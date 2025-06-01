@@ -1,0 +1,51 @@
+
+\prob{000B}{中线求角}
+
+\begin{figure}[htbp]
+  \centering
+  \image{000B}
+  \caption{000B：中线求角} \label{fig:000B}
+\end{figure}
+
+如图~\ref{fig:000B}，在$\triangle ABC$中，$AD = CD$，$\angle A = 30^\circ$，$\angle C = 15^\circ$，求$\angle CBD$。
+\problabels{yellow/平面几何, green/角度问题}
+
+\ans{$\angle CBD = 30^\circ$}
+
+\subsection{构造等腰直角三角形} \label{subsec:000B-isrtri}
+
+\begin{figure}[htbp]
+  \centering
+  \image{000B-isrtri}
+  \caption{\nameref{subsec:000B-isrtri}：通过构造等腰直角三角形找到等边三角形，最后利用一系列等腰三角形求解。}
+  \label{fig:000B-isrtri}
+\end{figure}
+
+基本思路：通过构造一个等腰直角三角形和一个等边三角形，得出一个包含所求角的等腰三角形，最后通过等腰三角形的性质求解。
+
+如图~\ref{fig:000B-isrtri}，作$CE \perp AB$于$E$，连接$DE$。
+
+\begin{align*}
+  &\because   CE \perp AB \\
+  &\therefore \angle BEC = 90^\circ \\
+  &\therefore \angle A + \angle ACE = 90^\circ, \angle BCE + \angle CBE = 90^\circ \\
+  &\because   \angle A = 30^\circ \\
+  &\therefore \angle ACE = 90^\circ - 30^\circ = 60^\circ, AC = 2CE \\
+  &\because   AD = CD \\
+  &\therefore CD = CE \\
+  &\therefore \triangle CDE\text{是等边三角形} \\
+  &\therefore \angle DEC = 60^\circ, CE = DE \\
+  &\therefore \angle BED = 90^\circ - 60^\circ = 30^\circ \\
+  \text{又}&\because \angle ACB = 15^\circ \\
+  &\therefore \angle BCE = 60^\circ - 15^\circ = 45^\circ \\
+  &\therefore \angle CBE = 90^\circ - 45^\circ = 45^\circ \\
+  &\therefore \angle BCE = \angle CBE \\
+  &\therefore BE = CE \\
+  &\therefore BE = DE \\
+  &\therefore \angle BDE = \angle DBE \\
+  &\because   \angle BDE + \angle DBE + \angle BED = 180^\circ \\
+  &\therefore \angle DBE = \frac12(180^\circ - 30^\circ) = 75^\circ \\
+  &\therefore \angle CBD = 75^\circ - 45^\circ = 30^\circ \\
+\end{align*}
+
+综上，$\angle CBD = 30^\circ$。

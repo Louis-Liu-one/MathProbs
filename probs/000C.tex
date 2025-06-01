@@ -1,0 +1,64 @@
+
+\prob{000C}{单位等边三角形}
+
+\begin{figure}[htbp]
+  \centering
+  \image{000C}
+  \caption{000C：单位等边三角形} \label{fig:000C}
+\end{figure}
+
+如图~\ref{fig:000C}，$\triangle ABC$是等边三角形，$AB = AC = BC = 1$，$P$在线段$AB$上，$Q$在$BC$的延长线上且$AP = CQ$，$PE \perp AC$于$E$，求$DE$的长。
+\problabels{yellow/平面几何, green/长度问题}
+
+\ans{$DE = \sfrac12$}
+
+\subsection{构造8形全等} \label{subsec:000C-8eq}
+
+\begin{figure}[htbp]
+  \centering
+  \image{000C-8eq}
+  \caption{\nameref{subsec:000C-8eq}：通过构造8形全等和一个等边三角形求解。}
+  \label{fig:000C-8eq}
+\end{figure}
+
+基本思路：通过作一个等边三角形构造8形全等，进而求出$DE$的长。
+
+如图~\ref{fig:000C-8eq}，作$PC' \parallel BQ$，交$AC$于点$C'$。
+
+\begin{align*}
+  &\because   PC' \parallel BQ \\
+  &\therefore \angle APC' = \angle B, \angle AC'P = \angle ACB, \\
+  &\mathalignsep \angle C'PD = \angle Q \\
+  &\because   \triangle ABC\text{是等边三角形} \\
+  &\therefore \angle B = \angle ACB = 60^\circ \\
+  &\therefore \angle APC' = \angle AC'P = 60^\circ \\
+  &\therefore \triangle APC'\text{是等边三角形} \\
+  &\therefore \angle A = \angle AC'P, AP = C'P \\
+  &\because   PE \perp AC \\
+  &\therefore \angle AEP = \angle C'EP = 90^\circ \\
+  &\because   \text{在}\triangle AEP\text{与}\triangle C'EP\text{中} \\
+  &\mathalignsep \begin{cases}
+    \angle A = \angle PC'E \\
+    \angle AEP = \angle C'EP \\
+    EP = EP \\
+  \end{cases} \\
+  &\therefore \triangle AEP \cong \triangle C'EP \\
+  &\therefore AE = C'E \\
+  \text{又}&\because AP = CQ \\
+  &\therefore C'P = CQ \\
+  &\because   \text{在}\triangle C'DP\text{与}\triangle CDQ\text{中} \\
+  &\mathalignsep \begin{cases}
+    \angle C'DP = \angle CDQ \\
+    \angle C'PD = \angle Q \\
+    C'P = CQ \\
+  \end{cases} \\
+  &\therefore \triangle C'DP \cong \triangle CDQ \\
+  &\therefore CD = C'D \\
+  &\because   DE = C'D + C'E \\
+  &\therefore DE = CD + AE \\
+  &\because   DE + CD + AE = AC = 1 \\
+  &\therefore 2DE = 1 \\
+  &\therefore DE = \frac12 \\
+\end{align*}
+
+综上，$DE$的长度为$\sfrac12$。

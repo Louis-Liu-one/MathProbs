@@ -1,0 +1,33 @@
+
+\prob{00A3}{巧解四次方程III}
+
+解方程
+\[ \left(x^2 - \sqrt3\right)^2 = x + \sqrt3 \]
+\problabels{yellow/代数, green/方程相关问题}
+
+\ans{
+  \begin{align*}
+    x_{1,2} &= \frac12\left(-1 \pm \sqrt{4\sqrt3 - 3}\right) \\
+    x_{3,4} &= \frac12\left(1 \pm \sqrt{4\sqrt3 + 1}\right)
+  \end{align*}
+}
+
+\subsection{换常数为元}
+
+原方程展开为
+\[ x^4 - 2\sqrt3x^2 - x + 3 - \sqrt3 = 0 \]
+令$k = \sqrt3$，则
+\[ x^4 - 2x^2k - x + k^2 - k = 0 \]
+于是得一关于$k$的方程
+\[ k^2 - \left(2x^2 + 1\right)k + \left(x^4 - x\right) = 0 \]
+解得
+\begin{align*}
+  k &= \frac12\left(2x^2 + 1 \pm \sqrt{\left(2x^2 + 1\right)^2 - 4\left(x^4 - x\right)}\right) \\
+  &= \frac12\left(2x^2 + 1 \pm \sqrt{4x^2 + 4x + 1}\right) \\
+  &= x^2 + \frac12 \pm \left(x + \frac12\right)
+\end{align*}
+故$k = x^2 + x + 1$或$k = x^2 - x$。而$k = \sqrt3$，解两关于$x$的二次方程得
+\begin{align*}
+  x_{1,2} &= \frac12\left(-1 \pm \sqrt{4\sqrt3 - 3}\right) \\
+  x_{3,4} &= \frac12\left(1 \pm \sqrt{4\sqrt3 + 1}\right)
+\end{align*}

@@ -1,0 +1,56 @@
+
+\prob{00A4}{Taylor展开}
+
+求证：对于某实数$x_0$，可导函数$f(x)$可以表示为如下形式：
+\[ f(x) = \sum_{n = 0}^\infty \frac{f^{(n)}(x_0)}{n!}(x - x_0)^n \]
+其中$f^{(n)}$表示$f$的$n$阶导数。
+\problabels{yellow/微积分, green/证明题}
+
+\subsection{待定系数}
+
+设$f(x) = a_0(x - x_0)^0 + a_1(x - x_0)^1 + \dots + a_n(x - x_0)^n + \dots$，其中$x_0$表示在$x_0$处展开。易知$f(x_0) = a_0$。
+
+运用链式法则将$f(x)$求导得$f'(x)$，其中
+\begin{align*}
+  f'(x) &= 0 + a_1\cdot1(x - x_0)^0\cdot(1 - 0) \\
+  &+ a_2\cdot2(x - x_0)^1\cdot(1 - 0) \\
+  &+ a_3\cdot3(x - x_0)^2\cdot(1 - 0) + \cdots \\
+  &+ a_n\cdot n(x - x_0)^{n - 1}\cdot(1 - 0) + \cdots \\
+  &= a_1 + 2a_2(x - x_0)^1 + 3a_3(x - x_0)^2 \\
+  &+ \dots + na_n(x - x_0)^{n - 1} + \cdots
+\end{align*}
+由此可知$f'(x_0) = a_1$。再次求导可得
+\begin{align*}
+  f''(x) &= 0 + 2a_2\cdot1(x - x_0)^0\cdot(1 - 0) \\
+  &+ 3a_3\cdot2(x - x_0)^1\cdot(1 - 0) + \cdots \\
+  &+ na_n\cdot(n - 1)(x - x_0)^{n - 2}\cdot(1 - 0) + \cdots \\
+  &= 1\cdot2a_2 + 2\cdot3a_3(x - x_0)^1 \\
+  &+ 3\cdot4a_4(x - x_0)^2 + \cdots \\
+  &+ (n - 1)na_n(x - x_0)^{n - 2} + \cdots
+\end{align*}
+易知$\sfrac1{2!}f''(x_0) = \sfrac1{1\cdot2}f''(x_0) = a_2$。多次求导可得
+\begin{align*}
+  f(x) &= 0!a_0(x - x_0)^0 + \frac{1!}{1!}a_1(x - x_0)^1 \\
+  &+ \dots + \frac{n!}{n!}a_n(x - x_0)^n + \cdots \\
+  f'(x) &= 1!a_1(x - x_0)^0 + \frac{2!}{1!}a_2(x - x_0)^1 \\
+  &+ \dots + \frac{n!}{(n - 1)!}a_n(x - x_0)^{n - 1} + \cdots \\
+  f''(x) &= 2!a_2(x - x_0)^0 + \frac{3!}{1!}a_3(x - x_0)^1 \\
+  &+ \dots + \frac{n!}{(n - 2)!}a_n(x - x_0)^{n - 2} + \cdots \\
+  f'''(x) &= 3!a_3(x - x_0)^0 + \frac{4!}{1!}a_4(x - x_0)^1 + \cdots \\
+  &+ \frac{n!}{(n - 3)!}a_n(x - x_0)^{n - 3} + \cdots \\
+  f^{(k)}(x) &= k!a_k(x - x_0)^0 + \frac{(k + 1)!}{1!}a_{k + 1}(x - x_0)^1 \\
+  &+ \dots + \frac{n!}{(n - k)!}a_n(x - x_0)^{n - k} + \cdots
+\end{align*}
+易知
+\begin{align*}
+  a_0 &= \frac{f(x_0)}{0!} \\
+  a_1 &= \frac{f'(x_0)}{1!} \\
+  \cdots &= \cdots \\
+  a_n &= \frac{f^{(n)}(x_0)}{n!}
+\end{align*}
+由此可得$f(x)$的Taylor展开式为\footnote{当函数在$0$处展开，即$x_0 = 0$时，该展开被称为Maclaurin展开，即$f(x) = \sum_{n = 0}^\infty \sfrac{f^{(n)}(0)}{n!}x^n$。}
+\begin{align*}
+  f(x) &= \frac{f(x_0)}{0!}(x - x_0)^0 + \frac{f'(x_0)}{1!}(x - x_0)^1 \\
+  &+ \dots + \frac{f^{(n)}(x_0)}{n!}(x - x_0)^n + \cdots \\
+  &= \sum_{n = 0}^\infty \frac{f^{(n)}(x_0)}{n!}(x - x_0)^n \\
+\end{align*}

@@ -1,0 +1,41 @@
+
+\prob{00B1}{均值不等式}
+
+对于实数$a_1, a_2, \dots, a_n$，求证：
+\[ \sum_{i = 1}^n a_i \ge n\sqrt[n]{\prod_{i = 1}^n a_i} \]
+当且仅当$a_1 = a_2 = \dots = a_n$时等号成立。
+\problabels{yellow/代数, green/证明题}
+
+\subsection{归纳法}
+
+\subsubsection{基础情况}
+
+当$n = 2$时，显然有
+\[ \left(\sqrt{a_1} - \sqrt{a_2}\right)^2 \ge 0 \]
+展开后立得
+\[ a_1 + a_2 \ge 2\sqrt{a_1a_2} \]
+当且仅当$a_1 = a_2$时等号成立。
+
+\subsubsection{递归情况}
+
+若对于$1 < k \le n$有
+\[ \sum_{i = 1}^k a_i \ge k\sqrt[k]{\prod_{i = 1}^k a_i} \]
+成立，则对于$n + 1$，令
+\[ S = \sum_{i = 1}^n a_i, P = \prod_{i = 1}^n a_i, S' = \sum_{i = 1}^{n + 1} a_i, P' = \prod_{i = 1}^{n + 1} a_i \]
+有
+\begin{align*}
+  S' &= S + \left(a_{n + 1} + (n - 1)\sqrt[n + 1]{P'}\right) - (n - 1)\sqrt[n + 1]{P'} \\
+  &\ge n\sqrt[n]{P} + n\sqrt[n]{a_{n + 1}\left(\sqrt[n + 1]{P'}\right)^{n - 1}} - (n - 1)\sqrt[n + 1]{P'} \\
+  &\ge 2n\sqrt{\sqrt[n]{P}\sqrt[n]{a_{n + 1}\left(\sqrt[n + 1]{P'}\right)^{n - 1}}} - (n - 1)\sqrt[n + 1]{P'} \\
+  &= 2n\sqrt[2n]{a_{n + 1}P\left(\sqrt[n + 1]{P'}\right)^{n - 1}} - (n - 1)\sqrt[n + 1]{P'} \\
+  &= 2n\sqrt[2n]{\left(\sqrt[n + 1]{P'}\right)^{n + 1}\left(\sqrt[n + 1]{P'}\right)^{n - 1}} - (n - 1)\sqrt[n + 1]{P'} \\
+  &= 2n\sqrt[2n]{\left(\sqrt[n + 1]{P'}\right)^{2n}} - (n - 1)\sqrt[n + 1]{P'} \\
+  &= (2n - (n - 1))\sqrt[n + 1]{P'} = (n + 1)\sqrt[n + 1]{P'} \\
+\end{align*}
+当且仅当
+\begin{align*}
+  a_1 = a_2 &= \dots = a_n \\
+  a_{n + 1} &= \sqrt[n + 1]{P'} \\
+  \sqrt[n]{P} &= \sqrt[n]{a_{n + 1}\left(\sqrt[n + 1]{P'}\right)^{n - 1}}
+\end{align*}
+即$a_1 = a_2 = \dots = a_{n + 1}$时等号成立。原不等式得证。

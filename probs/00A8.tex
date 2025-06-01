@@ -1,0 +1,29 @@
+
+\prob{00A8}{从等腰到等腰}
+
+\begin{figure}[htbp]
+  \centering \image{00A8}
+  \caption{总第~\ref{sec:00A8} 题图} \label{fig:00A8}
+\end{figure}
+
+如图~\ref{fig:00A8}，在Rt$\triangle ABC$中，$\angle ACB = 90^\circ, AC = BC$，$D$是边$BC$上一点；延长$AD$到$E$，连接$BE, CE$，使得$AB = AE$且$CE \parallel AB$。求$\angle BAE$。
+\problabels{yellow/平面几何, green/角度问题}
+
+\ans{$\angle BAE = 30^\circ$}
+
+\subsection{作垂线} \label{subsec:00A8-h}
+
+\begin{figure}[htbp]
+  \centering \image{00A8-h}
+  \caption{方法~\ref{subsec:00A8-h} 图} \label{fig:00A8-h}
+\end{figure}
+
+如图~\ref{fig:00A8-h}，作$CP \perp AB$于$P$，$EQ \perp AB$于$Q$，显然四边形$PQEC$为矩形，故$CP = EQ$。同时，$\triangle ABC$为等腰直角三角形，故$AP = BP = CP$，于是$AB = 2EQ$。由于$AB = AE$，于是$AE = 2EQ$，即$\angle BAE = 30^\circ$。
+
+\subsection{正弦定理}
+
+不失一般性，设$AC = 1, AB = \sqrt2$，于是$AE = \sqrt2$。由$CE \parallel AB$易知$\angle ACE = 135^\circ$。
+
+在$\triangle ACE$中应用正弦定理得
+\[ \frac{\sin\angle ACE}{AE} = \frac{\sin\angle AEC}{AC} \Rightarrow \sin\angle AEC = \frac12 \]
+于是$\angle BAE = \angle AEC = 30^\circ$。

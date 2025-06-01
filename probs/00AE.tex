@@ -1,0 +1,34 @@
+
+\prob{00AE}{线段旋转最值}
+
+\begin{figure}[htbp]
+  \centering \image{00AE}
+  \caption{总第~\ref{sec:00AE} 题图} \label{fig:00AE}
+\end{figure}
+
+如图~\ref{fig:00AE}，自点$P$引出两条射线$PA, PB$，作$\angle APB$的角平分线$PQ$，其中$PQ$为一定值；过$Q$作一条直线$MN$，交$PA$于$M$，交$PB$于$N$。求证：当且仅当$MN \perp PQ$时，$MN$最小。
+\problabels{yellow/平面几何, green/最值问题, green/证明题}
+
+\subsection{比较} \label{subsec:00AE-cmp}
+
+\begin{figure}[htbp]
+  \centering \image{00AE-cmp}
+  \caption{方法~\ref{subsec:00AE-cmp} 图} \label{fig:00AE-cmp}
+\end{figure}
+
+如图~\ref{fig:00AE-cmp}，过$Q$作$M'N' \perp PQ$，交$PA$于$M'$，交$PB$于$N'$；过$M'$作$M'I \perp M'N'$交$MN$于$I$，过$N'$作$N'J \perp M'N'$交$MN$于$J$，过$M'$作$M'R \parallel PB$交$MN$于$R$。即要证明$MN > M'N'$。不失一般性，只需考虑$M$在$M'N'$下方、$N$在$M'N'$上方的情况即可，此时$PM > PN$。
+
+此时，显然有
+\[ IR = JN, IJ > M'N' \]
+同时，显然有$M'I$平分$\angle AM'R$，由角平分线定理知
+\[ \frac{IM}{IR} = \frac{M'M}{MR} \]
+由于$M'R \parallel PB$，故$\triangle M'MR \sim \triangle PMN$，于是
+\[ \frac{IM}{IR} = \frac{M'M}{MR} = \frac{PM}{PN} \]
+而$PM > PN$，故$IM > IR$。因此，
+\begin{align*}
+  MN &= IM + IR + RN \\
+  &= IM + JN + RN \\
+  &> IR + JN + RN \\
+  &= IJ > M'N'
+\end{align*}
+即$MN > M'N'$，证毕。

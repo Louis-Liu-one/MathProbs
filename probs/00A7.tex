@@ -1,0 +1,89 @@
+
+\prob{00A7}{Fourier级数}
+
+求证：可积函数$f$可以表示为如下形式：
+\[ f(t) = \frac{a_0}2 + \sum_{n = 1}^\infty (a_n\cos(n\omega t) + b_n\sin(n\omega t)) \]
+其中
+\begin{align*}
+  a_n &= \frac1\pi \int_{-\pi}^\pi \cos(n\omega t)f(t) \dif t \\
+  b_n &= \frac1\pi \int_{-\pi}^\pi \sin(n\omega t)f(t) \dif t
+\end{align*}
+\problabels{yellow/微积分, green/证明题}
+
+\subsection{待定系数}
+
+\begin{lemma} \label{lemma:00A7-tri}
+  对于两不同正整数$n, k$，有
+  \begin{align*}
+    \int_{-\pi}^\pi \sin nx \dif x = \int_{-\pi}^\pi \cos nx \dif x &= 0 \\
+    \int_{-\pi}^\pi \sin nx \cos nx \dif x &= 0 \\
+    \int_{-\pi}^\pi \sin nx \cos kx \dif x &= 0 \\
+    \int_{-\pi}^\pi \sin nx \sin kx \dif x &= 0 \\
+    \int_{-\pi}^\pi \cos nx \cos kx \dif x &= 0
+  \end{align*}
+\end{lemma}
+
+\begin{proof}
+  参见总第~\ref{sec:00A6} 题。
+\end{proof}
+
+不妨设
+\begin{align}
+  f(t) = \frac{a_0}2 + \sum_{n = 1}^\infty (a_n\cos(n\omega t) + b_n\sin(n\omega t)) \label{eq:00A7-set}
+\end{align}
+再解出$a_n, b_n$。
+
+对式~\ref{eq:00A7-set} 两边求定积分，得
+\begin{align*}
+  & \int_{-\pi}^\pi f(t) \dif t \\
+  ={}& \int_{-\pi}^\pi \frac{a_0}2 \dif t \\
+  &+ \int_{-\pi}^\pi \sum_{n = 1}^\infty (a_n\cos(n\omega t) + b_n\sin(n\omega t)) \dif t \\
+  ={}& \int_{-\pi}^\pi \frac{a_0}2 \dif t + 0 = \left.\frac{a_0}2\right|_{-\pi}^\pi = \pi a_0 \\
+\end{align*}
+解得
+\[ a_0 = \frac1\pi\int_{-\pi}^\pi f(t) \dif t \]
+
+对于某正整数$k$，将式~\ref{eq:00A7-set} 两边同时乘以$\cos(k\omega t)$得
+\begin{align*}
+  & f(t)\cos(k\omega t) \\
+  ={}& \frac{a_0}2\cos(k\omega t) + \sum_{n = 1}^\infty (a_n\cos(n\omega t)\cos(k\omega t) \\
+  &+ b_n\sin(n\omega t)\cos(k\omega t))
+\end{align*}
+对等号两边求定积分，得
+\begin{align*}
+  & \int_{-\pi}^\pi f(t)\cos(k\omega t) \dif t \\
+  ={}& \frac{a_0}2\int_{-\pi}^\pi \cos(k\omega t) \dif t \\
+  &+ \sum_{n = 1}^\infty \left(a_n\int_{-\pi}^\pi \cos(n\omega t)\cos(k\omega t) \dif t\right. \\
+  &+ \left.b_n\int_{-\pi}^\pi \sin(n\omega t)\cos(k\omega t) \dif t\right)
+\end{align*}
+由引理~\ref{lemma:00A7-tri} 可知，
+\begin{align*}
+  \int_{-\pi}^\pi \cos(k\omega t) \dif t &= 0 \\
+  \int_{-\pi}^\pi \sin(n\omega t)\cos(k\omega t) \dif t &= 0
+\end{align*}
+且当$n \ne k$时，
+\[ \int_{-\pi}^\pi \cos(n\omega t)\cos(k\omega t) \dif t = 0 \]
+于是
+\begin{align*}
+  & \int_{-\pi}^\pi f(t)\cos(k\omega t) \dif t \\
+  ={}& \sum_{n = 1}^\infty a_n\int_{-\pi}^\pi \cos(n\omega t)\cos(k\omega t) \dif t \\
+  ={}& a_k\int_{-\pi}^\pi \cos^2(k\omega t) \dif t
+\end{align*}
+而
+\begin{align*}
+  \cos^2(k\omega t) &= \frac12\left(\cos^2(k\omega t) + \cos^2(k\omega t)\right) \\
+  &= \frac12\left(1 + \cos^2(k\omega t) - \sin^2(k\omega t)\right) \\
+  &= \frac12\left(1 + \cos(2k\omega t)\right)
+\end{align*}
+故
+\begin{align*}
+  & \int_{-\pi}^\pi f(t)\cos(k\omega t) \dif t \\
+  ={}& a_k\int_{-\pi}^\pi (1 + \cos(2k\omega t)) \dif t \\
+  ={}& a_k\left(\int_{-\pi}^\pi 1 \dif t + \int_{-\pi}^\pi \cos(2k\omega t) \dif t\right) \\
+  ={}& 2\pi a_k + 0 = 2\pi a_k \\
+\end{align*}
+令$n = k$，解得
+\[ a_n = \frac1\pi \int_{-\pi}^\pi \cos(n\omega t)f(t) \dif t \]
+同理，将式~\ref{eq:00A7-set} 两边同时乘以$\sin(k\omega t)$得
+\[ b_n = \frac1\pi \int_{-\pi}^\pi \sin(n\omega t)f(t) \dif t \]
+经比较，与题中公式相同。证毕。

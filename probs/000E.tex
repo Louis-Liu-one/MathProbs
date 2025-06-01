@@ -1,0 +1,48 @@
+
+\prob{000E}{四边形求角I}
+
+\begin{figure}[htbp]
+  \centering
+  \image{000E}
+  \caption{总第~\ref{sec:000E} 题图} \label{fig:000E}
+\end{figure}
+
+如图~\ref{fig:000E}，在四边形$ABCD$中，$2\angle CAD + \angle BAC = 180^\circ$，$BD = CD$，求$\angle CAD$与$\angle CBD$的数量关系。
+\problabels{yellow/平面几何, green/数量关系问题}
+
+\ans{$\angle CAD = \angle CBD$}
+
+\subsection{翻折法} \label{subsec:000E-fold}
+
+\begin{figure}[htbp]
+  \centering
+  \image{000E-fold}
+  \caption{\nameref{subsec:000E-fold}：通过翻折$\triangle ABD$到$\triangle AB'D$，构造一个等腰直角三角形，进而得出数量关系。}
+  \label{fig:000E-fold}
+\end{figure}
+
+基本思路：通过翻折$DB$构造等腰三角形，进而得出数量关系。
+
+如图~\ref{fig:000E-fold}，延长$CA$到$B'$，使得$AB = AB'$；连接$B'D$。
+
+\begin{align*}
+  &\because   2\angle CAD + \angle BAC = 180^\circ \\
+  &\therefore 180^\circ - \angle CAD = \angle CAD + \angle BAC \\
+  &\because   \angle CAD + \angle B'AD = 180^\circ \\
+  &\therefore \angle BAD = \angle B'AD \\
+  &\therefore \triangle ABD \cong \triangle AB'D \ \text{（证明省略）} \\
+  &\therefore BD = B'D, \angle B' = \angle ABD \\
+  &\because   BD = CD \\
+  &\therefore B'D = CD, \angle BCD = \angle CBD \\
+  &\therefore \angle B'CD = \angle B' \\
+  &\therefore \angle ABD = \angle B'CD, \\
+  &\mathalignsep \angle ACB = \angle BCD - \angle B'CD = \angle CBD - \angle ABD \\
+  &\therefore \angle ABD = 45^\circ \\
+  &\because   \angle ABD + \angle CBD + \angle ACB + \angle BAC = 180^\circ \\
+  &\therefore \angle ABD + \angle CBD \\& + \angle CBD - \angle ABD + \angle BAC = 180^\circ \\
+  &\therefore 2\angle CBD + \angle BAC = 180^\circ \\
+  &\because   2\angle CAD + \angle BAC = 180^\circ \\
+  &\therefore \angle CAD = \angle CBD \\
+\end{align*}
+
+综上，$\angle CAD = \angle CBD$。\footnote{得到$\angle ABD = \angle B'CD$后，也可用三角形相似证明。设$AC$与$BD$交于$P$，则$\triangle ABP \sim \triangle DCP$，然后证明$\triangle ADP \sim \triangle BCP$也可得到$\angle CAD = \angle CBD$。}

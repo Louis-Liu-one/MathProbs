@@ -1,0 +1,65 @@
+
+\prob{00B4}{半圆中圆}
+
+\begin{figure}[htbp]
+  \centering \image{00B4}
+  \caption{总第~\ref{sec:00B4} 题图} \label{fig:00B4}
+\end{figure}
+
+如图~\ref{fig:00B4}，在半圆$O_1$中，$AB$是其直径，$C$是半圆上一点，过$C$作$CD \perp AB$于$D$；在半圆内、$CD$右侧作$\odot O_2$使之与半圆和$CD$相切，且与$AB$切于$P$；连接$PC$。求证：
+\[ PC^2 = 2PA\cdot PD \]
+\problabels{yellow/平面几何, green/证明题}
+
+\emph{YCY提供的题目。}
+
+\subsection{硬算角平分线} \label{subsec:00B4-bis}
+
+\begin{figure}[htbp]
+  \centering \image{00B4-bis}
+  \caption{方法~\ref{subsec:00B4-bis} 图} \label{fig:00B4-bis}
+\end{figure}
+
+如图~\ref{fig:00B4-bis}，连接$AC, BC, O_1C$；令半$\odot O_1$与$\odot O_2$切于$E$，连接$O_1E, O_2P$；在线段$AD$上找一点$P'$使得$PD = P'D$；作$PH \perp BC$于$H$；过$A, P', C$作圆。设$\odot O_1$的半径为$R$，$\odot O_2$的半径为$r$。显然有$\angle DCP = \angle DCP', DP = O_2P = r$。
+
+考虑过$E$的切线$l$，显然$O_1E \perp l, O_2E \perp l$，故$O_1, O_2, E$共线。而$O_1E = R, O_2E = r$，故$O_1O_2 = R - r$。而$O_2P \perp AB$，由勾股定理知
+\[ O_1P = \sqrt{O_1O_2^2 - O_2P^2} = \sqrt{R^2 - 2Rr} \]
+设$k = O_1P = \sqrt{R^2 - 2Rr}$。
+
+由于$DP = r, O_1B = R$，故$O_1D = k - r, BP = R - k, BD = R + r - k$，由勾股定理知
+\begin{align*}
+  CD &= \sqrt{O_1C^2 - O_1D^2} = \sqrt{R^2 - (k - r)^2} \\
+  &= \sqrt{R^2 - k^2 + 2kr - r^2} = \sqrt{2Rr + 2kr - r^2} \\
+  BC &= \sqrt{CD^2 + BD^2} \\
+  &= \sqrt{2Rr + 2kr - r^2 + (R + r - k)^2} \\
+  &= \sqrt{4Rr + R^2 + k^2 - 2kR} \\
+  &= \sqrt{4Rr + R^2 + R^2 - 2Rr - 2kR} \\
+  &= \sqrt{2R^2 + 2Rr - 2kR}
+\end{align*}
+
+显然$\triangle PBH \sim \triangle CBD$，故
+\begin{align*}
+  PH &= \frac{CD}{BC}\cdot PB \\
+  &= \frac{\sqrt{2Rr + 2kr - r^2}}{\sqrt{2R^2 + 2Rr - 2kR}}(R - k) \\
+  PH^2 &= \frac{r(2R + 2k - r)}{2R(R + r - k)}(R - k)^2 \\
+  &= \frac{r(2R + 2k - r)}{2R(R + r - k)}\left(R^2 - 2kR + R^2 - 2Rr\right) \\
+  &= \frac{r(2R + 2k - r)}{2R(R + r - k)}2R(R - k - r) \\
+  &= \frac{r(2R + 2k - r)(R - k - r)}{R + r - k} \\
+\end{align*}
+分子除$r$外的部分乘开得
+\begin{align*}
+  & (2R + 2k - r)(R - k - r) \\
+  ={}& 2R^2 - 2kR - 2Rr + 2kR \\
+  &- 2k^2 - 2kr - Rr + kr + r^2 \\
+  ={}& 2R^2 - 3Rr - 2k^2 - kr + r^2 \\
+  ={}& 2R^2 - 3Rr - 2R^2 + 4Rr - kr + r^2 \\
+  ={}& r(R - k + r)
+\end{align*}
+故而
+\[ PH^2 = \frac{r\cdot r(R - k + r)}{R + r - k} = r^2 \]
+即$PH = r = PD$。故$CP$平分$\angle BCD$，于是
+\[ \angle DCP' = \angle DCP = \angle BCP \]
+于是有$\angle BCD = \angle PCP'$。
+
+显然$\angle CAP' = \angle BCD$，故$\angle CAP' = \angle PCP'$，由弦切角定理逆定理知$CP$切于$\triangle ACP'$外接的圆，由切割线定理知
+\[ PC^2 = PP'\cdot PA \Rightarrow PC^2 = 2PD\cdot PA \]
+证毕。

@@ -1,0 +1,46 @@
+
+\prob{0001}{等长线段}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0001}
+  \caption{0001：等长线段} \label{fig:0001}
+\end{figure}
+
+如图~\ref{fig:0001}，$AC = AB = BD = DE$，$CD = CE$，求$\angle DCE$。
+\problabels{yellow/平面几何, green/角度问题}
+
+\ans{$\angle DCE = 100^\circ$}
+
+\subsection{构造等边三角形} \label{subsec:0001-eqtri}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0001-eqtri}
+  \caption{\nameref{subsec:0001-eqtri}：构造等边三角形和平行四边形。} \label{fig:0001-eqtri}
+\end{figure}
+
+基本思路：构造等边三角形，通过所得的平行四边形列角度方程求解。
+
+如图~\ref{fig:0001-eqtri}，设$\alpha = \angle D = \angle CED$，则$\angle ABC = \angle ACB = 2\alpha$。作直线$AC$右边的$A'$，使得$\angle AEA' = \angle ACB = \angle ABC = 2\alpha$且$A'E = AB$。连接$A'A$、$A'B$、$A'E$、$BE$。
+
+\begin{align*}
+  &\because   BD = AC, CD = CE \\
+  &\therefore BD - CD = AC - CE \\
+  &\therefore BC = EA \\
+  &\therefore \triangle ABC \cong \triangle A'EA \ \text{（证明省略）} \\
+  &\therefore AC = AB = BD = DE = A'A = A'E \\
+  \text{又}&\because \angle AEA' = \angle ACB \\
+  &\therefore A'E \parallel BD \\
+  &\therefore \angle DBE = \angle A'EB \\
+  &\because   \triangle DBE \cong \triangle A'EB \ \text{（证明省略）} \\
+  &\therefore AB = A'A = A'B \\
+  &\therefore \angle A'AB = 60^\circ \\
+  &\therefore \angle EAA' - \angle BAC = 60^\circ \\
+  &\because   \angle BAC' = 180^\circ - 4\alpha, \angle EAA' = 2\alpha \\
+  &\therefore 6\alpha - 180^\circ = 60^\circ \\
+  &\therefore \alpha = 40^\circ \\
+  &\therefore \angle DCE = 180^\circ - 2\times40^\circ = 100^\circ \\
+\end{align*}
+
+综上，$\angle DCE = 100^\circ$。

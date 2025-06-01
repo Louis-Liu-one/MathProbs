@@ -1,0 +1,26 @@
+
+\prob{00A1}{圆切等腰}
+
+\begin{figure}[htbp]
+  \centering \image{00A1}
+  \caption{总第~\ref{sec:00A1} 题图} \label{fig:00A1}
+\end{figure}
+
+如图~\ref{fig:00A1}，在一圆中取一弦$AB$；过弦的中点$C$引另一弦$CD$，交$AB$于$E$；过$D$作圆的切线，交$AB$的延长线于$F$。求证：$DF = EF$。
+\problabels{yellow/平面几何, green/证明题}
+
+\subsection{弦切角} \label{subsec:00A1-circ}
+
+\begin{figure}[htbp]
+  \centering \image{00A1-circ}
+  \caption{方法~\ref{subsec:00A1-circ} 图} \label{fig:00A1-circ}
+\end{figure}
+
+如图~\ref{fig:00A1-circ}，连接$AC, BC, BD$，易知$AC = BC \Rightarrow \angle ABC = \angle BAC$。
+
+由圆周角定理知$\angle BAC = \angle BDE$，于是$\angle CBE = \angle BDE$。由弦切角定理知$\angle BDF = \angle BCE$，于是有
+\begin{align*}
+  \angle EDF &= \angle BDE + \angle BDF \\
+  &= \angle CBE + \angle BCE = \angle DEF
+\end{align*}
+故$DF = EF$，证毕。

@@ -1,0 +1,69 @@
+
+\prob{00AF}{等边内一点II}
+
+\begin{figure}[htbp]
+  \centering \image{00AF}
+  \caption{总第~\ref{sec:00AF} 题图} \label{fig:00AF}
+\end{figure}
+
+如图~\ref{fig:00AF}，在等边$\triangle ABC$中，$AB = BC = CA = 2\sqrt3$；$P$是其中一点，作直线$BP, CP$分别交$AC, AB$于$D, E$；作$PF$平分$\angle BPC$，交$BC$于$F$。若$PF = 1, CD = AE$，求$CE$。
+\problabels{yellow/平面几何, green/长度问题}
+
+\emph{JYH提供的题目。}
+
+\ans{$CE = 3$}
+
+\subsection{相似三角形} \label{subsec:00AF-sim}
+
+\begin{figure}[htbp]
+  \centering \image{00AF-sim}
+  \caption{方法~\ref{subsec:00AF-sim} 图} \label{fig:00AF-sim}
+\end{figure}
+
+如图~\ref{fig:00AF-sim}，以$CP$为边向左作等边$\triangle PCP'$，连接$AP'$。设$AE = CD = x$，则$AD = 2\sqrt3 - x$。
+
+显然$\triangle ACE \cong \triangle CBD$，于是
+\[ \angle ACE + \angle CDB = \angle ACE + \angle AEC = 120^\circ \]
+于是
+\[ \angle CPD = 60^\circ \Rightarrow \angle BPF = \angle CPF = 60^\circ \]
+因此$P, D, P'$共线。
+
+显然有$\triangle ACP' \cong \triangle BCP$，故
+\[ \angle AP'C = \angle BPC = 2\cdot60^\circ = 120^\circ \]
+而由于$\angle BP'C = 60^\circ$，故$P'D$是$\triangle ACP'$的角平分线。而$PF$是$\triangle BCP$的角平分线，故$P'D = PF = 1$。
+
+由$\angle AP'B = \angle CPP' = 60^\circ \Rightarrow AP' \parallel CE$知
+\[ \angle DAP' = \angle ECA, \angle AP'D = \angle CAE \]
+因此，$\triangle AP'D \sim \triangle CAE$，于是
+\[ \frac{AD}{P'D} = \frac{CE}{AE} \Rightarrow CE = \frac{AD\cdot AE}{P'D} = x\left(2\sqrt3 - x\right) \]
+故
+\begin{align}
+  CE^2 = \left(x^2 - 2\sqrt3x\right)^2 \label{eq:00AF-sim}
+\end{align}
+
+在$\triangle CAE$中使用余弦定理知
+\[ \left(2\sqrt3\right)^2 + x^2 - CE^2 = 2\cdot2\sqrt3x\cos\angle CAE \]
+得$CE^2 = x^2 - 2\sqrt3x + 12$。结合式~\ref{eq:00AF-sim} 知
+\[ x^2 - 2\sqrt3x + 12 = \left(x^2 - 2\sqrt3x\right)^2 \]
+解关于$x^2 - 2\sqrt3x$的二次方程得
+\[ x^2 - 2\sqrt3x = -3\ \text{或} x^2 - 2\sqrt3x = 4 \]
+而$CE = -\left(x^2 - 2\sqrt3x\right)$，故$CE = 3$或$CE = -4$（舍）。
+
+综上，$CE = 3$。
+
+\subsection{线段旋转最值} \label{subsec:00AF-min}
+
+\begin{lemma} \label{lemma:00AF-min}
+  \begin{figure}[htbp]
+    \centering \image{00AF-min-l}
+    \caption{引理~\ref{lemma:00AF-min} 图} \label{fig:00AF-min-l}
+  \end{figure}
+
+  如图~\ref{fig:00AF-min-l}，从$P$引出两条射线$PA, PB$，使得$\angle APB = 120^\circ$；作$\angle APB$的角平分线$PQ$，其中$PQ = 1$；过$Q$作一条直线$MN$，交$PA$于$M$，交$PB$于$N$。若$MN = 2\sqrt3$，则$MN \perp PQ$。
+\end{lemma}
+
+\begin{proof}
+  由总第~\ref{sec:00AE} 题知，当且仅当$MN \perp PQ$时，$MN$最小，此时易知$MN = 2\sqrt3$。而由题知$MN = 2\sqrt3$，故$MN \perp PQ$。
+\end{proof}
+
+注意到在$\triangle BPC$中，若将$PB, PC$看作定射线，$PF$看作定线段，则直线$BC$恒过点$F$且绕$F$旋转。由引理~\ref{lemma:00AF-min} 知，$BC \perp PF$，于是$PC = 2PF = 2$。又有$\triangle PBE \cong \triangle PBF$，于是$PE = PF = 1$，因此有$CE = 1 + 2 = 3$。

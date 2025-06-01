@@ -1,0 +1,112 @@
+
+\prob{000A}{等腰与二倍角}
+
+\begin{figure}[htbp]
+  \centering \image{000A}
+  \caption{总第~\ref{sec:000A} 题图} \label{fig:000A}
+\end{figure}
+
+如图~\ref{fig:000A}，在$\triangle ABC$中，$BD = 8$，$DE = 7$，$AD = CD$，$\angle ADE = 60^\circ$，$2\angle BAD = \angle CDE$，求$AE$的长。
+\problabels{yellow/平面几何, green/长度问题}
+
+\ans{$AE = 13$}
+
+\subsection{翻折法} \label{subsec:000A-fold}
+
+\begin{figure}[htbp]
+  \centering \image{000A-fold}
+  \caption{方法~\ref{subsec:000A-fold} 图} \label{fig:000A-fold}
+\end{figure}
+
+如图~\ref{fig:000A-fold}，作$D'$与$D$关于直线$AB$对称，连接$AD'$、$BD'$；在线段$AD'$上找一点$F$使得$AF = DE = 7$，连接$DF$，与$AB$交于$G$；在线段$AD$上找一点$B'$使得$BD = B'D = 8$，连接$B'G$。
+
+\begin{align*}
+  \because  {}& \text{$D'$与$D$关于直线$AB$对称} \\
+  \therefore{}& AD = AD', BD = BD' \\
+  \therefore{}& \triangle ABD \cong \triangle ABD'\ \text{（证明省略）} \\
+  \therefore{}& \angle BAD = \angle BAD' \\
+  \because  {}& \angle DAF = \angle BAD + \angle BAD' \\
+  \therefore{}& \angle DAF = 2\angle BAD \\
+  \because  {}& \angle CDE = 2\angle BAD \\
+  \therefore{}& \angle DAF = \angle CDE \\
+  \because  {}& \text{在$\triangle DAF$与$\triangle CDE$中，} \\
+  & \left\{ \begin{aligned}
+    DA &= CD \\ \angle DAF &= \angle CDE \\ AF &= DE \\
+  \end{aligned} \right. \\
+  \therefore{}& \triangle DAF \cong \triangle CDE \\
+  \therefore{}& \angle ADF = \angle C \\
+  \because  {}& AD = CD \\
+  \therefore{}& \angle C = \angle CAD \\
+  \therefore{}& \angle ADF = \angle CAD \\
+  \therefore{}& AC \parallel DF \\
+  \therefore{}& \angle C = \angle BDG \\
+  \therefore{}& \angle BDG = \angle B'DG \\
+  \because  {}& \text{在$\triangle BDG$与$\triangle B'DG$中，} \\
+  & \left\{ \begin{aligned}
+    BD &= B'D \\ \angle BDG &= \angle B'DG \\ DG &= DG \\
+  \end{aligned} \right. \\
+  \therefore{}& \triangle BDG \cong \triangle B'DG \\
+  \therefore{}& \angle BGD = \angle B'GD \\
+  \text{又}\because{}& \angle ADF + \angle BDF + \angle CDE + \angle ADE = 180^\circ \\
+  \therefore{}& 2\angle ADF + 2\angle BAD = 180^\circ - \angle ADE \\
+  \because  {}& \angle ADE = 60^\circ \\
+  \therefore{}& \angle ADF + \angle BAD = 60^\circ \\
+  \therefore{}& \angle BGD = 60^\circ \\
+  \because  {}& \angle BGD = \angle AGF \\
+  \therefore{}& \angle AGF = \angle B'GD = 60^\circ \\
+  \because  {}& \angle AGF + \angle B'GD + \angle AGB' = 180^\circ \\
+  \therefore{}& \angle AGB' = 60^\circ \\
+  \therefore{}& \angle AGF = \angle AGB' \\
+  \because  {}& \text{在$\triangle AGF$与$\triangle AGB'$中，} \\
+  &\left\{ \begin{aligned}
+    \angle FAG &= \angle B'AG \\ AG &= AG \\ \angle AGF &= \angle AGB' \\
+  \end{aligned} \right. \\
+  \therefore{}& \triangle AGF \cong \triangle AGB' \\
+  \therefore{}& AF = AB' \\
+  \because  {}& AF = 7 \\
+  \therefore{}& AB' = 7 \\
+  \because  {}& AD = AB' + B'D \\
+  \therefore{}& AD = 7 + 8 = 15 \\
+  \because  {}& \cos\angle ADE = \frac{AD^2 + DE^2 - AE^2}{2AD\cdot DE} \\
+  \therefore{}& AE = (AD^2 + DE^2 \\
+  & - 2AD\cdot DE\cos\angle ADE)^\frac12 \\
+  & = \sqrt{15^2 + 7^2 - 2\times15\times7\times\frac12} \\
+  & = \sqrt{169} = 13
+\end{align*}
+
+综上，$AE = 13$。
+
+若不用余弦定理，则得出$AD = 15$后，也可作$EH \perp AD$于$H$。根据$DH:DE:EH = 1:2:\sqrt3$，可得$EH = \sfrac72\sqrt3$，$DH = \sfrac72$。因此，$AH = 15 - \sfrac72 = \sfrac{23}2$，$AE = \sqrt{AH^2 + EH^2} = \sqrt{169} = 13$。也可作$AH \perp DE$于$H$，方法与前述类似。
+
+\subsection{相似三角形} \label{subsec:000A-sim}
+
+\begin{figure}
+  \centering \image{000A-sim}
+  \caption{方法~\ref{subsec:000A-sim} 图} \label{fig:000A-sim}
+\end{figure}
+
+\emph{LTY提供的方法。}
+
+如图~\ref{fig:000A-sim}，延长$AB, ED$交于$F$；作$FH \perp AD$于$H$。设$\angle BAD = \theta$，则$\angle CDE = \angle BDF = 2\theta$。
+
+由于$AD = CD$，故$\angle C = 60^\circ - \theta$，又有$\angle ADB = 120^\circ - 2\theta$，则$\angle DBF = 120^\circ - \theta$，于是$\angle BFD = 60^\circ - \theta = \angle C$。由于
+\[ \angle BFD = \angle C, \angle BDF = \angle EDC \]
+故而$\triangle BDF \sim \triangle EDC$，相似比为$8:7$。不妨设$AD = CD = 7x$，则$FD = 8x$。
+
+由于$\angle FDH = \angle ADE = 60^\circ, DH \perp FH$，有
+\[ DH = \frac12FD = 4x, FH = \frac{\sqrt3}2FD = 4\sqrt3x \]
+故
+\[ AH = AD + DH = 7x + 4x = 11x \]
+由勾股定理知
+\[ AF = \sqrt{AH^2 + FH^2} = \sqrt{169x^2} = 13x \]
+由正余弦函数的定义知
+\[ \sin\theta = \frac{FH}{AF} = \frac4{13}\sqrt3, \cos\theta = \frac{AH}{AF} = \frac{11}{13} \]
+由差角公式知
+\begin{align*}
+  & \sin\angle CAD = \sin\angle C = \sin(60^\circ - \theta) \\
+  ={}& \sin60^\circ\cos\theta - \cos60^\circ\sin\theta \\
+  ={}& \frac{11}{26}\sqrt3 - \frac4{26}\sqrt3 = \frac7{26}\sqrt3
+\end{align*}
+在$\triangle ADE$中应用正弦定理知
+\[ \frac{AE}{\sin\angle ADE} = \frac{DE}{\sin\angle CAD} \Rightarrow \frac23\sqrt3AE = \frac{26}3\sqrt3 \]
+即$AE = 13$。

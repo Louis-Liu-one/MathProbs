@@ -1,0 +1,60 @@
+
+\prob{000F}{积和最大值}
+
+已知$p, r, s$是常数，$m, n$为正数，$m^2 + n^2 = p$，求$rm + sn$的最大值。
+\problabels{yellow/代数, green/最值问题}
+
+\ans{$rm + sn$的最大值为$\sqrt{p(r^2 + s^2)}$。}
+
+\subsection{对偶式}
+
+基本思路：运用对偶式拼出$m^2 + n^2$。
+
+求$rm + sn$与其对偶式$sm - rn$的平方和，可得
+
+\begin{align*}
+  &\phantom{=} (rm + sn)^2 + (sm - rn)^2 \\
+  &= r^2m^2 + 2rsmn + s^2n^2 + s^2m^2 - 2rsmn + r^2n^2 \\
+  &= (r^2 + s^2)(m^2 + n^2) \\
+  &= p(r^2 + s^2) \\
+\end{align*}
+
+当且仅当$sm = rn$时，$rm + sn$取最大值，即
+
+\begin{align*}
+  rm + sn &= \sqrt{p(r^2 + s^2) - (sm - rn)^2} \\
+  &= \sqrt{p(r^2 + s^2)}
+\end{align*}
+
+综上，$rm + sn$的最大值为$\sqrt{p(r^2 + s^2)}$。
+
+\subsection{求导}
+
+基本思路：通过将函数求导解出最大值。
+
+由$m^2 + n^2 = p$与$m > 0, n > 0$可得$n = \sqrt{p - m^2}$，代入$rm + sn$得$rm + s\sqrt{p - m^2}$。
+
+令$y = rm + s\sqrt{p - m^2}$，则
+
+\begin{align*}
+  \frac{\dif y}{\dif m} &= r + s\cdot(p - m^2)^{-\frac12}\cdot(-2m) \\
+  &= r - \frac{sm}{\sqrt{1 - m^2}} \\
+\end{align*}
+
+当$\sfrac{\dif y}{\dif m} = 0$时$rm + sn$取最值，求解方程并取正值得
+
+\[ m = \frac{r\sqrt p}{\sqrt{r^2 + s^2}} \]
+
+代入$n = \sqrt{p - m^2}$得
+
+\[ n = \frac{s\sqrt p}{\sqrt{r^2 + s^2}} \]
+
+由此可得
+
+\begin{align*}
+  rm + sn &= r\frac{r\sqrt p}{\sqrt{r^2 + s^2}} + s\frac{s\sqrt p}{\sqrt{r^2 + s^2}} \\
+  &= \frac{\sqrt p(r^2 + s^2)}{\sqrt{r^2 + s^2}} \\
+  &= \sqrt{p(r^2 + s^2)} \\
+\end{align*}
+
+综上，$rm + sn$的最大值为$\sqrt{p(r^2 + s^2)}$。

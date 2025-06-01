@@ -1,0 +1,48 @@
+
+\prob{00A0}{Peaucellier-Lipkin连杆}
+
+\begin{figure}[htbp]
+  \centering
+  \image{00A0}
+  \caption{总第~\ref{sec:00A0} 题图} \label{fig:00A0}
+\end{figure}
+
+如图~\ref{fig:00A0}，定$\odot O$上有一定点$A$和一动点$B$；在某时刻，存在两点$C, D$，连接$AC, AD, BC, BD$，满足$AC = AD, BC = BD$；以$BC, BD$为边作菱形$BCED$。证明：当$B$在圆上运动时，$E$的运动轨迹为一条垂直于$OA$的线段。
+\problabels{yellow/平面几何, green/证明题}
+
+\subsection{乘积恒定} \label{subsec:00A0-mul}
+
+\begin{lemma} \label{lemma:00A0}
+  \begin{figure}[htbp]
+    \centering
+    \image{009E}
+    \caption{引理~\ref{lemma:00A0} 图} \label{fig:00A0-lemma}
+  \end{figure}
+
+  如图~\ref{fig:00A0-lemma}，若定$\odot O$上有一定点$A$和一动点$B$，$C$是射线$AB$上一点，且满足$AB \cdot AC$为某定值，则$C$的运动轨迹为一条垂直于$OA$的直线。
+\end{lemma}
+
+\begin{proof}
+  参见总第~\ref{sec:009E} 题。
+\end{proof}
+
+\begin{figure}[htbp]
+  \centering
+  \image{00A0-mul}
+  \caption{方法~\ref{subsec:00A0-mul} 图} \label{fig:00A0-mul}
+\end{figure}
+
+如图~\ref{fig:00A0-mul}，显然$A, B, E$都在$CD$的中垂线上，连接$AE, CD$，交于$H$，易知$AE \perp CD, BH = EH$。设$AC = a, BC = b, \angle CAH = \alpha$。
+
+于是可知，在$\triangle ACH$中，
+\[ CH = a\sin\alpha, AH = a\cos\alpha \]
+由勾股定理可知，
+\[ EH = BH = \sqrt{b^2 - a^2\sin^2\alpha} \]
+于是
+\begin{align*}
+  AB \cdot AE &= (AH - BH)(AH + EH) \\
+  &= (AH - BH)(AH + BH) = AH^2 - BH^2 \\
+  &= (a\cos\alpha)^2 - \left(b^2 - a^2\sin^2\alpha\right) \\
+  &= \left(\cos^2\alpha + \sin^2\alpha\right)a^2 + b^2 = a^2 + b^2
+\end{align*}
+可知$AB \cdot AE$为定值，于是由引理~\ref{lemma:00A0} 知$E$的运动轨迹为一条垂直于$OA$的线段。证毕。

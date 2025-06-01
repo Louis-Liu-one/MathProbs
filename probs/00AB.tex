@@ -1,0 +1,25 @@
+
+\prob{00AB}{半圆折叠}
+
+\begin{figure}[htbp]
+  \centering \image{00AB}
+  \caption{总第~\ref{sec:00AB} 题图} \label{fig:00AB}
+\end{figure}
+
+如图~\ref{fig:00AB}，在半圆$AB$中，$O$是圆心；将半圆$AB$沿弦$PQ$折叠，所得的弧恰切$AB$于$H$。若$AH = 5, BH = 3$，求$PQ$。
+\problabels{yellow/平面几何, green/长度问题}
+
+\ans{$PQ = \sqrt{47}$}
+
+\subsection{勾股定理} \label{subsec:00AB-sym}
+
+\begin{figure}[htbp]
+  \centering \image{00AB-sym}
+  \caption{方法~\ref{subsec:00AB-sym} 图} \label{fig:00AB-sym}
+\end{figure}
+
+如图~\ref{fig:00AB-sym}，作$O$关于$PQ$的对称点$O'$，连接$OO'$交$PQ$于$M$，连接$O'H, OQ$。显然$O'H \perp AB$，$OO'$与$PQ$互相垂直平分，翻折得的弧$PQ$以$O'$为圆心，圆$O'$与圆$O$全等。易知$OA = OB = OQ = O'H = 4, OH = 1$。
+
+由勾股定理知，$OO' = \sqrt{17}$，故$OM = \sfrac12\sqrt{17}$，而$OQ = 4$，故
+\[ MQ = \sqrt{OQ^2 - OM^2} = \frac12\sqrt{47} \]
+故$PQ = 2MQ = \sqrt{47}$。
