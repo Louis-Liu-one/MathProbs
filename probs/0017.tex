@@ -1,0 +1,126 @@
+
+\prob{0017}{双等腰}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0017}
+  \caption{0017：双等腰} \label{fig:0017}
+\end{figure}
+
+如图~\ref{fig:0017}，$AB = AC$，$AD = AE$，$AB \perp AC$，$AD \perp AE$，$F$为$CD$的中点，$AF$的延长线交$BE$于点$G$，$AF = 4$，$FG = 1$，求$\triangle ADC$的面积。
+\problabels{yellow/平面几何, green/面积问题}
+
+\ans{$S_{\triangle ADC} = 20$}
+
+\subsection{倍长中线} \label{subsec:0017-mid}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0017-mid}
+  \caption{\nameref{subsec:0017-mid}：通过倍长中线构造两对全等，从而求出面积。}
+  \label{fig:0017-mid}
+\end{figure}
+
+\emph{LHQ提供的方法。}
+
+基本思路：通过倍长中线构造8形全等，然后通过证明全等求出$\angle AGB$的度数以及$AF$与$BE$的数量关系，进而求出面积。
+
+如图~\ref{fig:0017-mid}，延长到$FG$到$A'$使得$AF = A'F$，连接$A'D$。
+
+\begin{align*}
+  &\because   \triangle AFC \cong \triangle A'FD\ \text{（证明省略）} \\
+  &\therefore AC = A'D, \angle ACD = \angle A'DC, \\
+  &\mathalignsep S_{\triangle AFC} = S_{\triangle A'FD} \\
+  &\because   AB = AC \\
+  &\therefore AB = A'D, \angle ABC = \angle ACB \\
+  &\because   AB \perp AC \\
+  &\therefore \angle BAC = 90^\circ \\
+  &\therefore \angle ABC = \angle ACD = \angle A'DC = 45^\circ \\
+  &\because   \angle ABC = \angle ADC + \angle BAD \\
+  &\therefore \angle BAD = 45^\circ - \angle ADC \\
+  &\because   AD \perp AE \\
+  &\therefore \angle DAE = 90^\circ \\
+  &\because   \angle DAE = \angle BAD + \angle BAE \\
+  &\therefore \angle BAE = 45^\circ + \angle ADC \\
+  &\because   \angle A'DA = \angle A'DC + ADC \\
+  &\therefore \angle A'DA = 45^\circ + \angle ADC \\
+  &\therefore \angle BAE = \angle A'DA \\
+  &\because   \text{在}\triangle BAE\text{与}\triangle A'DA\text{中} \\
+  &\mathalignsep \begin{cases}
+    BA = A'D \\
+    \angle BAE = \angle A'DA \\
+    AE = DA \\
+  \end{cases} \\
+  &\therefore \triangle BAE \cong \triangle A'DA \\
+  &\therefore AA' = BE, \angle DAG = \angle AEG, \\
+  &\mathalignsep S_{\triangle BAE} = S_{\triangle A'DA} \\
+  &\because   \angle DAG + \angle EAG = \angle DAE \\
+  &\therefore \angle DAG + \angle EAG = 90^\circ \\
+  &\therefore \angle AEG + \angle EAG = 90^\circ \\
+  &\because   \angle AGB = \angle AEG + \angle EAG \\
+  &\therefore \angle AGB = 90^\circ \\
+  &\therefore AG \perp BE \\
+  \text{又}&\because S_{\triangle AFC} = S_{\triangle A'FD} \\
+  &\therefore S_{\triangle AFC} + S_{\triangle ADF} = S_{\triangle A'FD} + S_{\triangle ADF} \\
+  &\therefore S_{\triangle A'DA} = S_{\triangle ADC} \\
+  &\therefore S_{\triangle BAE} = S_{\triangle ADC} \\
+  &\because   AF = A'F \\
+  &\therefore A'A = 2AF \\
+  &\because   AF = 4 \\
+  &\therefore A'A = 8 \\
+  &\therefore BE = 8 \\
+  &\because   AG \perp BE \\
+  &\therefore S_{\triangle BAE} = \frac12AG\cdot BE \\
+  &\because   FG = 1 \\
+  &\therefore AG = 1 + 4 = 5 \\
+  &\therefore S_{\triangle BAE} = \frac12\times5\times8 = 20 \\
+  &\therefore S_{\triangle ADC} = 20 \\
+\end{align*}
+
+综上，$\triangle ADC$的面积是$20$。\footnote{延长后也可连接$A'C$，然后证明$\triangle ACA' \cong \triangle BAE$，方法异曲同工。}
+
+\subsection{解析几何} \label{subsec:0017-dec}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0017-dec}
+  \caption{\nameref{subsec:0017-dec}：通过建立平面直角坐标系求出面积。}
+  \label{fig:0017-dec}
+\end{figure}
+
+基本思路：通过建立平面直角坐标系得出$AG \perp BE$且$S_{\triangle ACD} = S_{\triangle ABE}$，从而求出面积。
+
+如图~\ref{fig:0017-dec}，以直线$AB$为$x$轴、直线$AC$为$y$轴建立平面直角坐标系$xAy$。设$B(a,0)$、$C(0,a)$、$x_E = -y_D = b$。
+
+\begin{align*}
+  &\because   CE \perp BC \\
+  &\mathalignsep \text{（证法参见\nameref{subsec:0017-mid}）} \\
+  &\therefore E(b, a + b) \\
+  &\because   C, B, D\ \text{在同一条直线上} \\
+  &\therefore D(a + b, -b) \\
+  &\because   F\text{为}CD\text{的中点} \\
+  &\therefore F(\frac{a + b}2, \frac{a - b}2) \\
+  &\because   S_{\triangle ADC} = \frac12AC\cdot|x_D| \\
+  &\therefore S_{\triangle ADC} = \frac12a(a + b) \\
+  &\because   S_{\triangle BAE} = \frac12AB\cdot|y_E| \\
+  &\therefore S_{\triangle BAE} = \frac12a(a + b) \\
+  &\therefore S_{\triangle ADC} = S_{\triangle BAE} \\
+  \text{又}&\because AG\text{的斜率为}k_1 = \frac{\sfrac{a - b}2}{\sfrac{a + b}2} \\
+  &\therefore k_1 = \frac{a - b}{a + b} \\
+  &\because   BE\text{的斜率为} \\
+  &\mathalignsep k_2 = \frac{0 - (a + b)}{a - b} = \frac{b + a}{b - a} \\
+  &\therefore k_1k_2 = -1 \\
+  &\therefore AG \perp BE \\
+  &\therefore S_{\triangle BAE} = \frac12AG\cdot BE \\
+  &\because   AG = AF + FG = 5 \\
+  &\therefore S_{\triangle ADC} = \frac52BE \\
+  \text{又}&\because AF = \sqrt{(\frac{a + b}2)^2 + (\frac{a - b}2)^2} \\
+  &\therefore AF = \frac12\sqrt{2(a^2 + b^2)} \\
+  &\because   BE = \sqrt{(a + b)^2 + (a - b)^2} \\
+  &\mathalignsep \phantom{BE} = \sqrt{2(a^2 + b^2)} \\
+  &\therefore BE = 2AF \\
+  &\therefore BE = 2\times4 = 8 \\
+  &\therefore S_{\triangle ADC} = \frac52\times8 = 20 \\
+\end{align*}
+
+综上，$\triangle ADC$的面积是$20$。

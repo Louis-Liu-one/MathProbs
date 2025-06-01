@@ -1,0 +1,39 @@
+
+\prob{0025}{圆周角定理}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0025}
+  \caption{0025：圆周角定理} \label{fig:0025}
+\end{figure}
+
+证明圆周角定理：一条弧所对圆周角等于它所对圆心角的一半。
+\problabels{yellow/平面几何, green/证明题}
+
+\subsection{等腰三角形} \label{subsec:0025-eqtri}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0025-eqtri}
+  \caption{\nameref{subsec:0025-eqtri}：构造等腰三角形，然后利用角的关系证明。}
+  \label{fig:0025-eqtri}
+\end{figure}
+
+基本思路：构造两个等腰三角形，通过一系列角的关系证明。
+
+如图~\ref{fig:0025-eqtri}，连接$OA$。
+
+\begin{align*}
+  &\because   OA = OB = OC \\
+  &\therefore \angle OAB = \angle OBA, \angle OAC = \angle OCA \\
+  &\because   \angle OAB + \angle OBA + \angle AOB = 180^\circ \\
+  &\therefore \angle AOB = 180^\circ - 2\angle OAB \\
+  &\because   \angle OAC + \angle OCA + \angle AOC = 180^\circ \\
+  &\therefore \angle AOC = 180^\circ - 2\angle OAC \\
+  &\because   \angle AOB + \angle AOC + \angle BOC = 360^\circ \\
+  &\therefore \angle BOC = 2(\angle OAB + \angle OAC) \\
+  &\because   \angle OAB + \angle OAC = \angle BAC \\
+  &\therefore \angle BOC = 2\angle BAC \\
+\end{align*}
+
+证毕。

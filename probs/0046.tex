@@ -1,0 +1,26 @@
+
+\prob{0046}{至少一个为一}
+
+已知$a + b + c = \sfrac1a + \sfrac1b + \sfrac1c = 1$，求证：$a, b, c$中至少有一个等于1。
+\problabels{yellow/代数, green/证明题}
+
+\subsection{因式分解}
+
+基本思路：将题目中的等式变形，然后得出多个等式，最后进行因式分解得出$(a - 1)(b - 1)(c - 1) = 0$。
+
+易知
+
+\begin{align*}
+  \frac1a + \frac1b + \frac1c &= \frac{ab}{abc} + \frac{ac}{abc} + \frac{bc}{abc} \\
+  &= \frac{ab + ac + bc}{abc} = 1 \\
+  ab + ac + bc &= abc \\
+\end{align*}
+
+即$abc - ab - ac - bc = 0$。又由$a + b + c = 1$知$a + b + c - 1 = 0$，即
+
+\begin{align*}
+  abc - ab - ac - bc + a + b + c - 1 &= 0 \\
+  (a - 1)(b - 1)(c - 1) &= 0 \\
+\end{align*}
+
+即$a = 1$，$b = 1$或$c = 1$。因此，$a, b, c$中至少有一个等于1。证毕。

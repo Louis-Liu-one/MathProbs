@@ -1,0 +1,35 @@
+
+\prob{0027}{切割线定理}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0027}
+  \caption{0027：切割线定理} \label{fig:0027}
+\end{figure}
+
+证明切割线定理：从圆外一点引圆的切线和割线，切线长是这点到割线与圆交点的两条线段长的比例中项。
+\problabels{yellow/平面几何, green/证明题}
+
+\subsection{相似三角形} \label{subsec:0027-sim}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0027-sim}
+  \caption{\nameref{subsec:0027-sim}：通过弦切角定理证明三角形相似。}
+  \label{fig:0027-sim}
+\end{figure}
+
+基本思路：利用弦切角定理找出相似三角形，得出比例。
+
+如图~\ref{fig:0027-sim}，连接$AC$、$BC$。
+
+\begin{align*}
+  &\because   \text{据弦切角定理\footnotemark 得，}\angle CAP = \angle BCP \\
+  &\mathalignsep \angle P = \angle P \\
+  &\therefore \triangle CAP \sim \triangle BCP \\
+  &\therefore AP:CP = CP:BP \\
+\end{align*}
+
+\footnotetext{弦切角定理的证明参见第~\ref{sec:0026} 题。}
+
+证毕。
