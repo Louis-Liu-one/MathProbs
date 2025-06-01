@@ -1,0 +1,13 @@
+
+\begin{tikzpicture}[scale=.6]
+  \coordinate[label=above:$B$] (B) at (0,0);
+  \coordinate[label=above:$A$] (A) at ({5*sqrt(3)},3);
+  \coordinate[label=below:$C$] (C) at ($ (A)!1! 60:(B) $);
+  \draw[thick] (-.5,3) -- (9,3) node[right] {$l_1$}
+    (-.5,0) -- (9,0) node[right] {$l_2$}
+    (-.5,-6) -- (9,-6) node[right] {$l_3$};
+  \draw[<->] (-.3,3) -- node[left] {$a$} (-.3,0);
+  \draw[<->] (-.3,-6) -- node[left] {$b$} (-.3,0);
+  \filldraw[opafill=blue] (A) -- (B) -- (C)
+    -- node[right] {$c$} cycle;
+\end{tikzpicture}

@@ -1,0 +1,12 @@
+
+\begin{tikzpicture}
+  \def\Ax{2} \def\Ay{3} \def\Bx{0} \def\By{0} \def\Cx{6} \def\Cy{0}
+  \coordinate[label=below:$B$] (B) at (\Bx,\By);
+  \coordinate[label=below:$C$] (C) at (\Cx,\Cy);
+  \coordinate[label=above:$A$] (A) at (\Ax,\Ay);
+  \coordinate[label=below:$P$] (P)
+    at ({\calcbisectorx\Bx\By\Ax\Ay\Cx\Cy},
+      {\calcbisectory\Bx\By\Ax\Ay\Cx\Cy});
+  \pic[mark angle={red}{5mm}{1.2}] {angle=B--A--C};
+  \draw (A) -- (B) -- (C) -- cycle (A) -- (P);
+\end{tikzpicture}

@@ -1,0 +1,42 @@
+
+\begin{tikzpicture}[scale=.35]
+  \coordinate[label=left:$A$] (A) at (0,8);
+  \coordinate[label=below:$B$] (B) at (-6,0);
+  \coordinate[label=below:$C$] (C) at (3,0);
+  \coordinate[label=above right:$D$] (D) at ($ (A)!(B)!(C) $);
+  \coordinate[label=above left:$E$] (E) at ($ (A)!(C)!(B) $);
+  \path[name path=BD] (B) -- (D);
+  \path[name path=CE] (C) -- (E);
+  \coordinate[label=below:$U$] (rtBDC) at ($ (B)!(D)!(C) $);
+  \coordinate[label=below:$V$] (rtBEC) at ($ (B)!(E)!(C) $);
+  \path[name path=DF] (D) -- (rtBDC);
+  \path[name path=EG] (E) -- (rtBEC);
+  \path[name intersections={of=BD and CE}]
+    coordinate[label=above:$O$] (O) at (intersection-1);
+  \path[name intersections={of=CE and DF}]
+    coordinate[label=above:$F$] (F) at (intersection-1);
+  \path[name intersections={of=BD and EG}]
+    coordinate[label=above left:$G$] (G) at (intersection-1);
+  \path[name path=AP] (A) -- ($ (B)!1.5!(A) $);
+  \path[name path=AQ] (A) -- ($ (C)!2!(A) $);
+  \path[name path=DP] (D) -- ($ (F)!5!(D) $);
+  \path[name path=EQ] (E) -- ($ (G)!5!(E) $);
+  \path[name intersections={of=AP and DP}]
+    coordinate[label=above:$P$] (P) at (intersection-1);
+  \path[name intersections={of=AQ and EQ}]
+    coordinate[label=above:$Q$] (Q) at (intersection-1);
+  \coordinate (sec) at ($ (B)!2!(C) $);
+  \pic[mark angle={cyan}{2mm}{1}] {right angle=B--E--C};
+  \pic[mark angle={cyan}{2mm}{1}] {right angle=B--D--C};
+  \pic[mark angle={cyan}{2mm}{1}] {right angle=C--rtBEC--E};
+  \pic[mark angle={cyan}{2mm}{1}] {right angle=D--rtBDC--B};
+  \fill[opafill=yellow] (E) -- (F) -- (D) -- (G) -- cycle;
+  \fill[opafill=green] (E) -- (P) -- (D) -- (Q) -- cycle;
+  \draw (A) -- (B) -- (C) -- cycle (B) -- (D) (C) -- (E)
+    (D) -- (rtBDC) (E) -- (rtBEC) (A) -- (P) (P) -- (D)
+    (A) -- (Q) (P) -- (Q) -- (E);
+  \draw[blue] (B) -- (sec) -- (Q) (E) -- (sec) (G) -- (sec);
+  \draw[densely dashed, thick, teal] (B) arc (180:0:4.5);
+  \draw[very thick, ->] (-6.5,0) -- (4.5,0) node[below] {$x$};
+  \draw[very thick, ->] (-1.5,-.5) -- (-1.5,5.5) node[left] {$y$};
+\end{tikzpicture}

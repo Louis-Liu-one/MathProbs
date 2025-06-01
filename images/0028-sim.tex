@@ -1,0 +1,22 @@
+
+\begin{tikzpicture}[scale=2.4]
+  \coordinate[label=left:$O$] (O) at (0,0);
+  \coordinate[label=left:$A$] (A) at (180:1);
+  \coordinate[label=right:$B$] (B) at (40:1);
+  \coordinate[label=below:$C$] (C) at (-50:1);
+  \coordinate[label=above:$D$] (D) at (90:1);
+  \path[name path=AB] (A) -- (B);
+  \path[name path=CD] (C) -- (D);
+  \path[name intersections={of=AB and CD}]
+    coordinate[label=below left:$P$] (P) at (intersection-1);
+  \pic[mark angle={red}{3mm}{1}] {angle=D--P--A};
+  \pic[mark angle={red}{3mm}{1}] {angle=C--P--B};
+  \pic[mark angle={blue}{5mm}{1}] {angle=B--A--D};
+  \pic[mark angle={blue}{5mm}{1}] {angle=B--C--D};
+  \fill (O) circle (.5pt);
+  \draw (O) circle (1) (A) -- (B) (C) -- (D);
+  \draw[blue] (B) arc (40:90:1);
+  \draw[dashed] (A) -- (D) (B) -- (C);
+  \fill[opafill=cyan] (A) -- (D) -- (P) -- cycle
+    (B) -- (C) -- (P) -- cycle;
+\end{tikzpicture}

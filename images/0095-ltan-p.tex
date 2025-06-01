@@ -1,0 +1,17 @@
+
+\begin{tikzpicture}[scale=1.5]
+  \tkzDefPoints{0/0/O,3/1/P}
+  \tkzDefPoint(160:1){A}
+  \tkzInterLC(A,P)(O,A) \tkzGetFirstPoint{B}
+  \tkzDefLine[tangent from=P](O,A) \tkzGetFirstPoint{C}
+  \tkzDrawPoints(O,A,B,C,P)
+  \tkzDrawCircle(O,A)
+  \tkzDrawSegments(P,A P,O)
+  \tkzDrawSegments[dashed](P,C O,C)
+  \tkzLabelPoint[left](O){$O$}
+  \tkzLabelPoint[left](A){$A$}
+  \tkzLabelPoint[above](B){$B$}
+  \tkzLabelPoint[below](C){$C$}
+  \tkzLabelPoint[right](P){$P$}
+  \tkzMarkRightAngle(P,C,O)
+\end{tikzpicture}

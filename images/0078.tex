@@ -1,0 +1,15 @@
+
+\begin{tikzpicture}
+  \coordinate[label=below:$A$] (A) at (4,0);
+  \coordinate[label=above:$B$] (B) at (0,4);
+  \coordinate[label=below:$C$] (C) at (-1,0);
+  \coordinate[label=left:$P$] (P) at ($ (B)!(A)!(C) $);
+  \coordinate[label=below:$Q$] (Q) at ($ (C)!(B)!(A) $);
+  \coordinate[label=above right:$R$] (R) at ($ (A)!(C)!(B) $);
+  \pic[mark angle={cyan}{2mm}{1}] {right angle=A--P--B};
+  \pic[mark angle={cyan}{2mm}{1}] {right angle=A--Q--B};
+  \pic[mark angle={cyan}{2mm}{1}] {right angle=C--R--A};
+  \fill[opafill=cyan] (P) -- (Q) -- (R) -- cycle;
+  \draw (A) -- (B) -- (C) -- cycle (A) -- (P) (B) -- (Q) (C) -- (R)
+    (P) -- (Q) (Q) -- (R) (R) -- (P);
+\end{tikzpicture}

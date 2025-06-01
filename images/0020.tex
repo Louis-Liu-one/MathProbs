@@ -1,0 +1,14 @@
+
+\begin{tikzpicture}[scale=.8]
+  \coordinate[label=below:$A$] (A) at (0,0);
+  \coordinate[label=below:$B$] (B) at (7,0);
+  \coordinate[label=above:$C$] (C) at (7,7);
+  \coordinate[label=above:$D$] (D) at (0,7);
+  \coordinate[label=above:$E$] (E) at (3,7);
+  \coordinate[label=above right:$F$] (F) at (5,2);
+  \pic[mark angle={teal}{3mm}{1}] {right angle=E--F--A};
+  \draw (A) -- (B) -- (C) -- (E)
+    -- node[above] {$3$} (D) -- node[left] {$7$} cycle
+    (B) -- (F) -- node[left] {$?$} (D)
+    (A) -- (F) -- (E);
+\end{tikzpicture}

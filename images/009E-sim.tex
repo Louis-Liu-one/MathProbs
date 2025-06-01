@@ -1,0 +1,17 @@
+
+\begin{tikzpicture}[scale=.8]
+  \tkzDefPoints{0/0/O,-2/0/A,5/3/C,5/0/H,2/0/D}
+  \tkzInterLC(A,C)(O,A) \tkzGetFirstPoint{B}
+  \tkzDrawPoints(O,A,B,C,D,H)
+  \tkzDrawPolygon(A,C,H)
+  \tkzDrawSegment[dashed](B,D)
+  \tkzDrawCircle(O,A)
+  \tkzLabelPoint[below](O){$O$}
+  \tkzLabelPoint[left](A){$A$}
+  \tkzLabelPoint[above](B){$B$}
+  \tkzLabelPoint[above](C){$C$}
+  \tkzLabelPoint[below right](D){$D$}
+  \tkzLabelPoint[below](H){$H$}
+  \tkzMarkRightAngle(C,H,A)
+  \tkzMarkRightAngle(A,B,D)
+\end{tikzpicture}

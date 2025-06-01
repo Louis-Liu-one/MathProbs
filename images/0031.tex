@@ -1,0 +1,18 @@
+
+\begin{tikzpicture}[scale=.2]
+  \coordinate[label=below:$A$] (A) at (9,0);
+  \coordinate[label=above:$B$] (B) at (-3,17);
+  \coordinate[label=below:$C$] (C) at (-9,0);
+  \coordinate[label=left:$P$] (P) at ($ (B)!15/17!(C) $);
+  \coordinate[label=above right:$Q$] (Q) at ($ (B)!15/17!(A) $);
+  \coordinate[label=left:$M$] (M) at ($ (C)!9/17!(B) $);
+  \coordinate[label=above right:$N$] (N) at ($ (A)!9/17!(B) $);
+  \draw (C) -- (A) -- (B) (B) -- (C) (P) -- (Q) (M) -- (N);
+  \draw[dashed] (15,0) -- (-13,0) (12,17) -- (-13,17)
+    (Q) -- (12,2) (N) -- (15,9);
+  \draw[<->] (-11,0) -- node[left] {$h$} (-11,17);
+  \draw[<->] (13,0) -- node[right] {$9$} (13,9);
+  \draw[<->] (10,2) -- node[left] {$15$} (10,17);
+  \fill[opafill=cyan] (A) -- (C) -- (P) -- (Q) -- cycle
+    (M) -- (B) -- (N) -- cycle;
+\end{tikzpicture}

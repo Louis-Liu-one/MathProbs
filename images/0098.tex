@@ -1,0 +1,24 @@
+
+\begin{tikzpicture}[scale=.7]
+  \tkzDefPoints{-2/1/A,3/1/B,-1/4/C}
+  \tkzDefMidPoint(A,B) \tkzGetPoint{D}
+  \tkzInterLC[R](C,A)(D,5) \tkzGetSecondPoint{E}
+  \tkzInterLC[R](C,B)(D,5) \tkzGetFirstPoint{F}
+  \tkzDefLine[orthogonal=through E](C,A) \tkzGetPoint{e}
+  \tkzDefLine[orthogonal=through F](C,B) \tkzGetPoint{f}
+  \tkzInterLL(E,e)(F,f) \tkzGetPoint{P}
+  \tkzDrawPoints(A,B,C,D,E,F,P)
+  \tkzDrawPolygon(A,B,C)
+  \tkzDrawSegments(A,E B,F E,P F,P A,P B,P D,E D,F)
+  \tkzLabelPoint[left](A){$A$}
+  \tkzLabelPoint[above](B){$B$}
+  \tkzLabelPoint[above](C){$C$}
+  \tkzLabelPoint[above](D){$D$}
+  \tkzLabelPoint[left](E){$E$}
+  \tkzLabelPoint[right](F){$F$}
+  \tkzLabelPoint[below](P){$P$}
+  \tkzMarkSegments[color=blue,mark=|](A,D B,D)
+  \tkzMarkSegments[color=teal,mark=||](D,E D,F)
+  \tkzMarkRightAngle(P,E,A)
+  \tkzMarkRightAngle(B,F,P)
+\end{tikzpicture}

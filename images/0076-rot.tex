@@ -1,0 +1,21 @@
+
+\begin{tikzpicture}[scale=.45]
+  \def\xOa{-2} \def\yOa{0} \def\xOb{3} \def\yOb{0}
+  \def\xP{0}   \def\yP{3}  \def\xQ{0}  \def\yQ{-3}
+  \coordinate[label=left:$O_1$] (O1) at (\xOa, \yOa);
+  \coordinate[label=right:$O_2$] (O2) at (\xOb, \yOb);
+  \coordinate[label=above:$P$] (P) at (\xP, \yP);
+  \coordinate[label=below:$Q$] (Q) at (\xQ, \yQ);
+  \path[draw, name path=circO1] (O1) circle (\calclen\xOa\yOa\xP\yP);
+  \path[draw, name path=circO2] (O2) circle (\calclen\xOb\yOb\xP\yP);
+  \coordinate[label=above:$O_1'$] (O1') at ($ (O1)!2!(P) $);
+  \coordinate (O2') at ($ (O2)!2!(P) $);
+  \fill (O1) circle (1pt) (O2) circle (1pt) (O1') circle (1pt);
+  \path[draw, dashed, name path=circO1'] (O1') circle (\calclen\xOa\yOa\xP\yP);
+  \path[name path=circO2'] (O2') circle (\calclen\xOb\yOb\xP\yP);
+  \path[name intersections={of=circO1 and circO2'}]
+    coordinate[label=above left:$A$] (A) at (intersection-2);
+  \path[name intersections={of=circO1' and circO2}]
+    coordinate[label=above:$B$] (B) at (intersection-2);
+  \draw (A) -- (B);
+\end{tikzpicture}

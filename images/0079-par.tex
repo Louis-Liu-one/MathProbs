@@ -1,0 +1,38 @@
+
+\begin{tikzpicture}
+  \coordinate[label=below right:$A$] (A) at (4,0);
+  \coordinate[label=above:$B$] (B) at (3,4);
+  \coordinate[label=below left:$C$] (C) at (-1,0);
+  \coordinate[label=left:$O$] (O) at (1.5,1.5);
+  \coordinate (Ah) at ($ (B)!(A)!(C) $);
+  \coordinate[label=below:$P$] (Bh) at ($ (C)!(B)!(A) $);
+  \coordinate[label=right:$Q$] (Ch) at ($ (A)!(C)!(B) $);
+  \path[name path=AH] (A) -- (Ah);
+  \path[name path=BH] (B) -- (Bh);
+  \path[name path=CH] (C) -- (Ch);
+  \path[name intersections={of=AH and BH}]
+    coordinate[label=below left:$H$] (H) at (intersection-1);
+  \coordinate[label=left:$H_1$] (H1) at ($ (H)!2!(O1) $);
+  \coordinate[label=above left:$O_1$] (O1) at ($ (B)!(O)!(C) $);
+  \coordinate[label=below:$O_2$] (O2) at ($ (C)!(O)!(A) $);
+  \coordinate[label=right:$O_3$] (O3) at ($ (A)!(O)!(B) $);
+  \pic[mark angle={cyan}{2mm}{1}] {right angle=A--Ah--B};
+  \pic[mark angle={cyan}{2mm}{1}] {right angle=A--Bh--B};
+  \pic[mark angle={cyan}{2mm}{1}] {right angle=C--Ch--A};
+  \pic[mark angle={red}{2mm}{1}] {right angle=O--O1--B};
+  \pic[mark angle={red}{2mm}{1}] {right angle=O--O2--C};
+  \pic[mark angle={red}{2mm}{1}] {right angle=O--O3--A};
+  \pic[mark angle={blue}{2mm}{1}] {right angle=A--C--H1};
+  \pic[mark angle={green}{3mm}{1}] {angle=C--B--H};
+  \pic[mark angle={green}{3mm}{1}] {angle=B--C--H1};
+  \pic[mark angle={lime}{3mm}{1}] {angle=B--H--C};
+  \pic[mark angle={lime}{3mm}{1}] {angle=C--H1--B};
+  \fill[opafill=green] (B) -- (H) -- (C) -- (H1) -- cycle;
+  \fill[opafill=cyan] (A) -- (C) -- (H1) -- cycle;
+  \draw (A) -- (Ah) (B) -- (Bh) (C) -- (Ch)
+    (A) -- (B) -- (C) -- cycle
+    (O) -- (O1) (O) -- (O2) (O) -- (O3);
+  \draw[teal, densely dashed, thick]
+    (O) circle (\calclen{1.5}{1.5}{4}{0});
+  \draw[dashed] (B) -- (H1) -- (C) (A) -- (H1);
+\end{tikzpicture}

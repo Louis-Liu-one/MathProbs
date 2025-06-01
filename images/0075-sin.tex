@@ -1,0 +1,17 @@
+
+\begin{tikzpicture}
+  \coordinate[label=below:$O$] (O) at (0,0);
+  \coordinate[label=below:$A$] (A) at (-3,0);
+  \coordinate[label=below:$B$] (B) at (3,0);
+  \coordinate[label=above:$C$] (C) at (1,2);
+  \coordinate[label=above:$D$] (D) at (-2,1);
+  \pic[mark angle={blue}{3mm}{1}] {right angle=C--O--D};
+  \pic[mark angle={red}{3mm}{2}, "$45^\circ$"] {angle=B--A--D};
+  \pic[mark angle={red}{3mm}{2}, "$45^\circ$"] {angle=C--B--A};
+  \pic[mark angle={cyan}{3mm}{2}, "$\alpha$"] {angle=D--O--A};
+  \pic[mark angle={cyan}{3mm}{2}, "$\beta$"] {angle=B--O--C};
+  \draw (A) -- node[below] {$p$} (O) -- node[below] {$q$} (B)
+    -- node[above right] {$y$} (C) -- (D)
+    -- node[above left] {$x$} cycle (C)
+    -- node[right] {$z$} (O) (O) -- node[above] {$z$} (D);
+\end{tikzpicture}

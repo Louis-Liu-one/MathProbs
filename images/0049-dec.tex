@@ -1,0 +1,16 @@
+
+\begin{tikzpicture}[scale=1.9]
+  \coordinate[label=below right:{$D(0,0)$}] (D) at (0,0);
+  \coordinate[label=below:{$B(-1,0)$}] (B) at (-1,0);
+  \coordinate[label=below:{$C(\sqrt7-1,0)$}] (C) at ({sqrt(7)-1},0);
+  \coordinate[label=above:{$A(\sqrt3x,x)$}] (A)
+    at ({(1+sqrt(7))/2},{(sqrt(3)+sqrt(21))/6});
+  \coordinate (X) at (2,0);
+  \pic[mark angle={red}{5mm}{1.8}, "$30^\circ$"] {angle=C--D--A};
+  \pic[mark angle={red}{5mm}{1.2}, "$60^\circ$"] {angle=B--A--C};
+  \pic[mark angle={cyan}{7mm}{1.2}, "$\alpha$"] {angle=C--B--A};
+  \pic[mark angle={cyan}{4mm}{1.2}, "$\beta$"] {angle=X--C--A};
+  \draw (A) -- (B) -- node[below] {$1$} (D) -- (C) -- cycle (A) -- (D);
+  \draw[very thick, ->] (-1.2,0) -- (X) node[right] {$x$};
+  \draw[very thick, ->] (0,-.3) -- (0,1.2) node[left] {$y$};
+\end{tikzpicture}
