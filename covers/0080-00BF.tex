@@ -1,0 +1,44 @@
+
+\onecolumn
+\begin{inctext}[paper=graphics]
+  \begin{tikzpicture}
+    \coordinate (below left) at (0in,0in);
+    \coordinate (above right) at (8.5in,11in);
+    \path[use as bounding box] (below left) rectangle (above right);
+    \draw[very thin, Seashell2] (below left) grid (above right);
+    \draw (0,25) node[right]
+      {\fontsize{100pt}{0pt}\selectfont
+        \textbf{Math\textit{\textcolor{DodgerBlue2}{P}}robs}};
+    \foreach \pos/\char in {21/数,17.5/学,14/题,10.5/集} {
+      \draw (0,\pos) node[right]
+        {\fontsize{100pt}{0pt}\selectfont \textbf{\textit{\char}}}; }
+    \fill[DeepSkyBlue2] (17.5,23.9) rectangle (22,25.5);
+    \fill[DarkSlateGray3] (10,0) -| (22,8) -- cycle;
+    \draw (21.5,3) node[left]
+      {\fontsize{60pt}{0pt}\selectfont
+      \textcolor{DarkSlateGray1}{\textbf{\texttt{0080}}}};
+    \draw (21.5,1) node[left]
+      {\fontsize{60pt}{0pt}\selectfont
+      \textcolor{DarkSlateGray1}{\textbf{-- \texttt{00BF}}}};
+    \draw (17.5,24.7) node[right] {
+      \begin{minipage}{10cm}
+        \fontsize{10pt}{10pt}\selectfont \textcolor{Azure1}
+        {Copyright \copyright\ 2024 \\
+          \textbf{Liu One} \\ \emph{All rights reserved.}}
+      \end{minipage} };
+    \draw (0,6.9) node[right] {\includegraphics[scale=.45]{covers/logo}};
+    \draw (2,4) node {\Huge\textcolor{RoyalBlue1}{\textbf{VOL.}}};
+    \draw (2,2) node
+      {\fontsize{100pt}{0pt}\selectfont\textcolor{RoyalBlue2}{\textbf{3}}};
+    \draw (13,6) node {
+      \begin{minipage}{3cm}
+        \footnotesize \textit{
+        \raggedright 质数螺旋 \\
+        \raggedleft ——混沌中的秩序 \\ }
+      \end{minipage} };
+    \begin{scope}[shift={(12,15)}, scale=.9, very thick]
+      \draw (0,0) node {\includegraphics[width=16cm]{images/primes}};
+    \end{scope}
+  \end{tikzpicture}
+\end{inctext}
+\twocolumn
