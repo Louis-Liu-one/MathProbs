@@ -1,0 +1,25 @@
+
+\begin{tikzpicture}
+  \tkzDefPoints{0/0/O,-2/0/A}
+  \tkzDefPoint(60:2){B}
+  \tkzInterCC[R](A,5)(B,2)           \tkzGetPoints{C}{D}
+  \tkzInterCC(C,B)(D,B)             \tkzGetFirstPoint{E}
+  \tkzDefLine[orthogonal=through E](O,A) \tkzGetPoint{e}
+  \tkzInterLL(O,A)(E,e)                  \tkzGetPoint{h}
+  \tkzInterLL(A,E)(C,D)                  \tkzGetPoint{H}
+  \tkzDrawCircle(O,A)
+  \tkzDrawSegments(A,C A,D B,C B,D E,C E,D)
+  \tkzDrawSegments[dashed](A,E C,D)
+  \tkzDrawLine[<->,add=.5 and 1](E,e)
+  \tkzDrawLine[add=2 and 0](O,A)
+  \tkzDrawPoints(O,A,B,C,D,E)
+  \tkzMarkSegments[color=blue,mark=|](A,C A,D)
+  \tkzMarkSegments[color=teal,mark=||](B,C B,D E,C E,D)
+  \tkzMarkAngle(E,A,C)
+  \tkzMarkRightAngles(E,h,A C,H,A)
+  \tkzLabelAngle[pos=1.5](E,A,C){$\alpha$}
+  \tkzLabelPoints[below](O,B,D)
+  \tkzLabelPoints[above](C)
+  \tkzLabelPoints[left](A)
+  \tkzLabelPoints[right](E,H)
+\end{tikzpicture}

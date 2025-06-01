@@ -1,0 +1,25 @@
+
+\begin{tikzpicture}[scale=.6]
+  \pgfmathsetmacro\yA{2}
+  \pgfmathsetmacro\xC{6}
+  \pgfmathsetmacro\rad{24/sqrt(\yA^2+\xC^2)}
+  \tkzDefPoints{0/\yA/A,0/0/B,\xC/0/C}
+  \tkzDefPointBy[rotation=center A angle 60](B) \tkzGetPoint{B'}
+  \tkzDefPointBy[rotation=center A angle 60](C) \tkzGetPoint{C'}
+  \tkzInterLC[R](A,C')(A,\rad)           \tkzGetSecondPoint{D}
+  \tkzDefLine[orthogonal=through D](A,D) \tkzGetPoint{d}
+  \tkzInterLL(A,B')(D,d) \tkzGetPoint{E}
+  \tkzDefMidPoint(A,E)   \tkzGetPoint{O}
+  \tkzFillPolygon[cyan!20](B',C',A,E,D)
+  \tkzDrawPolygon(A,B,C,D)
+  \tkzDrawSegments(A,C B,D)
+  \tkzDrawSegments[dashed](A,B' B',C' C',D D,E A,E O,B O,D)
+  \tkzDrawCircle[dashed](O,A)
+  \tkzMarkRightAngles(C,B,A A,D,E C',B',A)
+  \tkzDrawPoints(A,B,C,D,B',C',E,O)
+  \tkzLabelPoints[left](A,B)
+  \tkzLabelPoints[right](C)
+  \tkzLabelPoints[above left](D)
+  \tkzLabelPoints[above](C')
+  \tkzLabelPoints[below](B',O,E)
+\end{tikzpicture}

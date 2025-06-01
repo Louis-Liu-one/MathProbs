@@ -1,0 +1,21 @@
+
+\begin{tikzpicture}[scale=3, ang/.style={mark angle={green}{5mm}{1.2}}]
+  \coordinate[label=below:$C$] (C) at (0,0);
+  \coordinate[label=below:$D$] (D) at (-1,0);
+  \coordinate[label=below:$A$] (A) at (-2,0);
+  \coordinate[label=above:$B$] (B) at (165:{sqrt(2)});
+  \coordinate[label=above:$E$] (E) at (120:1);
+  \pic[ang, "$30^\circ$"] {angle=C--A--B};
+  \pic[ang, "$15^\circ$"] {angle=B--C--A};
+  \pic[ang, "$30^\circ$"] {angle=D--B--C};
+  \pic[ang, "$45^\circ$"] {angle=C--B--E};
+  \pic[ang, "$45^\circ$"] {angle=E--C--B};
+  \pic[ang, "$60^\circ$"] {angle=D--E--C};
+  \pic[ang, "$30^\circ$"] {angle=B--E--D};
+  \pic[mark angle={blue}{3mm}{1}] {right angle=B--E--C};
+  \fill[opafill=red] (E) -- (B) -- (C) -- cycle;
+  \fill[opafill=cyan] (E) -- (C) -- (D) -- cycle;
+  \draw (A) -- (B) -- (C) -- cycle (B) -- (D);
+  \draw[blue] (A) -- (C);
+  \draw[dashed, blue] (B) -- (E) -- (C) (E) -- (D);
+\end{tikzpicture}

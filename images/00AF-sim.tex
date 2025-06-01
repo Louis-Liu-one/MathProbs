@@ -1,0 +1,28 @@
+
+\begin{tikzpicture}[scale=1.6]
+  \tkzDefPoints{-sqrt(3)/0/A,sqrt(3)/0/B}
+  \tkzDefTriangle[equilateral](A,B) \tkzGetPoint{C}
+  \tkzDefMidPoint(A,C)  \tkzGetPoint{D}
+  \tkzDefMidPoint(A,B)  \tkzGetPoint{E}
+  \tkzDefMidPoint(B,C)  \tkzGetPoint{F}
+  \tkzInterLL(B,D)(C,E) \tkzGetPoint{P}
+  \tkzDefTriangle[equilateral](P,C) \tkzGetPoint{P'}
+  \tkzFillPolygon[cyan!20](A,E,C)
+  \tkzFillPolygon[cyan!15](A,D,P')
+  \tkzDrawPolygon(A,B,C)
+  \tkzDrawSegments(B,D C,E P,F)
+  \tkzDrawSegments[dashed](P',A P',C P',D)
+  \tkzMarkSegments[color=teal,mark=|](A,E C,D)
+  \tkzMarkSegments[color=cyan,mark=||](P',D P,F)
+  \tkzLabelAngle[pos=.3](B,P,F){$60^\circ$}
+  \tkzLabelAngle[pos=.3](F,P,C){$60^\circ$}
+  \tkzLabelAngle[pos=.3](C,P,D){$60^\circ$}
+  \tkzLabelAngle[pos=.3](A,P',D){$60^\circ$}
+  \tkzLabelAngle[pos=.3](D,P',C){$60^\circ$}
+  \tkzDrawPoints(A,B,C,D,E,F,P,P')
+  \tkzLabelPoints[below](A,B,E,D)
+  \tkzLabelPoints[above](C)
+  \tkzLabelPoints[left](P')
+  \tkzLabelPoints[right](F)
+  \tkzLabelPoints[below left](P)
+\end{tikzpicture}

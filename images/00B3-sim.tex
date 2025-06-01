@@ -1,0 +1,19 @@
+
+\begin{tikzpicture}[scale=.2]
+  \tkzDefPoints{-15/0/A,15/0/B}
+  \tkzInterCC[R](A,18)(B,18) \tkzGetFirstPoint{D}
+  \tkzInterLC[R](A,D)(D,7)   \tkzGetSecondPoint{C}
+  \tkzInterLC[R](A,D)(D,2)   \tkzGetSecondPoint{E}
+  \tkzInterLC[R](A,D)(D,12)  \tkzGetSecondPoint{E'}
+  \tkzDrawPolygon(A,B,C)
+  \tkzDrawSegments(B,D B,E)
+  \tkzDrawSegments[dashed](B,E' C,E')
+  \tkzMarkSegments[color=teal,mark=|](A,D B,D)
+  \tkzMarkAngle[mkcolor=cyan,mark=|,mkpos=1/4,size=2](D,B,A)
+  \tkzMarkAngle[mkcolor=cyan,mark=|,mkpos=3/4,size=2](D,B,A)
+  \tkzMarkAngles[mkcolor=cyan,mark=|,size=2](C,B,E E',B,C)
+  \tkzMarkRightAngle[size=1.5](A,C,B)
+  \tkzDrawPoints(A,B,C,D,E,E')
+  \tkzLabelPoints[below](A,B)
+  \tkzLabelPoints[above](C,D,E,E')
+\end{tikzpicture}

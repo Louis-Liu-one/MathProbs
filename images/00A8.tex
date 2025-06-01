@@ -1,0 +1,15 @@
+
+\begin{tikzpicture}[scale=2]
+  \tkzDefPoints{-1/0/A,1/0/B,0/1/C}
+  \tkzDefLine[parallel=through C](A,B) \tkzGetPoint{c}
+  \tkzInterLC(C,c)(A,B)           \tkzGetFirstPoint{E}
+  \tkzInterLL(A,E)(B,C)                \tkzGetPoint{D}
+  \tkzDrawPolygon(A,B,E,C)
+  \tkzDrawSegments(A,E B,C)
+  \tkzMarkSegments[color=teal,mark=|](A,C B,C)
+  \tkzMarkSegments[color=blue,mark=||](A,E A,B)
+  \tkzMarkRightAngle[size=.1](A,C,B)
+  \tkzDrawPoints(A,B,C,D,E)
+  \tkzLabelPoints[below](A,B,D)
+  \tkzLabelPoints[above](C,E)
+\end{tikzpicture}

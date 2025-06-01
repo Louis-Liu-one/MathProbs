@@ -1,0 +1,13 @@
+
+\begin{tikzpicture}[scale=.3]
+  \tkzDefPoints{0/0/O_1,-8/0/A,8/0/B,4/3/O_2,4/0/P,1/0/D}
+  \tkzDefLine[orthogonal=through D](A,B) \tkzGetPoint{d}
+  \tkzInterLC(D,d)(O_1,B)                \tkzGetSecondPoint{C}
+  \tkzDrawSemiCircle(O_1,B)
+  \tkzDrawCircle(O_2,P)
+  \tkzDrawSegments(A,B C,D C,P)
+  \tkzMarkRightAngle[size=.5](B,D,C)
+  \tkzDrawPoints(O_1,O_2,A,B,C,D,P)
+  \tkzLabelPoints[below](O_1,A,B,D,P)
+  \tkzLabelPoints[above](O_2,C)
+\end{tikzpicture}

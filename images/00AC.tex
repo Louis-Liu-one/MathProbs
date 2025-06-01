@@ -1,0 +1,18 @@
+
+\begin{tikzpicture}[scale=3]
+  \tkzDefPoints{-1/0/A,0/0/B}
+  \tkzDefPoint(75:1){C}
+  \tkzDefLine[parallel=through C](A,B) \tkzGetPoint{c}
+  \tkzInterLC[R](C,c)(C,2) \tkzGetFirstPoint{D}
+  \tkzDefMidPoint(B,C)          \tkzGetPoint{E}
+  \tkzInterLL(A,C)(D,E)         \tkzGetPoint{F}
+  \tkzFillPolygon[cyan!20](A,D,F)
+  \tkzFillPolygon[cyan!20](C,E,F)
+  \tkzDrawPolygon(A,B,C,D)
+  \tkzDrawSegments(A,C D,E)
+  \tkzMarkSegments[color=teal,mark=|](B,E C,E)
+  \tkzDrawPoints(A,B,C,D,E,F)
+  \tkzLabelPoints[below](A,B,F)
+  \tkzLabelPoints[left](D)
+  \tkzLabelPoints[right](C,E)
+\end{tikzpicture}

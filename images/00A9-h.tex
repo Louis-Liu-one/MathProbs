@@ -1,0 +1,20 @@
+
+\begin{tikzpicture}[scale=1.5]
+  \tkzDefPoints{-2/0/A,-sqrt(2)/sqrt(2)/B,
+    2/0/C,0/0/D,-sqrt(2)/0/E,0/sqrt(2)/E'}
+  \tkzInterLL(B,C)(D,E') \tkzGetPoint{A'}
+  \tkzFillPolygon[cyan!20](B,A,E)
+  \tkzFillPolygon[cyan!20](B,A',E')
+  \tkzDrawPolygon(A,B,C)
+  \tkzDrawSegment(B,D)
+  \tkzDrawSegments[dashed](B,E B,E' D,E' A,A')
+  \tkzMarkSegments[color=teal,mark=|](A,D C,D)
+  \tkzMarkSegments[color=blue,mark=||](A,B A',B)
+  \tkzMarkSegments[color=cyan,mark=x](B,E B,E')
+  \tkzMarkRightAngles[size=.2](D,E,B B,E',D C,D,E')
+  \tkzLabelAngle[pos=.5](B,D,A){$45^\circ$}
+  \tkzDrawPoints(A,B,C,D,E,A',E')
+  \tkzLabelPoints[below](A,C,D,E)
+  \tkzLabelPoints[above](B)
+  \tkzLabelPoints[above right](E',A')
+\end{tikzpicture}

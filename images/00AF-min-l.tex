@@ -1,0 +1,16 @@
+
+\begin{tikzpicture}[scale=.6]
+  \tkzDefPoints{
+    0/0/P,-5/{-5/sqrt(3)}/A,5/{-5/sqrt(3)}/B,
+    0/-2/Q,3/{-sqrt(3)}/N}
+  \tkzDefLine[orthogonal=through Q](P,Q) \tkzGetPoint{q}
+  \tkzInterLL(Q,q)(P,A) \tkzGetPoint{M'}
+  \tkzInterLL(Q,q)(P,B) \tkzGetPoint{N'}
+  \tkzInterLL(Q,N)(P,A) \tkzGetPoint{M}
+  \tkzDrawSegments(P,A P,B M,N)
+  \tkzDrawLine[add=0 and .2](P,Q)
+  \tkzDrawPoints(P,Q,M,N)
+  \tkzLabelPoints[below](A,B)
+  \tkzLabelPoints[above](P,M,N)
+  \tkzLabelPoints[below right](Q)
+\end{tikzpicture}

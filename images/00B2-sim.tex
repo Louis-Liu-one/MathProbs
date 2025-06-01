@@ -1,0 +1,29 @@
+
+\begin{tikzpicture}[scale=.3]
+  \tkzDefPoints{-4/0/A,8/0/B,0/3/C}
+  \tkzDefTriangleCenter[circum](A,B,C)
+    \tkzGetPoint{o}
+  \tkzDefLine[tangent at=C](o) \tkzGetPoint{c}
+  \tkzInterLC(C,c)(B,C)        \tkzGetFirstPoint{D}
+  \tkzDefLine[altitude](A,D,B) \tkzGetPoint{E}
+  \tkzInterLL(A,C)(D,E)        \tkzGetPoint{F}
+  \tkzDefLine[parallel=through D](A,E)
+    \tkzGetPoint{d}
+  \tkzInterLL(A,C)(D,d)        \tkzGetPoint{G}
+  \tkzDefMidPoint(F,G)         \tkzGetPoint{M}
+  \tkzInterLC(F,G)(D,G)        \tkzGetFirstPoint{G'}
+  \tkzFillPolygon[cyan!20](A,B,C,D,G')
+  \tkzDrawPolygon(A,E,F)
+  \tkzDrawPolygon(B,C,D)
+  \tkzDrawSegment(D,G)
+  \tkzDrawSegments[dashed](D,M D,G' F,G')
+  \tkzMarkSegments[color=teal,mark=|](B,C B,D)
+  \tkzMarkRightAngles[size=1](F,E,A F,D,G)
+  \tkzMarkAngles[
+    mkcolor=cyan,mark=|,size=1.5](B,A,C B,C,D C,D,B D,G,F M,D,G A,G',D)
+  \tkzMarkAngles[mkcolor=teal,mark=||,size=2](D,C,F C,B,A)
+  \tkzDrawPoints(A,B,C,D,E,F,G,G',M)
+  \tkzLabelPoints[below](A,B,E)
+  \tkzLabelPoints[right](D,G')
+  \tkzLabelPoints[above left](C,F,G,M)
+\end{tikzpicture}

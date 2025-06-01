@@ -1,0 +1,15 @@
+
+\begin{tikzpicture}[scale=.6]
+  \tkzDefPoints{0/0/O,3/4/P}
+  \tkzDefPoint({(432-64*sqrt(193))/337},{(576+27*sqrt(193))/337}){M}
+  \tkzDefPoint({(432+64*sqrt(193))/337},{(576-27*sqrt(193))/337}){N}
+  \tkzDrawEllipse(O,4,3,0)
+  \tkzDrawCircle(O,P)
+  \tkzDrawLines(P,M P,N)
+  \tkzDrawSegment(O,P)
+  \tkzMarkRightAngle(M,P,N)
+  \tkzDrawPoints(O,P,M,N)
+  \tkzLabelPoints[above](P,M)
+  \tkzLabelPoints[below](O)
+  \tkzLabelPoints[right](N)
+\end{tikzpicture}
