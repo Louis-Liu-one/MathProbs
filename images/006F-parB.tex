@@ -1,0 +1,13 @@
+
+\begin{tikzpicture}
+  \coordinate[label=below:$A$] (A) at (-3,0);
+  \coordinate[label=right:$B$] (B) at (2,0);
+  \coordinate[label=above:$C$] (C) at (0,4);
+  \coordinate[label=below left:$D$] (D) at ($ (A)!.5!(B) $);
+  \coordinate[label=right:$E$] (E) at ($ (C)!1/4!(D) $);
+  \coordinate[label=right:$F$] (F) at ($ (C)!1/7!(B) $);
+  \coordinate[label=below:$G$] (G) at ($ (E)!2!(D) $);
+  \fill[opafill=green] (A) -- (E) -- (G) -- (B) -- cycle;
+  \draw (A) -- (B) -- (C) -- cycle (C) -- (D) (A) -- (F);
+  \draw[dashed] (D) -- (G) -- (B);
+\end{tikzpicture}

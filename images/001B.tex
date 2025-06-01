@@ -1,0 +1,13 @@
+
+\begin{tikzpicture}[scale=4]
+  \coordinate[label=below:$C$] (C) at (0,0);
+  \coordinate[label=below:$B$] (B) at (1,0);
+  \coordinate[label=above:$A$] (A) at ($ (C)!1! 60:(B) $);
+  \coordinate[label=right:$M$] (M) at ($ (A)!1/2!(B) $);
+  \coordinate[label=below:$N$] (N) at ($ (B)!4/3!(C) $);
+  \coordinate[label=above:$P$] (P) at ($ (N)!1! 60:(M) $);
+  \pic[mark angle={cyan}{5mm}{1}] {angle=B--N--M};
+  \pic[mark angle={cyan}{5mm}{1}] {angle=A--M--P};
+  \draw (M) -- (P) -- (N) -- (B) -- (A) -- (C) (M) -- (N) (P) -- (C);
+  \fill[opafill=blue] (A) -- (B) -- (C) -- cycle;
+\end{tikzpicture}

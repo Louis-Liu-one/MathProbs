@@ -1,0 +1,27 @@
+
+\begin{tikzpicture}[scale=2]
+  \clip (-2.4,-.8) rectangle (1,1.5);
+  \coordinate[label=above:$C$] (C) at (0,0);
+  \coordinate[label=above:$A$] (A) at (-1,1);
+  \coordinate[label=left:$B$] (B) at (-2,0);
+  \coordinate[label=right:$E$] (E) at (1/2,0);
+  \coordinate[label=right:$D$] (D) at (1/2,-1/2);
+  \coordinate[label=below:$F$] (F) at ($ (B)!1/2!(D) $);
+  \pic[mark angle={green}{3mm}{1}] {right angle=B--A--C};
+  \pic[mark angle={green}{3mm}{1}] {right angle=C--E--D};
+  \pic[mark angle={red}{3mm}{1}] {right angle=E--F--A};
+  \pic[mark angle={red}{5mm}{1.8}, "$\alpha$"] {angle=D--B--E};
+  \pic[mark angle={red}{5mm}{1.8}, "$\alpha$"] {angle=B--E--F};
+  \pic[mark angle={red}{4mm}{1.8}, "$2\alpha$"] {angle=D--F--E};
+  \pic[mark angle={red}{3mm}{1.8}, "$45^\circ$"] {angle=E--B--A};
+  \pic[mark angle={red}{3mm}{2.4}, "$45^\circ + \alpha$"] {angle=B--A--F};
+  \pic[mark angle={red}{3mm}{2.4}, "$90^\circ - 2\alpha$"] {angle=A--F--B};
+  \filldraw[opafill=blue] (A) -- (E) -- (F) -- cycle;
+  \draw (D) -- (A) -- (B) -- (D) -- (E) -- (B);
+  \draw[red] (B) -- (A) -- (C);
+  \draw[blue] (D) -- (E) -- (C);
+  \draw[teal] (B) -- (D) (A) -- (F) -- (E);
+  \draw[dashed] (F) circle ({sqrt(26)/4});
+  \fill[opafill=cyan] (A) -- (B) -- (C) -- cycle
+    (C) -- (D) -- (E) -- cycle;
+\end{tikzpicture}

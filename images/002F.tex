@@ -1,0 +1,28 @@
+
+\begin{tikzpicture}[scale=1.45]
+  \def\blocksize{38pt}
+  \filldraw[drop shadow, line width=3pt, rounded corners,
+    draw=teal!50, fill=teal!20] (-.54,.54) rectangle (3.6,-3.6);
+  \foreach \num/\x/\y/\nodecolor in {
+      1/0/0/blue,2/1/0/cyan,3/2/0/blue,4/3/0/cyan,
+      5/0/1/cyan,6/1/1/blue,7/2/1/cyan,8/3/1/blue,
+      9/0/2/blue,10/1/2/cyan,11/2/2/blue,12/3/2/cyan,
+      13/0/3/cyan,15/1/3/cyan,14/2/3/blue} {
+    \node[rectangle, drop shadow, very thick, rounded corners,
+      draw=\nodecolor!50, fill=\nodecolor!20,
+      minimum width=\blocksize, minimum height=\blocksize
+      ] (block\num) at (\x,-\y) {\huge\texttt{\num}}; }
+  \begin{scope}[yshift=-3.4*\blocksize]
+    \filldraw[drop shadow, line width=3pt, rounded corners,
+      draw=teal!50, fill=teal!20] (-.54,.54) rectangle (3.6,-3.6);
+    \foreach \num/\x/\y/\nodecolor in {
+        1/0/0/blue,2/1/0/cyan,3/2/0/blue,4/3/0/cyan,
+        5/0/1/cyan,6/1/1/blue,7/2/1/cyan,8/3/1/blue,
+        9/0/2/blue,10/1/2/cyan,11/2/2/blue,12/3/2/cyan,
+        13/0/3/cyan,14/1/3/blue,15/2/3/cyan} {
+      \node[rectangle, drop shadow, very thick, rounded corners,
+        draw=\nodecolor!50, fill=\nodecolor!20,
+        minimum width=\blocksize, minimum height=\blocksize
+        ] (block\num) at (\x,-\y) {\huge\texttt{\num}}; }
+  \end{scope}
+\end{tikzpicture}

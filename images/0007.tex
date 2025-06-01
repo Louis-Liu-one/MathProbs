@@ -1,0 +1,10 @@
+
+\begin{tikzpicture}[scale=2, ang/.style={mark angle={green}{5mm}{-1}}]
+  \coordinate[label=below:$C$] (C) at (0,0);
+  \coordinate[label=below:$B$] (B) at (-1,0);
+  \coordinate[label=above:$A$] (A) at ($ (B)!1! 60:(C) $);
+  \coordinate[label=right:$D$] (D) at ({(1+sqrt(3))/2},{(1+sqrt(3))/2});
+  \pic[ang, "$60^\circ$"] {angle=C--B--A};
+  \pic[ang, "$30^\circ$"] {angle=A--D--C};
+  \draw (A) -- (B) -- (C) -- (D) -- cycle (B) -- (D);
+\end{tikzpicture}

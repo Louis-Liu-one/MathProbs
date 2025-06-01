@@ -1,0 +1,17 @@
+
+\begin{tikzpicture}
+  \coordinate[label=left:$A$] (A) at (0,3);
+  \coordinate[label=right:$B$] (B) at (4,3);
+  \coordinate[label=right:$C$] (C) at (4,0);
+  \coordinate[label=left:$D$] (D) at (0,0);
+  \coordinate[label=below right:$F$] (F) at (1.6,3);
+  \coordinate[label=right:$P$] (P) at (4,2.4);
+  \coordinate[label=above:$E$] (E) at ($ (D)!(P)!(F) $);
+  \path[name path=PE] (P) -- (E);
+  \path[name path=BF] (B) -- (F);
+  \path[name intersections={of=PE and BF}]
+    coordinate[label=above:$G$] (G) at (intersection-1);
+  \draw (A) -- (B) -- (C) -- (D) -- cycle (D) -- (E) -- (P) (D) -- (P);
+  \draw[red] (E) -- (G) -- (B);
+  \fill[opafill=green] (C) -- (D) -- (E) -- (P) -- cycle;
+\end{tikzpicture}

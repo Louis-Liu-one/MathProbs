@@ -1,0 +1,15 @@
+
+\begin{tikzpicture}[scale=.8, draw=black]
+  \filldraw[opafill=purple] (0,0) -- (0,7) -- (7,7) -- (7,0) -- cycle;
+  \filldraw[opafill=red] (0,0) -- (3,0) -- (3,4) -- (0,0);
+  \filldraw[opafill=yellow] (0,0) -- (0,4) -- (3,4) -- (0,0);
+  \filldraw[opafill=green] (7,7) -- (7,4) -- (3,4) -- (7,7);
+  \filldraw[opafill=blue] (7,7) -- (3,7) -- (3,4) -- (7,7);
+  \begin{scope}[shift={(0,-8)}]
+    \filldraw[opafill=purple] (0,0) -- (0,7) -- (7,7) -- (7,0) -- cycle;
+    \filldraw[opafill=red] (0,0) -- (3,0) -- (0,4) -- (0,0);
+    \filldraw[opafill=yellow] (0,7) -- (0,4) -- (4,7) -- (0,7);
+    \filldraw[opafill=green] (7,7) -- (4,7) -- (7,3) -- (7,7);
+    \filldraw[opafill=blue] (7,0) -- (3,0) -- (7,3) -- (7,0);
+  \end{scope}    
+\end{tikzpicture}

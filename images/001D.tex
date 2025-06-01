@@ -1,0 +1,13 @@
+
+\begin{tikzpicture}[scale=2]
+  \coordinate (O) at (0,0);
+  \coordinate[label=above:$A$] (A) at (0,2);
+  \coordinate[label=below:$C$] (C) at (0,-1);
+  \coordinate[label=right:$B$] (B) at (4/3,0);
+  \coordinate[label=left:$D$] (D) at (-4/5,0);
+  \pic[mark angle={teal}{3mm}{1}] {right angle=B--O--A};
+  \draw (A) -- (B) -- (C) -- (D) -- cycle
+    (A) -- (C) (B) -- (D);
+  \draw[red] (A) -- (D);
+  \draw[blue] (B) -- (C);
+\end{tikzpicture}

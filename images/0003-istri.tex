@@ -1,0 +1,20 @@
+
+\begin{tikzpicture}[ang/.style={mark angle={red}{5mm}{1}}]
+  \coordinate[label=below:$B$] (B) at (0,0);
+  \coordinate[label=below:$D$] (D) at (2,0);
+  \coordinate[label=below:$A'$] (A') at (3,0);
+  \coordinate[label=left:$A$] (A) at (120:3);
+  \coordinate[label=above:$C$] (C) at (60:3);
+  \coordinate[label=right:$E$] (E) at ($ (D)!1! -60:(C) $);
+  \pic[ang, "$60^\circ$"] {angle=D--B--C};
+  \fill[opafill=blue] (A) -- (B) -- (C) (C) -- (D) -- (E);
+  \fill[opafill=green] (A') -- (E) -- (P) -- cycle;
+  \draw (A) -- (C) -- (E) -- (D) -- (B) -- cycle (B) -- (C) (C) -- (D);
+  \draw[red, dashed] (C) -- (A') -- (D);
+  \draw[red] (D) -- (B) -- (C);
+  \draw[dashed] (P) -- (A') -- (E);
+  \path[name path=BC] (B) -- (C);
+  \draw[name path=AE] (A) -- (E);
+  \path[name intersections={of=BC and AE}]
+    coordinate[label=above:$P$] (P) at (intersection-1);
+\end{tikzpicture}
