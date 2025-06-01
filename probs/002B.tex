@@ -1,0 +1,73 @@
+
+\prob{002B}{正弦定理}
+
+\begin{figure}[htbp]
+  \centering
+  \image{002B}
+  \caption{002B：正弦定理} \label{fig:002B}
+\end{figure}
+
+证明正弦定理：在任意一个平面三角形中，各边和它所对角的正弦值之比相等。
+\problabels{yellow/平面几何, green/证明题}
+
+\subsection{面积法}
+
+基本思路：通过将三角形的面积用不同的方式表示，然后列出等式证明。
+
+由于$\alpha$的正弦为$\sin\alpha$，易知三角形$AB$边上的高是$b\sin\alpha$，又由于底为$c$，所以三角形的面积
+
+\[ S = \frac12bc\sin\alpha \]
+
+同理得
+
+\begin{align*}
+  S &= \frac12ac\sin\beta \\
+  &= \frac12ab\sin\gamma \\
+\end{align*}
+
+因此，
+
+\[ \frac12bc\sin\alpha = \frac12ac\sin\beta = \frac12ab\sin\gamma \]
+
+每个单项式同除$\sfrac12abc$可知
+
+\[ \frac{\sin\alpha}a = \frac{\sin\beta}b = \frac{\sin\gamma}c \]
+
+即为正弦定理。证毕。
+
+\subsection{作垂线} \label{subsec:002B-vert}
+
+\begin{figure}[htbp]
+  \centering
+  \image{002B-vert}
+  \caption{\nameref{subsec:002B-vert}：通过作垂线运用正弦函数的定义证明。}
+  \label{fig:002B-vert}
+\end{figure}
+
+基本思路：通过作垂线构造直角三角形，然后运用正弦函数的定义证明命题。
+
+如图~\ref{fig:002B-vert}，作三角形$AB$边上的高，设为$h$。
+
+图中有两个直角三角形：$\mathrm{Rt}\triangle ADC$与$\mathrm{Rt}\triangle BDC$，由正弦函数的定义知，
+
+\begin{align*}
+  \sin\alpha &= \frac hb \\
+  \sin\beta &= \frac ha \\
+\end{align*}
+
+于是知
+
+\begin{align*}
+  \frac{\sin\alpha}{\sin\beta} &= \frac ab \\
+  \frac{\sin\alpha}a &= \frac{\sin\beta}b \\
+\end{align*}
+
+同样通过作垂线的方法知
+
+\[ \frac{\sin\beta}b = \frac{\sin\gamma}c \]
+
+整理得
+
+\[ \frac{\sin\alpha}a = \frac{\sin\beta}b = \frac{\sin\gamma}c \]
+
+即为正弦定理。证毕。

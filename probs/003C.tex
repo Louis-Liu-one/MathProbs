@@ -1,0 +1,26 @@
+
+\prob{003C}{Euclid算法}
+
+对于正整数$a, b$，求证：
+
+\[ \gcd(a, b) = \gcd(b, a \bmod b) \]
+\problabels{yellow/数论, green/证明题}
+
+\subsection{不等式}
+
+由于模运算可以通过不断相减得到，故只需要证明
+\[ \gcd(a, b) = \gcd(b, a - b) \]
+即可。
+
+由定义知若
+\begin{align*}
+  S_1 &= \left\{x \mid x\text{整除}a\text{且}x\text{整除}b\right\} \\
+  S_2 &= \left\{x \mid x\text{整除}b\text{且}x\text{整除}a - b\right\}
+\end{align*}
+则
+\begin{align*}
+  \gcd(a, b) &= \max(S_1) \\
+  \gcd(b, a - b) &= \max(S_2)
+\end{align*}
+
+任意可以整除$a, b$的整数必然可以整除$b, a - b$，故$S_1 \subseteq S_2$；任意可以整除$b, a - b$的整数也必然可以整除$a, b$，故$S_2 \subseteq S_1$。因此，$S_1 = S_2$，$\gcd(a, b) = \gcd(b, a - b)$。证毕。

@@ -1,0 +1,100 @@
+
+\prob{0006}{勾股定理}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0006}
+  \caption{0006：勾股定理} \label{fig:0006}
+\end{figure}
+
+证明勾股定理：直角三角形中两条直角边的平方和等于斜边的平方。
+\problabels{yellow/平面几何, green/证明题}
+
+\subsection{弦图} \label{subsec:0006-xiantu}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0006-xiantu}
+  \caption{\nameref{subsec:0006-xiantu}：弦图在三国时期由赵爽发明，是证明勾股定理的重要几何方法之一。}
+  \label{fig:0006-xiantu}
+\end{figure}
+
+基本思路：运用正方形的面积公式证明。
+
+如图~\ref{fig:0006-xiantu}，整个正方形面积为$c^2$，同时它又是四个三角形加上一个小正方形的面积，即$2ab + (a - b)^2$。由此可得
+
+\[ c^2 = 2ab + (a - b)^2 \]
+
+化简得
+
+\[ a^2 + b^2 = c^2 \]
+
+证毕。
+
+\subsection{总统证法} \label{subsec:0006-pres}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0006-pres}
+  \caption{\nameref{subsec:0006-pres}：美国政治家、数学家James Abram Garfield得出此结论5年后成为美国第20任总统，因此该证法被称为“总统证法”。}
+  \label{fig:0006-pres}
+\end{figure}
+
+基本思路：运用梯形的面积公式证明。
+
+如图~\ref{fig:0006-pres}，整个梯形的面积为$\sfrac12(a + b)^2$。同时也是三个三角形面积的和，即$\sfrac12c^2 + ab$。由此可得
+
+\[ \frac12(a + b)^2 = \frac12c^2 + ab \]
+
+化简后即可得
+
+\[ a^2 + b^2 = c^2 \]
+
+证毕。
+
+\subsection{Euclid证法} \label{subsec:0006-eu}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0006-eu}
+  \caption{\nameref{subsec:0006-eu}：该证法由Euclid在其著作《几何原本》中给出。}
+  \label{fig:0006-eu}
+\end{figure}
+
+基本思路：运用等底等高的三角形和手拉手模型证明大正方形的两部分分别等于两个小正方形。
+
+如图~\ref{fig:0006-eu}，分别以$BC$、$AC$和$AB$为边作正方形$BCFC'_1$、正方形$ACGC'_2$和正方形$ABA'B'$，过$C$作$CE \perp AB$于$D$，$E$在$A'B'$上，将正方形$ABA'B'$分为矩形$A'BDE$和矩形$B'ADE$两个部分。
+
+\begin{align*}
+  &\because   A'B \parallel CE \\
+  &\therefore S_{\triangle A'BE} = S_{\triangle A'BC} = \frac12S_{A'BED} \\
+  &\because   \triangle A'BC \cong \triangle ABC'_1 \ \text{（证明省略）} \\
+  &\therefore S_{\triangle ABC'_1} = \frac12S_{A'BDE} \\
+  &\because   BC'_1 \parallel AF \\
+  &\therefore S_{\triangle ABC'_1} = S_{\triangle FBC'_1} = \frac12S_{BCFC'_1} \\
+  &\therefore S_{A'BDE} = S_{BCFC'_1} \\
+  &\text{同理可得}\ S_{B'ADE} = S_{ACGC'_2} \ \text{（证明省略）} \\
+  &\because   S_{A'BDE} + S_{B'ADE} = S_{ABA'B'} \\
+  &\therefore S_{BCFC'_1} + S{ACGC'_2} = S_{ABA'B'} \\
+  &\therefore BC^2 + AC^2 = AB^2 \\
+  &\text{证毕。} \\
+\end{align*}
+
+\subsection{拼图法} \label{subsec:0006-puz}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0006-puz}
+  \caption{\nameref{subsec:0006-puz}：该证法简洁明了，值得一提。} \label{fig:0006-puz}
+\end{figure}
+
+基本思路：通过将四个三角形的不同排布摆出边长分别为$a$、$b$、$c$的正方形，即可证明。
+
+将四个直角三角形如图~\ref{fig:0006-puz}（上）摆放，整个大正方形的面积为$(a + b)^2$，其中有两个小正方形，面积之和为$a^2 + b^2$；再重新排布直角三角形，如图~\ref{fig:0006-puz}（下），小正方形面积为$c^2$。又因为上下的粉色面积相等，所以
+
+\[ a^2 + b^2 = c^2 \]
+
+证毕。
+
+\vspace{15pt}
+注：勾股定理目前有大约400种证法，这里只列举了典型的四个，其余证法大家可以从网络上或其它途径找到。

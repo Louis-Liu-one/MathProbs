@@ -1,0 +1,102 @@
+
+\prob{002D}{高和中线}
+
+\begin{figure}[htbp]
+  \centering
+  \image{002D}
+  \caption{002D：高和中线} \label{fig:002D}
+\end{figure}
+
+如图~\ref{fig:002D}，$OA \perp OA'$，$OB \perp OB'$，$OA = OA'$，$OB = OB'$，$OP \perp AB$于$P$，$Q$是线段$A'B'$的中点，求证：$P$、$O$、$Q$三点共线。
+\problabels{yellow/平面几何, green/证明题}
+
+\subsection{倍长中线} \label{subsec:002D-mid}
+
+\begin{figure}[htbp]
+  \centering
+  \image{002D-mid}
+  \caption{\nameref{subsec:002D-mid}：通过倍长中线构造两对全等三角形，从而证明。}
+  \label{fig:002D-mid}
+\end{figure}
+
+基本思路：通过倍长中线构造全等三角形，从而证明$\angle POQ = 180^\circ$，进而证明命题。
+
+如图~\ref{fig:002D-mid}，延长$OQ$到点$O'$，使得$OQ = O'Q$；连接$O'B'$。
+
+\begin{align*}
+  &\because   \triangle OQA' \cong \triangle O'QB' \ \text{（证明省略）} \\
+  &\therefore \angle O'B'Q = \angle OA'B', A'O = O'B' \\
+  &\therefore \angle O'B'Q + \angle OB'A' = \angle OA'B' + \angle OB'A' \\
+  &\therefore \angle O'B'O = \angle OA'B' + \angle OB'A' \\
+  &\because   \angle OA'B' + \angle OB'A' + \angle A'OB' = 180^\circ \\
+  &\therefore \angle O'B'O + \angle A'OB' = 180^\circ \\
+  &\because   \angle AOB + \angle A'OB' \\
+  &\mathalignsep + \angle AOA' + \angle BOB' = 360^\circ \\
+  &\therefore \angle AOB + \angle A'OB' \\
+  &\mathalignsep = 360^\circ - \angle AOA' - \angle BOB' \\
+  &\because   OA \perp OA', OB \perp OB' \\
+  &\therefore \angle AOA' = \angle BOB' = 90^\circ \\
+  &\therefore \angle AOB + \angle A'OB' = 180^\circ \\
+  &\therefore \angle AOB = \angle O'B'O \\
+  &\because   AO = A'O \\
+  &\therefore AO = O'B' \\
+  &\because   \text{在}\triangle AOB\text{与}\triangle O'B'O\text{中} \\
+  &\mathalignsep \begin{cases}
+    AO = O'B' \\
+    \angle AOB = \angle O'B'O \\
+    OB = B'O \\
+  \end{cases} \\
+  &\therefore \triangle AOB \cong \triangle O'B'O \\
+  &\therefore \angle B'OQ = \angle B \\
+  \text{又}&\because OP \perp AB \\
+  &\therefore \angle OPA = 90^\circ \\
+  &\therefore \angle B + \angle BOP = 90^\circ \\
+  &\therefore \angle B'OQ + \angle BOP = 90^\circ \\
+  &\because   \angle POQ = \angle B'OQ + \angle BOP + \angle BOB' \\
+  &\therefore \angle POQ = 90^\circ + 90^\circ = 180^\circ \\
+  &\therefore P, O, Q\text{三点共线} \\
+\end{align*}
+
+证毕。
+
+\subsection{旋转} \label{subsec:002D-rot}
+
+\begin{figure}[htbp]
+  \centering
+  \image{002D-rot}
+  \caption{\nameref{subsec:002D-rot}：通过旋转三角形构造中位线，然后利用位置关系证明。}
+  \label{fig:002D-rot}
+\end{figure}
+
+基本思路：通过构造一个被旋转的三角形构造一个三角形的中位线，然后利用一系列线段的位置关系证明命题。
+
+如图~\ref{fig:002D-rot}，延长$AO$到点$A''$使得$OA = OA' = OA''$，连接$A''B$；设线段$A''B$的中点为$Q'$，连接$OQ'$。
+
+\begin{align*}
+  &\because   \angle A'OA'' = \angle BOB' = 90^\circ \\
+  &\therefore \angle A'OA'' + \angle A''OB' = \angle BOB' + \angle A''OB' \\
+  &\therefore \angle A'OB' = \angle A''OB \\
+  &\therefore \triangle A'OB' \cong \triangle A''OB \ \text{（证明省略）} \\
+  &\therefore A'B' = A''B, \angle B' = \angle OBQ' \\
+  &\because   B'Q = \frac12A'B', BQ' = \frac12A''B \\
+  &\therefore B'Q = BQ' \\
+  &\because   \text{在}\triangle B'OQ\text{与}\triangle BOQ'\text{中} \\
+  &\mathalignsep \begin{cases}
+    B'O = BO \\
+    \angle B' = \angle OBQ' \\
+    B'Q = BQ' \\
+  \end{cases} \\
+  &\therefore \triangle B'OQ \cong \triangle BOQ' \\
+  &\therefore \angle B'OQ = \angle BOQ' \\
+  &\therefore \angle B'OQ + \angle B'OQ' = \angle BOQ' + \angle B'OQ' \\
+  &\therefore \angle QOQ' = \angle BOB' = 90^\circ \\
+  &\therefore OQ' \perp OQ \\
+  \text{又}&\because OA'' = OA, Q'A'' = Q'B \\
+  &\therefore \text{线段}OQ'\text{是}\triangle AA''B\text{的中位线} \\
+  &\therefore OQ' \parallel AB \\
+  &\because   OP \perp AB \\
+  &\therefore OQ' \perp OP \\
+  &\therefore P, O, Q\text{三点共线} \\
+\end{align*}
+
+证毕。

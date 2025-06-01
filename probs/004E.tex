@@ -1,0 +1,32 @@
+
+\prob{004E}{三次方与三次方根}
+
+求关于$x$的方程
+
+\[ x^3 - \frac32\sqrt[3]6x^2 +3 = 0 \]
+
+的实数根。
+\problabels{yellow/代数, green/方程相关问题}
+
+\ans{$x = \sqrt[3]6$或$x = -\sfrac12\sqrt[3]6$}
+
+\subsection{因式分解}
+
+基本思路：直接将等号左边因式分解求得其根。
+
+将等号左边因式分解得
+
+\begin{align*}
+  & x^3 - \frac32\sqrt[3]6x^2 + 3 \\
+  ={}& x^3 - 2\sqrt[3]6x^2 + \sqrt[3]6^2x + \frac12\sqrt[3]6x^2 - \sqrt[3]6^2x + 3 \\
+  ={}& x\cdot x^2 - x\cdot 2\sqrt[3]6x + x\cdot\sqrt[3]6^2 \\
+    &+ \frac12\sqrt[3]6\cdot x^2 - \frac12\sqrt[3]6\cdot2\sqrt[3]6x + \frac12\sqrt[3]6\cdot \sqrt[3]6^2 \\
+  ={}& x\left(x^2 - 2\sqrt[3]6x + \sqrt[3]6^2\right) \\
+  &+ \frac12\sqrt[3]6\left(x^2 - 2\sqrt[3]6x + \sqrt[3]6^2\right) \\
+  ={}& \left(x + \frac12\sqrt[3]6\right)\left(x^2 - 2\sqrt[3]6x + \sqrt[3]6^2\right) \\
+  ={}& \left(x + \frac12\sqrt[3]6\right)\left(x - \sqrt[3]6\right)^2 \\
+\end{align*}
+
+由于等号右边为0，故$x = \sqrt[3]6$或$x = -\sfrac12\sqrt[3]6$。
+
+综上，原方程实数根为$x = \sqrt[3]6$或$x = -\sfrac12\sqrt[3]6$。
