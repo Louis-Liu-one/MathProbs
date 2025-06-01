@@ -1,0 +1,43 @@
+
+\prob{009F}{带约束的最值II}
+
+若$x, y, z$满足$x + y + z = 1$，求$xy + 2yz + 3zx$的最大值。
+\problabels{yellow/代数, green/最值问题}
+
+\ans{$\sfrac34$}
+
+\subsection{配方}
+
+令$P = xy + 2yz + 3zx$，则由$x + y + z = 1$知
+\begin{align*}
+  P &= (xy + zx) + 2(yz + zx) \\
+  &= x(y + z) + 2z(x + y) \\
+  &= x(1 - x) + 2z(1 - z) \\
+  &= -\left(\left(x^2 - x\right) + 2\left(z^2 - z\right)\right)
+\end{align*}
+于是有
+\begin{align*}
+  \frac34 - P &= \left(x^2 - x + \frac14\right) + 2\left(z^2 - z + \frac14\right) \\
+  &= \left(x - \frac12\right)^2 + 2\left(z - \frac12\right)^2
+\end{align*}
+于是当$x = z = \sfrac12$时，$\sfrac34 - P$取得最小值0，故此时$P$取得最大值$\sfrac34$。
+
+\subsection{Lagrange乘数法}
+
+引入函数
+\[ f(x, y, z, \lambda) = xy + 2yz + 3zx + \lambda(x + y + z - 1) \]
+当其取得极值时，有
+\[ \left\{ \begin{aligned}
+  \frac{\partial f}{\partial x} &= y + 3z + \lambda = 0 \\
+  \frac{\partial f}{\partial y} &= x + 2z + \lambda = 0 \\
+  \frac{\partial f}{\partial z} &= 2y + 3x + \lambda = 0 \\
+  \frac{\partial f}{\partial \lambda} &= x + y + z - 1 = 0
+\end{aligned} \right. \]
+其中，最后一条方程即为约束条件。解四元一次方程组，得
+\[ \left\{ \begin{aligned}
+  x &= \frac12 \\
+  y &= 0 \\
+  z &= \frac12 \\
+  \lambda &= -\frac32 \\
+\end{aligned} \right. \]
+代入得最大值为$\sfrac34$。

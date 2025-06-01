@@ -1,0 +1,95 @@
+
+\prob{0009}{线段和}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0009}
+  \caption{0009：线段和} \label{fig:0009}
+\end{figure}
+
+如图~\ref{fig:0009}，在$\triangle ABC$中，$AB = AC$，$D$是$\triangle ABC$外一点，且$\angle ABD = 60^\circ$，$\angle ADB = 90^\circ - \sfrac12\angle BDC$，求证：$AC = BD + CD$。
+\problabels{yellow/平面几何, green/证明题}
+
+\subsection{翻折$BD$边} \label{subsec:0009-BD}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0009-BD}
+  \caption{\nameref{subsec:0009-BD}：翻折$\triangle ABD$至$\triangle AB'D$，从而构造等边三角形。}
+  \label{fig:0009-BD}
+\end{figure}
+
+基本思路：通过翻折三角形构造等边三角形，从而证明命题。
+
+如图~\ref{fig:0009-BD}，延长$CD$到$B'$，使得$B'D = BD$。连接$AB'$。
+
+\begin{align*}
+  &\because   \angle ADB = 90^\circ - \frac12\angle BDC \\
+  &\therefore 2\angle ADB + \angle BDC = 180^\circ \\
+  &\because   \angle ADB + \angle ADB' + \angle BDC = 180^\circ \\
+  &\therefore \angle ADB = \angle ADB' \\
+  &\because   \text{在}\triangle ADB\text{与}\triangle ADB'\text{中} \\
+  &\mathalignsep \begin{cases}
+    AD = AD \\
+    \angle ADB = \angle ADB' \\
+    DB = DB' \\
+  \end{cases} \\
+  &\therefore \triangle ADB \cong \triangle ADB' \\
+  &\therefore AB = AB', \angle ABD = \angle AB'D \\
+  &\because   \angle ABD = 60^\circ \\
+  &\therefore \angle AB'D = 60^\circ \\
+  &\because   AB = AC \\
+  &\therefore AB' = AC \\
+  &\because   \text{在}\triangle AB'C\text{中} \\
+  &\mathalignsep \begin{cases}
+    \angle AB'C = 60^\circ \\
+    AB' = AC \\
+  \end{cases} \\
+  &\therefore \triangle AB'C\text{是等边三角形} \\
+  &\therefore AC = B'C \\
+  &\because   B'C = B'D + CD \\
+  &\therefore AC = BD + CD \\
+  &\text{证毕。} \\
+\end{align*}
+
+\subsection{翻折$CD$边} \label{subsec:0009-CD}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0009-CD}
+  \caption{\nameref{subsec:0009-CD}：翻折$\triangle ACD$至$\triangle AC'D$，从而构造等边三角形。}
+  \label{fig:0009-CD}
+\end{figure}
+
+\emph{XJX提供的方法。}
+
+基本思路：通过翻折三角形构造等边三角形，从而证明命题。
+
+如图~\ref{fig:0009-CD}，延长$BD$到$C'$，使得$C'D = CD$。连接$AC'$。
+
+\begin{align*}
+  &\because   \angle ADB = 90^\circ - \frac12\angle BDC \\
+  &\therefore 2\angle ADB + \angle BDC = 180^\circ \\
+  &\because   \angle ADB + \angle ADC' = 180^\circ \\
+  &\therefore \angle ADC' = \angle ADB + \angle BDC = \angle ADC \\
+  &\because   \text{在}\triangle ADC\text{与}\triangle ADC'\text{中} \\
+  &\mathalignsep \begin{cases}
+    AD = AD \\
+    \angle ADC = \angle ADC' \\
+    DC = DC' \\
+  \end{cases} \\
+  &\therefore \triangle ADC \cong \triangle ADC' \\
+  &\therefore AC = AC' \\
+  &\because   AB = AC \\
+  &\therefore AB = AC' \\
+  &\because   \text{在}\triangle ABC'\text{中} \\
+  &\mathalignsep \begin{cases}
+    \angle ABC' = 60^\circ \\
+    AB = AC' \\
+  \end{cases} \\
+  &\therefore \triangle ABC'\text{是等边三角形} \\
+  &\therefore BC' = AB = AC \\
+  &\because   BC' = BD + C'D \\
+  &\therefore AC = BD + CD \\
+  &\text{证毕。} \\
+\end{align*}

@@ -1,0 +1,38 @@
+
+\prob{0011}{等边多边形}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0011}
+  \caption{0011：等边多边形} \label{fig:0011}
+\end{figure}
+
+证明：同一所有边都相等的凸多边形内一点$P$到该多边形每条边所在直线的距离之和与$P$的位置无关。
+\problabels{yellow/平面几何, green/证明题}
+
+\subsection{面积法} \label{subsec:0011-area}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0011-area}
+  \caption{\nameref{subsec:0011-area}：通过构造一系列等底的三角形得出其高之和不变。}
+  \label{fig:0011-area}
+\end{figure}
+
+基本思路：通过构造一系列等底的三角形证明命题。
+
+如图~\ref{fig:0011-area}，将$P$与多边形的每个顶点相连。设多边形的边均为$k$。
+
+若多边形是$n$边形，则会有$n$个三角形，将它们的面积记为$S_1, S_2, \dots, S_n$。令每个三角形的底边是多边形的边，那么每个三角形的底边均为$k$。记它们的高为$h_1, h_2, \dots, h_n$。
+
+由于每个三角形的顶点都是$P$，因此每条高都是$P$到多边形一边所在直线的距离。因此，$P$到该多边形每条边所在直线的距离之和就是$h_1 + h_2 + \dots + h_n$。
+
+又因为$P$在多边形内，且该多边形是凸的，所以可知多边形的面积为$S_1 + S_2 + \dots + S_n$。由于$P$在同一多边形内移动，所以多边形的边长$k$和多边形的面积是一个固定值，即
+
+\begin{align*}
+  &\phantom{=} S_1 + S_2 + \dots + S_n \\
+  &= \frac12kh_1 + \frac12kh_2 + \dots + \frac12kh_n \\
+  &= \frac12k(h_1 + h_2 + \dots + h_n) \\
+\end{align*}
+
+由于$S_1 + S_2 + \dots + S_n$不随$P$的位置变化，$\sfrac12k$亦不随$P$的位置变化，所以由上式可知$h_1 + h_2 + \dots + h_n$不随$P$的位置变化。证毕。

@@ -1,0 +1,35 @@
+
+\prob{0007}{四边形}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0007}
+  \caption{0007：四边形} \label{fig:0007}
+\end{figure}
+
+如图~\ref{fig:0007}，在四边形$ABCD$中，$AB = BC$，$\angle ABC = 60^\circ$，$\angle ADC = 30^\circ$，求证：$AD^2 + CD^2 = BD^2$。
+\problabels{yellow/平面几何, green/证明题}
+
+\subsection{手拉手模型} \label{subsec:0007-hand}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0007-hand}
+  \caption{\nameref{subsec:0007-hand}：通过作等边三角形找出$90^\circ$，然后利用手拉手模型将待求线段转入直角三角形中去。}
+  \label{fig:0007-hand}
+\end{figure}
+
+基本思路：将问题转换成手拉手模型，然后通过一系列全等关系将三条线段移到一个直角三角形中去，最后利用勾股定理证明。
+
+如图~\ref{fig:0007-hand}，以$CD$为边作等边三角形$CDE$，$E$在直线$CD$右边。连接$AC$、$AE$。
+
+\begin{align*}
+  &\because   \triangle BCD \cong \triangle ACE \ \text{（证明省略）} \\
+  &\therefore BD = AE \\
+  &\because   \angle CDE = 60^\circ, \angle ADC = 30^\circ \\
+  &\therefore \angle ADE = 90^\circ \\
+  &\therefore AD^2 + DE^2 = AE^2 \\
+  &\because   CD = DE \\
+  &\therefore AD^2 + CD^2 = BD^2 \\
+  &\text{证毕。} \\
+\end{align*}

@@ -1,0 +1,31 @@
+
+\prob{008F}{整数根方程III}
+
+求关于整数$n, x$的方程
+\[ 2^n + 7 = x^2 \]
+的所有根。
+\problabels{yellow/数论, green/方程相关问题}
+
+\ans{$n = 1, x = \pm3$}
+
+\subsection{模运算}
+
+\begin{lemma} \label{lemma:008F-43}
+  一个整数的平方数模4不可能为3。
+\end{lemma}
+
+\begin{proof}
+  考虑整数$n$的平方，对$n$进行奇偶性讨论。若$n$为偶数，则$n = 2k$，其中$k$为正整数，此时$n \bmod 4$为0或2。若$n$为奇数，则$n = 2k + 1$，其中$k$为正整数，此时
+  \[ n^2 = (2k + 1)^2 = 4k^2 + 4k + 1 = 4\left(k^2 + k\right) + 1 \equiv 1 \]
+  故$n^2 \bmod 4$不可能为3。
+\end{proof}
+
+由于$n, x$都是整数，且显然$n$是非负整数，于是可以对等号两边进行模运算：
+\[ 2^n + 7 \equiv x^2 \pmod 4 \]
+考虑到当$n = 0$时$2^n \equiv 1$，$n = 1$时$2^n \equiv 2$，$n > 1$时$2^n \equiv 0$，故
+\[ \begin{cases}
+  x^2 \equiv 1 + 7 \equiv 0 & (n = 0) \\
+  x^2 \equiv 2 + 7 \equiv 1 & (n = 1) \\
+  x^2 \equiv 0 + 7 \equiv 3 & (n > 1)
+\end{cases} \]
+由引理~\ref{lemma:008F-43} 知，最后一种情况不成立，故$n = 0$或$n = 1$。代入可知，显然$n = 1$，此时$x = \pm3$。故根为$n = 1, x = \pm3$。

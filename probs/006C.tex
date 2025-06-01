@@ -1,0 +1,41 @@
+
+\prob{006C}{整数长度四边形}
+
+\begin{figure}
+  \centering
+  \image{006C}
+  \caption{006C：整数长度四边形} \label{fig:006C}
+\end{figure}
+
+四边形$ABCD$的面积为$32$，其中线段$AB, CD, AC$都是整数，且其和为$16$，$AB \le CD$，求满足条件的四边形的$AB, CD, AC$。
+\problabels{yellow/平面几何, yellow/数论, green/长度问题, green/代数求值问题}
+
+\ans{$AB = 1, CD = 7, AC = 8$；$AB = 2, CD = 6, AC = 8$；$AB = 3, CD = 5, AC = 8$；$AB = CD = 4, AC = 8$。}
+
+\subsection{不等式} \label{subsec:006C-neqf}
+
+基本思路：作三角形的高线，然后利用高线的性质，列出不等式求解。
+
+\begin{figure}
+  \centering
+  \image{006C-neqf}
+  \caption{\nameref{subsec:006C-neqf}：作三角形的高线。} \label{fig:006C-neqf}
+\end{figure}
+
+如图~\ref{fig:006C-neqf}，将$\triangle ABC$在$AB$上的高记作$h_1$，$\triangle ACD$在$CD$上的高记作$h_2$，并记$a = AB, b = CD, l = AC$。
+
+由$h_1 \le l, h_2 \le l$有$h_1a + h_2b \le l(a + b)$，即
+
+\begin{align*}
+  \frac12(h_1a + h_2b) &\le\frac12l(a + b) \\
+  2S_{ABCD} &\le l(a + b) \\
+\end{align*}
+
+由题知$S_{ABCD} = 32$知$l(a + b) \ge64$。又由$a + b + l = 16$知$a + b = 16 - l$，故
+
+\begin{align*}
+  l(a + b) &= l(16 - l) \\
+  &= 64 - (l - 8)^2 \le64 \\
+\end{align*}
+
+故$l(a + b) = 64$，解得$l = a + b = 8$。而$a \le b$，故有$4$个四边形：$a = 1, b = 7, l = 8$；$a = 2, b = 6, l = 8$；$a = 3, b = 5, l = 8$；$a = b = 4, l = 8$。

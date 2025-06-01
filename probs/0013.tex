@@ -1,0 +1,51 @@
+
+\prob{0013}{角平分线定理}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0013}
+  \caption{0013：角平分线定理} \label{fig:0013}
+\end{figure}
+
+如图~\ref{fig:0013}，在$\triangle ABC$中，$AP$平分$\angle BAC$，证明角平分线定理：$AB:AC = PB:PC$。
+\problabels{yellow/平面几何, green/证明题}
+
+\subsection{面积法} \label{subsec:0013-S}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0013-S}
+  \caption{\nameref{subsec:0013-S}：通过面积比例证明命题。}
+  \label{fig:0013-S}
+\end{figure}
+
+基本思路：运用面积和角平分线的一些基本性质，根据左右两三角形面积之比证明。
+
+如图~\ref{fig:0013-S}，作$PP_1 \perp AB$于$P_1$，$PP_2 \perp AC$于$P_2$，$AP_3 \perp BC$于$P_3$。
+
+\begin{align*}
+  &\because   PP_1 \perp AB \\
+  &\therefore \angle AP_1P = 90^\circ \\
+  &\because   PP_2 \perp AC \\
+  &\therefore \angle AP_2P = 90^\circ \\
+  &\because   AP\text{平分}\angle BAC \\
+  &\therefore PP_1 = PP_2 \\
+  &\therefore S_{\triangle APB}:S_{\triangle APC} = \frac12AB\cdot PP_1:\frac12AC\cdot PP_2 \\& = AB:AC \\
+  &\because   S_{\triangle APB}:S_{\triangle APC} = \frac12PB\cdot AP_3:\frac12PC\cdot AP_3 \\& = PB:PC \\
+  &\therefore AB:AC = PB:PC \\
+  &\text{证毕。} \\
+\end{align*}
+
+\subsection{正弦定理}
+
+基本思路：利用角平分线和正弦定理推出比例。
+
+根据正弦定理可得$AB:\sin\angle APB = PB:\sin\angle BAP$，$AC:\sin\angle APC = PC:\sin\angle CAP$。
+
+因为$\angle APB + \angle APC = 180^\circ$，由此可得$\sin\angle APB = \sin\angle APC$，又因为$AP$平分$\angle BAC$，可得$\angle BAP = \angle CAP$，即$\sin\angle BAP = \sin\angle CAP$。
+
+代入$AB:\sin\angle APB = PB:\sin\angle BAP$与$AC:\sin\angle APC = PC:\sin\angle CAP$可得
+
+\[ AB:AC = PB:PC \]
+
+证毕。
