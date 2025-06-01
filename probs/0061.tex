@@ -1,0 +1,31 @@
+
+\prob{0061}{分式最值II}
+
+求关于$x$的分式
+\[ \frac{6x^2 + 12x + 5}{x^2 + 2x + 2} \]
+的最小值。
+\problabels{yellow/代数, green/最值问题}
+
+\ans{原式最小值为$-1$。}
+
+\subsection{直接求导}
+
+\begin{align*}
+  \text{原式} &= \frac{6(x^2 + 2x + 2) - 7}{x^2 + 2x + 2} \\
+  &= 6 - \frac7{x^2 + 2x + 2} \\
+  \frac{\dif\text{原式}}{\dif x} &= \frac{7(2x + 2)}{\sqrt{x^2 + 2x + 2}} \\
+\end{align*}
+当原式取极值时，$\sfrac{\dif\text{原式}}{\dif x} = 0$，即
+\begin{align*}
+  7(2x + 2) &= 0 \\
+  x &= -1 \\
+\end{align*}
+代入得原式最小值为$-1$。
+
+\subsection{代数变换}
+
+\begin{align*}
+  \text{原式} &= \frac{6(x^2 + 2x + 2) - 7}{x^2 + 2x + 2} \\
+  &= 6 - \frac7{x^2 + 2x + 2} \\
+\end{align*}
+故当$x^2 + 2x + 2$越小时，原式越大。$x^2 + 2x + 2$最小时$x = -\sfrac b{2a} = -1$，代入得其最小值为$1$。将此代入原式得原式最小值为$-1$。

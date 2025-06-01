@@ -1,0 +1,39 @@
+
+\prob{0097}{三元二次方程组II}
+
+求方程组
+\[ \left\{\begin{aligned}
+  6xy &= 2x + 5y \\
+  -2yz &= 3y + 2z \\
+  -zx &= 5z + 6x
+\end{aligned}\right. \]
+的所有解。
+\problabels{yellow/代数, green/方程相关问题}
+
+\ans{$x = y = z = 0$或$x = 1, y = 2, z = -1$}
+
+\subsection{升次消项}
+
+由原方程组知
+\begin{align}
+  6xyz &= 5yz + 2zx \label{eq:0097-52} \\
+  -6xyz &= 9xy + 6zx \label{eq:0097-96} \\
+  -6xyz &= 30yz + 36zx \label{eq:0097-3036}
+\end{align}
+式~\ref{eq:0097-52} 分别与式~\ref{eq:0097-96}、式~\ref{eq:0097-3036} 相加，消去三次项，得
+\begin{align*}
+  9xy + 5yz + 8zx &= 0 \\
+  36xy + 35yz + 2zx &= 0
+\end{align*}
+消去$xy, yz$项，得
+\[ yz = 2zx, xy = -2xz \]
+若$z = 0$或$x = 0$，则$x = y = z = 0$，是方程组的一个解；若$z \ne 0$且$x \ne 0$，则
+\[ y = 2x, y = -2z, z = -x \]
+代入$-zx = 5z + 6x$知
+\[ x^2 = x, x \ne 0 \Rightarrow x = 1 \]
+于是有$x = 1, y = 2, z = -1$。故方程所有解为
+\[ \left\{ \begin{aligned}
+  x &= 1 \\ y &= 2 \\ z &= -1
+\end{aligned} \right. \text{或} \left\{ \begin{aligned}
+  x &= 0 \\ y &= 0 \\ z &= 0
+\end{aligned} \right. \]

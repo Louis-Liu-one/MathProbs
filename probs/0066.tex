@@ -1,0 +1,27 @@
+
+\prob{0066}{判别式与根}
+
+若$b^2 - 4ac$是关于$x$的二次方程$ax^2 + bx + c = 0$的一个实根，求$ab$的取值范围。
+\problabels{yellow/代数, green/取值范围问题}
+
+\ans{$ab \le\sfrac18$}
+
+\subsection{代入解方程}
+
+基本思路：将$b^2 - 4ac$代入方程，再解关于$c$的方程。
+
+将$b^2 - 4ac$代入方程得
+
+\begin{align*}
+  16a^3c^2 - 8a^2b^2c + ab^4 - 4abc + b^3 + c &= 0 \\
+  16a^3c^2 + (1 - 8a^2b^2 - 4ab)c + (ab^4 + b^3) &= 0 \\
+\end{align*}
+
+将其看作关于$c$的二次方程，则有
+
+\begin{align*}
+  \Delta &= (1 - 8a^2b^2 - 4ab)^2 - 64a^3(ab^4 + b^3) \\
+  &= 1 - 8ab \ge0 \\
+\end{align*}
+
+故$ab \le\sfrac18$。

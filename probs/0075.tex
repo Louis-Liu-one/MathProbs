@@ -1,0 +1,81 @@
+
+\prob{0075}{嵌套等腰直角三角形}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0075}
+  \caption{0075：嵌套等腰直角三角形} \label{fig:0075}
+\end{figure}
+
+如图~\ref{fig:0075}，在四边形$ABCD$中，$\angle A = \angle B = 45^\circ$；$O$是$AB$上一点，且满足$\angle COD = 90^\circ, OC = OD$，求$\sfrac{AB}{AD + BC}$。
+\problabels{yellow/平面几何, green/长度问题}
+
+\ans{$\sfrac{AB}{AD + BC} = \sqrt2$}
+
+\subsection{作垂线} \label{subsec:0075-vert}
+
+基本思路：通过作垂线构造一线三等角。
+
+\begin{figure}[htbp]
+  \centering
+  \image{0075-vert}
+  \caption{\nameref{subsec:0075-vert}：一线三等角。}
+  \label{fig:0075-vert}
+\end{figure}
+
+如图~\ref{fig:0075-vert}，作$CP \perp AB$于$P$，$DQ \perp AB$于$Q$。易知$\triangle COP \cong \triangle ODQ$。不妨设$CP = OQ = x, DQ = OP = y$。
+
+由$\angle B = 45^\circ, CP \perp AB$易知$\triangle BPC$是等腰直角三角形，故$BP = CP = x, BC = \sqrt2x$。同理知$AQ = DQ = y, AD = \sqrt2y$。
+
+故有
+\begin{align*}
+  \frac{AB}{AD + BC} &= \frac{x + y + x + y}{\sqrt2x + \sqrt2y} \\
+  &= \frac2{\sqrt2} = \sqrt2 \\
+\end{align*}
+
+综上，$\sfrac{AB}{AD + BC} = \sqrt2$。
+
+\subsection{正弦定理} \label{subsec:0075-sin}
+
+基本思路：运用正弦定理解三角形。
+
+\begin{figure}[htbp]
+  \centering
+  \image{0075-sin}
+  \caption{\nameref{subsec:0075-sin}：解三角形。}
+  \label{fig:0075-sin}
+\end{figure}
+
+如图~\ref{fig:0075-sin}，令$AD = x, BC = y, OC = OD = z, OA = p, OB = q, \angle AOD = \alpha, \angle BOC = \beta$，$\sfrac{p + q}{x + y}$即为所求。易知$\alpha + \beta = 90^\circ$。
+
+由正弦定理可知
+\begin{align*}
+  \frac x{\sin\alpha} = \frac y{\sin\beta} &= \frac z{\sin45^\circ} \\
+  \frac{x + y}{\sin\alpha + \sin\beta} &= \frac z{\sin45^\circ} \\
+\end{align*}
+又
+\begin{align*}
+  \angle ODA &= 135^\circ - \alpha \\
+  \angle OCB &= 135^\circ - \beta \\
+\end{align*}
+故有
+\begin{align*}
+  \frac p{\sin(135^\circ - \alpha)} = \frac q{\sin(135^\circ - \beta)} &= \frac z{\sin45^\circ} \\
+  \frac{p + q}{\sin(135^\circ - \alpha) + \sin(135^\circ - \beta)} &= \frac z{\sin45^\circ} \\
+\end{align*}
+因此，
+\begin{align*}
+  \frac{x + y}{\sin\alpha + \sin\beta} &= \frac{p + q}{\sin(135^\circ - \alpha) + \sin(135^\circ - \beta)} \\
+  \frac{p + q}{x + y} &= \frac{\sin(135^\circ - \alpha) + \sin(135^\circ - \beta)}{\sin\alpha + \sin\beta} \\
+  &= \frac{2\sin\sfrac{270^\circ - \alpha - \beta}2\cos\sfrac{-\alpha + \beta}2}{2\sin\sfrac{\alpha + \beta}2\cos\sfrac{\alpha - \beta}2} \\
+\end{align*}
+
+由$\sfrac{-\alpha + \beta}2 + \sfrac{\alpha - \beta}2 = 0$知
+\[ 2\cos\frac{-\alpha + \beta}2 = 2\cos\frac{\alpha - \beta}2 \]
+且$\alpha + \beta = 90^\circ$，故
+\begin{align*}
+  \frac{AB}{AD + BC} &= \frac{p + q}{x + y} = \frac{\sin\sfrac{270^\circ - \alpha - \beta}2}{\sin\sfrac{\alpha + \beta}2} \\
+  &= \frac{\sin90^\circ}{\sin45^\circ} = \sqrt2 \\
+\end{align*}
+
+综上，$\sfrac{AB}{AD + BC} = \sqrt2$。

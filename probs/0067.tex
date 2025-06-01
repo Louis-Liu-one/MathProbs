@@ -1,0 +1,42 @@
+
+\prob{0067}{无相异两实根}
+
+若关于$x$的方程
+
+\[ x^2 + 2(a + 2b + 3)x + (a + 4b^2 + 99) = 0 \]
+
+无相异两实根（$\Delta \le0$），求满足条件的有序正整数对$(a, b)$的个数。
+\problabels{yellow/数论, green/方程相关问题}
+
+\ans{$12$个}
+
+\subsection{枚举}
+
+基本思路：由$\Delta \le0$枚举$a$求出$b$。
+
+由$\Delta \le0$知
+
+\begin{align*}
+  4(a + 2b + 3)^2 - 4(a + 4b^2 + 99) \le0 \\
+  a^2 + 4ab + 5a + 12b \le90 \\
+\end{align*}
+
+枚举$a$（表~\ref{tab:0067-enum}），可得$(a, b)$共$5 + 3 + 2 + 1 + 1 = 12$个。
+
+\begin{table}[hbp]
+  \centering
+  \begin{tabular}{cclc}
+    \toprule
+    $a$ & $b$的条件 & $b$ & 个数 \\
+    \midrule
+    $1$ & $16b \le84$ & $\in \{1, \dots, 5\}$ & 5 \\
+    $2$ & $20b \le76$ & $\in \{1, 2, 3\}$ & 3 \\
+    $3$ & $24b \le66$ & $\in \{1, 2\}$ & 2 \\
+    $4$ & $28b \le54$ & $= 1$ & 1 \\
+    $5$ & $32b \le40$ & $= 1$ & 1 \\
+    $6$ & $36a \le24$ & 无解 & 0 \\
+    $> 6$ & & 无解 & 0 \\
+    \bottomrule
+  \end{tabular}
+  \caption{枚举$a$，以求出$b$。} \label{tab:0067-enum}
+\end{table}

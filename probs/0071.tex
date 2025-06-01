@@ -1,0 +1,71 @@
+
+\prob{0071}{四线一点}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0071}
+  \caption{0071：四线一点} \label{fig:0071}
+\end{figure}
+
+如图~\ref{fig:0071}，在锐角$\triangle ABC$中，$BD \perp AC$于$D$，$CE \perp AB$于$E$；分别过$D, E$作$BC$的垂线，交$CE$于$F$，交$BD$于$G$，交$BA$的延长线于$P$，交$CA$的延长线于$Q$。证明：直线$BC, DE, FG, PQ$交于一点。
+\problabels{yellow/平面几何, green/证明题}
+
+\subsection{解析几何} \label{subsec:0071-dec}
+
+基本思路：先证明$DE, FG, PQ$交于一点，再利用解析几何证明$BC, DE, FG$交于一点。
+
+\begin{figure}[htbp]
+  \centering
+  \image{0071-dec}
+  \caption{\nameref{subsec:0071-dec}} \label{fig:0071-dec}
+\end{figure}
+
+如图~\ref{fig:0071-dec}，设$BD$与$CE$交于$O$，$DU \perp BC$于$U$，$EV \perp BC$于$V$。以$BC$的中点为原点，$BC$为$x$轴建立平面直角坐标系。
+
+\subsubsection{相似三角形}
+
+先证明$DE, FG, PQ$交于一点。
+
+由$PU \perp BC, QV \perp BC$易知$PU \parallel QV$，于是有
+\begin{align*}
+  \triangle DAP &\sim \triangle QAE \\
+  \triangle DOF &\sim \triangle GOE \\
+\end{align*}
+
+而由$O$是$\triangle ABC$的垂心易知$AO \perp BC$，故$PU \parallel QV \parallel AO$。由此可知$A$到$PU$的距离与$O$到$PU$的距离相同，$A$到$QV$的距离与$O$到$QV$的距离相同，故两对相似三角形的相似比相同，即
+\[ \frac{PD}{QE} = \frac{DF}{EG} \]
+由此易知直线$DE, FG, PQ$交于一点。
+
+\subsubsection{三角函数}
+
+再证明$BC, DE, FG$交于一点。
+
+设$BC = 2r$，于是有$D(r\cos\alpha, r\sin\alpha)$，$E(r\cos\beta, r\sin\beta)$，$B(-r, 0), C(r, 0)$。于是易知
+
+\begin{align*}
+  BD&:y = \frac{\sin\alpha}{\cos\alpha + 1}(x + r) \\
+  CE&:y = \frac{\sin\beta}{\cos\beta - 1}(x - r) \\
+  DU&:x = r\cos\alpha \\
+  EV&:x = r\cos\beta \\
+\end{align*}
+
+将$x = r\cos\alpha$代入$CE$的函数解析式可得$F$的纵坐标为
+
+\begin{align*}
+  FU = y_F &= \frac{\sin\beta}{\cos\beta - 1}(r\cos\alpha - r) \\
+  &= \frac{r\sin\beta(\cos\alpha - 1)}{\cos\beta - 1} \\
+\end{align*}
+同理，有
+\[ GV = y_G = \frac{r\sin\alpha(\cos\beta + 1)}{\cos\alpha + 1} \]
+因此有
+\begin{align*}
+  \frac{FU}{GV} &= \frac{\sin\alpha(\cos\beta + 1)(\cos\beta - 1)}{\sin\beta(\cos\alpha + 1)(\cos\alpha - 1)} \\
+  &= \frac{\sin\alpha(1 - \cos^2\beta)}{\sin\beta(1 - \cos^2\alpha)} \\
+  &= \frac{\sin\alpha\sin^2\beta}{\sin\beta\sin^2\alpha} = \frac{\sin\beta}{\sin\alpha} \\
+  \frac{DU}{EV} &= \frac{r\sin\beta}{r\sin\alpha} = \frac{\sin\beta}{\sin\alpha} \\
+\end{align*}
+故
+\[ \frac{FU}{GV} = \frac{DU}{EV} \]
+因此，直线$BC, DE, FG$交于一点。
+
+综上可知，直线$BC, DE, FG, PQ$交于一点。证毕。

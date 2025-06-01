@@ -1,0 +1,60 @@
+
+\prob{0057}{整数二元二次方程}
+
+已知整数$x, y$满足
+
+\[ 15xy = 21x + 20y - 13 \]
+
+求$x, y$。
+\problabels{yellow/数论, green/方程相关问题}
+
+\ans{$x = 3, y = 2$}
+
+\subsection{因式分解}
+
+基本思路：通过因式分解，然后求整数的因数求解。
+
+由原方程知
+
+\begin{align*}
+  3x\cdot5y - 7\cdot3x - 4\cdot5y &= -13 \\
+  3x\cdot5y - 7\cdot3x - 4\cdot5y + 4\cdot7 &= 15 \\
+  (3x - 4)(5y - 7) &= 15 \\
+\end{align*}
+
+由于$x, y$为整数，故$3x - 4$与$5y - 7$均为整数，而
+
+\[ 15 = 1\times15 = 3\times5 = 5\times3 = 15\times1 \]
+
+故
+
+\begin{align*}
+  \begin{cases}
+    3x - 4 = 1 \\ 5y - 7 = 15 \\
+  \end{cases} \text{或}& \begin{cases}
+    3x - 4 = 3 \\ 5y - 7 = 5 \\
+  \end{cases} \\ \text{或} \begin{cases}
+    3x - 4 = 5 \\ 5y - 7 = 3 \\
+  \end{cases} \text{或}& \begin{cases}
+    3x - 4 = 15 \\ 5y - 7 = 1 \\
+  \end{cases}
+\end{align*}
+
+方程组的解参见表~\ref{tab:0057-fac}。
+
+\begin{table}[hbp]
+  \centering
+  \begin{tabular}{ccc}
+    \toprule
+    $x$ & $y$ & 备注 \\
+    \midrule
+    $\sfrac53$ & $\sfrac{21}5$ & （舍） \\
+    $\sfrac73$ & $\sfrac{12}5$ & （舍） \\
+    $3$ & $2$ & \\
+    $\sfrac{19}3$ & $\sfrac85$ & （舍） \\
+    \bottomrule
+  \end{tabular}
+  \caption{$x, y$均为整数，故分数的情况需舍去。} \label{tab:0057-fac}
+\end{table}
+
+故$x = 3, y = 2$。综上，$x = 3, y = 2$。

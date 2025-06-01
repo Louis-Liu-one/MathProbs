@@ -1,0 +1,61 @@
+
+\prob{0095}{线段比例III}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0095}
+  \caption{总第~\ref{sec:0095} 题图} \label{fig:0095}
+\end{figure}
+
+如图~\ref{fig:0095}，四边形$ABFE$是矩形，$D$是对角线$AF, BE$的交点。过$E$的一直线$CG$交$BF$的延长线于$C$，交$BA$的延长线于$G$。连接$DC, DG$，$DC = DG$。求证：
+\[ \frac{AB}{FC} = \frac{FC}{GA} = \frac{GA}{AE} \]
+\problabels{yellow/平面几何, green/证明题}
+
+\subsection{切割线定理} \label{subsec:0095-tan}
+
+\begin{lemma} \label{lemma:0095-ltan}
+  \begin{figure}
+    \centering
+    \image{0095-ltan}
+    \caption{引理~\ref{lemma:0095-ltan} 图}
+    \label{fig:0095-ltan}
+  \end{figure}
+  如图~\ref{fig:0095-ltan}，从半径为$r$的圆$O$外一点$P$引出一条直线，交圆于$A, B$。连接$OP$，可知
+  \[ AP \cdot BP = OP^2 - r^2 \]
+\end{lemma}
+
+\begin{proof}
+  \begin{figure}
+    \centering
+    \image{0095-ltan-p}
+    \caption{引理~\ref{lemma:0095-ltan} 证明图}
+    \label{fig:0095-ltan-p}
+  \end{figure}
+  如图~\ref{fig:0095-ltan-p}，从$P$引圆的切线$PC$，切圆于$C$，连接$OC$。由切割线定理知，$AP \cdot BP = CP^2$。由于$PC$切圆$O$于$C$，故$PC \perp OC$，由勾股定理知
+  \[ CP^2 = OP^2 - OC^2 = OP^2 - r^2 \]
+  代入$AP \cdot BP = CP^2$即得。
+\end{proof}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0095-tan}
+  \caption{解法~\ref{subsec:0095-tan} 图} \label{fig:0095-tan}
+\end{figure}
+
+如图~\ref{fig:0095-tan}，作矩形$ABFE$的外接圆，$D$为圆心，令其半径为$r$。
+
+易证$\triangle CFE \sim \triangle EAG$，同时注意到有$\triangle EAG \sim \triangle CBG$，于是
+\begin{align}
+  \frac{AB}{FC} = \frac{EF}{FC} = \frac{GB}{BC} = \frac{GA}{AE} \label{eq:0095-tan}
+\end{align}
+
+由引理~\ref{lemma:0095-ltan} 知，
+\begin{align*}
+  FC \cdot BC &= DC^2 - r^2 \\
+  GB \cdot GA &= DG^2 - r^2 \\
+\end{align*}
+而$DC = DG$，于是
+\[ FC \cdot BC = GB \cdot GA \Rightarrow \frac{FC}{GA} = \frac{GB}{BC} \]
+结合式~\ref{eq:0095-tan} 可知
+\[ \frac{AB}{FC} = \frac{FC}{GA} = \frac{GA}{AE} \]
+证毕。

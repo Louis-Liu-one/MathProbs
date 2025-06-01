@@ -1,0 +1,100 @@
+
+\prob{0053}{Newton幂和}
+
+已知$x, y, z$满足
+
+\[ \begin{cases}
+  x + y + z = 1 \\
+  x^2 + y^2 + z^2 = 2 \\
+  x^3 + y^3 + z^3 = 3 \\
+\end{cases} \]
+
+求$x^4 + y^4 + z^4$。
+\problabels{yellow/代数, green/方程相关问题}
+
+\ans{$x^4 + y^4 + z^4 = \sfrac{25}6$}
+
+\subsection{代数变换}
+
+基本思路：将$x, y, z$表示为某三次方程的解，然后通过一系列代数变换，将$x^4 + y^4 + z^4$用$1, 2, 3$表示。
+
+由$x + y + z = 1$知，
+
+\begin{align*}
+  (x + y + z)^2 &= 1 \\
+  x^2 + y^2 + z^2 + 2(xy + yz + zx) &= 1 \\
+\end{align*}
+
+又由$x^2 + y^2 + z^2 = 2$知，
+
+\[ xy + yz + zx = \frac12(1 - 2) = -\frac12 \]
+
+将$x + y + z = 1$求立方得
+
+\begin{align*}
+  (x + y + z)^3 &= 1 \\
+  x^3 + y^3 + z^3 + 3(xy(x + y) & \\
+  + yz(y + z) + zx(z + x) + 2xyz) &= 1 \\
+  3(xy(x + y) + yz(y + z) & \\
+  + zx(z + x) + 2xyz) &= -2 \\
+  3(xy(x + y + z) & \\
+  + yz(x + y + z) + zx(z + x)) &= -2 \\
+  3(y(z + x) + zx(z + x)) &= -2 \\
+  3(y + zx)(1 - y) &= -2 \\
+  3(1 - z - x + zx)(1 - y) &= -2 \\
+  3(1 - x)(1 - y)(1 - z) &= -2 \\
+  1 - (x + y + z) + (xy + yz + zx) - xyz &= -\frac23 \\
+  xyz &= \frac16 \\
+\end{align*}
+
+若存在三次方程
+
+\[ w^3 - bw^2 + cw - d = 0 \]
+
+且$w = x, w = y, w = z$分别为该三次方程的三个解，则
+
+\begin{align*}
+  (w - x)(w - y)(w - z) &= 0 \\
+  w^3 - (x + y + z)w^2 + (xy + yz + zx)w - xyz &= 0 \\
+\end{align*}
+
+即
+
+\begin{align*}
+  b &= x + y + z = 1 \\
+  c &= xy + yz + zx = -\frac12 \\
+  d &= xyz = \frac16 \\
+\end{align*}
+
+可得
+
+\[ w^3 - w^2 - \frac12w - \frac16 = 0 \]
+
+代入$w = x$可得
+
+\begin{align*}
+  x^3 - x^2 - \frac12x - \frac16 &= 0 \\
+  x^3 &= x^2 + \frac12x + \frac16 \\
+  x^4 &= x^3 + \frac12x^2 + \frac16x \\
+\end{align*}
+
+同理知
+
+\begin{align*}
+  y^4 &= y^3 + \frac12y^2 + \frac16y \\
+  z^4 &= z^3 + \frac12z^2 + \frac16z \\
+\end{align*}
+
+故
+
+\begin{align*}
+  & x^4 + y^4 + z^4 \\
+  ={}& \left(x^3 + \frac12x^2 + \frac16x\right) \\
+  &+ \left(y^3 + \frac12y^2 + \frac16y\right) + \left(z^3 + \frac12z^2 + \frac16z\right) \\
+  ={}& (x^3 + y^3 + z^3) \\
+  &+ \frac12(x^2 + y^2 + z^2) + \frac16(x + y + z) \\
+  ={}& 3 + \frac12\cdot2 + \frac16\cdot1 \\
+  ={}& 3 + 1 + \frac16 = \frac{25}6 \\
+\end{align*}
+
+综上，$x^4 + y^4 + z^4 = \sfrac{25}6$。

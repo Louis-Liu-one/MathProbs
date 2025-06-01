@@ -1,0 +1,28 @@
+
+\prob{0078}{三角形垂心II}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0078}
+  \caption{总第~\ref{sec:0078} 题图} \label{fig:0078}
+\end{figure}
+
+证明：三角形的垂心是以三角形的垂足为顶点的三角形的内心。
+\problabels{yellow/平面几何, green/证明题}
+
+\subsection{四点共圆} \label{subsec:0078-circ}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0078-circ}
+  \caption{总第~\ref{sec:0078} 题解法“\nameref{subsec:0078-circ}”图}
+  \label{fig:0078-circ}
+\end{figure}
+
+如图~\ref{fig:0078-circ}，令$\triangle ABC$的垂心为$O$。
+
+由$\angle OPB = \angle ORB = 90^\circ$知$B, P, O, R$四点共圆；由$\angle APB = \angle AQB = 90^\circ$知$A, B, P, Q$四点共圆。
+
+将圆周角定理在两圆中应用，知$\angle APR = \angle ABQ, \angle APQ = \angle ABQ$，故$\angle APQ = \angle APR$。因此，$PO$平分$\angle QPR$。同理可证$QO$平分$\angle RQP$，$RO$平分$\angle PRQ$。
+
+因此$O$是$\triangle PQR$的内心。原命题得证。

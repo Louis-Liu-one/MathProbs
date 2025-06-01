@@ -1,0 +1,59 @@
+
+\prob{0079}{三角形垂心III}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0079}
+  \caption{总第~\ref{sec:0079} 题图} \label{fig:0079}
+\end{figure}
+
+证明：三角形的顶点到垂心的距离是外心到该点所对边的距离的两倍。
+
+\paragraph{数学表述} 如图~\ref{fig:0079}，在$\triangle ABC$中，$H$是垂心，$O$是外心，$O_1, O_2, O_3$分别是$O$在$BC, CA, AB$边上的垂足，求证：$AH = 2OO_1, BH = 2OO_2, CH = 2OO_3$。
+\problabels{yellow/平面几何, green/证明题}
+
+\subsection{平行四边形} \label{subsec:0079-par}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0079-par}
+  \caption{总第~\ref{sec:0079} 题解法“\nameref{subsec:0079-par}”图}
+  \label{fig:0079-par}
+\end{figure}
+
+如图~\ref{fig:0079-par}，在劣弧$BC$上找一点$H_1$，使得$\angle BCH_1 = \angle CBH$；连接$AH_1, BH_1, CH_1$；令$B$在$CA$上的垂足为$P$，$C$在$AB$上的垂足为$Q$。
+
+\begin{align*}
+  \because  {}& BP \perp CA, CQ \perp AB \\
+  \therefore{}& \angle ABH = \angle ACH = 90^\circ - \angle BAC \\
+  \therefore{}& \angle ABH + \angle ACH = 180^\circ - 2\angle BAC \\
+  \because  {}& \angle ABC + \angle ACB = 180^\circ - \angle BAC \\
+  \therefore{}& \angle HBC + \angle HCB = \angle BAC \\
+  \therefore{}& \angle BHC = 180^\circ - \angle BAC \\
+  \because  {}& A, B, H_1, C\text{四点共圆} \\
+  \therefore{}& \angle CH_1B = 180^\circ - \angle BAC = \angle BHC \\
+  \because  {}& \text{在}\triangle BHC\text{与}\triangle CH_1B\text{中，} \\
+  & \begin{cases}
+    \angle BHC = \angle CH_1B \\
+    \angle CBH = \angle BCH_1 \\
+    BC = CB \\
+  \end{cases} \\
+  \therefore{}& \triangle BHC \cong \triangle CH_1B \\
+  \therefore{}& BH = CH_1, CH = BH_1 \\
+  \therefore{}& \text{四边形}BHCH_1\text{是平行四边形} \\
+  \therefore{}& CH_1 \parallel BP \\
+  \therefore{}& \angle ACH_1 = \angle CPB \\
+  \text{又}\because{}& \angle APB = 90^\circ \\
+  \therefore{}& \angle ACH_1 = 90^\circ \\
+  \therefore{}& AH_1\text{是圆的直径} \\
+  \therefore{}& A, O, H_1\text{共线} \\
+  \because  {}& \angle AO_2O = 90^\circ = \angle ACH_1, \\
+  & \angle O_2AO = \angle CAH_1 \\
+  \therefore{}& \triangle O_2AO \sim \triangle CAH_1 \\
+  \therefore{}& \frac{CH_1}{OO_2} = \frac{AC}{AO_2} \\
+  \because  {}& \text{由外心的定义知，}AC = 2AO_2 \\
+  \therefore{}& CH_1 = 2OO_2 \\
+  \therefore{}& BH = 2OO_2 \\
+\end{align*}
+
+同理可证$AH = 2OO_1, CH = 2OO_3$。命题得证。

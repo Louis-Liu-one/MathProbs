@@ -1,0 +1,53 @@
+
+\prob{0048}{特殊的五次方程}
+
+求关于$x$的方程
+
+\[ x^5 + 10x^3 + 20x - 4 = 0 \]
+
+的实数根。
+\problabels{yellow/代数, green/方程相关问题}
+
+\ans{$x = \sqrt[5]8 - \sqrt[5]4$}
+
+\subsection{换元法}
+
+基本思路：通过换元消去三次与一次项，进而求出$x$。
+
+令$x = y - \sfrac2y$，代入原方程得
+
+\begin{align*}
+  \left(y - \frac2y\right)^5 + 10\left(y - \frac2y\right)^3 + 20\left(y - \frac2y\right) - 4 &= 0 \\
+  y^5 - 5y^4\cdot\frac2y + 10y^3\cdot\left(\frac2y\right)^2 - 10y^2\cdot\left(\frac2y\right)^3 \\
+  + 5y\cdot\left(\frac2y\right)^4 - \left(\frac2y\right)^5 + 10y^3 - 10\cdot3y^2\cdot\left(\frac2y\right) \\
+  + 10\cdot3y\cdot\left(\frac2y\right)^2 - 10\left(\frac2y\right)^3 + 20y - 20\frac2y - 4 &= 0 \\
+  y^5 - 10y^3 + 40y - 80\frac1y + 80\frac1{y^3} - 32\frac1{y^5} \\
+  + 10y^3 - 60y + 120\frac1y - 80\frac1{y^3} \\
+  + 20y - 40\frac1y - 4 &= 0 \\
+  y^5 + (-10 + 10)y^3 + (40 - 60 + 20)y \\
+  + (-80 + 120 - 40)\frac1y + (80 - 80)\frac1{y^3} \\
+  - 32\frac1{y^5} - 4 &= 0 \\
+  y^5 - 32\frac1{y^5} - 4 &= 0 \\
+  \left(y^5\right)^2 - 4y^5 - 32 &= 0 \\
+  \left(y^5 - 8\right)\left(y^5 + 4\right) &= 0 \\
+\end{align*}
+
+可知$y^5 = 8$或$y^5 = -4$，即$y = \sqrt[5]8$或$y = -\sqrt[5]4$。
+
+代入$x = y - \sfrac2y$得，当$y = \sqrt[5]8$时，
+
+\begin{align*}
+  x &= \sqrt[5]8 - \frac2{\sqrt[5]8} \\
+  &= \sqrt[5]8 - \sqrt[5]{\frac{2^5}8} \\
+  &= \sqrt[5]8 - \sqrt[5]4 \\
+\end{align*}
+
+同理，当$y = -\sqrt[5]4$时，
+
+\begin{align*}
+  x &= -\sqrt[5]4 + \frac2{\sqrt[5]4} \\
+  &= -\sqrt[5]4 + \sqrt[5]{\frac{2^5}4} \\
+  &= \sqrt[5]8 - \sqrt[5]4 \\
+\end{align*}
+
+综上，方程的实数根为$x = \sqrt[5]8 - \sqrt[5]4$。

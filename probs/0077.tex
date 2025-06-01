@@ -1,0 +1,33 @@
+
+\prob{0077}{三角形垂心I}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0077}
+  \caption{总第~\ref{sec:0077} 题图} \label{fig:0077}
+\end{figure}
+
+证明：三角形的垂心关于三边的对称点都在该三角形的外接圆上。
+\problabels{yellow/平面几何, green/证明题}
+
+\subsection{全等} \label{subsec:0077-eqtri}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0077-eqtri}
+  \caption{总第~\ref{sec:0077} 题解法“\nameref{subsec:0077-eqtri}”图}
+  \label{fig:0077-eqtri}
+\end{figure}
+
+如图~\ref{fig:0077-eqtri}，连接$O_1B$，令$BC$上的垂足为$H$。要证原命题，不妨令$O_1$是$AO$与三角形外接圆的交点，然后证明$O, O_1$关于$BC$对称。
+
+\begin{align*}
+  \because  {}& BO_2 \perp AC \\
+  \therefore{}& \angle O_2BC = 90^\circ - \angle ACB \\
+  \because  {}& AO_1 \perp BC \\
+  \therefore{}& \angle BOH = 90^\circ - \angle O_2BC = \angle ACB \\
+\end{align*}
+
+而由圆周角定理知$\angle BO_1H = \angle ACB$，故$\angle BOH = \angle BO_1H$，由此易知$\triangle BOH \cong \triangle BO_1H$，故$OH = O_1H$。
+
+而$OH \perp BC, O_1H \perp BC$，可知$O, O_1$关于$BC$对称，同理可证$O, O_2$关于$CA$对称，$O, O_3$关于$AB$对称。命题得证。

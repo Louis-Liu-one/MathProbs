@@ -1,0 +1,48 @@
+
+\prob{0085}{勾股数}
+
+证明：若勾股数$a, b, c$互质，则其能表示为如下形式：
+\begin{align*}
+  a &= 2pq \\
+  b &= p^2 - q^2 \\
+  c &= p^2 + q^2
+\end{align*}
+其中$p, q$是互质的正整数，且$p > q$。
+\problabels{yellow/数论, green/证明题}
+
+\subsection{奇偶性分析}
+
+\begin{lemma} \label{lemma:0085-abc}
+  $a, b, c$两两互质。
+\end{lemma}
+
+\begin{proof}
+  由$a^2 + b^2 = c^2$知，$a, b$的公因数是$a, b, c$的公因数，故$a, b$互质；由$a^2 = c^2 - b^2 = (c + b)(c - b)$知，$b, c$的公因数是$a, b, c$的公因数，故$b, c$互质；同理知$a, c$互质，故$a, b, c$两两互质。
+\end{proof}
+
+\begin{lemma} \label{lemma:0085-aboddeven}
+  $a, b$奇偶性不同。
+\end{lemma}
+
+\begin{proof}
+  显然$a, b$不可能均为偶数。$a, b$也不可能同为奇数，这是由于若$a, b$均为奇数，则存在正整数$m, n$，使得$a = 2m + 1, b = 2n + 1$，此时
+  \begin{align*}
+    & c^2 = a^2 + b^2 = (2m + 1)^2 + (2n + 1)^2 \\
+    ={}& 4\left(m^2 + n^2 + m + n\right) + 2 \\
+    \equiv{}& 2 \pmod 4
+  \end{align*}
+  而此时$c$显然为偶数，故$c^2$被4整除，不可能同余2，因此$a, b$不可能同为奇数。
+  故$a, b$必然一奇一偶，即奇偶性不同。
+\end{proof}
+
+由引理~\ref{lemma:0085-aboddeven} 知$a, b$一奇一偶，不妨设$a$为偶数，$b, c$为奇数。与此同时，
+\[ a^2 = c^2 - b^2 = (c + b)(c - b) = 4\cdot\frac{c + b}2\cdot\frac{c - b}2 \]
+设整数$r = \sfrac{c + b}2, s = \sfrac{c - b}2$，于是$r, s$互质。这是由于$r, s$的每个公因数都是$c = r + s$和$b = r - s$的公因数，而由引理~\ref{lemma:0085-abc}，$b, c$互质，故$r, s$互质。而$4rs$是平方数，故$r, s$均为平方数。令$r = p^2, s = q^2$，其中$p, q$是互质的正整数。
+
+代入原式，有
+\begin{align*}
+  a &= 2pq \\
+  b &= p^2 - q^2 \\
+  c &= p^2 + q^2
+\end{align*}
+故$a, b, c$能表示成如上形式。证毕。

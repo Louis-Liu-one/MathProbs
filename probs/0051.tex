@@ -1,0 +1,59 @@
+
+\prob{0051}{三次根式方程}
+
+求关于$x$的方程
+
+\[ \sqrt[3]{x + 1} + \sqrt[3]{x - 1} = \sqrt[3]{5x} \]
+
+的实数根。
+\problabels{yellow/代数, green/方程相关问题}
+
+\ans{$x = 0$或$x = \pm\sfrac{\sqrt5}2$}
+
+\subsection{换元法}
+
+基本思路：换元后通过一系列代数变换求解。
+
+设$a = \sqrt[3]{x + 1}, b = \sqrt[3]{x - 1}$，则
+
+\begin{align*}
+  x &= \frac{a^3 + b^3}2 \\
+  \sqrt[3]{5x} &= \sqrt[3]{\frac52}\sqrt[3]{a^3 + b^3} \\
+  \sqrt[3]2(a + b) &= \sqrt[3]5\sqrt[3]{a^3 + b^3} \\
+  2(a + b)^3 &= 5(a^3 + b^3) \\
+  2a^3 + 2b^3 + 6a^2b + 6ab^2 &= 5a^3 + 5b^3 \\
+  a^3 + b^3 - 2a^2b - 2ab^2 &= 0 \\
+  \frac{a^3}{b^3} + 1 - 2\frac{a^2}{b^2} - 2\frac ab &= 0 \\
+  \left(\frac ab\right)^3 - 2\left(\frac ab\right)^2 - 2\frac ab + 1 &= 0 \\
+\end{align*}
+
+令$y = \sfrac ab$，则
+
+\begin{align*}
+  y^3 - 2y^2 - 2y + 1 &= 0 \\
+  y^3 - 3y^2 + y + y^2 - 3y + 1 &= 0 \\
+  y(y^2 - 3y + 1) + y^2 - 3y + 1 &= 0 \\
+  (y + 1)(y^2 - 3y + 1) &= 0 \\
+  (y + 1)\left(y - \frac{3 + \sqrt5}2\right)\left(y - \frac{3 - \sqrt5}2\right) &= 0 \\
+\end{align*}
+
+故$\sfrac ab = -1$或$\sfrac ab = \sfrac{3 \pm\sqrt5}2$。
+
+当$\sfrac ab = -1$时，
+
+\begin{align*}
+  \frac{\sqrt[3]{x + 1}}{\sqrt[3]{x - 1}} &= -1 \\
+  \frac{x + 1}{x - 1} &= -1 \\
+  x + 1 &= 1 - x \\
+  x &= 0 \\
+\end{align*}
+
+当$\sfrac ab = \sfrac{3 \pm\sqrt5}2$时，
+
+\begin{align*}
+  \frac{\sqrt[3]{x + 1}}{\sqrt[3]{x - 1}} &= \frac{3 \pm\sqrt5}2 \\
+  \frac{x + 1}{x - 1} &= 9 \pm4\sqrt5 \\
+  x &= \pm\frac{\sqrt5}2 \\
+\end{align*}
+
+综上，原方程实数根为$x = 0$或$x = \pm\sfrac{\sqrt5}2$。

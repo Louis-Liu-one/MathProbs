@@ -1,0 +1,28 @@
+
+\prob{0096}{任务分配}
+
+$n$个任务要分给$n$个员工，每个员工分到一个任务。给员工和任务编号为$1 \dots n$，员工$i$处理任务$j$的所需时间为$a_ib_j$，其中$a_i, b_j$是已知数，总时间为每个员工的处理时间之和。若$a, b$分别为$a_i, b_i$的平均值，则总时间有没有可能不超过$nab$？说明理由。
+\problabels{yellow/数学谜题}
+
+\ans{有可能；理由略。}
+
+\subsection{总时间的平均值}
+
+对于某种任务分配方式，可以将其表示为一函数$f$，表示方法为员工$f(j)$分到任务$j$。若$T(f)$表示分配方式$f$的总时间，则由题知
+\[ T(f) = \sum_{j = 1}^n a_{f(j)}b_j \]
+
+显然分配方式$f$一共有$n!$个，分别是$f_1, f_2, \dots, f_{n!}$。对于每个$f$，有一个总时间$T(f)$，则可以求出所有$T(f)$的平均值为
+\begin{align*}
+  T &= \frac1{n!}\sum_{i = 1}^{n!} T(f_i) = \frac1{n!}\sum_{i = 1}^{n!} \sum_{j = 1}^n a_{f_i(j)}b_j \\
+  &= \frac1{n!}\sum_{j = 1}^n \sum_{i = 1}^{n!} a_{f_i(j)}b_j = \frac1{n!}\sum_{j = 1}^n \left(b_j \sum_{i = 1}^{n!} a_{f_i(j)}\right)
+\end{align*}
+对于某个$j$，考虑$\sum_{i = 1}^{n!} a_{f_i(j)}$。显然，对于某个$k$，存在$(n - 1)!$个$i$，使得$f_i(j) = k$，于是易知
+\[ \sum_{i = 1}^{n!} a_{f_i(j)} = (n - 1)! \sum_{k = 1}^n a_k \]
+于是
+\begin{align*}
+  T &= \frac1{n!}\sum_{j = 1}^n \left(b_j(n - 1)! \sum_{k = 1}^n a_k\right) \\
+  &= \frac1n\sum_{j = 1}^n \left(b_j \sum_{k = 1}^n a_k\right) \\
+  &= \frac1n\left(\sum_{j = 1}^n b_j\right)\left(\sum_{k = 1}^n a_k\right) = nab
+\end{align*}
+
+由上可知，分配方式的平均总时间为$nab$，故必然存在某个分配方式$f$，使得$T(f) \le nab$。
