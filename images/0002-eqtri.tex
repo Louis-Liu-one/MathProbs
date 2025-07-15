@@ -1,0 +1,22 @@
+
+\begin{tikzpicture}[scale=3,
+    ang/.style n args={1}{mark angle={#1}{5mm}{1.2}}]
+  \coordinate[label=right:$C$] (C) at (0,0);
+  \coordinate[label=above:$D$] (D) at (140:{sin(80)});
+  \coordinate[label=above right:$B$] (B) at ({-sin(60)},0);
+  \coordinate[label=left:$A$] (A) at ({-sin(60)-sin(80)},0);
+  \coordinate[label=below:$E$] (E) at ($ (D)!1! -60:(C) $);
+  \coordinate[label=above:$F$] (F) at ($ (E)!1! 20:(B) $);
+  \pic[ang=red, "$60^\circ$"] {angle=B--D--C};
+  \pic[ang=red, "$40^\circ$"] {angle=D--C--B};
+  \pic[ang=lime, "$30^\circ$"] {angle=B--A--D};
+  \pic[ang=cyan, "$20^\circ$"] {angle=D--E--F};
+  \pic[ang=red, "$60^\circ$"] {angle=F--E--A};
+  \pic[ang=red, "$60^\circ$"] {angle=C--E--D};
+  \pic[ang=red, "$20^\circ$"] {angle=A--C--E};
+  \fill[opafill=cyan] (C) -- (D) -- (E) -- cycle;
+  \draw (A) -- (C) -- (D) -- cycle (B) -- (D);
+  \draw[blue] (C) -- (D) -- (B) -- (A);
+  \draw[dashed, blue] (A) -- (E) -- (C) (B) -- (E);
+  \draw[dashed] (E) -- (F);
+\end{tikzpicture}

@@ -1,0 +1,25 @@
+
+\prob{003E}{无限嵌套根式}
+
+求$\sqrt{2 + \sqrt{2 + \sqrt\cdots}}$。
+\problabels{yellow/代数, green/代数求值问题}
+
+\ans{$\sqrt{2 + \sqrt{2 + \sqrt\cdots}} = 2$}
+
+\subsection{一元二次方程}
+
+基本思路：设$x$为待求值，然后列一元二次方程求解$x$的值。
+
+设$x = \sqrt{2 + \sqrt{2 + \sqrt\cdots}}$，可知
+
+\begin{align*}
+  x &= \sqrt{2 + \sqrt{2 + \sqrt\cdots}} \\
+  x^2 &= 2 + \sqrt{2 + \sqrt{2 + \sqrt\cdots}} \\
+  x^2 - 2 &= \sqrt{2 + \sqrt{2 + \sqrt\cdots}} \\
+  x^2 - 2 &= x \\
+  x^2 - x - 2 &= 0 \\
+\end{align*}
+
+是一个一元二次方程。解得$x = 2$或$x = -1$。又由于$x > 0$，所以$x = 2$。
+
+综上，$\sqrt{2 + \sqrt{2 + \sqrt\cdots}} = 2$。

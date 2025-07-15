@@ -1,0 +1,102 @@
+
+\prob{006F}{线段比例II}
+
+\begin{figure}[htbp]
+  \centering
+  \image{006F}
+  \caption{006F：线段比例II} \label{fig:006F}
+\end{figure}
+
+如图~\ref{fig:006F}，在$\triangle ABC$中，$D$是$AB$的中点，$E$在$CD$上且$CE:DE = 1:3$，延长$AE$与$BC$交于点$F$，求$CF:BF$。
+\problabels{yellow/平面几何, green/长度问题}
+
+\ans{$CF:BF = 1:6$}
+
+\subsection{作过$D$的平行线} \label{subsec:006F-parD}
+
+基本思路：作过$D$的平行线，然后通过平行线等比例分线段的性质求解。
+
+\begin{figure}[htbp]
+  \centering
+  \image{006F-parD}
+  \caption{\nameref{subsec:006F-parD}：平行线等比例分线段。}
+  \label{fig:006F-parD}
+\end{figure}
+
+如图~\ref{fig:006F-parD}，作$DG \parallel AF$交$BC$于点$G$。
+
+\begin{align*}
+  \because  {}& AF \parallel DG \\
+  \therefore{}& AD:BD = FG:BG \\
+  \because  {}& D\text{是}AB\text{的中点} \\
+  \therefore{}& AD = BD \\
+  \therefore{}& BG = FG \\
+  \text{又}\because{}& EF \parallel DG \\
+  \therefore{}& CE:DE = CF:FG \\
+  \because  {}& CE:DE = 1:3 \\
+  \therefore{}& CF:FG = 1:3 \\
+  \therefore{}& CF:FG:BG = 1:3:3 \\
+  \therefore{}& CF:BF = 1:6 \\
+\end{align*}
+
+综上，$CF:BF = 1:6$。
+
+\subsection{作过$B$的平行线} \label{subsec:006F-parB}
+
+基本思路：作过$B$的平行线，然后通过平行线等比例分线段的性质求解。
+
+\begin{figure}[htbp]
+  \centering
+  \image{006F-parB}
+  \caption{\nameref{subsec:006F-parB}：平行线等比例分线段。}
+  \label{fig:006F-parB}
+\end{figure}
+
+如图~\ref{fig:006F-parB}，作$BG \parallel AF$交$CD$的延长线于点$G$。
+
+\begin{align*}
+  \because  {}& BG \parallel AE \\
+  \therefore{}& \angle AED = \angle G \\
+  \because  {}& D\text{是}AB\text{的中点} \\
+  \therefore{}& AD = BD \\
+  \because  {}& \text{在}\triangle ADE\text{与}\triangle BDG\text{中，} \\
+  & \begin{cases}
+    \angle AED = \angle G \\
+    \angle ADE = \angle BDG \\
+    AD = BD \\
+  \end{cases} \\
+  \therefore{}& \triangle ADE \cong \triangle BDG \\
+  \therefore{}& GE = 2DE \\
+  \because  {}& CE:DE = 1:3 \\
+  \therefore{}& CE:GE = 1:6 \\
+  \text{又}\because{}& BG \parallel EF \\
+  \therefore{}& CF:BF = CE:GE = 1:6 \\
+\end{align*}
+
+综上，$CF:BF = 1:6$。
+
+\subsection{等面积法} \label{subsec:006F-S}
+
+基本思路：运用等面积法得出$S_{\triangle ABE}:S_{\triangle ACE}$，进而求出$CF:BF$。
+
+\begin{figure}[htbp]
+  \centering
+  \image{006F-S}
+  \caption{\nameref{subsec:006F-S}：求$S_{\triangle ABE}:S_{\triangle ACE}$。}
+  \label{fig:006F-S}
+\end{figure}
+
+如图~\ref{fig:006F-S}，连接$BE$。设$S = S_{\triangle ACE}$。
+
+\begin{align*}
+  \because  {}& CE:DE = 1:3 \\
+  \therefore{}& DE = 3CE \\
+  \therefore{}& S_{\triangle ADE} = 3S \\
+  \because  {}& D\text{是}AB\text{的中点} \\
+  \therefore{}& S_{\triangle ADE} = S_{\triangle BDE} \\
+  \therefore{}& S_{\triangle ABE} = 6S \\
+  \therefore{}& S_{\triangle ABE}:S_{\triangle ACE} = 1:6 \\
+  \therefore{}& CF:BF = 1:6 \\
+\end{align*}
+
+综上，$CF:BF = 1:6$。

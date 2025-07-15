@@ -1,0 +1,159 @@
+
+\prob{0022}{一元三次方程}
+
+推导标准一元三次方程$ax^3 + bx^2 + cx + d = 0\quad(a \ne0)$的求根公式。
+\problabels{yellow/代数, green/方程相关问题}
+
+\ans{参见解法末尾。}
+
+\subsection{换元法}
+
+基本思路：经过多次换元依次消去二次项和一次项，进而得出求根公式。
+
+\subsubsection{消去二次项}
+
+为了消去二次项，令$x = y + s$，$y$为未知数，则
+
+\begin{align*}
+  a(y + s)^3 + b(y + s)^2 + c(y + s) + d &= 0 \\
+  ay^3 + (3as + b)y^2 + (3as^2 + 2bs + c)y & \\
+  + (as^3 + bs^2 + cs + d) &= 0 \\
+\end{align*}
+
+若要消去二次项，则必须使$3as + b = 0$，此时$s = -\sfrac b{3a}$。因此令$s = -\sfrac b{3a}$，于是$y = x - \sfrac b{3a}$，则
+
+\begin{align*}
+  ay^3 + \left(-\frac{b^2}{3a} + c\right)y + \left(\frac{2b^3}{27a^2} - \frac{bc}{3a} + d\right) &= 0 \\
+  y^3 + \left(-\frac{b^2}{3a^2} + \frac ca\right)y + \left(\frac{2b^3}{27a^3} - \frac{bc}{3a^2} + \frac da\right) &= 0 \\
+\end{align*}
+
+令
+
+\begin{align*}
+  p &= -\frac{b^2}{3a^2} + \frac ca \\
+  q &= \frac{2b^3}{27a^3} - \frac{bc}{3a^2} + \frac da \\
+\end{align*}
+
+则可得不含二次项的一元三次方程
+
+\[ y^3 + py + q = 0 \]
+
+\subsubsection{消去一次项}
+
+为了消去一次项，令$y = z + \sfrac tz$，$z$为未知数，则
+
+\begin{align*}
+  \left(z + \frac tz\right)^3 + p\left(z + \frac tz\right) + q &= 0 \\
+  z^3 + (3t + p)z + q + \frac{3t^2 + pt}z + \frac{t^3}{z^3} &= 0 \\
+\end{align*}
+
+此时，为了消去一次项，必须使$3t + p = 0$，此时$t = -\sfrac p3$。因此令$t = -\sfrac p3$，则
+
+\begin{align*}
+  y &= z - \frac p{3z} \\
+  z^3 - \frac{p^3}{27z^3} + q &= 0 \\
+\end{align*}
+
+值得注意的是，此时$\sfrac 1z$项也被消去了。
+
+\subsubsection{得出求根公式}
+
+将上述等式两边同时乘以$z^3$，可得
+
+\[ (z^3)^2 + qz^3 - \frac{p^3}{27} = 0 \]
+
+解一元二次方程得
+
+\begin{align*}
+  z^3 &= \frac12\left(-q\pm\sqrt{q^2 + \frac{4p^3}{27}}\right) \\
+  &= -\frac q2 \pm\sqrt{\frac{p^3}{27} + \frac{q^2}4} \\
+\end{align*}
+
+开三次根号可得6个$z$：
+
+\begin{align*}
+  \begin{cases}
+    z_{1,2} = \sqrt[3]{-\sfrac q2 \pm\sqrt{\sfrac{p^3}{27} + \sfrac{q^2}4}} \\
+    z_{3,4} = \omega\sqrt[3]{-\sfrac q2 \pm\sqrt{\sfrac{p^3}{27} + \sfrac{q^2}4}} \\
+    z_{5,6} = \omega^2\sqrt[3]{-\sfrac q2 \pm\sqrt{\sfrac{p^3}{27} + \sfrac{q^2}4}} \\
+  \end{cases}
+\end{align*}
+
+其中
+
+\[ \omega = -\frac12 + \frac{\sqrt3}2\mathi \]
+
+由于
+
+\begin{align*}
+  &\phantom{=} \sqrt[3]{-\frac q2 + \sqrt{\frac{p^3}{27} + \frac{q^2}4}}\cdot\sqrt[3]{-\frac q2 - \sqrt{\frac{p^3}{27} + \frac{q^2}4}} \\
+  &= \sqrt[3]{\left(-\frac q2 + \sqrt{\frac{p^3}{27} + \frac{q^2}4}\right)\left(-\frac q2 - \sqrt{\sfrac{p^3}{27} + \frac{q^2}4}\right)} \\
+  &= \sqrt[3]{\left(-\frac q2\right)^2 - \left(\frac{p^3}{27} + \frac{q^2}4\right)} \\
+  &= \sqrt[3]{\frac{n^2}4 + \frac{p^3}{27} - \frac{q^2}4} \\
+  &= -\frac p3 \\
+\end{align*}
+
+又因为
+
+\[ \omega^0 = \omega^3 = \omega^6 = \dots = 1 \]
+
+所以
+
+\[ z_1z_2 = z_3z_6 = z_4z_5 = -\frac p3 \]
+
+又由于
+
+\[ y = z - \frac p{3z} = z + \left(-\frac p3\right)\cdot\frac 1z \]
+
+所以将$z = z_{1,2}$代入$y = z - \sfrac p{3z}$，可得$y$的一个解为
+
+\begin{align*}
+  y_1 &= z_1 + \left(-\frac p3\right)\cdot\frac 1{z_1} \\
+  &= z_1 + z_1z_2\cdot\frac 1{z_1} = z_1 + z_2 \\
+  y_1 &= z_2 + \left(-\frac p3\right)\cdot\frac 1{z_1} \\
+  &= z_2 + z_1z_2\cdot\frac 1{z_1} = z_2 + z_1 \\
+\end{align*}
+
+同理可得
+
+\begin{align*}
+  \begin{cases}
+    y_1 = z_1 + z_2 \\
+    y_2 = z_3 + z_6 \\
+    y_3 = z_4 + z_5 \\
+  \end{cases}
+\end{align*}
+
+即
+
+\begin{align*}
+  \begin{cases}
+    y_1 = \sqrt[3]{-\sfrac q2 + \sqrt{\sfrac{p^3}{27} + \sfrac{q^2}4}} \\
+    \phantom{y_1} + \sqrt[3]{-\sfrac q2 - \sqrt{\sfrac{p^3}{27} + \sfrac{q^2}4}} \\
+    y_2 = \omega\sqrt[3]{-\sfrac q2 + \sqrt{\sfrac{p^3}{27} + \sfrac{q^2}4}} \\
+    \phantom{y_2} + \omega^2\sqrt[3]{-\sfrac q2 - \sqrt{\sfrac{p^3}{27} + \sfrac{q^2}4}} \\
+    y_3 = \omega^2\sqrt[3]{-\sfrac q2 + \sqrt{\sfrac{p^3}{27} + \sfrac{q^2}4}} \\
+    \phantom{y_3} + \omega\sqrt[3]{-\sfrac q2 - \sqrt{\sfrac{p^3}{27} + \sfrac{q^2}4}} \\
+  \end{cases}
+\end{align*}
+
+将$y_{1,2,3}$分别代入$x = y - \sfrac b{3a}$即可得求根公式
+
+\begin{align*}
+  \begin{cases}
+    x_1 = \sqrt[3]{-\sfrac q2 + \sqrt{\sfrac{p^3}{27} + \sfrac{q^2}4}} \\
+    \phantom{x_1} + \sqrt[3]{-\sfrac q2 - \sqrt{\sfrac{p^3}{27} + \sfrac{q^2}4}} - \sfrac b{3a} \\
+    x_2 = \omega\sqrt[3]{-\sfrac q2 + \sqrt{\sfrac{p^3}{27} + \sfrac{q^2}4}} \\
+    \phantom{x_2} + \omega^2\sqrt[3]{-\sfrac q2 - \sqrt{\sfrac{p^3}{27} + \sfrac{q^2}4}} - \sfrac b{3a} \\
+    x_3 = \omega^2\sqrt[3]{-\sfrac q2 + \sqrt{\sfrac{p^3}{27} + \sfrac{q^2}4}} \\
+    \phantom{x_3} + \omega\sqrt[3]{-\sfrac q2 - \sqrt{\sfrac{p^3}{27} + \sfrac{q^2}4}} - \sfrac b{3a} \\
+  \end{cases}
+\end{align*}
+
+其中
+
+\begin{align*}
+  p &= -\frac{b^2}{3a^2} + \frac ca \\
+  q &= \frac{2b^3}{27a^3} - \frac{bc}{3a^2} + \frac da \\
+  \omega &= -\frac12 + \frac{\sqrt3}2\mathi \\
+\end{align*}

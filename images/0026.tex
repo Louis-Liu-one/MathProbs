@@ -1,0 +1,14 @@
+
+\begin{tikzpicture}[scale=2.4]
+  \coordinate[label=above:$A$] (A) at (75:1);
+  \coordinate[label=below:$B$] (B) at (-120:1);
+  \coordinate[label=below:$C$] (C) at (-50:1);
+  \coordinate[label=below:$O$] (O) at (0,0);
+  \coordinate[label=left:$P_1$] (P1) at ($ (C)!1! 90:(O) $);
+  \coordinate[label=right:$P_2$] (P2) at ($ (P1)!2!(C) $);
+  \pic[mark angle={blue}{3mm}{1}] {angle=B--A--C};
+  \pic[mark angle={blue}{3mm}{1}] {angle=B--C--P1};
+  \fill (O) circle (.5pt);
+  \draw (O) circle (1)
+      (B) -- (A) (A) -- (C) (C) -- (B) (P1) -- (P2);
+\end{tikzpicture}

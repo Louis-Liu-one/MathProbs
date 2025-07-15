@@ -1,0 +1,10 @@
+
+\begin{tikzpicture}
+  \coordinate[label=below:$A$] (A) at (-3,0);
+  \coordinate[label=below:$B$] (B) at (2,0);
+  \coordinate[label=above:$C$] (C) at (0,4);
+  \coordinate[label=below:$D$] (D) at ($ (A)!.5!(B) $);
+  \coordinate[label=right:$E$] (E) at ($ (C)!1/4!(D) $);
+  \coordinate[label=right:$F$] (F) at ($ (C)!1/7!(B) $);
+  \draw (A) -- (B) -- (C) -- cycle (C) -- (D) (A) -- (F);
+\end{tikzpicture}

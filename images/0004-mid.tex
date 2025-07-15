@@ -1,0 +1,14 @@
+
+\begin{tikzpicture}[scale=.8]
+  \coordinate[label=below right:$F$] (F) at (0,0);
+  \coordinate[label=left:$A$] (A) at (-150:5);
+  \coordinate[label=right:$E$] (E) at (30:2);
+  \coordinate[label=above:$B$] (B) at ($ (E)!1! -100:(F) $);
+  \coordinate[label=below:$C$] (C) at ($ (B)!5/2!(E) $);
+  \coordinate[label=below right:$D$] (D) at ($ (A)!1/2!(C) $);
+  \coordinate[label=below:$B'$] (B') at ($ (B)!2!(D) $);
+  \draw (A) -- (B) -- node[right] {$2$} (E) -- node[right] {$3$} (C) -- cycle -- node[above] {$5$} (F) -- node[above] {$2$} (E) (B) -- (D);
+  \draw[dashed] (D) -- (B') -- node[left] {$5$} (A);
+  \fill[opafill=green] (A) -- (F) -- (B');
+  \fill[opafill=red] (A) -- (D) -- (B') (C) -- (D) -- (B);
+\end{tikzpicture}

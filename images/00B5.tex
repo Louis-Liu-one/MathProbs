@@ -1,0 +1,16 @@
+
+\begin{tikzpicture}[scale=.5]
+  \tkzDefPoints{-3/0/A,5/0/B,0/6/C,
+    {5+sqrt(61)/3}/0/D,{-3-sqrt(34)/3}/0/E}
+  \tkzDefTriangleCenter(A,C,D) \tkzGetPoint{O_1}
+  \tkzDefTriangleCenter(B,C,E) \tkzGetPoint{O_2}
+  \tkzInterLL(O_1,O_2)(A,C)    \tkzGetPoint{P}
+  \tkzInterLL(O_1,O_2)(B,C)    \tkzGetPoint{Q}
+  \tkzDrawPolygon(C,D,E)
+  \tkzDrawSegments(A,C B,C P,Q)
+  \tkzDrawPoints(A,B,C,D,E,O_1,O_2,P,Q)
+  \tkzLabelPoints[below](A,B,D,E)
+  \tkzLabelPoints[above](C,O_1,O_2)
+  \tkzLabelPoints[left](P)
+  \tkzLabelPoints[right](Q)
+\end{tikzpicture}

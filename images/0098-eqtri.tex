@@ -1,0 +1,34 @@
+
+\begin{tikzpicture}[scale=.7]
+  \tkzDefPoints{-2/1/A,3/1/B,-1/4/C}
+  \tkzDefMidPoint(A,B) \tkzGetPoint{D}
+  \tkzInterLC[R](C,A)(D,5) \tkzGetSecondPoint{E}
+  \tkzInterLC[R](C,B)(D,5) \tkzGetFirstPoint{F}
+  \tkzDefLine[orthogonal=through E](C,A) \tkzGetPoint{e}
+  \tkzDefLine[orthogonal=through F](C,B) \tkzGetPoint{f}
+  \tkzInterLL(E,e)(F,f) \tkzGetPoint{P}
+  \tkzDefMidPoint(A,P) \tkzGetPoint{M}
+  \tkzDefMidPoint(B,P) \tkzGetPoint{N}
+  \tkzFillPolygon[color=cyan!20](D,M,E)
+  \tkzFillPolygon[color=cyan!20](D,N,F)
+  \tkzDrawPoints(A,B,C,D,E,F,P,M,N)
+  \tkzDrawPolygon(A,B,C)
+  \tkzDrawSegments(A,E B,F E,P F,P A,P B,P D,E D,F)
+  \tkzDrawSegments[dashed](D,M D,N E,M F,N)
+  \tkzLabelPoint[left](A){$A$}
+  \tkzLabelPoint[above](B){$B$}
+  \tkzLabelPoint[above](C){$C$}
+  \tkzLabelPoint[above](D){$D$}
+  \tkzLabelPoint[left](E){$E$}
+  \tkzLabelPoint[right](F){$F$}
+  \tkzLabelPoint[below](P){$P$}
+  \tkzLabelPoint[right](M){$M$}
+  \tkzLabelPoint[left](N){$N$}
+  \tkzMarkSegments[color=teal,mark=|](D,E D,F)
+  \tkzMarkSegments[color=cyan,mark=||](E,M D,N A,M P,M)
+  \tkzMarkSegments[color=blue,mark=|||](F,N D,M B,N P,N)
+  \tkzMarkAngle[mkcolor=blue,mark=x](E,A,P)
+  \tkzMarkAngle[mkcolor=blue,mark=x](P,B,F)
+  \tkzMarkRightAngle(P,E,A)
+  \tkzMarkRightAngle(B,F,P)
+\end{tikzpicture}

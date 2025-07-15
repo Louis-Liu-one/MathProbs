@@ -1,0 +1,21 @@
+
+\prob{00B0}{轮换立方和}
+
+对于正实数$a, b, c$，若$abc = 1$，求证：
+\[ (a + b)^3 + (b + c)^3 + (c + a)^3 \ge 24 \]
+当且仅当$a = b = c = 1$时等号成立。
+\problabels{yellow/代数, green/证明题}
+
+\emph{LTY提供的题目。}
+
+\subsection{均值不等式}
+
+由均值不等式得
+\begin{align*}
+  & (a + b)^3 + (b + c)^3 + (c + a)^3 \\
+  \ge{}& 3\sqrt[3]{(a + b)^3(b + c)^3(c + a)^3} \\
+  ={}& 3(a + b)(b + c)(c + a) \\
+  \ge{}& 3\cdot2\sqrt{ab}\cdot2\sqrt{bc}\cdot2\sqrt{ca} \\
+  ={}& 24abc = 24
+\end{align*}
+当且仅当$a = b = c = 1$时等号成立。证毕。

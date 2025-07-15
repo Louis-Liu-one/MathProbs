@@ -1,0 +1,53 @@
+
+\begin{tikzpicture}[scale=.6]
+  \clip (-1,-7.5) rectangle (10,5);
+  \def\Ax{0} \def\Ay{0} \def\Bx{7} \def\By{0} \def\Cx{5} \def\Cy{4}
+  \coordinate[label=left:$A$] (A) at (\Ax,\Ay);
+  \coordinate[label=above right:$B$] (B) at (\Bx,\By);
+  \coordinate[label=above:$C$] (C) at (\Cx,\Cy);
+  \coordinate (Dbisector) at
+    ({\calcbisectorx\Bx\By\Ax\Ay\Cx\Cy}, {\calcbisectory\Bx\By\Ax\Ay\Cx\Cy});
+  \coordinate (Ebisector) at
+    ({\calcbisectorx\Ax\Ay\Bx\By\Cx\Cy}, {\calcbisectory\Ax\Ay\Bx\By\Cx\Cy});
+  \path[name path=OA] (A) -- (Dbisector);
+  \path[name path=OB] (B) -- (Ebisector);
+  \path[name intersections={of=OA and OB}]
+    coordinate[label=above right:$O$] (O) at (intersection-1);
+  \coordinate[label=right:$D$] (D) at ($ (B)!(O)!(C) $);
+  \coordinate[label=above:$E$] (E) at ($ (A)!(O)!(C) $);
+  \coordinate[label=below:$F$] (F) at ($ (A)!(O)!(B) $);
+  \coordinate[label=right:$M$] (M) at ({(7+sqrt(41))/2+sqrt(5)},0);
+  \path[name path=BN] (B) -- ($ (B)!1! 90:(A) $);
+  \path[name path=ON] (O) -- ($ (O)!2! 90:(A) $);
+  \path[name intersections={of=BN and ON}]
+    coordinate[label=below:$N$] (N) at (intersection-1);
+  \path[name path=AB] (A) -- (B);
+  \path[name intersections={of=ON and AB}]
+    coordinate[label=below right:$L$] (L) at (intersection-1);
+  \pic[mark angle={green}{2mm}{1}] {right angle=A--B--N};
+  \pic[mark angle={green}{2mm}{1}] {right angle=O--F--A};
+  \pic[mark angle={green}{2mm}{1}] {right angle=C--D--O};
+  \pic[mark angle={green}{2mm}{1}] {right angle=O--E--C};
+  \pic[mark angle={green}{2mm}{1}] {right angle=A--O--N};
+  \pic[mark angle={red}{3mm}{1}] {angle=O--B--A};
+  \pic[mark angle={red}{3mm}{1}] {angle=O--N--A};
+  \pic[mark angle={blue}{3mm}{1}] {angle=A--C--O};
+  \pic[mark angle={blue}{3mm}{1}] {angle=N--A--B};
+  \draw (A) -- node[below] {$x$} (F)
+    -- node[above, inner sep=.2pt] {\footnotesize $h$} (L)
+    -- node[above, inner sep=.2pt] {\footnotesize $y - h$} (B)
+    -- node[right] {$y$} (D) -- node[right] {$z$} (C)
+    -- node[above] {$z$} (E) -- node[above] {$x$} cycle;
+  \foreach \dot/\labelpos in {D/below,E/below left,F/left}
+    {\draw[dashed] (O) -- node[\labelpos, inner sep=.2pt]
+      {\footnotesize $r$} (\dot);}
+  \fill (M) circle (1.3pt);
+  \draw[dashed] (O) -- (C) (B) -- node[below] {$z$} (M) (O) -- (N);
+  \draw[densely dash dot, thick, teal] (O) -- (A) (O) -- (B)
+    (A) -- (N) (B) -- (N);
+  \node[draw, dashed, circle through=(D)] at (O) {};
+  \node[draw=teal, thick, densely dashed, circle through=(A)]
+    at ($ (A)!1/2!(N) $) {};
+  \fill[opafill=cyan] (A) -- (B) -- (N) -- cycle
+    (C) -- (E) -- (O) -- cycle;
+\end{tikzpicture}

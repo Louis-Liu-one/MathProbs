@@ -1,0 +1,33 @@
+
+\prob{00B5}{双外心等腰}
+
+\begin{figure}[htbp]
+  \centering \image{00B5}
+  \caption{总第~\ref{sec:00B5} 题} \label{fig:00B5}
+\end{figure}
+
+如图~\ref{fig:00B5}，有$\triangle ABC$；延长$AB$至$D$、$BA$至$E$，使得
+\[ \frac{AC}{BC} = \frac{AE}{BD} \]
+连接$CD, CE$；作$\triangle ACD$与$\triangle BCE$的外心$O_1, O_2$；作直线$O_1O_2$分别与$AC, BC$交于$P, Q$。求证：$CP = CQ$。
+\problabels{yellow/平面几何, green/证明题}
+
+\emph{LTY提供的题目。}
+
+\subsection{相交弦定理} \label{subsec:00B5-cc}
+
+\begin{figure}[htbp]
+  \centering \image{00B5-cc}
+  \caption{方法~\ref{subsec:00B5-cc} 图} \label{fig:00B5-cc}
+\end{figure}
+
+如图~\ref{fig:00B5-cc}，作$\triangle ACD$与$\triangle BCE$的外接圆$\odot O_1, \odot O_2$，两圆相交于$C, C'$；连接$C, C'$，交$AB$于点$K$。显然$CC' \perp PQ$。
+
+由相交弦定理有
+\begin{align*}
+  & BK\cdot EK = CK\cdot C'K = AK \cdot DK \\
+  \Rightarrow{}& BK\cdot(AE + AK) = AK\cdot(BD + BK) \\
+  \Rightarrow{}& BK\cdot AE = AK\cdot BD \Rightarrow \frac{AK}{BK} = \frac{AE}{BD} = \frac{AC}{BC}
+\end{align*}
+由角平分线定理逆定理知$CK$平分$\angle PCQ$，而$CK \perp PQ$，由三线合一知$CP = CQ$。
+
+证毕。

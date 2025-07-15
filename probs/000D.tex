@@ -1,0 +1,90 @@
+
+\prob{000D}{平行于角平分线}
+
+\begin{figure}[htbp]
+  \centering
+  \image{000D}
+  \caption{000D：平行于角平分线} \label{fig:000D}
+\end{figure}
+
+如图~\ref{fig:000D}，在任意三角形$ABC$中，$D$在线段$BC$上且$AD$平分$\angle BAC$，$Q$是线段$BC$的中点，$P$在线段$AC$上且$PQ \parallel AD$，求$AB$、$AP$与$CP$的数量关系。
+\problabels{yellow/平面几何, green/数量关系问题}
+
+\ans{$AB + AP = CP$}
+
+\subsection{倍长“中线”} \label{subsec:000D-mid}
+
+\begin{figure}[htbp]
+  \centering
+  \image{000D-mid}
+  \caption{\nameref{subsec:000D-mid}：运用倍长中线的思想构造8形全等，从而找出一个平行四边形和一个等腰三角形，将三条线段拼在一起。}
+  \label{fig:000D-mid}
+\end{figure}
+
+基本思路：构造8形全等从而构造出一个平行四边形，将三条线段拼在一起。
+
+如图~\ref{fig:000D-mid}，延长$PQ$到$P'$使得$PQ = P'Q$，连接$BP'$，与$AD$的延长线交于$A'$。
+
+\begin{align*}
+  &\because   Q\text{是线段}BC\text{的中点} \\
+  &\therefore BQ = CQ \\
+  &\because   \text{在}\triangle CPQ\text{与}\triangle BP'Q\text{中} \\
+  &\mathalignsep \begin{cases}
+    CQ = BQ \\
+    \angle CQP = \angle BQP' \\
+    PQ = P'Q \\
+  \end{cases} \\
+  &\therefore \triangle CPQ \cong \triangle BP'Q \\
+  &\therefore CP = BP', \angle P' = \angle CPP' \\
+  &\therefore AC \parallel BP' \\
+  &\therefore \angle A'AC = \angle AA'B \\
+  &\because   AD\text{平分}\angle BAC \\
+  &\therefore \angle A'AC = \angle A'AB \\
+  &\therefore \angle A'AB = \angle AA'B \\
+  &\therefore AB = A'B \\
+  \text{又}&\because AA' \parallel PP', AC \parallel BP' \\
+  &\therefore \text{四边形}A'APP'\text{为平行四边形} \\
+  &\therefore AP = A'P' \\
+  &\because   A'B + A'P' = BP' \\
+  &\therefore AB + AP = CP \\
+\end{align*}
+
+综上，$AB$、$AP$与$CP$的数量关系为$AB + AP = CP$。
+
+\subsection{角平分线定理}
+
+基本思路：通过角平分线定理以及中点、平行等线段的比例关系推出$AB$、$AP$与$CP$的数量关系。
+
+根据角平分线、中点、平行三个条件可以列出方程组
+
+\[ \begin{cases}
+  \sfrac{AB}{BD} = \sfrac{CP + AP}{CQ + DQ} \\
+  BD + DQ = CQ \\
+  \sfrac{CP}{AP} = \sfrac{CQ}{DQ} \\
+\end{cases} \]
+
+可得
+
+\[ \frac{AB}{CQ - DQ} = \frac{CP + AP}{CQ + DQ} \]
+
+即
+
+\[ \frac{AB}{CP + AP} = \frac{CQ - DQ}{CQ + DQ} \]
+
+将等号右边上下同时除以$DQ$可得
+
+\[ \frac{AB}{CP + AP} = \frac{\sfrac{CQ}{DQ} - 1}{\sfrac{CQ}{DQ} + 1} \]
+
+又根据$\sfrac{CP}{AP} = \sfrac{CQ}{DQ}$可得
+
+\[ \frac{AB}{CP + AP} = \frac{\sfrac{CP}{AP} - 1}{\sfrac{CP}{AP} + 1} \]
+
+将等号右边上下同时乘以$AP$可得
+
+\begin{align*}
+  \frac{AB}{CP + AP} &= \frac{CP - AP}{CP + AP} \\
+  AB &= CP - AP \\
+  AB + AP &= CP \\
+\end{align*}
+
+综上，$AB$、$AP$与$CP$的数量关系为$AB + AP = CP$。

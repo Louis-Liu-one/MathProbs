@@ -1,0 +1,49 @@
+
+\prob{00AA}{四边形求角II}
+
+\begin{figure}[htbp]
+  \centering \image{00AA}
+  \caption{总第~\ref{sec:00AA} 题图} \label{fig:00AA}
+\end{figure}
+
+如图~\ref{fig:00AA}，在四边形$ABCD$中，连接$AC, BD$，$\angle CBD = 20^\circ, \angle CAD = 30^\circ, \angle BAC = 50^\circ, \angle ABD = 60^\circ$，求$\angle ACD$。
+\problabels{yellow/平面几何, green/角度问题}
+
+\ans{$\angle ACD = 80^\circ$}
+
+\subsection{等腰三角形} \label{subsec:00AA-eq}
+
+\begin{figure}[htbp]
+  \centering \image{00AA-eq}
+  \caption{方法~\ref{subsec:00AA-eq} 图} \label{fig:00AA-eq}
+\end{figure}
+
+如图~\ref{fig:00AA-eq}，过$D$作$DE \parallel AB$，交直线$BC$于$E$；连接$AE$，交$BD$于$E'$；连接$CE'$。显然$A, B, E, D$四点共圆，于是有$\angle ADB = \angle AEB = 40^\circ, \angle EDE' = \angle DEE' = 60^\circ, \angle ACB = 50^\circ$。故$\triangle DEE'$为等边三角形，$DE = DE', \angle DE'E = 60^\circ$。
+
+由于$\angle AE'B = \angle ABD = 60^\circ$，故$\triangle ABE'$亦为等边三角形，故$BA = BE'$。
+
+\begin{align*}
+  \because  {}& \angle ABC = 80^\circ, \angle BAC = 50^\circ \\
+  \therefore{}& \angle BAC = \angle BCA = 50^\circ \\
+  \therefore{}& BA = BC \\
+  \because  {}& BA = BE' \\
+  \therefore{}& BC = BE' \\
+  \because  {}& \angle CBE' = 20^\circ \\
+  \therefore{}& \angle BCE' = \angle BE'C = 80^\circ \\
+  \because  {}& \angle ACB = 50^\circ, \angle AEB = 40^\circ \\
+  \therefore{}& \angle ACE' = 30^\circ, \angle CAE' = 10^\circ \\
+  \therefore{}& \angle CE'E = 40^\circ = \angle CEE' \\
+  \therefore{}& CE = CE' \\
+  \because  {}& \text{在$\triangle CDE$与$\triangle CDE'$中，} \\
+  & \left\{ \begin{aligned}
+    CD &= CD \\ DE &= DE' \\ CE &= CE'
+  \end{aligned} \right. \\
+  \therefore{}& \triangle CDE \cong \triangle CDE' \\
+  \therefore{}& \angle DCE = \angle DCE' \\
+  \because  {}& \angle ACB = 50^\circ, \angle ACE' = 30^\circ \\
+  \therefore{}& \angle ACE = 100^\circ \\
+  \therefore{}& \angle DCE' = \frac12\angle ACE = 50^\circ \\
+  \therefore{}& \angle ACD = 50^\circ + 30^\circ = 80^\circ
+\end{align*}
+
+综上，$\angle ACD = 80^\circ$。

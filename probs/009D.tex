@@ -1,0 +1,98 @@
+
+\prob{009D}{求等腰部分底}
+
+\begin{figure}[htbp]
+  \centering
+  \image{009D}
+  \caption{总第~\ref{sec:009D} 题图} \label{fig:009D}
+\end{figure}
+
+如图~\ref{fig:009D}，在等腰$\triangle ABC$中，$AB = AC$，$D, E$分别是边$BC, AC$上的点，连接$AD, BE$交于点$P$，满足$\angle ADB = \angle AEB = 60^\circ$。若$AP = 3, CD = 5$，求$BD$。
+\problabels{yellow/平面几何, green/长度问题}
+
+\ans{$BD = 13$}
+
+\subsection{向外证全等} \label{subsec:009D-oeq}
+
+\begin{figure}[htbp]
+  \centering
+  \image{009D-oeq}
+  \caption{解法~\ref{subsec:009D-oeq} 图} \label{fig:009D-oeq}
+\end{figure}
+
+如图~\ref{fig:009D-oeq}，以$CD$为边向下作等边$\triangle CDQ$，易知$A, D, Q$共线。
+
+由$\angle ADB = \angle AEB, \angle APE = \angle BPD$知$\angle CAQ = \angle PBD$。同时有$\angle BDP = \angle Q = 60^\circ$。
+
+设$\angle APB = \alpha$，则易知$\angle ABC = \angle ACB = 120^\circ - \alpha$。由$\angle ADB = 60^\circ$知$\angle PAB = \alpha = \angle APB$，于是$AC = AB = BP$。
+
+\begin{align*}
+  \because  {}& \text{在$\triangle CAQ$与$\triangle PBD$中，} \\
+  & \left\{ \begin{aligned}
+    \angle Q &= \angle PDB \\
+    \angle CAQ &= \angle PBD \\
+    CA &= PB
+  \end{aligned} \right. \\
+  \therefore{}& \triangle CAQ \cong \triangle PBD \\
+  \therefore{}& CQ = PD, AP + PD + DQ = BD \\
+  \because  {}& CD = CQ = DQ = 5 \\
+  \therefore{}& PD = 5 \\
+  \because  {}& AP = 3 \\
+  \therefore{}& BD = AP + PD + DQ = 3 + 5 + 5 = 13
+\end{align*}
+
+故$BD = 13$。
+
+\subsection{向内证全等} \label{subsec:009D-ieq}
+
+\textit{XWT提供的方法，有改动。}
+
+\begin{figure}[htbp]
+  \centering
+  \image{009D-ieq}
+  \caption{解法~\ref{subsec:009D-ieq} 图} \label{fig:009D-ieq}
+\end{figure}
+
+如图~\ref{fig:009D-ieq}，在$BD$上找一点$Q$，连接$PQ$，使得$\triangle DPQ$为等边三角形。易知$\angle BQP = \angle ADC = 120^\circ$，由解法~\ref{subsec:009D-oeq} 知有$BP = AC, \angle PBQ = \angle CAD$。
+
+\begin{align*}
+  \because  {}& \text{在$\triangle CAD$与$\triangle PBQ$中，} \\
+  & \left\{ \begin{aligned}
+    \angle ADC &= \angle BQP \\
+    \angle CAD &= \angle PBQ \\
+    CA &= PB
+  \end{aligned} \right. \\
+  \therefore{}& \triangle CAD \cong \triangle PBQ \\
+  \therefore{}& BQ = AD, PQ = CD \\
+  \because  {}& CD = 5, DP = DQ = PQ \\
+  \therefore{}& DP = DQ = 5 \\
+  \because  {}& AP = 3 \\
+  \therefore{}& BD = BQ + DQ = 3 + 5 + 5 = 13
+\end{align*}
+
+故$BD = 13$。
+
+\subsection{四点共圆} \label{subsec:009D-circ}
+
+\begin{figure}[htbp]
+  \centering
+  \image{009D-circ}
+  \caption{解法~\ref{subsec:009D-circ} 图} \label{fig:009D-circ}
+\end{figure}
+
+如图~\ref{fig:009D-circ}，连接$DE$，作$AQ \perp BC$于$Q$。由$\angle ADB = \angle AEB$知$A, B, D, E$四点共圆。
+
+\begin{align*}
+  \because  {}& \text{$A, B, D, E$四点共圆} \\
+  \therefore{}& \angle ABC + \angle AED = 180^\circ \\
+  \because  {}& \angle CED + \angle AED = 180^\circ \\
+  \therefore{}& \angle ABC = \angle CED \\
+  \because  {}& AB = AC \\
+  \therefore{}& \angle ABC = \angle ECD \\
+  \therefore{}& \angle CED = \angle ECD \\
+  \therefore{}& DC = DE
+\end{align*}
+
+不妨设$\angle BAC = 2\alpha$，则易知$\angle ABC = 90^\circ - \alpha, \angle ABP = 120^\circ - 2\alpha$。同时，由$\angle ADB = 60^\circ$知$\angle BAP = 30^\circ + \alpha$，于是有$\angle BPA = 30^\circ + \alpha = \angle BAP$。由于$A, B, D, E$四点共圆，由圆周角定理知$\angle BAD = \angle BED$，于是有$\angle DEP = \angle DPE \Rightarrow DE = DP$。而$DC = 5, AP = 3$，故$DP = 5 \Rightarrow AD = 5 + 3 = 8$。
+
+由于$AQ \perp BC, \angle ADQ = 60^\circ$，故$DQ = \sfrac12AD = 4 \Rightarrow CQ = 4 + 5 = 9$。而$\triangle ABC$是等腰三角形，由三线合一知$BQ = CQ = 9 \Rightarrow BD = 4 + 9 = 13$。

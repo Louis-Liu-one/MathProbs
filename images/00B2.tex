@@ -1,0 +1,24 @@
+
+\begin{tikzpicture}[scale=.3]
+  \tkzDefPoints{-4/0/A,8/0/B,0/3/C}
+  \tkzDefTriangleCenter[circum](A,B,C)
+    \tkzGetPoint{o}
+  \tkzDefLine[tangent at=C](o) \tkzGetPoint{c}
+  \tkzInterLC(C,c)(B,C)        \tkzGetFirstPoint{D}
+  \tkzDefLine[altitude](A,D,B) \tkzGetPoint{E}
+  \tkzInterLL(A,C)(D,E)        \tkzGetPoint{F}
+  \tkzDefLine[parallel=through D](A,E)
+    \tkzGetPoint{d}
+  \tkzInterLL(A,C)(D,d)        \tkzGetPoint{G}
+  \tkzDrawPolygon(A,E,F)
+  \tkzDrawPolygon(B,C,D)
+  \tkzDrawSegment(D,G)
+  \tkzMarkSegments[color=teal,mark=|](B,C B,D)
+  \tkzMarkRightAngles[size=1](F,E,A F,D,G)
+  \tkzMarkAngles[
+    mkcolor=cyan,mark=|,size=1.5](B,A,C B,C,D C,D,B)
+  \tkzDrawPoints(A,B,C,D,E,F,G)
+  \tkzLabelPoints[below](A,B,E)
+  \tkzLabelPoints[right](D,F)
+  \tkzLabelPoints[above left](C,G)
+\end{tikzpicture}

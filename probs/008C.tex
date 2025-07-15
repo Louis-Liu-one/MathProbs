@@ -1,0 +1,33 @@
+
+\prob{008C}{从一次到多次}
+
+若对于实数$a, b, c$，满足
+\[ \frac1a + \frac1b + \frac1c = \frac1{a + b + c} \]
+求证：对于正奇数$n$，有
+\[ \frac1{a^n} + \frac1{b^n} + \frac1{c^n} = \frac1{a^n + b^n + c^n} = \frac1{(a + b + c)^n} \]
+\problabels{yellow/代数, green/证明题}
+
+\subsection{构造整式}
+
+构造一关于$a, b, c$的整式
+\begin{align*}
+  & f(a, b, c) \\
+  ={}& abc(a + b + c)\left(\frac1a + \frac1b + \frac1c - \frac1{a + b + c}\right)
+\end{align*}
+注意到当$a + b = 0$或$b + c = 0$或$c + a = 0$时，$f(a, b, c) = 0$，故整式$f$有因式
+\[ (a + b)(b + c)(c + a) \]
+注意到$f$为3次整式，而其如上因式亦3次，故满足
+\[ f(a, b, c) = k(a + b)(b + c)(c + a) \]
+其中$k$为某常数且不为0。
+
+注意到在题目条件下，$f(a, b, c) = 0$，故
+\[ (a + b)(b + c)(c + a) = 0 \]
+于是$a, b, c$必然满足$a + b = 0$或$b + c = 0$或$c + a = 0$之一。若$a + b = 0$，代入$b = -a$得
+\begin{align*}
+  \frac1{a^n} + \frac1{b^n} + \frac1{c^n} = \frac1{a^n} + \frac1{(-a)^n} + \frac1{c^n} &= \frac1{c^n} \\
+  \frac1{a^n + b^n + c^n} = \frac1{a^n + (-a)^n + c^n} &= \frac1{c^n} \\
+  \frac1{(a + b + c)^n} = \frac1{(a + (-a) + c)^n} &= \frac1{c^n}
+\end{align*}
+于是有
+\[ \frac1{a^n} + \frac1{b^n} + \frac1{c^n} = \frac1{a^n + b^n + c^n} = \frac1{(a + b + c)^n} \]
+同理可证$b + c = 0$或$c + a = 0$时等式亦成立。证毕。

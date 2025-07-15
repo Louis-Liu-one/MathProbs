@@ -1,0 +1,38 @@
+
+\prob{0052}{根式方程III}
+
+求关于$x$的方程
+
+\[ \sqrt x + \sqrt{x + 7} + 2x + 2\sqrt{x^2 + 7x} - 35 = 0 \]
+
+的实数根。
+\problabels{yellow/代数, green/方程相关问题}
+
+\ans{$x = \sfrac{841}{144}$}
+
+\subsection{换元法}
+
+基本思路：通过换元化简等式求解。
+
+设
+
+\[ p = \sqrt{x + 7}, q = \sqrt x \]
+
+则
+
+\begin{align*}
+  p + q + p^2 + q^2 + 2pq - 42 &= 0 \\
+  (p + q)^2 + (p + q) &= 42 \\
+\end{align*}
+
+解关于$p + q$的一元二次方程得$p + q = 6$。又由$p^2 - q^2 = 7$，即$(p + q)(p - q) = 7$知
+
+\[ p - q = \frac7{p + q} = \frac76 \]
+
+故
+
+\[ q = \frac{(p + q) - (p - q)}2 = \frac{29}{12} \]
+
+即$\sqrt x = \sfrac{29}{12}$，得$x = \sfrac{841}{144}$。
+
+综上，原方程实数根为$x = \sfrac{841}{144}$。

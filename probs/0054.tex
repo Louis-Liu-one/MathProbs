@@ -1,0 +1,50 @@
+
+\prob{0054}{勾股定理逆定理}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0054}
+  \caption{0054：勾股定理逆定理} \label{fig:0054}
+\end{figure}
+
+证明勾股定理逆定理：若三角形中两边平方和等于第三边的平方，则该两边夹角为直角。
+\problabels{yellow/平面几何, green/证明题}
+
+\subsection{余弦定理}
+
+基本思路：通过余弦定理证明。注意，余弦定理的证明仅用到勾股定理，而没有用到其逆定理，故不构成循环论证。
+
+如图~\ref{fig:0054}，由余弦定理知，
+
+\[ \cos\angle C = \frac{a^2 + b^2 - c^2}{2ab} \]
+
+又由题知，$a^2 + b^2 = c^2$，故$\cos\angle C = 0$，$\angle C = 90^\circ$。
+
+证毕。
+
+\subsection{构造全等三角形} \label{subsec:0054-eqtri}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0054-eqtri}
+  \caption{\nameref{subsec:0054-eqtri}：证明$\triangle ABC$与$\triangle A'BC$全等。}
+  \label{fig:0054-eqtri}
+\end{figure}
+
+基本思路：通过证明$\triangle ABC$与某直角三角形全等，进而证明命题。
+
+如图~\ref{fig:0054-eqtri}，在直线$BC$下方找一点$A'$，使得$A'C = AC = b$且$A'C \perp BC$于$C$，连接$A'B$。
+
+由勾股定理知$A'C^2 + BC^2 = A'B^2$，即$a^2 + b^2 = A'B^2$，而$a^2 + b^2 = c^2$，故$A'B = AB = c$。
+
+由于在$\triangle ABC$与$\triangle A'BC$中，
+
+\[ \begin{cases}
+  AB = A'B = c \\
+  BC = BC = a \\
+  AC = A'C = b \\
+\end{cases} \]
+
+可知$\triangle ABC \cong \triangle A'BC$。由此可知$\angle ACB = \angle A'CB$。而$\angle A'CB = 90^\circ$，故$\angle ACB = 90^\circ$。
+
+证毕。

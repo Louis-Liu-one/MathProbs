@@ -1,0 +1,55 @@
+
+\prob{007A}{两根为质数}
+
+已知对于实数$a > 0$，存在唯一的$k$，使得关于$x$的方程
+\[ x^2 + (k^2 + ak)x + k^2 + ak + 1999 = 0 \]
+的两根均为质数，求$a$。
+\problabels{yellow/数论, green/方程相关问题}
+
+\ans{$a = 2\sqrt{502}$}
+
+\subsection{Vieta定理}
+
+不妨设原方程的两根为质数$p, q$，且$p \le q$，则由Vieta定理有
+\begin{align}
+  p + q &= -(k^2 + ak) \\
+  pq &= k^2 + ak + 1999 \label{eq:007A-vie-pq}
+\end{align}
+于是有
+\begin{align*}
+  pq + p + q &= 1999 \\
+  pq + p + q + 1 &= 2000 \\
+  (p + 1)(q + 1) &= 2000
+\end{align*}
+
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{ccccl}
+    \toprule
+    $p + 1$ & $p$ & $q + 1$ & $q$ & 备注 \\ \midrule
+     1 & \emph{ 0} & 2000 &      1999  & 不满足 \\
+     2 & \emph{ 1} & 1000 & \emph{999} & 不满足 \\
+     4 &        3  &  500 &       499  & 满足 \\
+     5 & \emph{ 4} &  400 & \emph{399} & 不满足 \\
+     8 &        7  &  250 & \emph{249} & 不满足 \\
+    10 & \emph{ 9} &  200 &       199  & 不满足 \\
+    16 & \emph{15} &  125 & \emph{124} & 不满足 \\
+    20 &       19  &  100 & \emph{ 99} & 不满足 \\
+    25 & \emph{24} &   80 &        79  & 不满足 \\
+    40 & \emph{39} &   50 & \emph{ 49} & 不满足 \\ \bottomrule
+  \end{tabular}
+  \caption{枚举$p + 1, q + 1$，当$p \le q$。表中的斜体字是合数。}
+  \label{tab:007A-vie-enum}
+\end{table}
+
+如表~\ref{tab:007A-vie-enum}，枚举2000的因数，可知只有$p + 1 = 4, q + 1 = 500$满足$p, q$为质数。此时$p = 3, q = 499$。由式~\ref{eq:007A-vie-pq} 知有如下关于$k$的方程：
+\[ k^2 + ak + 1999 = 3\cdot499 \]
+即
+\[ k^2 + ak + 502 = 0 \]
+由题知该方程有两相同实数根，故
+\begin{align*}
+  \Delta &= a^2 - 4\cdot502 = 0 \\
+  a^2 &= 4\cdot502 \\
+  a &= \pm2\sqrt{502} \\
+\end{align*}
+而$a > 0$，故$a = 2\sqrt{502}$。

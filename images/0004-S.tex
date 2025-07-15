@@ -1,0 +1,20 @@
+
+\begin{tikzpicture}[scale=.8, ang/.style={mark angle={blue}{3mm}{1}}]
+  \coordinate[label=above left:$F$] (F) at (0,0);
+  \coordinate[label=left:$A$] (A) at (-150:5);
+  \coordinate[label=right:$E$] (E) at (30:2);
+  \coordinate[label=above:$B$] (B) at ($ (E)!1! -100:(F) $);
+  \coordinate[label=below:$C$] (C) at ($ (B)!5/2!(E) $);
+  \coordinate[label=below right:$D$] (D) at ($ (A)!1/2!(C) $);
+  \coordinate[label=below:$A'$] (A') at ($ (F)!(A)!(B) $);
+  \coordinate[label=left:$C'$] (C') at ($ (F)!(C)!(B) $);
+  \pic[ang] {right angle=B--A'--A};
+  \pic[ang] {right angle=A'--C'--C};
+  \fill[opafill=green] (A) -- (B) -- (F) -- cycle;
+  \fill[opafill=red] (C) -- (B) -- (F) -- cycle;
+  \fill[opafill=cyan] (C') -- (A') -- (A) -- (C) -- cycle;
+  \draw (A) -- (B) -- node[right] {$2$} (E)
+    -- node[right] {$3$} (C) -- cycle
+    -- node[above] {$5$} (F) -- node[above] {$2$} (E) (B) -- (D);
+  \draw[dashed] (C') -- (C) (C) -- (F) (A) -- (A') -- (D);
+\end{tikzpicture}

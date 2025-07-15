@@ -1,0 +1,24 @@
+
+\prob{007B}{特殊正弦值}
+
+求$\sin18^\circ$。
+\problabels{yellow/代数, green/代数求值问题}
+
+\ans{$\sin18^\circ = \sfrac{-1 + \sqrt5}4$}
+
+\subsection{二次方程}
+
+注意到
+\begin{align*}
+  \sin36^\circ &= \cos54^\circ \\
+  2\sin18^\circ\cos18^\circ &= \cos^318^\circ - 3\sin^218^\circ\cos18^\circ \\
+  2\sin18^\circ &= \cos^218^\circ - 3\sin^218^\circ \\
+  &= 1 - 4\sin^218^\circ \\
+\end{align*}
+设$x = \sin18^\circ$，则
+\begin{align*}
+  1 - 4x^2 &= 2x \\
+  4x^2 + 2x - 1 &= 0
+\end{align*}
+解得$x = \sfrac{-1 \pm\sqrt5}4$，而$\sin18^\circ > 0$，故
+\[ \sin18^\circ = \frac{-1 + \sqrt5}4 \]

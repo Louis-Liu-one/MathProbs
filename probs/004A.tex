@@ -1,0 +1,80 @@
+
+\prob{004A}{线段平移最值}
+
+\begin{figure}
+  \centering
+  \image{004A}
+  \caption{004A：线段平移最值} \label{fig:004A}
+\end{figure}
+
+如图~\ref{fig:004A}，在平面直角坐标系$xOy$中有$A(0, 1)$、$B(0, 3)$。$x$轴上有长度为$3$的线段$CD$，求$AC + BD$的最小值。
+\problabels{yellow/解析几何, green/最值问题}
+
+\ans{$AC + BD$的最小值为$5$。}
+
+\subsection{移动线段} \label{subsec:004A-mv}
+
+\begin{figure}
+  \centering
+  \image{004A-mv}
+  \caption{\nameref{subsec:004A-mv}：移动线段$AC$。} \label{fig:004A-mv}
+\end{figure}
+
+基本思路：通过移动线段$AC$使得$C$与$D$重合，进而将其转换为易求问题。
+
+如图~\ref{fig:004A-mv}，将线段$AC$先向右平移$3$个单位，再作其关于$x$轴的对称线段。易知$A(0, 1)$的对应点为$A'(3, -1)$，$C$的对应点与$D$重合。由平移的性质知$AC = A'D$，故求出$A'D + BD$的最小值即可。
+
+又由于$B$、$A'$分别是$x$轴上下两定点，$D$为$x$轴上动点，故其最小值为
+
+\begin{align*}
+  A'B &= \sqrt{(x_{A'} - x_B)^2 + (y_{A'} - y_B)^2} \\
+  &= \sqrt{3^2 + 4^2} = 5 \\
+\end{align*}
+
+综上，$AC + BD$的最小值为$5$。
+
+\subsection{求导}
+
+基本思路：通过将$AC + BD$表示为一个函数，然后通过求导求该函数的极值。
+
+设$C(x, 0)$，则$D(x + 3, 0)$，又由$A(0, 1)$、$B(0, 3)$知
+
+\begin{align*}
+  AC &= \sqrt{(x_A - x_C)^2 + (y_A - y_C)^2} \\
+  &= \sqrt{x^2 + 1} \\
+  BD &= \sqrt{(x_B - x_D)^2 + (y_B - y_D)^2} \\
+  &= \sqrt{(x + 3)^2 + 9} \\
+  AC + BD &= \sqrt{x^2 + 1} + \sqrt{(x + 3)^2 + 9} \\
+\end{align*}
+
+又对其求导并应用链式法则得
+
+\begin{align*}
+  &\phantom{=} \frac{\dif}{\dif x}(AC + BD) \\
+  &= \frac{\dif}{\dif x}(\sqrt{x^2 + 1} + \sqrt{(x + 3)^2 + 9}) \\
+  &= \frac{\dif}{\dif x}\sqrt{x^2 + 1} + \frac{\dif}{\dif x}\sqrt{(x + 3)^2 + 9} \\
+  &= \frac{\dif}{\dif\ (x^2 + 1)}\sqrt{x^2 + 1}\cdot \frac{\dif}{\dif x}(x^2 + 1) \\
+  &+ \frac{\dif}{\dif\ \left((x + 3)^2 + 9\right)}\sqrt{(x + 3)^2 + 9} \\
+  &\cdot \frac{\dif}{\dif x}\left((x + 3)^2 + 9\right) \\
+  &= \frac1{2\sqrt{x^2 + 1}}\cdot2x + \frac1{2\sqrt{(x + 3)^2 + 9}}\cdot(2x + 6) \\
+  &= \frac x{\sqrt{x^2 + 1}} + \frac{x + 3}{\sqrt{(x + 3)^2 + 9}} \\
+\end{align*}
+
+由于其导数为$0$时函数取极值，故当
+
+\[ \frac x{\sqrt{x^2 + 1}} + \frac{x + 3}{\sqrt{(x + 3)^2 + 9}} = 0 \]
+
+时$AC + BD$取极值，即
+
+\begin{align*}
+  -\frac x{\sqrt{x^2 + 1}} &= \frac{x + 3}{\sqrt{(x + 3)^2 + 9}} \\
+  \frac{x^2}{x^2 + 1} &= \frac{(x + 3)^2}{(x + 3)^2 + 9} \\
+  \frac{x^2 + 1}{x^2} &= \frac{(x + 3)^2 + 9}{(x + 3)^2} \\
+  \frac1{x^2} &= \frac9{(x + 3)^2} \\
+  9x^2 &= (x + 3)^2 \\
+  8x^2 - 6x - 9 &= 0 \\
+\end{align*}
+
+解关于$x$的一元二次方程得$x = \sfrac32$或$x = -\sfrac34$。代入原函数得$AC + BD = 2\sqrt{13}$或$AC + BD = 5$。由于$2\sqrt{13} > 5$，故$x = \sfrac32$为平方后的余根，故$AC + BD$的最小值为$5$。
+
+综上，$AC + BD$的最小值为$5$。

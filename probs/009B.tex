@@ -1,0 +1,29 @@
+
+\prob{009B}{三元分式方程组II}
+
+求方程组
+\[ \left\{ \begin{aligned}
+  \frac{4x^2}{4x^2 + 1} &= y \\
+  \frac{4y^2}{4y^2 + 1} &= z \\
+  \frac{4z^2}{4z^2 + 1} &= x \\
+\end{aligned} \right. \]
+的实数根。
+\problabels{yellow/代数, green/方程相关问题}
+
+\textit{JYH提供的题目。}
+
+\ans{$x = y = z = 0$或$x = y = z = \sfrac12$}
+
+\subsection{倒数}
+
+若$x, y, z$有一个为0，显然有$x = y = z = 0$，是方程组的一组解。若$x, y, z$均不为0，则三方程两边取倒数得
+\[ \frac1{4x^2} + 1 = \frac1y, \frac1{4y^2} + 1 = \frac1z, \frac1{4z^2} + 1 = \frac1x \]
+三式相加，得
+\[ \frac1x + \frac1y + \frac1z = 3 + \frac14\left(\frac1{x^2} + \frac1{y^2} + \frac1{z^2}\right) \]
+由此，注意到
+\[ \frac1{x^2} + \frac1{y^2} + \frac1{z^2} - 4\left(\frac1x + \frac1y + \frac1z\right) + 12 = 0 \]
+配方，得
+\[ \left(\frac1x - 2\right)^2 + \left(\frac1y - 2\right)^2 + \left(\frac1z - 2\right)^2 = 0 \]
+因此$x = y = z = \sfrac12$。
+
+综上，$x = y = z = 0$或$x = y = z = \sfrac12$。

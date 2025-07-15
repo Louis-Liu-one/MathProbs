@@ -1,0 +1,37 @@
+
+\prob{0060}{分式最值I}
+
+求关于$x$的分式
+\[ \frac{\sqrt{x^4 + x^2 + 1} - \sqrt{x^4 + 1}}x \]
+的最大值，其中$x \ne0$。
+\problabels{yellow/代数, green/最值问题}
+
+\ans{原式最大值为$\sqrt3 - \sqrt2$。}
+
+\subsection{求导}
+
+令
+\[ f(y) = \frac{\sqrt{y^2 + y + 1} - \sqrt{y^2 + 1}}{\sqrt y} \quad (y \ne0) \]
+则有$y > 0$时$f(y) > 0$，$y < 0$时$f(y) < 0$，因此其最大时$y > 0$，此时当$y = x^2$时即为原分式。
+
+当$f(y)$最大时，由$y > 0$知
+\begin{align*}
+  f(y) &= \frac{\sqrt{y^2 + y + 1} - \sqrt{y^2 + 1}}{\sqrt y} \\
+  &= \sqrt{y + \frac1y + 1} - \sqrt{y + \frac1y} \\
+\end{align*}
+此时
+\begin{align*}
+  \frac{\dif f}{\dif y} &= \frac{\dif{}}{\dif y}\sqrt{y + \frac1y + 1} + \frac{\dif{}}{\dif y}\sqrt{y + \frac1y} \\
+  &= -\frac{-\sfrac1{y^2} + 1}{\sqrt{y + \sfrac1y + 1}} + \frac{-\sfrac1{y^2} + 1}{\sqrt{y + \sfrac1y}} = 0 \\
+\end{align*}
+于是有
+\[ \frac{-\sfrac1{y^2} + 1}{\sqrt{y + \sfrac1y + 1}} = \frac{-\sfrac1{y^2} + 1}{\sqrt{y + \sfrac1y}} \]
+
+当$-\sfrac1{y^2} + 1 = 0$时，$y = 1, -1\text{（舍）} \Rightarrow x = \pm1$。当$x = -1$时原分式取极小值，故舍去，故$x = 1$；
+当$-\sfrac1{y^2} + 1 \ne0$时，
+\begin{align*}
+  \frac1{\sqrt{y + \sfrac1y + 1}} &= \frac1{\sqrt{y + \sfrac1y}} \\
+  y + \frac1y + 1 &= y + \frac1y \\
+  1 &= 0 \\
+\end{align*}
+无意义。故$x = 1$，代入得分式最大值为$\sqrt3 - \sqrt2$。

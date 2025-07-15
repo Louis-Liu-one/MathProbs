@@ -1,0 +1,35 @@
+
+\prob{0056}{六次多项式求值}
+
+若$x = \sfrac1{\sqrt3 - \sqrt2}$，求
+
+\[ x^6 - 2\sqrt2x^5 - x^4 + x^3 - 2\sqrt3x^2 + 2x - \sqrt2 \]
+
+的值。
+\problabels{yellow/代数, green/代数求值问题}
+
+\ans{原式的值为$\sqrt3$。}
+
+\subsection{化简中代入}
+
+基本思路：在化简的过程中同时代入求值。
+
+由$x = \sfrac1{\sqrt3 - \sqrt2}$易知
+
+\begin{align*}
+  x ={}& \frac{\sqrt3 + \sqrt2}{(\sqrt3 + \sqrt2)(\sqrt3 - \sqrt2)} \\
+  ={}& \sqrt3 + \sqrt2 \\
+  \text{原式} ={}& x^4\left(x^2 - 2\sqrt2x + 2\right) - 3x^4 \\
+  &+ x\left(x^2 - 2\sqrt3x + 3\right) - x - \sqrt2 \\
+  ={}& \left(\left(x - \sqrt2\right)^2 - 3\right)x^4 \\
+  &+ \left(\left(x - \sqrt3\right)^2 - 1\right)x - \sqrt2 \\
+\end{align*}
+
+当$x = \sqrt3 + \sqrt2$时，
+
+\begin{align*}
+  \text{原式} &= (3 - 3)x^4 + (2 - 1)x - \sqrt2 \\
+  &= x - \sqrt2 = \sqrt3 \\
+\end{align*}
+
+综上，原式的值为$\sqrt3$。

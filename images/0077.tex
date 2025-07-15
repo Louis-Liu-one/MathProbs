@@ -1,0 +1,24 @@
+
+\begin{tikzpicture}
+  \coordinate[label=below right:$A$] (A) at (4,0);
+  \coordinate[label=above left:$B$] (B) at (0,4);
+  \coordinate[label=below left:$C$] (C) at (-1,0);
+  \coordinate (circumcenter) at (1.5,1.5);
+  \draw (circumcenter) circle (\calclen{1.5}{1.5}{4}{0});
+  \coordinate (Ah) at ($ (B)!(A)!(C) $);
+  \coordinate (Bh) at ($ (C)!(B)!(A) $);
+  \coordinate (Ch) at ($ (A)!(C)!(B) $);
+  \path[name path=AO1] (A) -- (Ah);
+  \path[name path=BO2] (B) -- (Bh);
+  \path[name path=CO3] (C) -- (Ch);
+  \path[name intersections={of=AO1 and BO2}]
+    coordinate[label=below right:$O$] (O) at (intersection-1);
+  \coordinate[label=left:$O_1$] (O1) at ($ (O)!2!(Ah) $);
+  \coordinate[label=below:$O_2$] (O2) at ($ (O)!2!(Bh) $);
+  \coordinate[label=above:$O_3$] (O3) at ($ (O)!2!(Ch) $);
+  \pic[mark angle={cyan}{3mm}{1}] {right angle=A--Ah--B};
+  \pic[mark angle={cyan}{3mm}{1}] {right angle=A--Bh--B};
+  \pic[mark angle={cyan}{3mm}{1}] {right angle=C--Ch--A};
+  \draw (A) -- (O1) (B) -- (O2) (C) -- (O3)
+    (A) -- (B) (B) -- (C) (C) -- (A);
+\end{tikzpicture}

@@ -1,0 +1,27 @@
+
+\prob{007E}{从不等式到函数}
+
+若$f$是某定义域和值域均为正整数的函数，且对于任意正整数$n$，满足
+\[ f(n + 1) > f(f(n)) \]
+求$f(n)$。
+\problabels{yellow/数论}
+
+\ans{$f(n) = n$}
+
+\subsection{利用正整数的性质}
+
+\begin{lemma} \label{lemma:007E-mnfmn}
+  对于任意正整数$m \ge n$，$f(m) \ge n$。
+\end{lemma}
+
+\begin{proof}
+  对$n$使用归纳法。
+
+  对于$n = 1$，由于$f(m)$是正整数，显然有$f(m) \ge n$；
+
+  对于$n > 1$，假设对于所有$m \ge n$，有$f(m) \ge n$，即要证明对于所有$m \ge n + 1$，有$f(m) \ge n + 1$。由题目条件知$f(m) > f(f(m - 1))$。而$m - 1 \ge n$，故由归纳假设有$f(m - 1) \ge n$，又由归纳假设有$f(f(m - 1)) \ge n$，于是$f(m) > n$，即$f(m) \ge n + 1$。
+\end{proof}
+
+考虑引理~\ref{lemma:007E-mnfmn} 中$m = n$时的特殊情形，有$f(n) \ge n$，而由此又有$f(f(n)) \ge f(n)$，故
+\[ f(n + 1) > f(f(n)) \ge f(n) \]
+即$f(n + 1) > f(n)$，于是$f$是单调增的。因此当对于正整数$a, b$，有$f(a) > f(b)$，则必然有$a > b$，于是式$f(n + 1) > f(f(n))$可改写为$n + 1 > f(n)$，即$f(n) \le n$。而$f(n) \ge n$，故$f(n) = n$。

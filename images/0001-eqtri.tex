@@ -1,0 +1,19 @@
+
+\begin{tikzpicture}[scale=3.5,
+    ang/.style n args={1}{mark angle={#1}{5mm}{1}}]
+  \coordinate[label=below:$B$] (B) at (1,0);
+  \coordinate[label=below:$D$] (D) at (0,0);
+  \coordinate[label=above:$A$] (A) at ($ (B)!1! -80:(D) $);
+  \coordinate[label=above left:$E$] (E) at ($ (D)!1! 40:(B) $);
+  \coordinate[label=below:$C$] (C) at ($ (A)!1! -20:(B) $);
+  \coordinate[label=right:$A'$] (A') at ($ (A)!1! 80:(C) $);
+  \pic[ang=teal, "$\alpha$"] {angle=B--D--E};
+  \pic[ang=teal, "$\alpha$"] {angle=D--E--C};
+  \pic[ang=lime, "$2\alpha$"] {angle=A--B--C};
+  \pic[ang=lime, "$2\alpha$"] {angle=B--C--A};
+  \pic[ang=lime, "$2\alpha$"] {angle=A'--E--A};
+  \fill[opafill=cyan] (A) -- (B) -- (A') -- cycle;
+  \draw (C) -- (A) -- (B) -- (D) -- (E);
+  \draw[blue] (D) -- (C) -- (E);
+  \draw[dashed] (A) -- (A') -- (B) (A') -- (E) -- (B);
+\end{tikzpicture}

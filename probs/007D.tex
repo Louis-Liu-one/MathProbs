@@ -1,0 +1,43 @@
+
+\prob{007D}{主定理}
+
+证明主定理：若对常数$a > 0, b > 1, d \ge0$，有
+\[ T(n) = aT\left(\frac nb\right) + O\left(n^d\right) \]
+成立，则
+\[ T(n) = \begin{cases}
+  O\left(n^d\right), & a < b^d \\
+  O\left(n^d\log n\right), & a = b^d \\
+  O\left(n^{\log_ba}\right), & a > b^d \\
+\end{cases} \]
+\problabels{yellow/算法理论, green/证明题}
+
+\subsection{几何级数}
+
+由条件知，每个问题被分成$a$个子问题，每个子问题的规模是原问题的$\sfrac1b$。不妨考虑分支因子为$a$的递归树，在第$k$层上共$a^k$个子问题，每个子问题规模为$\sfrac n{b^k}$。故规模为1的子问题（即树叶）在第$\log_bn$层上，即递归树高度为$\log_bn$。
+
+考虑在第$k$层上的一个子问题的耗时为
+\[ O\left(\left(\frac n{b^k}\right)^d\right) = \frac1{b^{kd}}O\left(n^d\right) \]
+共$a^k$个子问题，故总耗时为
+\[ \frac{a^k}{b^{kd}}O\left(n^d\right) = \left(\frac a{b^d}\right)^kO\left(n^d\right) \]
+由此可知总耗时为
+\[ T(n) = O\left(n^d\right)\sum_{k = 0}^{\log_bn}\left(\frac a{b^d}\right)^k \]
+可见等号右侧是一个几何级数，公比为$q = \sfrac a{b^d}$。对$q$进行分情况讨论。
+
+若$q < 1$，即$a < b^d$，此时几何级数是递减的，从而可用其首项表示。而其首项为1，故
+\[ T(n) = O\left(n^d\right) \]
+
+若$q = 1$，即$a = b^d$，此时级数的每项都是1，共$\log_bn$项，故
+\[ T(n) = O\left(n^d\right)\log_bn = O\left(n^d\log n\right) \]
+
+若$q > 1$，即$a > b^d$，此时几何级数是递增的，从而可用其末项表示。而其末项为
+\[ \left(\frac a{b^d}\right)^{\log_bn} = \frac{a^{\log_bn}}{\left(b^{\log_bn}\right)^d} = \frac{\left(b^{\log_bn}\right)^{\log_ba}}{n^d} = \frac{n^{\log_ba}}{n^d} \]
+故
+\[ T(n) = \frac{n^{\log_ba}}{n^d}O\left(n^d\right) = O\left(n^{\log_ba}\right) \]
+
+即为
+\[ T(n) = \begin{cases}
+  O\left(n^d\right), & a < b^d \\
+  O\left(n^d\log n\right), & a = b^d \\
+  O\left(n^{\log_ba}\right), & a > b^d \\
+\end{cases} \]
+命题得证。

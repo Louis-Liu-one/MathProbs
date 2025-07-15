@@ -1,0 +1,121 @@
+
+\prob{0042}{直线上的内心}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0042}
+  \caption{0042：直线上的内心} \label{fig:0042}
+\end{figure}
+
+如图~\ref{fig:0042}，在$\mathrm{Rt}\triangle ABC$中，$\angle ACB = 90^\circ$，$CD \perp AB$于$D$，$I$、$J$分别为$\triangle ACD$与$\triangle BCD$的内心。延长$IJ$，与$BC$交于点$K$，求$\angle IKC$的度数。
+\problabels{yellow/平面几何, green/角度问题}
+
+\ans{$\angle IKC = 45^\circ$}
+
+\subsection{垂心} \label{subsec:0042-vert}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0042-vert}
+  \caption{\nameref{subsec:0042-vert}：运用内心与垂心的性质求解。}
+  \label{fig:0042-vert}
+\end{figure}
+
+如图~\ref{fig:0042-vert}，连接$CI$、$CJ$；作射线$AI$，与$CJ$交于点$P$；作射线$BJ$，与$CI$交于点$Q$，与$AP$交于点$O$；作射线$CO$，与$IJ$交于点$R$。
+
+由于$I$、$J$分别为$\triangle ACD$与$\triangle BCD$的内心，易知$AP$平分$\angle BAC$，$BQ$平分$\angle ABC$，$CI$平分$\angle ACD$，$CJ$平分$\angle BCD$。
+
+又由内心的定义知，$O$是$\triangle ABC$的内心，故$CO$平分$\angle ACB$，即$\angle RCK = 45^\circ$。
+
+\begin{align*}
+  &\because   BQ\text{平分}\angle ABC \\
+  &\therefore \angle CBD = 2\angle CBQ \\
+  &\because   \angle CDB = 90^\circ \\
+  &\therefore \angle BCD + \angle CBD = 90^\circ \\
+  &\therefore \angle BCD = 90^\circ - 2\angle CBQ \\
+  &\because   \angle ACB = 90^\circ \\
+  &\therefore \angle ACD + \angle BCD = 90^\circ \\
+  &\therefore \angle ACD = 2\angle CBQ \\
+  &\because   CI\text{平分}\angle ACD \\
+  &\therefore \angle ICD = \angle CBQ \\
+  &\therefore \angle BCQ = 90^\circ - \angle CBQ \\
+  &\therefore \angle BCQ + \angle CBQ = 90^\circ \\
+  &\therefore BQ \perp CI, \text{同理可知}AP \perp CJ \\
+  &\therefore O\text{是}\triangle ICJ\text{的垂心} \\
+  &\therefore CR \perp IJ \\
+  &\therefore \angle RCK + \angle IKC = 90^\circ \\
+  &\because   \angle RCK = 45^\circ \\
+  &\therefore \angle IKC = 45^\circ \\
+\end{align*}
+
+综上，$\angle IKC = 45^\circ$。
+
+\subsection{解析几何} \label{subsec:0042-dec}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0042-dec}
+  \caption{总第~\ref{sec:0042} 题解法“\nameref{subsec:0042-dec}”图}
+  \label{fig:0042-dec}
+\end{figure}
+
+如图~\ref{fig:0042-dec}，以$C$为原点，$CB$为$x$轴，$CA$为$y$轴建立平面直角坐标系$xCy$；连接$AI, BJ, CI, CJ$。不妨设$BC = a, AC = b, AB = c, \angle IAC = \alpha, \angle JBC = \beta$，则易知$\angle BAC = 2\alpha, \angle ABC = 2\beta, \angle ICA = 45^\circ - \alpha, \angle JCB = 45^\circ - \beta$。于是有
+\begin{align}
+  CI&: y = \frac{\cos(45^\circ - \alpha)}{\sin(45^\circ - \alpha)}x = \frac{\cos\alpha + \sin\alpha}{\cos\alpha - \sin\alpha}x \label{eq:0042-dec-CI} \\
+  CJ&: y = \frac{\sin(45^\circ - \beta)}{\cos(45^\circ - \beta)}x = \frac{\cos\beta - \sin\beta}{\cos\beta + \sin\beta}x \label{eq:0042-dec-CJ} \\
+  AI&: y = -\frac{\cos\alpha}{\sin\alpha}x + b \label{eq:0042-dec-AI} \\
+  BJ&: y = -\frac{\sin\beta}{\cos\beta}(x - a) = -\frac{\sin\beta}{\cos\beta}x + \frac{\sin\beta}{\cos\beta}a \label{eq:0042-dec-BJ}
+\end{align}
+
+联立式~\ref{eq:0042-dec-AI}与式~\ref{eq:0042-dec-CI}，解得
+\begin{align}
+  \left\{\begin{aligned}
+    x_I &= b(\cos\alpha\sin\alpha - \sin^2\alpha) \\
+    y_I &= b(\cos\alpha\sin\alpha + \sin^2\alpha) \\
+  \end{aligned}\right. \label{eq:0042-dec-I}
+\end{align}
+同理，联立式~\ref{eq:0042-dec-BJ}与式~\ref{eq:0042-dec-CJ}，解得
+\begin{align}
+  \left\{\begin{aligned}
+    x_J &= a(\cos\beta\sin\beta + \sin^2\beta) \\
+    y_J &= a(\cos\beta\sin\beta - \sin^2\beta) \\
+  \end{aligned}\right. \label{eq:0042-dec-J}
+\end{align}
+于是有
+\begin{align*}
+  x_I - x_J ={}& b\cos\alpha\sin\alpha - b\sin^2\alpha \\
+  &- a\cos\beta\sin\beta - a\sin^2\beta \\
+  ={}& \frac12(b\sin2\alpha - a\sin2\beta) \\
+  &- (b\sin^2\alpha + a\sin^2\beta) \\
+\end{align*}
+易知$b\sin2\alpha = a\sin2\beta = CD$，故
+\[ x_I - x_J = -(b\sin^2\alpha + a\sin^2\beta) \]
+同理得
+\[ y_I - y_J = b\sin^2\alpha + a\sin^2\beta = -(x_I - x_J) \]
+
+因此，直线$IJ$的斜率为
+\[ k = \frac{y_I - y_J}{x_I - x_J} = \frac{-(x_I - x_J)}{x_I - x_J} = -1 \]
+故知$\angle IKC = 45^\circ$。
+
+\paragraph{或} 由
+\begin{align*}
+  a &= c\sin2\alpha = 2c\sin\alpha\cos\alpha \\
+  b &= c\sin2\beta = 2c\sin\beta\cos\beta
+\end{align*}
+将式~\ref{eq:0042-dec-I}、式~\ref{eq:0042-dec-J}改写为
+\begin{align*}
+  \left\{\begin{aligned}
+    x_I &= 2c\sin\beta\cos\beta(\cos\alpha\sin\alpha - \sin^2\alpha) \\
+    y_I &= 2c\sin\beta\cos\beta(\cos\alpha\sin\alpha + \sin^2\alpha) \\
+  \end{aligned}\right. \\
+  \left\{\begin{aligned}
+    x_J &= 2c\sin\alpha\cos\alpha(\cos\beta\sin\beta + \sin^2\beta) \\
+    y_J &= 2c\sin\alpha\cos\alpha(\cos\beta\sin\beta - \sin^2\beta) \\
+  \end{aligned}\right.
+\end{align*}
+于是有
+\begin{align*}
+  x_I - x_J &= -2c\sin\alpha\sin\beta(\sin\alpha\cos\beta + \cos\alpha\sin\beta) \\
+  y_I - y_J &= 2c\sin\alpha\sin\beta(\sin\alpha\cos\beta + \cos\alpha\sin\beta)
+\end{align*}
+后易知$\angle IKC = 45^\circ$。

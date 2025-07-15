@@ -1,0 +1,19 @@
+
+\begin{tikzpicture}[scale=2.7]
+  \coordinate[label=below:$C$] (C) at (0,0);
+  \coordinate[label=below:$B$] (B) at (1,0);
+  \coordinate[label=above:$A$] (A) at ($ (C)!1! 60:(B) $);
+  \coordinate[label=right:$M$] (M) at ($ (A)!1/2!(B) $);
+  \coordinate[label=below:$N$] (N) at ($ (B)!4/3!(C) $);
+  \coordinate[label=above:$P$] (P) at ($ (N)!1! 60:(M) $);
+  \coordinate[label=left:$M'$] (M') at ($ (C)!1! 60:(P) $);
+  \pic[mark angle={cyan}{5mm}{1}] {angle=B--N--M};
+  \pic[mark angle={cyan}{5mm}{1}] {angle=A--M--P};
+  \draw (M) -- (P) -- (N) -- (B) -- (A) -- (C) (M) -- (N) (P) -- (C);
+  \draw[dashed] (P) -- (M') -- (C) (M') -- (N) (M) -- (C);
+  \fill[opafill=blue] (A) -- (B) -- (C) -- cycle;
+  \fill[opafill=cyan] (M) -- (P) -- (C) -- cycle
+    (N) -- (P) -- (M') -- cycle;
+  \fill[opafill=teal] (M) -- (N) -- (C) -- cycle;
+  \fill[opafill=teal] (M') -- (N) -- (C) -- cycle;
+\end{tikzpicture}

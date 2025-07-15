@@ -1,0 +1,38 @@
+
+\prob{006D}{指数相等}
+
+若自然数$a, b$满足$a^x = b^y = 1994^z$，同时有$\sfrac1x + \sfrac1y = \sfrac1z$，求$a, b$的所有可能值。
+\problabels{yellow/数论, green/代数求值问题}
+
+\ans{$a = 1, b = 1994$；$a = 2, b = 997$；$a = 997, b = 2$；$a = 1994, b = 1$。}
+
+\subsection{对数}
+
+基本思路：等式求对数，然后通过代数变换化简得$\ln a + \ln b = \ln 1994$，即$ab = 1994$。
+
+等式求自然对数得
+
+\[ x\ln a = y\ln b = z\ln1994 \]
+
+由$\sfrac1x + \sfrac1y = \sfrac1z$知
+
+\[ z = \frac{xy}{x + y} \]
+
+故
+
+\begin{align*}
+  x\ln a = y\ln b &= \frac{xy}{x + y}\ln1994 \\
+  x(x + y)\ln a = y(x + y)\ln b &= xy\ln1994 \\
+\end{align*}
+
+于是有
+
+\begin{align*}
+  (x + y)\ln a &= y\ln1994 \\
+  (x + y)\ln b &= x\ln1994 \\
+  (x + y)(\ln a + \ln b) &= (x + y)\ln1994 \\
+  \ln ab &= \ln1994 \\
+  ab &= 1994 \\
+\end{align*}
+
+而$a, b$是自然数，故有$4$种情况：$a = 1, b = 1994$；$a = 2, b = 997$；$a = 997, b = 2$；$a = 1994, b = 1$。

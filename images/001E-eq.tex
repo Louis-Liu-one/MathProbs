@@ -1,0 +1,24 @@
+
+\begin{tikzpicture}[scale=2]
+  \coordinate[label=below:$C$] (C) at (0,0);
+  \coordinate[label=below:$A$] (A) at (4/3,0);
+  \coordinate[label=left:$B$] (B) at (0,2);
+  \coordinate[label=left:$D$] (D) at (0,2/3);
+  \coordinate[label=left:$E$] (E) at ($ (B)!(D)!(A) $);
+  \coordinate[label=right:$B'$] (B') at (2,2);
+  \coordinate[label=above:$O$] (O) at (1,2);
+  \pic[mark angle={teal}{3mm}{1}] {right angle=A--C--B};
+  \pic[mark angle={teal}{3mm}{1}] {right angle=B'--E--B};
+  \pic[mark angle={teal}{3mm}{1}] {right angle=D--B--B'};
+  \pic[mark angle={red}{3mm}{1}] {angle=B'--D--B};
+  \pic[mark angle={red}{3mm}{1}] {angle=B--A--C};
+  \draw (A) -- (B) -- (C) -- cycle (D) -- (E);
+  \draw[red] (C) -- (E);
+  \draw[green] (A) -- (C) (B) -- (D);
+  \draw[dashed] (B) -- node[above] {$1$} (O)
+    -- node[above] {$1$} (B') -- (E) (B') arc (0:-180:1);
+  \draw[blue, dashed] (O) -- node[right] {$1$} (E);
+  \draw[teal, dashed] (O) -- (C);
+  \fill[opafill=cyan] (A) -- (B) -- (C) -- cycle;
+  \fill[opafill=cyan] (B') -- (B) -- (D) -- cycle;
+\end{tikzpicture}

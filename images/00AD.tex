@@ -1,0 +1,18 @@
+
+\begin{tikzpicture}
+  \pgfmathsetmacro\yA{2}
+  \pgfmathsetmacro\xC{6}
+  \pgfmathsetmacro\rad{24/sqrt(\yA^2+\xC^2)}
+  \tkzDefPoints{0/\yA/A,0/0/B,\xC/0/C}
+  \tkzDefPointBy[rotation=center A angle 60](C)
+  \tkzInterLC[R](A,tkzPointResult)(A,\rad)
+  \tkzGetSecondPoint{D}
+  \tkzDrawPolygon(A,B,C,D)
+  \tkzDrawSegments(A,C B,D)
+  \tkzLabelAngle[pos=.5](C,A,D){$60^\circ$}
+  \tkzMarkRightAngle(C,B,A)
+  \tkzDrawPoints(A,B,C,D)
+  \tkzLabelPoints[left](A,B)
+  \tkzLabelPoints[right](C)
+  \tkzLabelPoints[above](D)
+\end{tikzpicture}

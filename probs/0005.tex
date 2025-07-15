@@ -1,0 +1,19 @@
+
+\prob{0005}{和为合数}
+
+$a, b, c, d$为正整数，$ab = cd$，求证：$a + b + c + d$为合数。
+\problabels{yellow/数论, green/证明题}
+
+\subsection{化为乘积}
+
+基本思路：利用$ab = cd$，将$a + b + c + d$化为两个大于1的正整数的乘积。
+
+因为$ab = cd$，则$\sfrac ac = \sfrac db$。设$\sfrac ac = \sfrac db = \sfrac mn$，其中$\sfrac mn$是最简分数。则$a = mp, c = np, d = mq, b = nq$，其中$p, q$是正整数。因此，
+
+\begin{align*}
+  a + b + c + d
+  &= mp + nq + np + mq \\
+  &= (m + n)(p + q) \\
+\end{align*}
+
+因此，$a + b + c + d$是合数。证毕。

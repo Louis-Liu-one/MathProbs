@@ -1,0 +1,27 @@
+
+\begin{tikzpicture}
+  \coordinate[label=below right:$A$] (A) at (4,0);
+  \coordinate[label=above:$B$] (B) at (3,4);
+  \coordinate[label=below left:$C$] (C) at (-1,0);
+  \coordinate[label=left:$O$] (O) at (1.5,1.5);
+  \coordinate (Ah) at ($ (B)!(A)!(C) $);
+  \coordinate (Bh) at ($ (C)!(B)!(A) $);
+  \coordinate (Ch) at ($ (A)!(C)!(B) $);
+  \path[name path=AH] (A) -- (Ah);
+  \path[name path=BH] (B) -- (Bh);
+  \path[name path=CH] (C) -- (Ch);
+  \path[name intersections={of=AH and BH}]
+    coordinate[label=below left:$H$] (H) at (intersection-1);
+  \coordinate[label=above left:$O_1$] (O1) at ($ (B)!(O)!(C) $);
+  \coordinate[label=below:$O_2$] (O2) at ($ (C)!(O)!(A) $);
+  \coordinate[label=right:$O_3$] (O3) at ($ (A)!(O)!(B) $);
+  \pic[mark angle={cyan}{2mm}{1}] {right angle=A--Ah--B};
+  \pic[mark angle={cyan}{2mm}{1}] {right angle=A--Bh--B};
+  \pic[mark angle={cyan}{2mm}{1}] {right angle=C--Ch--A};
+  \pic[mark angle={red}{2mm}{1}] {right angle=O--O1--B};
+  \pic[mark angle={red}{2mm}{1}] {right angle=O--O2--C};
+  \pic[mark angle={red}{2mm}{1}] {right angle=O--O3--A};
+  \draw (A) -- (Ah) (B) -- (Bh) (C) -- (Ch)
+    (A) -- (B) -- (C) -- cycle
+    (O) -- (O1) (O) -- (O2) (O) -- (O3);
+\end{tikzpicture}

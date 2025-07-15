@@ -1,0 +1,54 @@
+
+\prob{00B2}{平行线夹等腰}
+
+\begin{figure}[htbp]
+  \centering \image{00B2}
+  \caption{总第~\ref{sec:00B2} 题图} \label{fig:00B2}
+\end{figure}
+
+如图~\ref{fig:00B2}，有$\triangle ABC$；过$C$作直线$CD$使得$\angle BCD = \angle A$，$D$在$BC$右侧且满足$BC = BD$；作$DE \perp AB$于$E$；直线$AC, DE$交于$F$；过$D$作$DG \parallel AE$，交$AF$于$G$。求线段$FG$与$AC$的数量关系。
+\problabels{yellow/平面几何, green/数量关系问题}
+
+\ans{$FG = 2AC$}
+
+\subsection{正弦定理} \label{subsec:00B2-sin}
+
+\begin{figure}[htbp]
+  \centering \image{00B2-sin}
+  \caption{方法~\ref{subsec:00B2-sin} 图} \label{fig:00B2-sin}
+\end{figure}
+
+如图~\ref{fig:00B2-sin}，作$\triangle DFG$的中线$DM$，设$\angle A = \alpha, \angle DCG = \beta$，则易知
+\begin{align*}
+  \angle A = \angle BCD &= \angle BDC \\
+  = \angle MGD &= \angle MDG = \alpha \\
+  \angle DCG &= \angle ABC = \beta \\
+  FG &= 2MG
+\end{align*}
+于是易知$\triangle BCD \sim \triangle MGD$，故有
+\[ \frac{MG}{BC} = \frac{GD}{CD} \]
+结合上式，在$\triangle CDG$中应用正弦定理知
+\[ \frac{MG}{BC} = \frac{GD}{CD} = \frac{\sin\beta}{\sin\alpha} \]
+在$\triangle ABC$中应用正弦定理知
+\[ \frac{BC}{AC} = \frac{\sin\alpha}{\sin\beta} \]
+于是
+\[ \frac{MG}{AC} = \frac{MG}{BC}\cdot\frac{BC}{AC} = 1 \Rightarrow MG = AC \]
+即$FG = 2AC$。
+
+\subsection{相似三角形} \label{subsec:00B2-sim}
+
+\begin{figure}[htbp]
+  \centering \image{00B2-sim}
+  \caption{方法~\ref{subsec:00B2-sim} 图} \label{fig:00B2-sim}
+\end{figure}
+
+如图~\ref{fig:00B2-sim}，作$\triangle DFG$的中线$DM$；在射线$GF$上找一点$G'$使得$DG = DG'$，$G'$不与$G$重合；设$\angle A = \alpha, \angle DCG = \beta$，则由方法~\ref{subsec:00B2-sin} 知
+\[ \left\{ \begin{aligned}
+  \angle A &= \angle G' = \alpha \\
+  \angle ABC &= \angle G'CD = \beta
+\end{aligned} \right. \Rightarrow \triangle ABC \sim \triangle G'CD \]
+于是
+\[ \frac{AC}{DG} = \frac{AC}{DG'} = \frac{BC}{CD} \]
+而由方法~\ref{subsec:00B2-sin} 知$\triangle BCD \sim \triangle MGD$，于是有
+\[ \frac{MG}{DG} = \frac{BC}{CD} \Rightarrow \frac{MG}{DG} = \frac{AC}{DG} \Rightarrow MG = AC \]
+即$FG = 2AC$。

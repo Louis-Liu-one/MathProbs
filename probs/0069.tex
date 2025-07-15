@@ -1,0 +1,34 @@
+
+\prob{0069}{三元轮换等式}
+
+若$a, b, c$互不相同，且满足
+
+\[ a + \frac1b = b + \frac1c = c + \frac1a = x \]
+
+求$x$。
+\problabels{yellow/代数, green/代数求值问题}
+
+\ans{$x = \pm1$}
+
+\subsection{一元三次方程}
+
+基本思路：通过已知关系解关于$x$的一元三次方程得到$x$。
+
+由$x = a + \sfrac1b$知$b = \sfrac1{x - a}$，由$x = c + \sfrac1a$知$\sfrac1c = \sfrac a{ax - 1}$。
+
+于是由$x = b + \sfrac1c$知
+
+\begin{align*}
+  \frac1{x - a} + \frac a{ax - 1} &= x \\
+  (ax - 1) + a(x - a) &= x(x - a)(ax - 1) \\
+  2ax - 1 - a^2 &= ax^3 - a^2x^2 - x^2 + ax \\
+\end{align*}
+
+整理得
+
+\begin{align*}
+  (x^2 - 1)a^2 - (x^3 - x)a + (x^2 - 1) &= 0 \\
+  (x^2 - 1)(a^2 - xa - 1) &= 0 \\
+\end{align*}
+
+故有$x = \pm1$或$x = a + \sfrac1a$。而当$x = a + \sfrac1a = a + \sfrac1b$时，有$a = b$，与题设矛盾，故$x = \pm1$。

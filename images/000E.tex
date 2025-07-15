@@ -1,0 +1,18 @@
+
+\begin{tikzpicture}[scale=2]
+  \clip (-1/3,-1/4) rectangle (1.7,1.5);
+  \coordinate[label=below:$A$] (A) at (0,0);
+  \coordinate[label=below:$B$] (B) at (1,0);
+  \path[name path=AC] (A) -- ($ (A)!2! 20:(B) $);
+  \path[name path=BC] (B) -- ($ (B)!2! -125:(A) $);
+  \path[name intersections={of=AC and BC}]
+    coordinate[label=right:$C$] (C) at (intersection-1);
+  \path[name path=AD] (A) -- ($ (A)!2! 80:(C) $);
+  \path[name path=CD] (C) -- ($ (C)!2! -45:(A) $);
+  \path[name intersections={of=AD and CD}]
+    coordinate[label=above:$D$] (D) at (intersection-1);
+  \pic[mark angle={blue}{5mm}{1.2}] {angle=C--A--D};
+  \pic[mark angle={red}{5mm}{1.2}] {angle=B--A--C};
+  \draw (D) -- (A) -- (B) -- (C) (A) -- (C);
+  \draw[blue] (C) -- (D) (B) -- (D);
+\end{tikzpicture}

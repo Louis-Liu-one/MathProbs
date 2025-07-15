@@ -1,0 +1,32 @@
+
+\prob{0084}{Eisenstein判别法}
+
+设$f(x) = a_nx^n + a_{n - 1}x^{n - 1} + \dots + a_1x + a_0$是整系数多项式，若存在某质数$p$，使其满足
+\begin{enumerate}
+  \item $p$不整除$a_n$；
+  \item $p$整除其它的系数；
+  \item $p^2$不整除$a_0$，
+\end{enumerate}
+求证：$f(x)$在有理数集上不可约。
+\problabels{yellow/数论, green/证明题}
+
+\subsection{反证法}
+
+\begin{lemma}[Gauss引理] \label{lemma:0084-Gauss}
+  若$f(x)$在有理数集上可约，则其在整数集上可约。
+\end{lemma}
+
+\begin{proof}
+  参见总第~\ref{sec:0083} 题。
+\end{proof}
+
+不妨假设$f(x)$在有理数集上可约，则由引理~\ref{lemma:0084-Gauss}，其在整数集上可约，故存在
+\begin{align*}
+  g(x) &= b_rx^r + b_{r - 1}x^{r - 1} + \dots + b_1x + b_0 \\
+  h(x) &= c_sx^s + c_{s - 1}x^{s - 1} + \dots + c_1x + c_0
+\end{align*}
+其中每个$b_i, c_i$都是整数，$r + s = n$，使得$f(x) = g(x)h(x)$。由$p \mid a_0$知$p \mid b_0c_0$，不妨设$p \mid b_0$，则由$p^2 \nmid a_0$知$p \nmid c_0$。由$f(x) = g(x)h(x)$知
+\[ a_n = b_nc_0 + b_{n - 1}c_1 + \dots + b_1c_{n - 1} + b_0c_n \]
+约定当$k > r$时，$b_k = 0$；当$k > s$时，$c_k = 0$。由$p \nmid a_n$知$b$至少有一个不被$p$整除，设$b$中第一个不能被$p$整除的系数为$b_i$，则$b_0, b_1, \dots, b_{i - 1}$均被$p$整除。于是
+\[ a_i = b_0c_i + b_1c_{i - 1} + \dots + b_{i - 1}c_1 + b_ic_0 \]
+其中$b_ic_0$不被$p$整除，其余项均被$p$整除，故$p \nmid a_i$，与题设矛盾，故原假设错误，故$f(x)$在有理数集上不可约。证毕。

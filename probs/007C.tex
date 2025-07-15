@@ -1,0 +1,37 @@
+
+\prob{007C}{Khwarizmi乘法}
+
+Al Khwarizmi提出了与竖式不同的一种用于做正整数乘法的算法。例如计算$19\times23$，按如下方式计算：
+
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{rrl}
+    19 &  23 & \\
+     9 &  46 & \\
+     4 &  92 & 划掉 \\
+     2 & 184 & 划掉 \\
+     1 & 368 & \\ \midrule
+    \multicolumn{3}{r}{$23 + 46 + 368 = 437$}  \\
+  \end{tabular}
+  \caption{Al Khwarizmi乘法} \label{tab:007C}
+\end{table}
+
+将19与23如表~\ref{tab:007C} 的方式写下，然后每次将左边的数字除以2后向下取整，右边的数字乘以2；当左边减为1时，将左边为偶数的行划掉，然后计算没有划掉的行的右边的和，即为$19\times23 = 437$。
+
+证明该算法的正确性。
+\problabels{yellow/算法理论, green/证明题}
+
+\subsection{递推式}
+
+设左边的数为$x$，右边的数为$y$。
+
+运用递归的思想，可以发现当左边是奇数时，算法返回
+\[ xy = x + \left\lfloor\frac x2\right\rfloor\cdot2y \]
+这是因为$xy$等于右边加上下面的结果；当左边为偶数时，算法返回
+\[ xy = \left\lfloor\frac x2\right\rfloor\cdot2y \]
+这是因为此时右边被划掉，于是$xy$直接等于下面的结果。也即，该乘法算法实现了如下规则：
+\[ xy = \begin{cases}
+  x + \left\lfloor\sfrac x2\right\rfloor\cdot2y, & 2 \nmid x \\
+  \left\lfloor\sfrac x2\right\rfloor\cdot2y, & 2 \mid x \\
+\end{cases} \]
+该规则显然是正确的，故算法是正确的。证毕。

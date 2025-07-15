@@ -1,0 +1,25 @@
+
+\begin{tikzpicture}[scale=.7]
+  \tkzDefPoints{-3/0/A,5/0/B,0/4/C,0/2.5/D,0/0/H}
+  \tkzDefLine[parallel=through D](B,C) \tkzGetPoint{m}
+  \tkzDefLine[parallel=through D](A,C) \tkzGetPoint{n}
+  \tkzInterLL(A,B)(D,m)        \tkzGetPoint{M}
+  \tkzInterLL(A,B)(D,n)        \tkzGetPoint{N}
+  \tkzDefTriangleCenter(A,C,M) \tkzGetPoint{o1}
+  \tkzDefTriangleCenter(B,C,N) \tkzGetPoint{o2}
+  \tkzInterCC(o1,A)(M,C)       \tkzGetSecondPoint{P}
+  \tkzInterCC(o2,B)(N,C)       \tkzGetFirstPoint{Q}
+  \tkzDrawPolygon(A,B,C)
+  \tkzDrawSegments(C,H D,M D,N C,M C,N P,M Q,N)
+  \tkzMarkSegments[color=teal,mark=|](C,M P,M)
+  \tkzMarkSegments[color=cyan,mark=||](C,N Q,N)
+  \tkzMarkRightAngle(B,H,C)
+  \tkzDrawCircles(o1,A o2,B)
+  \tkzDrawPoints(A,B,C,D,H,M,N,P,Q)
+  \tkzLabelPoints[below](H,P,Q)
+  \tkzLabelPoints[left](A,D)
+  \tkzLabelPoints[right](B)
+  \tkzLabelPoints[below left](N)
+  \tkzLabelPoints[below right](M)
+  \tkzLabelPoints[above](C)
+\end{tikzpicture}

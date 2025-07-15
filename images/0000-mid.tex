@@ -1,0 +1,18 @@
+
+\begin{tikzpicture}[scale=.7, ang/.style={mark angle={green}{3mm}{1}}]
+  \coordinate[label=below:$A$] (A) at ({-sqrt(13)},0);
+  \coordinate[label=below:$B$] (B) at (0,0);
+  \coordinate[label=below:$C$] (C) at ({sqrt(13)},0);
+  \coordinate[label=above:$D$] (D) at ({-4/sqrt(13)},{6/sqrt(13)});
+  \coordinate[label=below:$D'$] (D') at ({4/sqrt(13)},{-6/sqrt(13)});
+  \pic[ang] {right angle=A--D--D'};
+  \fill[opafill=blue] (A) -- (B) -- (D') -- cycle
+    (C) -- (B) -- (D) -- cycle;
+  \fill[opafill=cyan] (A) -- (B) -- (D) -- cycle;
+  \draw (A) -- node[above] {$\sqrt{13}$} (B)
+    -- (C) -- node[above] {$5$} (D)
+    -- node[left] {$3$} cycle
+    (B) -- node[right] {$2$} (D);
+  \draw[dashed] (A) -- node[below] {$5$} (D')
+    -- node[left] {$2$} (B);
+\end{tikzpicture}

@@ -1,0 +1,19 @@
+
+\begin{tikzpicture}[scale=.25]
+  \tkzDefPoint(60:7){E}
+  \tkzDefPoint(120:15){A}
+  \tkzDefPoint(0,0){D}
+  \tkzInterLC(A,E)(D,A)    \tkzGetFirstPoint{C}
+  \tkzInterLC[R](C,D)(D,8) \tkzGetSecondPoint{B}
+  \tkzDrawPolygon(A,B,C)
+  \tkzDrawSegments(A,D D,E)
+  \tkzMarkSegments[color=teal,mark=|](A,D C,D)
+  \tkzMarkAngle[mkcolor=cyan,mark=|,size=2](B,A,D)
+  \tkzMarkAngle[mkcolor=cyan,mark=|,mkpos=1/4,size=2](C,D,E)
+  \tkzMarkAngle[mkcolor=cyan,mark=|,mkpos=3/4,size=2](C,D,E)
+  \tkzLabelAngle[pos=2](E,D,A){$60^\circ$}
+  \tkzDrawPoints(A,B,C,D,E)
+  \tkzLabelPoints[above](A)
+  \tkzLabelPoints[above right](E)
+  \tkzLabelPoints[below](B,C,D)
+\end{tikzpicture}

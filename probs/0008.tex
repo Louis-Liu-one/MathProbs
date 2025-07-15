@@ -1,0 +1,19 @@
+
+\prob{0008}{无理数}
+
+若$n = p_1^{a_1}\cdot p_2^{a_2} \cdots p_m^{a_m}$，其中$p_1 < p_2 <\cdots< p_m$是质数，$a_1, a_2,\dots,a_m$是正整数，且其中至少有一个不是$q$的倍数。$q$是正整数，求证：$\sqrt[q]{n}$不是有理数。
+\problabels{yellow/代数, green/证明题}
+
+\subsection{反证法}
+
+基本思路：通过假设$\sqrt[q]{n}$为一个最简分数$\sfrac xy$，然后推出$(x, y) \neq1$，进而推翻假设，证明命题。
+
+将$p_1^{a_1}, p_2^{a_2}, \dots, p_m^{a_m}$分成$r = r_1^{b_1}\cdot r_2^{b_2} \cdots r_{m_1}^{b_{m_1}}$与$s = s_1^{c_1}\cdot s_2^{c_2} \cdots s_{m_2}^{c_{m_2}}$。其中$m_1 + m_2 = m$，$b_1, b_2, \dots, b_{m_1}$不是$q$的倍数，$c_1, c_2, \dots, c_{m_2}$，是$q$的倍数，$r_1, r_2, \dots, r_{m_1}, s_1, s_2, \dots, s_{m_2}$是质数。则$\sqrt[q]{n}$可以表示为
+
+\[ s\sqrt[q]{r} \]
+
+设$\sqrt[q]{r} = \sfrac xy$（$(x, y) = 1$），则$\sfrac{x^q}{y^q} = r$，即$ry^q = x^q$。因为$b_1, b_2, \dots, b_{m_1}$不是$q$的倍数，所以$x$是$r$的倍数，因此设$x = rx_1$。可得
+
+\[ y^q = r^{q-1} x_1^q \]
+
+因为$(q-1, q) = 1$，所以$y$也是$r$的倍数，与已知假设$(x, y) = 1$矛盾，因此$\sqrt[q]{r}$不是有理数，证毕。

@@ -1,0 +1,44 @@
+
+\prob{0098}{外角部分相等}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0098}
+  \caption{总第~\ref{sec:0098} 题图} \label{fig:0098}
+\end{figure}
+
+如图~\ref{fig:0098}，在$\triangle ABC$中，$D$是$AB$的中点。延长$CA, CB$到点$E, F$，使得$DE = DF$。过$E, F$分别作$EP \perp CE, FP \perp CF$，两垂线交于点$P$，连接$AP, BP$。求证：$\angle PAE = \angle PBF$。
+\problabels{yellow/平面几何, green/证明题}
+
+\subsection{构造全等三角形} \label{subsec:0098-eqtri}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0098-eqtri}
+  \caption{解法~\ref{subsec:0098-eqtri} 图} \label{fig:0098-eqtri}
+\end{figure}
+
+如图~\ref{fig:0098-eqtri}，作线段$AP, BP$的中点$M, N$，连接$DM, DN, EM, FN$。
+
+由直角三角形的性质易知$AM = EM = \sfrac12AP, BN = FN = \sfrac12BP$。同时，$DM, DN$均为$\triangle APB$的中位线，故$DN = \sfrac12AP, DM = \sfrac12BP$且$DN \parallel AP, DM \parallel BP$。于是有$EM = DN, FN = DM$。
+
+\begin{align*}
+  \because{}& \text{在$\triangle DME$与$\triangle FND$中，} \\
+  & \left\{ \begin{aligned}
+    DM &= FN \\
+    ME &= ND \\
+    DE &= FD \\
+  \end{aligned} \right. \\
+  \therefore{}& \triangle DME \cong \triangle FND \\
+  \therefore{}& \angle DME = \angle DNF \\
+  \because  {}& DN \parallel AP, DM \parallel BP \\
+  \therefore{}& \angle AMD = \angle APB = \angle BND \\
+  \therefore{}& \angle AME = \angle BNF \\
+  \because  {}& AM = EM, BN = FN \\
+  \therefore{}& \angle PAE = 90^\circ - \frac12\angle AME, \\
+  & \angle PBF = 90^\circ - \frac12\angle BNF \\
+  \because  {}& \angle AME = \angle BNF \\
+  \therefore{}& \angle PAE = \angle PBF
+\end{align*}
+
+证毕。

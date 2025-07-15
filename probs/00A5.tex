@@ -1,0 +1,18 @@
+
+\prob{00A5}{分部积分法}
+
+证明：对于有连续导数$u', v'$的函数$u, v$，有
+\[ \int u \dif v = uv - \int v \dif u \]
+\problabels{yellow/微积分, green/证明题}
+
+\subsection{函数相乘求导}
+
+由
+\[ \left(u(x)v(x)\right)' = u'(x)v(x) + u(x)v'(x) \]
+移项得
+\[ u(x)v'(x) = \left(u(x)v(x)\right)' - u'(x)v(x) \]
+对两边求不定积分，得
+\[ \int u(x)v'(x) \dif x = u(x)v(x) - \int u'(x)v(x) \dif x \]
+将$u'(x)$写作$\sfrac{\dif u}{\dif x}$，$v'(x)$写作$\sfrac{\dif v}{\dif x}$，于是上式可简化为
+\[ \int u \dif v = uv - \int v \dif u \]
+证毕。

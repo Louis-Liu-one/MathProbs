@@ -1,0 +1,15 @@
+
+\begin{tikzpicture}
+  \coordinate[label=above:$A$] (A) at (2, 3);
+  \coordinate[label=left:$B$] (B) at (-3, 2);
+  \coordinate[label=below:$C$] (C) at (-1, -2);
+  \coordinate[label=right:$D$] (D) at (3, -3);
+  \coordinate (P) at ($ (A)!(C)!(B) $);
+  \coordinate (Q) at ($ (C)!(A)!(D) $);
+  \pic[mark angle={green}{3mm}{1}] {right angle=A--P--C};
+  \pic[mark angle={green}{3mm}{1}] {right angle=A--Q--D};
+  \draw (A) -- node[above] {$a$} (B) -- (C) -- node[below] {$b$} (D)
+    -- cycle (A) -- node[left] {$l$} (C);
+  \draw[dashed] (A) -- node[right] {$h_2$} (Q)
+    (C) -- node[right] {$h_1$} (P);
+\end{tikzpicture}

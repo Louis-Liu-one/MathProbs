@@ -1,0 +1,23 @@
+
+\begin{tikzpicture}[scale=1.8, rotate=135]
+  \coordinate[label=above right:{$B(a,0)$}] (B) at (0,0);
+  \coordinate[label=below left:{$A(0,0)$}] (A) at (1,1);
+  \coordinate[label=left:{$C(0,a)$}] (C) at ($ (A)!1! 90:(B) $);
+  \coordinate[label=right:{$D(a+b,-b)$}] (D) at (-1/2,0);
+  \coordinate[label=above right:{$E(b,a+b)$}] (E) at ($ (A)!1! 90:(D) $);
+  \coordinate[label=below:{$F(\sfrac{a+b}2,\sfrac{a-b}2)$}]
+    (F) at ($ (C)!1/2!(D) $);
+  \coordinate[label=right:$G$] (G) at ($ (B)!(A)!(E) $);
+  \pic[mark angle={green}{5mm}{1}] {right angle=B--A--C};
+  \pic[mark angle={green}{3mm}{1}] {right angle=D--A--E};
+  \draw[very thick, ->] ($ (B)!1.2!(A) $)
+    -- ($ (A)!1.5!(B) $) node[below] {$x$};
+  \draw[very thick, ->] ($ (C)!1.2!(A) $)
+    -- ($ (A)!1.5!(C) $) node[left] {$y$};
+  \draw (D) -- (A) -- (C) -- (E) -- (B) (C) -- (D) (A) -- (B)
+    (A) -- (E) (A) -- (F) -- (G);
+  \draw[blue] (A) -- (B) (A) -- (C);
+  \draw[red] (A) -- (D) (A) -- (E);
+  \fill[opafill=cyan] (A) -- (D) -- (C) -- cycle;
+  \fill[opafill=yellow] (A) -- (B) -- (E) -- cycle;
+\end{tikzpicture}

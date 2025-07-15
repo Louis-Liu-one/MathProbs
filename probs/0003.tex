@@ -1,0 +1,48 @@
+
+\prob{0003}{双等边}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0003}
+  \caption{0003：双等边} \label{fig:0003}
+\end{figure}
+
+如图~\ref{fig:0003}，$\triangle ABC$与$\triangle CDE$是等边三角形，$\angle CBD = 60^\circ$，求证：$PA = PE$。
+\problabels{yellow/平面几何, green/证明题}
+
+\subsection{证明等腰三角形} \label{subsec:0003-istri}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0003-istri}
+  \caption{\nameref{subsec:0003-istri}：将$\triangle ABP$翻着至$\triangle A'BP$，从而将问题转化为等腰三角形。}
+  \label{fig:0003-istri}
+\end{figure}
+
+基本思路：将$PA$移到另一个位置，使得其能成为等腰三角形的一条腰，其中$PE$是等腰三角形的另一条腰。证明其为等腰三角形即可。
+
+如图~\ref{fig:0003-istri}，延长$BD$至$A'$，使得$BA' = BC$。连接$A'P$、$A'C$、$A'E$。
+
+\begin{align*}
+  &\because   BA' = BC, \angle A'BC = 60^\circ \\
+  &\therefore \triangle A'BC \text{是等边三角形} \\
+  &\therefore BC = BA' = CA' \\
+  &\because   AB = AC = BC \\
+  &\therefore AB = A'B \\
+  &\therefore \triangle ABP \cong \triangle A'BP \ \text{（证明省略）} \\
+  &\therefore \angle APB = \angle A'PB, PA = PA' \\
+  \text{又}&\because \angle A'CB = \angle DCE \\
+  &\therefore \angle BCD = \angle A'CE \\
+  &\therefore \triangle BCD \cong \triangle A'CE \ \text{（证明省略）} \\
+  &\therefore \angle CBD = \angle CA'E = 60^\circ \\
+  &\because   \angle A'CB = 60^\circ \\
+  &\therefore \angle A'CB = \angle CA'E \\
+  &\therefore BC \parallel A'E \\
+  &\therefore \angle APB = \angle AEA', \angle A'PB = \angle PA'E \\
+  &\because   \angle APB = \angle A'PB \\
+  &\therefore \angle AEA' = \angle PA'E \\
+  &\therefore PA' = PE \\
+  &\because   PA = PA' \\
+  &\therefore PA = PE \\
+  &\text{证毕。} \\
+\end{align*}

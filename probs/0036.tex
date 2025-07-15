@@ -1,0 +1,97 @@
+
+\prob{0036}{10的倍数}
+
+若$a$、$b$、$n$为整数且$n > 1$，证明：$a^{2^n+1}b - ab^{2^n+1}$是$10$的倍数。
+\problabels{yellow/数论, green/证明题}
+
+\subsection{奇偶分析法拓展}
+
+基本思路：通过奇偶分析法证明待求公式是$2$的倍数，然后通过奇偶分析法拓展到任意倍数的方法证明待求公式是$5$的倍数，从而证明命题。
+
+\subsubsection{命题转化}
+
+通过简单的因式分解可知
+
+\vspace{-16pt}
+
+\begin{align*}
+  a^{2^n+1}b - ab^{2^n+1} &= ab(a^{2^n} - b^{2^n}) \\
+  &= ab(a - b)(a + b)(a^2 + b^2) \\
+  &\cdots(a^{2^{n-1}} + b^{2^{n-1}}) \\
+\end{align*}
+
+\vspace{-16pt}
+
+由于$n > 1$，所以其中前5项$a$、$b$、$a - b$、$a + b$、$a^2 + b^2$总是在待求公式中，因此只要证明$ab(a - b)(a + b)(a^2 + b^2)$是$10$的倍数即可证明命题。
+
+\subsubsection{证明原式为2的倍数}
+
+现在运用奇偶分析法的思想分类讨论$a$、$b$。
+
+若$a$、$b$中有一个是偶数，则$ab$必为偶数，因此待求公式是2的倍数。
+
+若$a$、$b$都是奇数，不妨设$a = 2x + 1$，$b = 2y + 1$，其中$x$、$y$是整数，则$a - b = 2x - 2y = 2(x - y)$是2的倍数，因此待求公式是2的倍数。
+
+\subsubsection{证明原式为5的倍数}
+
+现在再次运用奇偶分析法的思想，并将其拓展到任意倍数，而不是只有2的倍数。
+
+为了证明待求公式是$5$的倍数，不妨设$a = 5u + p$，$b = 5v + q$，其中$m$、$n$是整数，且
+
+\begin{align*}
+  p &\in \{0, 1, 2, 3, 4\} \\
+  q &\in \{0, 1, 2, 3, 4\} \\
+\end{align*}
+
+\vspace{-19pt}
+
+由此可知
+
+\vspace{-19pt}
+
+\begin{align*}
+  &\phantom{=} ab(a - b)(a + b)(a^2 + b^2) \\
+  &= (5u + p)(5v + q)\Big(5(u - v) + (p - q)\Big) \\
+  &\cdot\Big(5(u + v) + (p + q)\Big)\Big((5u + p)^2 + (5v + q)^2\Big) \\
+  &= (5u + p)(5v + q)\Big(5(u - v) + (p - q)\Big) \\
+  &\cdot\Big(5(u + v) + (p + q)\Big)\Big(5(\dots) + (p^2 + q^2)\Big) \\
+\end{align*}
+
+\vspace{-19pt}
+
+可以看到，每项都是形如$5r + s$的形式。将上式乘开后，只有$pq(p - q)(p + q)(p^2 + q^2)$一项中没有$5$，其它项中均有$5$，因此
+
+\vspace{-16pt}
+
+\begin{align*}
+  &\phantom{=} ab(a - b)(a + b)(a^2 + b^2) \\
+  &= pq(p - q)(p + q)(p^2 + q^2) + 5(\dots) \\
+\end{align*}
+
+\vspace{-19pt}
+
+因此只要证明$pq(p - q)(p + q)(p^2 + q^2)$是$5$的倍数即可证明$ab(a - b)(a + b)(a^2 + b^2)$是$5$的倍数。由于$p$、$q$的取值有有限个，因此可以使用穷举法，参见表~\ref{tab:0036-eo-5mul}。
+
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{ccl}
+    \toprule
+    $p$ & $q$ & 原式中 \\
+    \midrule
+    \multicolumn{2}{c}{有一个为$0$} & $pq = 0$ \\
+    \multicolumn{2}{c}{相等} & $p - q = 0$ \\ \midrule
+    $1$ & $4$ & \multirow{2}*{$p + q = 5$} \\
+    $2$ & $3$ & \\ \midrule
+    $1$ & $2$ & $p^2 + q^2 = 5$ \\
+    $1$ & $3$ & $p^2 + q^2 = 10$ \\
+    $2$ & $4$ & $p^2 + q^2 = 20$ \\
+    $3$ & $4$ & $p^2 + q^2 = 25$ \\
+    \bottomrule
+  \end{tabular}
+  \caption{由于将$p$和$q$交换后，原式绝对值不变，符号改变，因此我们只考虑$p \le q$的情况。}
+  \label{tab:0036-eo-5mul}
+\end{table}
+
+表~\ref{tab:0036-eo-5mul} 中涵盖了所有$p$和$q$的可能组合，因此$pq(p - q)(p + q)(p^2 + q^2)$是$5$的倍数，因此待求公式是$5$的倍数。
+
+证毕。

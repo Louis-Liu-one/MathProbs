@@ -1,0 +1,15 @@
+
+\begin{tikzpicture}
+  \def\Ax{2} \def\Ay{3} \def\Bx{0} \def\By{0} \def\Cx{6} \def\Cy{0}
+  \def\Dx{\calcbisectorx\Bx\By\Ax\Ay\Cx\Cy}
+  \def\Dy{\calcbisectory\Bx\By\Ax\Ay\Cx\Cy}
+  \def\Qx{\calcdotpos\Bx\Cx{1/2}} \def\Qy{\calcdotpos\By\Cy{1/2}}
+  \coordinate[label=below:$B$] (B) at (\Bx,\By);
+  \coordinate[label=below:$C$] (C) at (\Cx,\Cy);
+  \coordinate[label=above:$A$] (A) at (\Ax,\Ay);
+  \coordinate[label=below:$D$] (D) at ({\Dx}, {\Dy});
+  \coordinate[label=below:$Q$] (Q) at ({\Qx}, {\Qy});
+  \coordinate[label=above right:$P$] (P)
+    at ($ (A)!{\calclen\Dx\Dy\Qx\Qy/\calclen\Dx\Dy\Cx\Cy}!(C) $);
+  \draw (A) -- (B) -- (C) -- cycle (A) -- (D) (P) -- (Q);
+\end{tikzpicture}

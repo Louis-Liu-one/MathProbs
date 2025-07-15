@@ -1,0 +1,69 @@
+
+\prob{0070}{二元四次方程组}
+
+求方程组
+
+\[ \begin{cases}
+  2x + xy + 2y = 4 \\
+  4x^2 + x^2y^2 + 4y^2 = 272 \\
+\end{cases} \]
+
+的实数解。
+\problabels{yellow/代数, green/方程相关问题}
+
+\ans{$\begin{cases}
+  x = 3\pm\sqrt{17} \\
+  y = 3\mp\sqrt{17} \\
+\end{cases}$}
+
+\subsection{换元法}
+
+基本思路：换元$p = x + y, q = xy$，然后求解$p, q$。
+
+令$p = x + y, q = xy$，则有
+
+\[ \begin{cases}
+  2p + q = 4 \\
+  4p^2 - 8q + q^2 = 272 \\
+\end{cases} \]
+
+由前式知
+
+\[ p = \frac{4 - q}2 \]
+
+代入后式得
+
+\begin{align*}
+  4\left(\frac{4 - q}2\right)^2 - 8q + q^2 &= 272 \\
+  q^2 - 8q - 128 &= 0 \\
+\end{align*}
+
+解得$q = -8$或$q = 16$。
+
+当$q = -8$时，$p = 6$，即
+
+\[ \begin{cases}
+  xy = -8 \\
+  x + y = 6 \\
+\end{cases} \]
+
+解得
+
+\[ \begin{cases}
+  x = 3\pm\sqrt{17} \\
+  y = 3\mp\sqrt{17} \\
+\end{cases} \]
+
+当$q = 16$时，$p = -4$，即
+
+\[ \begin{cases}
+  xy = 16 \\
+  x + y = -4 \\
+\end{cases} \]
+
+无解。故原方程组解为
+
+\[ \begin{cases}
+  x = 3\pm\sqrt{17} \\
+  y = 3\mp\sqrt{17} \\
+\end{cases} \]

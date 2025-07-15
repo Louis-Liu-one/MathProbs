@@ -1,0 +1,28 @@
+
+\prob{005E}{根式求值}
+
+若
+
+\[ x = \frac12\left(2024^{\sfrac1n} - 2024^{-\sfrac1n}\right) \]
+
+求$\left(x - \sqrt{x^2 + 1}\right)^n$。
+\problabels{yellow/代数, green/代数求值问题}
+
+\ans{$\left(\sqrt{x^2 + 1} - x\right)^n = \sfrac1{2024}$}
+
+\subsection{换元法}
+
+基本思路：通过换元简化$n$次根式，最后展开求解。
+
+设$p = 2024^{\sfrac1n}$，则
+
+\begin{align*}
+  x &= \frac12\left(p - \frac1p\right) \\
+  x^2 + 1 &= \frac14\left(p^2 + \frac1{p^2} - 2\right) + 1 \\
+  &= \frac14\left(p^2 + \frac1{p^2} + 2\right) \\
+  \sqrt{x^2 + 1} &= \frac12\left(p + \frac1p\right) \\
+  \left(\sqrt{x^2 + 1} - x\right)^n &= \left(\frac1p\right)^n = \frac1{p^n} \\
+  &= \frac1{(2024^{\sfrac1n})^n} = \frac1{2024} \\
+\end{align*}
+
+综上，$\left(\sqrt{x^2 + 1} - x\right)^n = \sfrac1{2024}$。

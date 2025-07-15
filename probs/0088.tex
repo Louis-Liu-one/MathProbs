@@ -1,0 +1,24 @@
+
+\prob{0088}{平方数倒数和}
+
+证明：对于所有正整数$n$，有
+\[ 1 + \frac1{2^2} + \frac1{3^2} + \frac1{4^2} + \dots + \frac1{n^2} < 2 \]
+成立。
+\problabels{yellow/代数, green/证明题}
+
+\subsection{一般化}
+
+试证明其一般化命题：对于所有正整数$n$，有
+\[ 1 + \frac1{2^2} + \frac1{3^2} + \frac1{4^2} + \dots + \frac1{n^2} \le 2 - \frac1n \]
+成立。
+
+将左边记为$f(n)$，对$n$进行归纳。
+
+当$n = 1$时，显然有$f(n) = 1 \le 2 - 1 = 1$；当$n > 1$时，假设$f(n - 1) \le 2 - \sfrac1{n - 1}$，即要证明$f(n) \le 2 - \sfrac1n$。注意到
+\begin{align*}
+  f(n) &= f(n - 1) + \frac1{n^2} \\
+  &\le 2 - \frac1{n - 1} + \frac1{n^2} \\
+  &\le 2 - \frac1{n - 1} + \frac1{n(n - 1)} \\
+  &= 2 - \frac1n
+\end{align*}
+于是有$f(n) \le 2 - \sfrac1n$成立。该命题是原命题更严格的情况，于是原命题得证。

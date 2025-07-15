@@ -1,0 +1,60 @@
+
+\prob{0014}{分数最小值}
+
+已知$x, y$为正数且$x + y = 1$，求$\sfrac{x^2}{x + 1} + \sfrac{y^2}{y + 1}$的最小值。
+\problabels{yellow/代数, green/最值问题}
+
+\ans{$\sfrac{x^2}{x + 1} + \sfrac{y^2}{y + 1}$的最小值为$\sfrac13$。}
+
+\subsection{代数变换} \label{subsec:0014-alg}
+
+基本思路：通过代数变换将问题转换成求$xy$的最大值，然后求解。
+
+依题意可得
+
+\begin{align*}
+  &\mathrel{\phantom{=}} \frac{x^2}{x + 1} + \frac{y^2}{y + 1} \\
+  &= \frac{x^2(y + 1) + y^2(x + 1)}{(x + 1)(y + 1)} \\
+  &= \frac{x^2y + xy^2 + x^2 + y^2}{xy + x + y + 1} \\
+  &= \frac{xy(x + y) + x^2 + y^2}{xy + 2} \\
+  &= \frac{x^2 + xy + y^2}{xy + 2} \\
+  &= \frac{x^2 + 2xy + y^2 - xy}{xy + 2} \\
+  &= \frac{(x + y)^2 - xy}{xy + 2} \\
+  &= \frac{1 - xy}{xy + 2} \\
+\end{align*}
+
+因为$xy$总是正数，分母总是正数，所以当$xy$越大时，分母越大，分子越小，原式就越小。于是原问题就转化为当$x + y = 1$时，求$xy$的最大值。我们令$xy = k$，即求$k$的最大值。
+
+根据二元一次方程组
+
+\[ \begin{cases}
+  x + y = 1 \\
+  xy = k \\
+\end{cases} \]
+
+可得$x - y = \pm\sqrt{1 - 4k}$。由于$x - y$是实数，所以$1 - 4k \le 0$，即$k \ge \sfrac14$。\footnote{这一步可以理解为平面直角坐标系里有两个函数：$x + y = 1$和$xy = k$，我们要使$k$尽可能的大同时保证这两个函数有交点，此时$k = \sfrac14$。} 因此，$xy$的最大值为$\sfrac14$。代入原式可得其最小值为
+
+\[ \frac{1 - \sfrac14}{\sfrac14 + 2} = \frac39 = \frac13 \]
+
+综上，$\sfrac{x^2}{x + 1} + \sfrac{y^2}{y + 1}$的最小值为$\sfrac13$。
+
+\subsection{三角函数}
+
+基本思路：运用三角函数求解$xy$的最大值，进而求出原式最小值。
+
+同样按照\nameref{subsec:0014-alg}的做法将原式变成
+
+\[ \frac{1 - xy}{xy + 2} \]
+
+因为$x + y = 1$，所以我们可以令$x = \sin^2\alpha, y = \cos^2\alpha$，即要求$(\sin\alpha \cos\alpha)^2$的最小值。积化和差可得
+
+\begin{align*}
+  xy &= (\sin\alpha \cos\alpha)^2 \\
+  &= (\frac12\times 2\sin\alpha \cos\alpha)^2 \\
+  &= (\frac12\sin2\alpha)^2 \\
+  &= \frac14\sin^2 2\alpha \\
+\end{align*}
+
+当$\alpha = \pm\sfrac\pi 4$时$\sin^2 2\alpha$取得其最大值$\sin^2(\pm\sfrac\pi 2) = 1$，此时$xy$取得最大值$1\times\sfrac14 = \sfrac14$。代入原式可得原式最小值为$\sfrac13$。
+
+综上，$\sfrac{x^2}{x + 1} + \sfrac{y^2}{y + 1}$的最小值为$\sfrac13$。

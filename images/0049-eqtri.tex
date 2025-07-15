@@ -1,0 +1,23 @@
+
+\begin{tikzpicture}[scale=1.2]
+  \coordinate[label=below:$D$] (D) at (0,0);
+  \coordinate[label=below:$B$] (B) at (-1,0);
+  \coordinate[label=below:$C$] (C) at ({sqrt(7)-1},0);
+  \coordinate[label=above:$A$] (A) at ({(1+sqrt(7))/2},{(sqrt(3)+sqrt(21))/6});
+  \coordinate[label=above:$D'$] (D') at ($ (A)!1! 120:(D) $);
+  \coordinate[label=below:$B'$] (B') at ($ (A)!1! 120:(B) $);
+  \coordinate[label=above:$P$] (P) at ($ (B)!(B')!(C) $);
+  \coordinate[label=above right:$Q$] (Q) at ($ (B)!(A)!(C) $);
+  \pic[mark angle={cyan}{4mm}{2}, "$30^\circ$"] {angle=C--D--A};
+  \pic[mark angle={cyan}{4mm}{2}, "$30^\circ$"] {angle=A--D'--B};
+  \pic[mark angle={red}{4mm}{1.5}, "$60^\circ$"] {angle=B--A--C};
+  \pic[mark angle={red}{4mm}{1.5}, "$60^\circ$"] {angle=C--A--B'};
+  \pic[mark angle={blue}{2mm}{1}] {right angle=B--P--B'};
+  \pic[mark angle={blue}{2mm}{1}] {right angle=A--Q--B};
+  \fill[opafill=green] (B) -- (A) -- (D) -- cycle (B') -- (A) -- (D') -- cycle;
+  \fill[opafill=yellow] (C) -- (B) -- (A) -- (B') -- cycle;
+  \draw (A) -- (B) -- node[below] {$1$} (D) -- (C) -- (A) (A) -- (D);
+  \draw[dashed] (C) -- (P) -- (B') -- node[below] {$\sqrt7$} (C)
+    (A) -- (D') -- node[left] {$1$} (B') (A) -- (B') (A) -- (Q);
+\end{tikzpicture}
+

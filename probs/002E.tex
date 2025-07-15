@@ -1,0 +1,113 @@
+
+\prob{002E}{对边平方和}
+
+\begin{figure}[htbp]
+  \centering
+  \image{002E}
+  \caption{002E：对边平方和} \label{fig:002E}
+\end{figure}
+
+证明：若四边形对角线垂直，则其对边平方和相等。
+\problabels{yellow/平面几何, green/证明题}
+
+\subsection{勾股定理} \label{subsec:002E-pyth}
+
+\begin{figure}[htbp]
+  \centering
+  \image{002E-pyth}
+  \caption{\nameref{subsec:002E-pyth}：四次运用勾股定理，证明命题。}
+  \label{fig:002E-pyth}
+\end{figure}
+
+基本思路：在四个直角三角形中运用勾股定理，将$AB^2 + CD^2$与$AD^2 + BC^2$用同一个代数式表示，从而证明命题。
+
+如图~\ref{fig:002E-pyth}，设$AC$与$BD$交于点$O$。
+
+在$\mathrm{Rt}\triangle AOB$与$\mathrm{Rt}\triangle COD$中由勾股定理知
+
+\begin{align*}
+  AB^2 &= OA^2 + OB^2 \\
+  CD^2 &= OC^2 + OD^2 \\
+\end{align*}
+
+因此，
+
+\[ AB^2 + CD^2 = OA^2 + OB^2 + OC^2 + OD^2 \]
+
+又在$\mathrm{Rt}\triangle BOC$与$\mathrm{Rt}\triangle AOD$中由勾股定理知
+
+\begin{align*}
+  BC^2 &= OB^2 + OC^2 \\
+  AD^2 &= OA^2 + OD^2 \\
+\end{align*}
+
+因此，
+
+\[ BC^2 + AD^2 = OA^2 + OB^2 + OC^2 + OD^2 \]
+
+由此可知，
+
+\[ AB^2 + CD^2 = BC^2 + AD^2 \]
+
+证毕。
+
+\subsection{化积为方} \label{subsec:002E-squ}
+
+\begin{figure}[htbp]
+  \centering
+  \image{002E-squ}
+  \caption{\nameref{subsec:002E-squ}：作四个正方形，然后证明颜色相同的矩形面积相等。}
+  \label{fig:002E-squ}
+\end{figure}
+
+基本思路：运用化积为方的思想作四个正方形，然后将正方形分成多个矩形，再分别证明每个矩形面积相等，进而证明命题。
+
+如图~\ref{fig:002E-squ}，设$AC$与$BD$交于点$O$；在$AB$、$BC$、$CD$、$AD$上分别向外作正方形$ABA_1B_1$、$BCB_2C_2$、$CDC_3D_3$、$ADA_4D_4$；设$Q_1$、$Q_2$、$Q_3$、$Q_4$分别是$O$在$A_1B_1$、$B_2C_2$、$C_3D_3$、$A_4D_4$边上的垂足，分别交$AB$、$BC$、$CD$、$AD$于$P_1$、$P_2$、$P_3$、$P_4$；连接$A_1C_2$，作$A_1M \parallel BD$交$OQ_1$于$M$，$C_2N \parallel BD$交$OQ_2$于$N$；设$L$为$A_1C_2$的中点，连接$BL$。
+
+由于$AB \perp A_1B$、$BC \perp BC_2$，且$OB$是$\triangle ABC$在$AC$边上的高，$BL$是$\triangle A_1BC_2$的中线，因此应用第~\ref{sec:002D} 题的结论知$O$、$B$、$L$三点共线。因此知平行四边形$OBA_1M$和$OBC_2N$在$OB$边上的高相等，又由于它们有公共底边$OB$，所以可知
+
+\[ S_{OBA_1M} = S_{OBC_2N} \]
+
+又由于看图可知，平行四边形$OBA_1M$与矩形$A_1BP_1Q_1$共底且高相同，所以
+
+\[ S_{OBA_1M} = S_{A_1BP_1Q_1} \]
+
+同理知
+
+\[ S_{OBC_2N} = S_{C_2BP_2Q_2} \]
+
+因此，
+
+\[ S_{A_1BP_1Q_1} = S_{C_2BP_2Q_2} \]
+
+用同样的方法可知
+
+\begin{align*}
+  S_{B_2CP_2Q_2} &= S_{D_3CP_3Q_3} \\
+  S_{C_3DP_3Q_3} &= S_{A_4DP_4Q_4} \\
+  S_{D_4AP_4Q_4} &= S_{B_1AP_1Q_1} \\
+\end{align*}
+
+因此，
+
+\begin{align*}
+  &\phantom{=} S_{ABA_1B_1} + S_{CDC_3D_3} \\
+  &= S_{A_1BP_1Q_1} + S_{B_1AP_1Q_1} + S_{D_3CP_3Q_3} + S_{C_3DP_3Q_3} \\
+  &= S_{C_2BP_2Q_2} + S_{D_4AP_4Q_4} + S_{B_2CP_2Q_2} + S_{A_4DP_4Q_4} \\
+  &= S_{BCB_2C_2} + S_{ADA_4D_4} \\
+\end{align*}
+
+由于
+
+\begin{align*}
+  S_{ABA_1B_1} &= AB^2 \\
+  S_{BCB_2C_2} &= BC^2 \\
+  S_{CDC_3D_3} &= CD^2 \\
+  S_{ADA_4D_4} &= AD^2 \\
+\end{align*}
+
+所以可知，
+
+\[ AB^2 + CD^2 = BC^2 + AD^2 \]
+
+证毕。

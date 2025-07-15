@@ -1,0 +1,92 @@
+
+\prob{00B7}{从增函数到不等式链}
+
+求证对于任意非负实数$a, b$，函数
+\[ f(x) = \left(\frac{a^x + b^x}2\right)^{1/x} \]
+在实数上是单调不减函数，并由此证明对于任意整数$i$，
+\begin{align*}
+  & \sqrt[i]{\frac2{1/a^i + 1/b^i}} \le \dots \le \frac2{1/a + 1/b} \\
+  \le{}& \sqrt{ab} \le \frac{a + b}2 \le \sqrt{\frac{a^2 + b^2}2} \\
+  \le{}& \sqrt[3]{\frac{a^3 + b^3}2} \le \dots \le \sqrt[i]{\frac{a^i + b^i}2}
+\end{align*}
+\problabels{yellow/代数, green/证明题}
+
+\subsection{由定义入手} \label{subsec:00B7-def}
+
+由定义知要证明对于任意满足$x_1 < x_2$的实数$x_1, x_2$，有
+\[ \left(\frac{a^{x_1} + b^{x_1}}2\right)^{1/x_1} \le \left(\frac{a^{x_2} + b^{x_2}}2\right)^{1/x_2} \]
+
+构造函数
+\[ g(x) = x^k, (k < 0\ \text{或}\ k > 1) \]
+显然有
+\[ \frac{\dif^2 g}{\dif x^2} = k(k - 1)x^{k - 2} > 0 \]
+故$g$为凹函数，于是对于任意实数$A, B$，有
+\[ g\left(\frac{A + B}2\right) \le \frac{g(A) + g(B)}2 \]
+即
+\[ \left(\frac{A + B}2\right)^k \le \frac{A^k + B^k}2 \]
+由于$x_2 > x_1 \ne 0$，故$x_2/x_1$不在$[0, 1]$中，故可令$A = a^{x_1}, B = b^{x_1}, k = x_2/x_1$，则
+\[ \left(\frac{a^{x_1} + b^{x_1}}2\right)^{x_2/x_1} \le \frac{a^{x_2} + b^{x_2}}2 \]
+即
+\[ \left(\frac{a^{x_1} + b^{x_1}}2\right)^{1/x_1} \le \left(\frac{a^{x_2} + b^{x_2}}2\right)^{1/x_2} \]
+故$f$是单调不减函数。
+
+显然
+\begin{align*}
+  \ln f(x) &= \ln\left(\frac{a^x + b^x}2\right)^{1/x} \\
+  &= \frac1x\ln\frac{a^x + b^x}2 = \frac{\ln((a^x + b^x)/2)}x
+\end{align*}
+当$x \to 0$时，分式上下皆$\to 0$，故应用L'Hôspital法则知
+\begin{align*}
+  \lim_{x \to 0}\ln f(x) &= \lim_{x \to 0}\frac2{a^x + b^x}\cdot\frac{a^x\ln a + b^x\ln b}2 \\
+  &= \lim_{x \to 0}\frac{a^x\ln a + b^x\ln b}{a^x + b^x} \\
+  &= \frac{\ln a + \ln b}2 \\
+  \lim_{x \to 0}f(x) &= \mathe^{(\ln a + \ln b)/2} = \sqrt{ab}
+\end{align*}
+由前知$f$是实数上的单调不减函数，故
+\begin{align*}
+  f(-i) &\le \dots \le f(-1) \le \lim_{x \to 0}f(x) \\
+  &\le f(1) \le f(2) \le \dots \le f(i)
+\end{align*}
+即
+\begin{align*}
+  & \sqrt[i]{\frac2{1/a^i + 1/b^i}} \le \dots \le \frac2{1/a + 1/b} \\
+  \le{}& \sqrt{ab} \le \frac{a + b}2 \le \sqrt{\frac{a^2 + b^2}2} \\
+  \le{}& \sqrt[3]{\frac{a^3 + b^3}2} \le \dots \le \sqrt[i]{\frac{a^i + b^i}2}
+\end{align*}
+证毕。
+
+\subsection{直接求导}
+
+直接将$f$求导得
+\begin{align*}
+  \frac{\dif f}{\dif x} &= \frac\dif{\dif x}\mathe^{1/x\cdot\ln((a^x + b^x)/2)} \\
+  &= \mathe^{1/x\cdot\ln((a^x + b^x)/2)}\cdot\frac\dif{\dif x}\left(\frac1x\ln\frac{a^x + b^x}2\right) \\
+  &= f(x)\left(\frac1x\cdot\frac\dif{\dif x}\ln\frac{a^x + b^x}2 + \frac{a^x + b^x}2\cdot\frac\dif{\dif x}\frac1x\right) \\
+  &= f(x)\left(\frac{a^x\ln a + b^x\ln b}{x\left(a^x + b^x\right)} - \frac1{x^2}\ln\frac{a^x + b^x}2\right) \\
+  &= x^2f(x)\left(\frac{a^x\ln a + b^x\ln b}{a^x + b^x}x - \ln\frac{a^x + b^x}2\right)
+\end{align*}
+令$A = a^x, B = b^x$，则
+\begin{align*}
+  \frac{\dif f}{\dif x} ={}& x^2f(x)\left(\frac{A\ln A + B\ln B}{A + B} - \ln\frac{A + B}2\right) \\
+  ={}& \frac{2x^2f(x)}{A + B}\bigg(\frac{A\ln A + B\ln B}2 \\
+  &- \frac{A + B}2\ln\frac{A + B}2\bigg)
+\end{align*}
+令
+\[ g(x) = x\ln x \]
+则
+\[ \frac{\dif f}{\dif x} = \frac{2x^2f(x)}{A + B}\left(\frac{g(A) + g(B)}2 - g\left(\frac{A + B}2\right)\right) \]
+而
+\[ \frac{\dif^2 g}{\dif x^2} = \frac\dif{\dif x}\left(\ln x + 1\right) = \frac1x \]
+当其中$x > 0$时上式$> 0$，故此时$g$为凸函数，故
+\[ \frac{g(A) + g(B)}2 \ge g\left(\frac{A + B}2\right) \]
+同时显然
+\[ \frac{2x^2f(x)}{A + B} \ge 0 \]
+故
+\[ \frac{\dif f}{\dif x} \ge 0 \]
+因此$f$为单调不减函数。与方法~\ref{subsec:00B7-def} 同理得
+\begin{align*}
+  & \sqrt[i]{\frac2{1/a^i + 1/b^i}} \le \dots \le \frac2{1/a + 1/b} \\
+  \le{}& \sqrt{ab} \le \frac{a + b}2 \le \sqrt{\frac{a^2 + b^2}2} \\
+  \le{}& \sqrt[3]{\frac{a^3 + b^3}2} \le \dots \le \sqrt[i]{\frac{a^i + b^i}2}
+\end{align*}
+证毕。

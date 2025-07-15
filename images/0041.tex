@@ -1,0 +1,14 @@
+
+\begin{tikzpicture}
+  \clip (-.1,-.8) rectangle (6.9,6.5);
+  \coordinate[label=below:$B$] (B) at (0,0);
+  \coordinate[label=below:$C$] (C) at ({sqrt(25+12*sqrt(3))},0);
+  \coordinate[label=above:$A$] (A) at ($ (B)!1! 60:(C) $);
+  \path[name path=Acirc] (A) circle (3);
+  \path[name path=Bcirc] (B) circle (4);
+  \path[name intersections={of=Acirc and Bcirc}]
+    coordinate[label=below:$P$] (P) at (intersection-2);
+  \draw (A) -- (B) -- (C) -- cycle
+    (B) -- node[below] {$4$} (P) -- node[right] {$3$} (A)
+    (P) -- node[below] {$5$} (C);
+\end{tikzpicture}

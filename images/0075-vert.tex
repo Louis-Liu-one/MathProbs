@@ -1,0 +1,21 @@
+
+\begin{tikzpicture}
+  \coordinate[label=below:$O$] (O) at (0,0);
+  \coordinate[label=below:$A$] (A) at (-3,0);
+  \coordinate[label=below:$B$] (B) at (3,0);
+  \coordinate[label=above:$C$] (C) at (1,2);
+  \coordinate[label=above:$D$] (D) at (-2,1);
+  \coordinate[label=below:$P$] (P) at ($ (A)!(C)!(B) $);
+  \coordinate[label=below:$Q$] (Q) at ($ (A)!(D)!(B) $);
+  \pic[mark angle={blue}{3mm}{1}] {right angle=C--O--D};
+  \pic[mark angle={green}{3mm}{1}] {right angle=C--P--O};
+  \pic[mark angle={green}{3mm}{1}] {right angle=O--Q--D};
+  \pic[mark angle={red}{3mm}{2}, "$45^\circ$"] {angle=B--A--D};
+  \pic[mark angle={red}{3mm}{2}, "$45^\circ$"] {angle=C--B--A};
+  \fill[opafill=yellow] (C) -- (P) -- (Q) -- (D) -- (O) -- cycle;
+  \draw (A) -- node[below] {$y$} (Q) -- node[below] {$x$} (O)
+    -- node[below] {$y$} (P) -- node[below] {$x$} (B)
+    -- node[above right] {$\sqrt2x$} (C) -- (D)
+    -- node[above left] {$\sqrt2y$} cycle (C) -- (O) (O) -- (D);
+  \draw[dashed] (C) -- node[right] {$x$} (P) (D) -- node[right] {$y$} (Q);
+\end{tikzpicture}

@@ -1,0 +1,44 @@
+
+\prob{0072}{三元分式方程组I}
+
+若实数$x, y, z$满足
+\[ \begin{cases}
+  \sfrac1x + \sfrac1{y + z} = \sfrac12 \\
+  \sfrac1y + \sfrac1{z + x} = \sfrac13 \\
+  \sfrac1z + \sfrac1{x + y} = \sfrac14 \\  
+\end{cases} \]
+求$x, y, z$。
+\problabels{yellow/代数, green/方程相关问题}
+
+\ans{$x = \sfrac{23}{10}, y = \sfrac{23}6, z = \sfrac{23}2$}
+
+\subsection{通分}
+
+基本思路：通分，然后经过代数变换求解。
+
+设$s = x + y + z$，则原方程组可变换为
+\[ \begin{cases}
+  zx + xy = 2s \\
+  xy + yz = 3s \\
+  yz + zx = 4s \\
+\end{cases} \]
+于是有
+\[ xy + yz + zx = \frac92s \]
+分别相减得
+\[ \begin{cases}
+  xy = \sfrac12s \\
+  yz = \sfrac52s \\
+  zx = \sfrac32s \\
+\end{cases} \]
+故
+\[ \frac yx = \frac53, \frac zy = 3 \]
+即$5x = 3y = z$。
+
+将该结果代入原方程组有
+\begin{align*}
+  \frac1x + \frac1{\sfrac53x + 5x} &= \frac12 \\
+  x &= \frac{23}{10} \\
+\end{align*}
+由此知
+\[ y = \frac{23}6, z = \frac{23}2 \]
+因此，$x = \sfrac{23}{10}, y = \sfrac{23}6, z = \sfrac{23}2$。

@@ -1,0 +1,58 @@
+
+\prob{00B6}{平行线双圆}
+
+\begin{figure}[htbp]
+  \centering \image{00B6}
+  \caption{总第~\ref{sec:00B6} 题图} \label{fig:00B6}
+\end{figure}
+
+如图~\ref{fig:00B6}，在$\triangle ABC$中，作$CH \perp AB$于$H$；$D$是$CH$上一点，过$D$作$DM \parallel BC$交$AB$于$M$，$DN \parallel AC$交$AB$于$N$，连接$CM, CN$；在$\triangle ACM$的外接圆上找一个不与$C$重合的点$P$使得$MC = MP$，在$\triangle BCN$的外接圆上找一个不与$C$重合的点$Q$使得$NC = NQ$。求证：$A, B, P, Q$四点共圆。
+\problabels{yellow/平面几何, green/证明题}
+
+\emph{LTY提供的题目。}
+
+\subsection{三角函数} \label{subsec:00B6-sin}
+
+\begin{figure}[htbp]
+  \centering \image{00B6-sin}
+  \caption{方法~\ref{subsec:00B6-sin} 图} \label{fig:00B6-sin}
+\end{figure}
+
+如图~\ref{fig:00B6-sin}，作$P, Q$关于$AB$的对称点$P', Q'$；作$MH_1 \perp AC$于$H_1$，$NH_2 \perp BC$于$H_2$；连接$AP, BQ, P'Q'$。设
+\[ \angle BAC = \alpha, \angle ABC = \beta, \angle MCH = \gamma, \angle NCH = \delta \]
+由平行线的性质可设
+\begin{align*}
+  NH &= a, MH = b, DH = h, \\
+  AH &= ka, BH = kb, CH = kh
+\end{align*}
+
+由于$MC = MP, NC = NQ$，由同弦所对圆周角相等以及对称的性质知
+\begin{align*}
+  \angle BAC &= \angle BAP = \angle BAP', \\
+  \angle ABC &= \angle ABQ = \angle ABQ', \\
+  MC &= MP', NC = NQ'
+\end{align*}
+故$P', Q'$在$AC, BC$上，由三线合一知$CP' = 2CH_1, CQ' = 2CH_2$。由对称的性质，证明$A, B, P', Q'$四点共圆亦可证原命题。
+
+显然
+\begin{align*}
+  & \angle ACM = 90^\circ - \alpha + \gamma \Rightarrow \angle CMH_1 = \alpha - \gamma \\
+  &\Rightarrow CH_1 = MC\sin(\alpha - \gamma)
+\end{align*}
+而
+\begin{align*}
+  \sin\alpha &= \frac h{\sqrt{a^2 + h^2}}, \cos\alpha = \frac a{\sqrt{a^2 + h^2}} \\
+  \sin\gamma &= \frac b{MC}, \cos\gamma = \frac{kh}{MC}
+\end{align*}
+故
+\begin{align*}
+  CH_1 &= MC(\sin\alpha\cos\gamma - \cos\alpha\sin\gamma) \\
+  &= \frac{h\cdot kh}{\sqrt{a^2 + h^2}} - \frac{a\cdot b}{\sqrt{a^2 + h^2}} = \frac{kh^2 - ab}{\sqrt{a^2 + h^2}}
+\end{align*}
+同理得
+\[ CH_2 = \frac{kh^2 - ab}{\sqrt{b^2 + h^2}} \]
+故
+\[ \frac{CP'}{CQ'} = \frac{CH_1}{CH_2} = \frac{\sqrt{b^2 + h^2}}{\sqrt{a^2 + h^2}} = \frac{CB}{CA} \]
+于是$\triangle ACB \sim \triangle Q'CP'$，故
+\[ \angle CP'Q' = \angle ABC \Rightarrow \angle ABQ' + \angle AP'Q' = 180^\circ \]
+故$A, B, P', Q'$四点共圆，由对称的性质知$A, B, P, Q$四点共圆。证毕。

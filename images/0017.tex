@@ -1,0 +1,17 @@
+
+\begin{tikzpicture}[scale=2]
+  \coordinate[label=below:$B$] (B) at (0,0);
+  \coordinate[label=above:$A$] (A) at (1,1);
+  \coordinate[label=right:$C$] (C) at ($ (A)!1! 90:(B) $);
+  \coordinate[label=left:$D$] (D) at (-1/2,0);
+  \coordinate[label=right:$E$] (E) at ($ (A)!1! 90:(D) $);
+  \coordinate[label=above left:$F$] (F) at ($ (C)!1/2!(D) $);
+  \coordinate[label=below:$G$] (G) at ($ (B)!(A)!(E) $);
+  \pic[mark angle={green}{5mm}{1}] {right angle=B--A--C};
+  \pic[mark angle={green}{3mm}{1}] {right angle=D--A--E};
+  \draw (D) -- (A) -- (C) -- (E) -- (B) (C) -- (D) (A) -- (B)
+    (A) -- (E) (A) -- node[right] {$4$} (F) -- node[right] {$1$} (G);
+  \draw[blue] (A) -- (B) (A) -- (C);
+  \draw[red] (A) -- (D) (A) -- (E);
+  \fill[opafill=cyan] (A) -- (D) -- (C) -- cycle;
+\end{tikzpicture}

@@ -1,0 +1,60 @@
+
+\prob{0063}{带约束的最值I}
+
+若实数$a, b, c, d$满足
+\[ a + b + c + d = 4, a^2 + b^2 + c^2 + d^2 = \frac{16}3 \]
+求$a$的取值范围。
+\problabels{yellow/代数, green/取值范围问题}
+
+\ans{$0 \le a \le2$}
+
+\subsection{抛物线}
+
+构造函数
+\[ y = 3x^2 - 2(b + c + d)x + (b^2 + c^2 + d^2) \]
+易知
+\[ y = (x - b)^2 + (x - c)^2 + (x - d)^2 \ge0 \]
+故其与$x$轴至多有$1$个交点，可知$\Delta \le0$。而
+\begin{align*}
+  \Delta &= 4(b + c + d)^2 - 12(b^2 + c^2 + d^2) \\
+  &= 4(4 - a)^2 - 12\left(\frac{16}3 - a^2\right) \\
+  &= 16a(a - 2) \le0 \\
+\end{align*}
+得$a(a - 2) \le 0$，即$0 \le a \le2$。
+
+\subsection{Lagrange乘数法}
+
+引入函数
+\begin{align*}
+  & f(a, b, c, d, u, v) \\
+  ={}& a + u(a + b + c + d - 4) \\
+  &+ v\left(a^2 + b^2 + c^2 + d^2 - \frac{16}3\right) \\
+\end{align*}
+当$f$取最值时，有
+\[ \begin{cases}
+  \sfrac{\partial f}{\partial a} = 1 + u + 2va = 0 \\
+  \sfrac{\partial f}{\partial b} = u + 2vb = 0 \\
+  \sfrac{\partial f}{\partial c} = u + 2vc = 0 \\
+  \sfrac{\partial f}{\partial d} = u + 2vd = 0 \\
+  \sfrac{\partial f}{\partial u} = a + b + c + d - 4 = 0 \\
+  \sfrac{\partial f}{\partial v} = a^2 + b^2 + c^2 + d^2 - \sfrac{16}3 = 0 \\
+\end{cases} \]
+于是有
+\begin{align*}
+  a &= -\frac{u + 1}{2v} \\
+  b = c = d &= -\frac u{2v} \\
+  -\frac{u + 1}{2v} - 3\frac u{2v} &= 4 \\
+  \left(\frac{u + 1}{2v}\right)^2 + 3\left(\frac u{2v}\right)^2 &= \frac{16}3 \\
+\end{align*}
+即
+\[ \begin{cases}
+  8v = -4u - 1 \\
+  12u^2 + 6u + 3 = 64v^2 \\
+\end{cases} \]
+解得
+\[ \begin{cases}
+  u = -1 \\ v = \sfrac38 \\
+\end{cases} \text{或} \begin{cases}
+  u = \sfrac12 \\ v = -\sfrac38 \\
+\end{cases} \]
+当$u = -1, v = \sfrac38$时，有$a = 0$；当$u = \sfrac12, v = -\sfrac38$时，有$a = 2$，故$a$的两个最值为$0$与$2$，故$0 \le a \le2$。

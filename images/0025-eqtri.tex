@@ -1,0 +1,15 @@
+
+\begin{tikzpicture}[scale=2.4]
+  \coordinate[label=above:$A$] (A) at (75:1);
+  \coordinate[label=below:$B$] (B) at (-120:1);
+  \coordinate[label=below:$C$] (C) at (-50:1);
+  \coordinate[label=right:$O$] (O) at (0,0);
+  \pic[mark angle={cyan}{5mm}{1}] {angle=B--A--O};
+  \pic[mark angle={cyan}{5mm}{1}] {angle=O--B--A};
+  \pic[mark angle={blue}{3mm}{1}] {angle=O--A--C};
+  \pic[mark angle={blue}{3mm}{1}] {angle=A--C--O};
+  \pic[mark angle={red}{3mm}{1}] {angle=B--O--C};
+  \draw (O) circle (1) (B) -- (A) (A) -- (C) (B) -- (O) (O) -- (C);
+  \draw[blue] (B) arc (-120:-50:1);
+  \draw[dashed] (O) -- (A);
+\end{tikzpicture}

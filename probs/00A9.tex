@@ -1,0 +1,29 @@
+
+\prob{00A9}{从中线到直角}
+
+\begin{figure}[htbp]
+  \centering \image{00A9}
+  \caption{总第~\ref{sec:00A9} 题图} \label{fig:00A9}
+\end{figure}
+
+如图~\ref{fig:00A9}，在$\triangle ABC$中，$BD$是中线，且$\angle ADB = 45^\circ$。若$\angle A = 3\angle C$，求证：$\angle ABC = 90^\circ$。
+\problabels{yellow/平面几何, green/证明题}
+
+\subsection{作垂线} \label{subsec:00A9-h}
+
+\begin{figure}[htbp]
+  \centering \image{00A9-h}
+  \caption{方法~\ref{subsec:00A9-h} 图} \label{fig:00A9-h}
+\end{figure}
+
+如图~\ref{fig:00A9-h}，作$BE \perp AC$于$E$；过$D$作$E'D \perp AC$于，交$BC$于$A'$；过$B$作$AC$的平行线，交$E'D$于$E'$。显然，四边形$DEBE'$是正方形，故$\angle EBE' = 90^\circ, BE = BE'$。设$\angle A = \alpha$，则$\angle C = 3\alpha$。
+
+显然$A'D$垂直平分$AC$，于是$\angle A'AD = \angle A = \alpha$，故$\angle AA'B = 2\alpha$。同时，由于$\angle C = 3\alpha$，故$\angle A'AB = 2\alpha = \angle AA'B \Rightarrow AB = A'B$。
+
+由于在$\rttri BAE$与$\rttri BA'E'$中，
+\[ \left\{\begin{aligned}
+  BA &= BA' \\ BE &= BE'
+\end{aligned}\right. \]
+故$\rttri BAE \cong \rttri BA'E'$，于是
+\[ \angle ABE = \angle A'BE' \Rightarrow \angle ABC = \angle EBE' = 90^\circ \]
+证毕。

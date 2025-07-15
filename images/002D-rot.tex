@@ -1,0 +1,22 @@
+
+\begin{tikzpicture}[scale=.45]
+  \coordinate[label=below right:$O$] (O) at (0,0);
+  \coordinate[label=right:$A$] (A) at (6,0);
+  \coordinate[label=above:$B$] (B) at (1,4);
+  \coordinate[label=below:$A'$] (A') at ($ (O)!1! -90:(A) $);
+  \coordinate[label=above:$B'$] (B') at ($ (O)!1! 90:(B) $);
+  \coordinate[label=above right:$P$] (P) at ($ (A)!(O)!(B) $);
+  \coordinate[label=left:$Q$] (Q) at ($ (A')!1/2!(B') $);
+  \coordinate[label=left:$A''$] (A'') at ($ (A)!2!(O) $);
+  \coordinate[label=above:$Q'$] (Q') at ($ (B)!1/2!(A'') $);
+  \pic[mark angle={red}{3mm}{1}] {right angle=A''--O--A'};
+  \pic[mark angle={red}{3mm}{1}] {right angle=B--O--B'};
+  \pic[mark angle={cyan}{3mm}{1}] {right angle=O--P--A};
+  \draw (O) -- (A) -- (B) -- (O) (O) -- (A') -- (B') -- (O) (P) -- (Q);
+  \draw[blue] (A') -- (B');
+  \draw[dashed] (O) -- (A'') -- (B) (O) -- (Q');
+  \fill[opafill=yellow] (A') -- (O) -- (B') -- cycle
+    (A'') -- (O) -- (B) -- cycle;
+  \fill[opafill=orange] (B') -- (O) -- (Q) -- cycle
+    (B) -- (O) -- (Q') -- cycle;
+\end{tikzpicture}

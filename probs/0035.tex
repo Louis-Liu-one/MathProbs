@@ -1,0 +1,49 @@
+
+\prob{0035}{五位数}
+
+数字$1$、$2$、$3$、$4$、$5$各使用一次组成一个五位数$\overline{PQRST}$。若其中三位数$\overline{PQR}$能被$4$整除，三位数$\overline{QRS}$能被$5$整除，三位数$\overline{RST}$能被$3$整除，求这个五位数$\overline{PQRST}$。
+\problabels{yellow/数论, green/代数求值问题}
+
+\ans{$\overline{PQRST} = 12453$}
+
+\subsection{倍数性质分析}
+
+基本思路：通过分析$4$的倍数、$3$的倍数、$5$的倍数的性质确定$P$、$Q$、$R$、$S$和$T$。
+
+由于$\overline{QRS}$能被$5$整除，又因为五位数由$1$、$2$、$3$、$4$、$5$组成，所以$S = 5$，其它数位均不是$5$。
+
+由于$\overline{PQR}$能被$4$整除，因此其能被$2$整除，所以
+
+\[ R \in \{2, 4\} \]
+
+又由于$\overline{RST}$能被$3$整除，所以
+
+\[ R + S + T \in \{6, 9, 12\} \]
+
+由于$S = 5$，又由于$R + T$最小为$3$，可知
+
+\[ R + T \in \{4, 7\} \]
+
+现在我们可以根据$R$和$R + T$的可能取值分析$T$的取值，参见表~\ref{tab:0035-mul}。
+
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{ccl}
+    \toprule
+    $R$ & $R + T$ & 情况 \\
+    \midrule
+    $2$ & $4$ & 不可能，$R = 2$，$T \ne2$ \\
+    $2$ & $7$ & 不可能，$S = 5$，$T \ne5$ \\
+    $4$ & $4$ & 不可能，$T \ne0$ \\
+    $4$ & $7$ & $T = 3$ \\
+    \bottomrule
+  \end{tabular}
+  \caption{逐一分析$R$、$T$的可能性可知，$R$、$T$的唯一组合是$R = 4$，$T = 3$。}
+  \label{tab:0035-mul}
+\end{table}
+
+通过分析可知，$R$、$T$的唯一组合是$R = 4$，$T = 3$。又由于$\overline{PQR}$能被$4$整除，而此时$P$、$Q$只可能是$1$和$2$，所以$\overline{PQR} = 124$或$\overline{PQR} = 214$。
+
+由于$124 = 4\times31$，所以$P = 1$，$Q = 2$。因此五位数$\overline{PQRST} = 12453$。
+
+综上，五位数$\overline{PQRST}$的值为$12453$。

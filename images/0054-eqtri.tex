@@ -1,0 +1,13 @@
+
+\begin{tikzpicture}
+  \coordinate[label=above:$A$] (A) at (4,3);
+  \coordinate[label=left:$B$] (B) at (0,0);
+  \coordinate[label=right:$C$] (C) at (4,0);
+  \coordinate[label=below:$A'$] (A') at (4,-3);
+  \pic[mark angle={green}{3mm}{1.2}] {right angle=B--C--A'};
+  \draw (B) -- node[above left] {$c$} (A)
+    -- node[right] {$b$} (C)
+    -- node[below] {$a$} cycle;
+  \draw[dashed] (C) -- node[right] {$b$} (A')
+    -- node[below left] {$c$} (B);
+\end{tikzpicture}

@@ -1,0 +1,22 @@
+
+\begin{tikzpicture}[rtang/.style={mark angle={green}{3mm}{1}}]
+  \def\Ax{2} \def\Ay{3} \def\Bx{0} \def\By{0} \def\Cx{6} \def\Cy{0}
+  \coordinate[label=below:$B$] (B) at (\Bx,\By);
+  \coordinate[label=below:$C$] (C) at (\Cx,\Cy);
+  \coordinate[label=above:$A$] (A) at (\Ax,\Ay);
+  \coordinate[label=below:$P$] (P)
+    at ({\calcbisectorx\Bx\By\Ax\Ay\Cx\Cy},
+      {\calcbisectory\Bx\By\Ax\Ay\Cx\Cy});
+  \coordinate[label=left:$P_1$] (P1) at ($ (A)!(P)!(B) $);
+  \coordinate[label=above:$P_2$] (P2) at ($ (A)!(P)!(C) $);
+  \coordinate[label=below:$P_3$] (P3) at ($ (B)!(A)!(C) $);
+  \pic[mark angle={red}{5mm}{1.2}] {angle=B--A--C};
+  \pic[rtang] {right angle=P--P1--A};
+  \pic[rtang] {right angle=A--P2--P};
+  \pic[rtang] {right angle=A--P3--B};
+  \draw (A) -- (B) -- (C) -- cycle (A) -- (P);
+  \draw[thick, orange] (P) -- (P1) (P) -- (P2);
+  \draw[thick, red] (A) -- (P3);
+  \fill[opafill=cyan] (A) -- (B) -- (P);
+  \fill[opafill=green] (A) -- (C) -- (P);
+\end{tikzpicture}

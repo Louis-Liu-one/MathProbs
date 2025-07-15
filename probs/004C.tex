@@ -1,0 +1,49 @@
+
+\prob{004C}{根式方程II}
+
+求关于$x$的方程
+
+\[ 5x^2 + x - x\sqrt{5x^2 - 1} - 2 = 0 \]
+
+的实数根。
+\problabels{yellow/代数, green/方程相关问题}
+
+\ans{$x = \pm\sfrac{\sqrt{10}}5$}
+
+\subsection{因式分解}
+
+基本思路：因式分解，然后分别求解。
+
+将原式左边因式分解得
+
+\begin{align*}
+  & 5x^2 + x - x\sqrt{5x^2 - 1} - 2 \\
+  ={}& (5x^2 - 1) - x\sqrt{5x^2 - 1} + \sqrt{5x^2 - 1} \\
+    &- \sqrt{5x^2 - 1} + x - 1 \\
+  ={}& \sqrt{5x^2 - 1}(\sqrt{5x^2 - 1} - x + 1) \\
+    &- (\sqrt{5x^2 - 1} - x + 1) \\
+  ={}& (\sqrt{5x^2 - 1} - 1)(\sqrt{5x^2 - 1} - x + 1) \\
+\end{align*}
+
+故$\sqrt{5x^2 - 1} - 1 = 0$或$\sqrt{5x^2 - 1} - x + 1 = 0$。
+
+当$\sqrt{5x^2 - 1} - 1 = 0$时，
+
+\begin{align*}
+  \sqrt{5x^2 - 1} &= 1 \\
+  5x^2 - 1 &= 1 \\
+  x^2 &= \frac25 \\
+  x &= \pm\frac{\sqrt{10}}5 \\
+\end{align*}
+
+经检验，$x = \pm\sfrac{\sqrt{10}}5$为原方程根；当$\sqrt{5x^2 - 1} - x + 1 = 0$时，
+
+\begin{align*}
+  \sqrt{5x^2 - 1} &= x - 1 \\
+  5x^2 - 1 &= x^2 - 2x + 1 \\
+  x &= -1 \text{或} \frac12 \\
+\end{align*}
+
+经检验，$x = -1$或$x = \sfrac12$均为原方程余根。
+
+综上，原方程实数根为$x = \pm\sfrac{\sqrt{10}}5$。

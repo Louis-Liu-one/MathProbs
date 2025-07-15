@@ -1,0 +1,71 @@
+
+\prob{0093}{从线段相等到角}
+
+\begin{figure}[htbp]
+  \centering \image{0093-1}
+  \caption{总第~\ref{sec:0093} 题图I} \label{fig:0093-1}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering \image{0093-2}
+  \caption{总第~\ref{sec:0093} 题图II} \label{fig:0093-2}
+\end{figure}
+
+在$\triangle ABC$中，$D, E$分别在边$AC, AB$上，$BD, CE$分别平分$\angle ABC, \angle ACB$且交于$O$。若$OD = OE$，求证：$AB = AC$（图~\ref{fig:0093-1}）或$\angle A = 60^\circ$（图~\ref{fig:0093-2}）。
+\problabels{yellow/平面几何, green/证明题}
+
+\subsection{分情况讨论} \label{subsec:0093-sit}
+
+连接$OA$，可知$OA$平分$\angle BAC$。考虑$AD = AE$与$AD \ne AE$两种情况。
+
+\begin{figure}[htbp]
+  \centering \image{0093-sit1}
+  \caption{方法~\ref{subsec:0093-sit} 图I} \label{fig:0093-sit1}
+\end{figure}
+
+如图~\ref{fig:0093-sit1}，此时$AD = AE$，由此易知$\triangle AOD \cong \triangle AOE$于是可知$\triangle ABD \cong \triangle ACE \Rightarrow AB = AC$。
+
+\begin{figure}[htbp]
+  \centering \image{0093-sit2}
+  \caption{方法~\ref{subsec:0093-sit} 图II} \label{fig:0093-sit2}
+\end{figure}
+
+考虑$AD \ne AE$的情况。如图~\ref{fig:0093-sit2}，此时$AD \ne AE$。在线段$AB$上截取$AD' = AD$，连接$OD'$。易证$\triangle AOD \cong \triangle AOD'$，于是$OD = OD' = OE$，可知$\angle ODA + \angle OEA = 180^\circ$。
+
+\begin{align*}
+  \because  {}& \angle ODA + \angle OEA = 180^\circ \\
+  \therefore{}& \angle ABD + \angle ACE + \angle BOE + \angle COD = 180^\circ \\
+  \because  {}& \angle BOE = \angle COD = \angle OBC + \angle OCB \\
+  \therefore{}& \angle ABD + \angle ACE + 2(\angle OBC + \angle OCB) = 180^\circ \\
+  \because  {}& \angle ABD = \angle OBC, \angle ACE = \angle OCB \\
+  \therefore{}& 3(\angle OBC + \angle OCB) = 180^\circ \\
+  \therefore{}& \angle ABC + \angle ACB = 2(\angle OBC + \angle OCB) = 120^\circ \\
+  \therefore{}& \angle BAC = 60^\circ
+\end{align*}
+
+因此，当$AD = AE$时$AB = AC$，当$AD \ne AE$时$\angle BAC = 60^\circ$，证毕。
+
+\subsection{正弦定理} \label{subsec:0093-sin}
+
+\begin{figure}[htbp]
+  \centering \image{0093-sin}
+  \caption{方法~\ref{subsec:0093-sin} 图} \label{fig:0093-sin}
+\end{figure}
+
+如图~\ref{fig:0093-sin}，连接$OA$。设$\angle BAC = 2\alpha, \angle ABC = 2\beta, \angle ACB = 2\gamma$，可知
+\begin{align*}
+  \angle OAB = \angle OAC &= \alpha \\
+  \angle ODA &= 2\gamma + \beta \\
+  \angle OEA &= 2\beta + \gamma
+\end{align*}
+
+在$\triangle AOD$与$\triangle AOE$中应用正弦定理，可知
+\begin{align*}
+  \frac{OA}{\sin(2\gamma + \beta)} &= \frac{OD}{\sin\alpha} \\
+  \frac{OA}{\sin(2\beta + \gamma)} &= \frac{OE}{\sin\alpha}
+\end{align*}
+而$OD = OE$，于是有
+\[ \sin(2\beta + \gamma) = \sin(2\gamma + \beta) \]
+显然，有
+\[ 2\beta + \gamma = 2\gamma + \beta\ \text{或}\ (2\beta + \gamma) + (2\gamma + \beta) = 180^\circ \]
+于是有$\angle BAC = 60^\circ$或$\angle ABC = \angle ACB \Rightarrow AB = AC$。证毕。

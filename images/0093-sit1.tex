@@ -1,0 +1,24 @@
+
+\begin{tikzpicture}
+  \tkzDefPoints{0/0/A,5/0/B}
+  \tkzDefShiftPoint[A](70:5){C}
+  \tkzDefLine[bisector,normed](A,B,C) \tkzGetPoint{b}
+  \tkzDefLine[bisector,normed](A,C,B) \tkzGetPoint{c}
+  \tkzInterLL(A,C)(B,b) \tkzGetPoint{D}
+  \tkzInterLL(A,B)(C,c) \tkzGetPoint{E}
+  \tkzInterLL(B,D)(C,E) \tkzGetPoint{O}
+  \tkzFillPolygon[color=teal!30](A,O,D)
+  \tkzFillPolygon[color=teal!30](A,O,E)
+  \tkzDrawPoints(A,B,C,D,E,O)
+  \tkzDrawPolygon(A,B,C)
+  \tkzDrawSegments(B,D C,E)
+  \tkzDrawSegments[dashed](A,O)
+  \tkzLabelPoint[below](A){$A$}
+  \tkzLabelPoint[below](B){$B$}
+  \tkzLabelPoint[above](C){$C$}
+  \tkzLabelPoint[left](D){$D$}
+  \tkzLabelPoint[below](E){$E$}
+  \tkzLabelPoint[above right](O){$O$}
+  \tkzMarkSegments[color=teal,mark=|](O,D O,E)
+  \tkzMarkSegments[color=cyan,mark=||](A,D A,E)
+\end{tikzpicture}

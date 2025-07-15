@@ -1,0 +1,35 @@
+
+\begin{tikzpicture}[scale=1.6]
+  \def\Ax{0} \def\Ay{5} \def\Bx{3} \def\By{0} \def\Cx{0} \def\Cy{0}
+  \coordinate[label=below:$C$] (C) at (\Cx,\Cy);
+  \coordinate[label=above:$A$] (A) at (\Ax,\Ay);
+  \coordinate[label=below:$B$] (B) at (\Bx,\By);
+  \coordinate[label=right:$D$] (D) at ($ (A)!(C)!(B) $);
+  \path[name path=AI] (A) -- ({\calcbisectorx\Cx\Cy\Ax\Ay\Bx\By},0);
+  \path[name path=BJ] (B) -- (0,{\calcbisectory\Ax\Ay\Bx\By\Cx\Cy});
+  \path[name path=DI] (D) -- ($ (D)!2/3! -45:(C) $);
+  \path[name path=DJ] (D) -- ($ (D)!1/2! 45:(C) $);
+  \path[name intersections={of=AI and DI}]
+    coordinate[label=above right:$I$] (I) at (intersection-1);
+  \path[name intersections={of=BJ and DJ}]
+    coordinate[label=above:$J$] (J) at (intersection-1);
+  \path[name intersections={of=AI and BJ}]
+    coordinate[label=below:$O$] (O) at (intersection-1);
+  \coordinate[label=below:$P$] (P) at ($ (C)!(I)!(J) $);
+  \coordinate[label=left:$Q$] (Q) at ($ (C)!(J)!(I) $);
+  \coordinate[label=above right:$R$] (R) at ($ (I)!(C)!(J) $);
+  \path[name path=IK] (I) -- ($ (I)!17/11!(J) $);
+  \path[name path=BC] (B) -- (C);
+  \path[name intersections={of=IK and BC}]
+    coordinate[label=below:$K$] (K) at (intersection-1);
+  \pic[mark angle={blue}{3mm}{1}] {right angle=B--C--A};
+  \pic[mark angle={blue}{3mm}{1}] {right angle=A--D--C};
+  \pic[mark angle={red}{4mm}{1.5}, "$45^\circ$"] {angle=I--K--C};
+  \pic[mark angle={green}{2mm}{1}] {right angle=A--P--C};
+  \pic[mark angle={green}{2mm}{1}] {right angle=C--Q--B};
+  \pic[mark angle={green}{2mm}{1}] {right angle=C--R--K};
+  \fill[opafill=cyan] (I) -- (C) -- (J) -- cycle;
+  \fill[opafill=orange] (R) -- (C) -- (K) -- cycle;
+  \draw (A) -- (B) -- (C) -- cycle (C) -- (D) (I) -- (K);
+  \draw[dashed] (C) -- (I) (C) -- (J) (A) -- (P) (B) -- (Q) (C) -- (R);
+\end{tikzpicture}

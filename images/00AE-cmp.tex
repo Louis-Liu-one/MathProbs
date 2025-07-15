@@ -1,0 +1,26 @@
+
+\begin{tikzpicture}[scale=.8]
+  \tkzDefPoints{0/0/P,-4/-3/A,4/-3/B,0/-2/Q,2.1/-1.575/N}
+  \tkzDefLine[orthogonal=through Q](P,Q) \tkzGetPoint{q}
+  \tkzInterLL(Q,q)(P,A)  \tkzGetPoint{M'}
+  \tkzInterLL(Q,q)(P,B)  \tkzGetPoint{N'}
+  \tkzInterLL(Q,N)(P,A)  \tkzGetPoint{M}
+  \tkzDefLine[parallel=through M'](P,B)     \tkzGetPoint{m}
+  \tkzDefLine[orthogonal=through M'](M',N') \tkzGetPoint{hm}
+  \tkzDefLine[orthogonal=through N'](M',N') \tkzGetPoint{hn}
+  \tkzInterLL(M',m)(M,N)  \tkzGetPoint{R}
+  \tkzInterLL(M',hm)(M,N) \tkzGetPoint{I}
+  \tkzInterLL(N',hn)(M,N) \tkzGetPoint{J}
+  \tkzDrawSegments(P,A P,B M,N)
+  \tkzDrawSegments[dashed](M',N' M',I N',J M',R N,J)
+  \tkzDrawLine[add=0 and .2](P,Q)
+  \tkzMarkSegments[color=teal,mark=|](I,R J,N)
+  \tkzMarkSegments[color=cyan,mark=||](Q,R Q,N)
+  \tkzMarkSegments[color=blue,mark=x](Q,M' Q,N')
+  \tkzMarkRightAngle(P,Q,M')
+  \tkzDrawPoints(P,Q,M,N,M',N',R,I,J)
+  \tkzLabelPoints[below](A,B,I,R)
+  \tkzLabelPoints[above](P,M,N,M',J)
+  \tkzLabelPoints[right](N')
+  \tkzLabelPoints[below right](Q)
+\end{tikzpicture}

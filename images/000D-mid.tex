@@ -1,0 +1,30 @@
+
+\begin{tikzpicture}[ang/.style={mark angle={red}{5mm}{1.2}}]
+  \def\Ax{2} \def\Ay{3} \def\Bx{0} \def\By{0} \def\Cx{6} \def\Cy{0}
+  \def\Dx{\calcbisectorx\Bx\By\Ax\Ay\Cx\Cy}
+  \def\Dy{\calcbisectory\Bx\By\Ax\Ay\Cx\Cy}
+  \def\Qx{\calcdotpos\Bx\Cx{1/2}} \def\Qy{\calcdotpos\By\Cy{1/2}}
+  \def\Px{\calcdotpos\Ax\Cx{\calclen\Dx\Dy\Qx\Qy/\calclen\Dx\Dy\Cx\Cy}}
+  \def\Py{\calcdotpos\Ay\Cy{\calclen\Dx\Dy\Qx\Qy/\calclen\Dx\Dy\Cx\Cy}}
+  \coordinate[label=below:$B$] (B) at (\Bx,\By);
+  \coordinate[label=below:$C$] (C) at (\Cx,\Cy);
+  \coordinate[label=above:$A$] (A) at (\Ax,\Ay);
+  \coordinate[label=above left:$D$] (D) at ({\Dx}, {\Dy});
+  \coordinate[label=above right:$Q$] (Q) at ({\Qx}, {\Qy});
+  \coordinate[label=above right:$P$] (P) at ({\Px}, {\Py});
+  \coordinate[label=below:$P'$] (P') at ($ (Q)!1! 180:(P) $);
+  \coordinate[label=below:$A'$] (A')
+    at ($ (B)!\calclen\Ax\Ay\Bx\By/\calclen\Cx\Cy\Px\Py!(P') $);
+  \pic[ang] {angle=B--A--C};
+  \pic[ang] {angle=P'--P--C};
+  \pic[ang] {angle=A--A'--B};
+  \pic[ang] {angle=P--P'--B};
+  \draw (P) -- (C) -- (B) (A) -- (D) (P) -- (Q);
+  \draw[dashed] (D) -- (A') (Q) -- (P');
+  \draw[blue, thick] (A) -- (B);
+  \draw[dashed, blue, thick] (A') -- (B);
+  \draw[red, thick] (A) -- (P);
+  \draw[dashed, red, thick] (A') -- (P');
+  \fill[opafill=cyan] (P) -- (Q) -- (C) -- cycle (P') -- (Q) -- (B) -- cycle;
+  \fill[opafill=green] (A) -- (B) -- (A') -- cycle;
+\end{tikzpicture}

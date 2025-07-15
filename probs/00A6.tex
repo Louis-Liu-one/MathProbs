@@ -1,0 +1,44 @@
+
+\prob{00A6}{三角函数正交性}
+
+对于两不同正整数$n, k$，求证：
+\begin{align*}
+  \int_{-\pi}^\pi \sin nx \dif x = \int_{-\pi}^\pi \cos nx \dif x &= 0 \\
+  \int_{-\pi}^\pi \sin nx \cos nx \dif x &= 0 \\
+  \int_{-\pi}^\pi \sin nx \cos kx \dif x &= 0 \\
+  \int_{-\pi}^\pi \sin nx \sin kx \dif x &= 0 \\
+  \int_{-\pi}^\pi \cos nx \cos kx \dif x &= 0
+\end{align*}
+\problabels{yellow/微积分, green/证明题}
+
+\subsection{积化和差}
+
+首先，显然有
+\begin{align*}
+  & \int_{-\pi}^\pi \sin nx \dif x = \frac1n \int_{-\pi}^\pi \sin nx \dif nx \\
+  ={}& \left.\frac1n \cdot (-\cos nx)\right|_{-\pi}^\pi = \left.-\frac1n\cos nx\right|_{-\pi}^\pi = 0
+\end{align*}
+同理得
+\[ \int_{-\pi}^\pi \cos nx \dif x = 0 \]
+
+由积化和差得
+\begin{align*}
+  \sin nx \cos kx &= \frac12(\sin(n + k)x + \sin(n - k)x) \\
+  \sin nx \sin kx &= -\frac12(\cos(n + k)x - \cos(n - k)x) \\
+  \cos nx \cos kx &= \frac12(\cos(n + k)x + \cos(n - k)x) \\
+\end{align*}
+于是当$n \ne k$时，有
+\begin{align*}
+  & \int_{-\pi}^\pi \sin nx \cos kx \dif x \\
+  ={}& \frac12\int_{-\pi}^\pi (\sin(n + k)x + \sin(n - k)x) \dif x \\
+  ={}& \left.\frac12\left(\frac{\sin(n + k)x}{n + k} + \frac{\sin(n - k)x}{n - k}\right)\right|_{-\pi}^\pi \\
+  ={}& \frac12(0 + 0) - \frac12(0 + 0) = 0
+\end{align*}
+当$n = k$时，
+\[ \int_{-\pi}^\pi \sin nx \cos kx \dif x = \frac12\int_{-\pi}^\pi \sin 2nx \dif x = 0 \]
+同理得
+\begin{align*}
+  \int_{-\pi}^\pi \sin nx \sin kx \dif x &= 0 \\
+  \int_{-\pi}^\pi \cos nx \cos kx \dif x &= 0
+\end{align*}
+证毕。

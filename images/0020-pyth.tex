@@ -1,0 +1,25 @@
+
+\begin{tikzpicture}[scale=.8]
+  \coordinate[label=below:$A$] (A) at (0,0);
+  \coordinate[label=below:$B$] (B) at (7,0);
+  \coordinate[label=above:$C$] (C) at (7,7);
+  \coordinate[label=above:$D$] (D) at (0,7);
+  \coordinate[label=above:$E$] (E) at (3,7);
+  \coordinate[label=above right:$F$] (F) at (5,2);
+  \coordinate[label=left:$P$] (P) at ($ (A)!(F)!(D) $);
+  \coordinate[label=above left:$Q$] (Q) at ($ (P)!(E)!(F) $);
+  \pic[mark angle={teal}{3mm}{1}] {right angle=E--F--A};
+  \pic[mark angle={green}{3mm}{1}] {right angle=F--Q--E};
+  \pic[mark angle={green}{3mm}{1}] {right angle=A--P--F};
+  \draw (A) -- (B) -- (C) -- (E)
+    -- node[above] {$3$} (D) -- node[left] {$x$} (P)
+    -- node[left] {$7 - x$} cycle
+    (B) -- (F) -- node[left] {$\sqrt2x$} (D)
+    (A) -- (F) -- (E);
+  \draw[dashed] (F) -- node[below] {$x - 3$} (Q)
+    -- node[below] {$3$} (P) (E) -- node[right] {$x$} (Q)
+    (A) -- (E);
+  \fill[opafill=red] (A) -- node[left] {$\sqrt{58}$} (E)
+    -- node[above, sloped] {$\sqrt{2x^2 - 6x + 9}$} (F)
+    -- node[below, sloped] {$\sqrt{2x^2 - 14x + 49}$} cycle;
+\end{tikzpicture}

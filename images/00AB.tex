@@ -1,0 +1,13 @@
+
+\begin{tikzpicture}[scale=.8]
+  \tkzDefPoints{0/0/O,-4/0/A,4/0/B,1/4/O',1/0/H}
+  \tkzDefLine(O,O')     \tkzGetPoints{p}{q}
+  \tkzInterLC(p,q)(O,A) \tkzGetPoints{Q}{P}
+  \tkzDrawSegments(A,B P,Q)
+  \tkzDrawArc(O,B)(A)
+  \tkzDrawArc(O',P)(Q)
+  \tkzDrawPoints(O,A,B,P,Q,H)
+  \tkzLabelPoints[below](O,A,B,H)
+  \tkzLabelPoints[above](P)
+  \tkzLabelPoints[right](Q)
+\end{tikzpicture}

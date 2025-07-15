@@ -1,0 +1,18 @@
+
+\begin{tikzpicture}[scale=3.2]
+  \coordinate[label=below right:{$C(0,0)$}] (C) at (0,0);
+  \coordinate[label=below:{$B(4,0)$}] (B) at (1,0);
+  \coordinate[label=above:{$A(2,2\sqrt3)$}] (A) at ($ (C)!1! 60:(B) $);
+  \coordinate[label=right:{$M(3,\sqrt3)$}] (M) at ($ (A)!1/2!(B) $);
+  \coordinate[label=below left:{$N(2d,0)$}] (N) at ($ (B)!4/3!(C) $);
+  \coordinate[label=left:$P$] (P) at ($ (N)!1! 60:(M) $);
+  \pic[mark angle={cyan}{5mm}{1}] {angle=B--N--M};
+  \pic[mark angle={cyan}{5mm}{1}] {angle=A--M--P};
+  \pic[mark angle={red}{5mm}{1}, "$60^\circ$"] {angle=M--N--P};
+  \draw (M) -- (P) -- (N) -- (B) -- (A) -- (C) (M) -- (N) (P) -- (C);
+  \draw[->, thick] (-.4,0) -- (1.2,0) node[above] {$x$};
+  \draw[->, thick] (0,-.2) -- (0,1.4) node[right] {$y$};
+  \draw[thick] (-1/6,-.2) -- (-1/6,1.25) node[above] {$x = d$};
+  \fill[opafill=blue] (A) -- (B) -- (C) -- cycle;
+  \fill[opafill=cyan] (P) -- (M) -- (N) -- cycle;
+\end{tikzpicture}

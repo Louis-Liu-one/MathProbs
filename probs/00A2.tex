@@ -1,0 +1,64 @@
+
+\prob{00A2}{Monge圆}
+
+\begin{figure}[htbp]
+  \centering
+  \image{00A2}
+  \caption{总第~\ref{sec:00A2} 题图} \label{fig:00A2}
+\end{figure}
+
+如图~\ref{fig:00A2}，以$O$为中心的椭圆外有一点$P$；从$P$引两条椭圆的切线$PM, PN$，切椭圆于点$M, N$，满足$PM \perp PN$。设椭圆的长轴半径为$a$，短轴半径为$b$，求证：$P$总是在一个圆心为$O$、半径为$r$的圆上，其中$r^2 = a^2 + b^2$。
+\problabels{yellow/平面几何, green/证明题}
+
+\subsection{解析几何} \label{subsec:00A2-dec}
+
+\begin{figure}[htbp]
+  \centering
+  \image{00A2-dec}
+  \caption{方法~\ref{subsec:00A2-dec} 图} \label{fig:00A2-dec}
+\end{figure}
+
+如图~\ref{fig:00A2-dec}，以$O$为原点、椭圆两轴为坐标轴建立平面直角坐标系。设$P(x_P, y_P)$，切点坐标为$(x, y)$，切线方程为$y - y_P = k(x - x_P)$，其中$k$为斜率。
+
+考虑关于$x, y$的方程组
+\[ \left\{ \begin{aligned}
+  y - y_P &= k(x - x_P) \\
+  \frac{x^2}{a^2} + \frac{y^2}{b^2} &= 1
+\end{aligned} \right. \]
+由于切线切于椭圆，故以上方程组有两组相同解。将方程组中前者约为
+\begin{align}
+  y = kx - kx_P + y_P \label{eq:00A2-dec}
+\end{align}
+后者约为
+\[ b^2x^2 + a^2y^2 - a^2b^2 = 0 \]
+将式~\ref{eq:00A2-dec} 代入上式，得
+\begin{align*}
+  & b^2x^2 + a^2(kx - kx_P + y_P)^2 - a^2b^2 \\
+  ={}& b^2x^2 + a^2k^2x^2 + a^2k^2x_P^2 + a^2y_P^2 \\
+  & - 2a^2k^2x_Px + 2a^2ky_Px - 2a^2kx_Py_P \\
+  & -a^2b^2 \\
+  ={}& \left(b^2 + a^2k^2\right)x^2 - 2a^2k(kx_P - y_P)x \\
+  & + a^2\left(k^2x_P^2 + y_P^2 - 2kx_Py_P - b^2\right) = 0
+\end{align*}
+上方程有两相同实数根，故
+\begin{align*}
+  \Delta ={}& 4a^4k^2\left(kx_P - y_P\right)^2 \\
+  & - 4a^2\left(b^2 + a^2k^2\right) \\
+  & \cdot \left(k^2x_P^2 + y_P^2 - 2kx_Py_P - b^2\right) \\
+  \frac{\Delta}{4a^2}={}& a^2k^2\left(k^2x_P^2 + y_P^2 - 2kx_Py_P\right) \\
+  & - b^2\left(k^2x_P^2 + y_P^2 - 2kx_Py_P - b^2\right) \\
+  & - a^2k^2\left(k^2x_P^2 + y_P^2 - 2kx_Py_P - b^2\right) \\
+  ={}& a^2x_P^2k^4 + a^2y_P^2k^2 - 2a^2x_Py_Pk^3 \\
+  & - b^2x_P^2k^2 - b^2y_P^2 + 2b^2x_Py_Pk + b^4 \\
+  & - a^2x_P^2k^4 - a^2y_P^2k^2 \\
+  & + 2a^2x_Py_Pk^3 + a^2b^2k^2 \\
+  ={}& b^2\left(a^2 - x_P^2\right)k^2 + 2b^2x_Py_Pk \\
+  & + b^2\left(b^2 - y_P^2\right) = 0
+\end{align*}
+于是得一关于$k$的二次方程，可知其有两实数根$k_1, k_2$，分别表示$PM, PN$的斜率。
+
+由Vieta定理知，
+\[ k_1k_2 = \frac{b^2\left(b^2 - y_P^2\right)}{b^2\left(a^2 - x_P^2\right)} = \frac{b^2 - y_P^2}{a^2 - x_P^2} \]
+而$PM \perp PN$，故有$k_1k_2 = -1$，代入上式化简得
+\[ x_P^2 + y_P^2 = a^2 + b^2 \]
+故点$P$恒在圆$x^2 + y^2 = a^2 + b^2$上，此圆的圆心为$O$，半径$r$满足$r^2 = a^2 + b^2$。证毕。

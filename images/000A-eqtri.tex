@@ -1,0 +1,27 @@
+
+\begin{tikzpicture}[scale=.25]
+  \tkzDefPoint(60:7){E}
+  \tkzDefPoint(120:15){A}
+  \tkzDefPoint(0,0){D}
+  \tkzInterLC(A,E)(D,A)    \tkzGetFirstPoint{C}
+  \tkzInterLC[R](C,D)(D,8) \tkzGetSecondPoint{B}
+  \tkzDefTriangle(A,D)     \tkzGetPoint{D'}
+  \tkzInterLC(A,C)(D',E)   \tkzGetFirstPoint{B'}
+  \tkzFillPolygon[cyan!20](A,B,D,A,B',D')
+  \tkzDrawPolygon(A,B,C)
+  \tkzDrawSegments(A,D D,E)
+  \tkzDrawSegments[dashed](A,D' D',E D',B')
+  \tkzMarkSegments[color=teal,mark=|](A,D C,D A,D')
+  \tkzMarkSegments[color=blue,mark=s||](B,D B',D' E,D')
+  \tkzMarkSegments[color=cyan,mark=s|](A,B A,B')
+  \tkzLabelAngle[pos=2](E,D,A){$60^\circ$}
+  \tkzLabelAngle[pos=2](B,A,D){$\theta$}
+  \tkzLabelAngle[pos=2](E,A,D'){$\theta$}
+  \tkzLabelAngle[pos=2](C,D,E){$2\theta$}
+  \tkzDrawPoints(A,B,C,D,E,D',B')
+  \tkzLabelPoints[above](A)
+  \tkzLabelPoints[above right](D')
+  \tkzLabelPoints[right](E)
+  \tkzLabelPoints[below left](B')
+  \tkzLabelPoints[below](B,C,D)
+\end{tikzpicture}

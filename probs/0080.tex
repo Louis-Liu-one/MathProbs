@@ -1,0 +1,24 @@
+
+\prob{0080}{Euler乘积公式}
+
+证明：对于正整数$s$，有
+\[ \sum_{n = 1}^{\infty}\frac1{n^s} = \prod_p\frac1{1 - p^{-s}} \]
+其中右边$p$是所有素数。
+\problabels{yellow/数论, green/证明题}
+
+\subsection{Eratosthenes筛法}
+
+借用Eratosthenes筛法的思路。
+
+易知等号左边即为Riemann $\zeta$函数，即要证明
+\[ \zeta(s) = \prod_p\frac1{1 - p^{-s}} \]
+其中
+\[ \zeta(s) = 1 + \frac1{2^s} + \frac1{3^s} + \frac1{4^s} + \frac1{5^s} + \frac1{6^s} + \frac1{7^s} + \cdots \]
+
+易知
+\[ \frac1{2^s}\zeta(s) = \frac1{2^s} + \frac1{4^s} + \frac1{6^s} + \frac1{8^s} + \frac1{10^s} + \frac1{12^s} + \cdots \]
+其中右边的分母的底都是2的倍数。做差，得
+\[ \left(1 - \frac1{2^s}\right)\zeta(s) = 1 + \frac1{3^s} + \frac1{5^s} + \frac1{7^s} + \frac1{11^s} + \cdots \]
+其中右边的分母的底不再含有2的倍数，于是称2的倍数被“筛掉”了。重复“筛掉”$3, 5, 7, 11, \dots$等素数的倍数，当所有的素数的倍数都被“筛掉”时，有
+\[ \cdots\left(1 - \frac1{7^s}\right)\left(1 - \frac1{5^s}\right)\left(1 - \frac1{3^s}\right)\left(1 - \frac1{2^s}\right)\zeta(s) = 1 \]
+其中左边所有分母的底都是素数，移项得待证等式，命题得证。

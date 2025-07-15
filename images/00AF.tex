@@ -1,0 +1,19 @@
+
+\begin{tikzpicture}[scale=1.8]
+  \tkzDefPoints{-sqrt(3)/0/A,sqrt(3)/0/B}
+  \tkzDefTriangle[equilateral](A,B) \tkzGetPoint{C}
+  \tkzDefMidPoint(A,C)  \tkzGetPoint{D}
+  \tkzDefMidPoint(A,B)  \tkzGetPoint{E}
+  \tkzDefMidPoint(B,C)  \tkzGetPoint{F}
+  \tkzInterLL(B,D)(C,E) \tkzGetPoint{P}
+  \tkzDrawPolygon(A,B,C)
+  \tkzDrawSegments(B,D C,E P,F)
+  \tkzMarkSegments[color=teal,mark=|](A,E C,D)
+  \tkzMarkAngles[mkcolor=cyan,mark=|,size=.2](B,P,F F,P,C)
+  \tkzDrawPoints(A,B,C,D,E,F,P)
+  \tkzLabelPoints[below](A,B,E)
+  \tkzLabelPoints[left](D)
+  \tkzLabelPoints[above](C)
+  \tkzLabelPoints[right](F)
+  \tkzLabelPoints[below left](P)
+\end{tikzpicture}

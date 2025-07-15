@@ -1,0 +1,113 @@
+
+\prob{001B}{等边中点}
+
+\begin{figure}[htbp]
+  \centering
+  \image{001B}
+  \caption{001B：等边中点} \label{fig:001B}
+\end{figure}
+
+如图~\ref{fig:001B}，在等边$\triangle ABC$中，$M$是线段$AB$的中点，$N$是射线$BC$上一点，$PM = MN$，$\angle MNB = \angle AMP$，求$PN$与$PC$的数量关系。
+\problabels{yellow/平面几何, green/数量关系问题}
+
+\ans{$PN = PC$}
+
+\subsection{构造全等三角形} \label{subsec:001B-eqtri}
+
+\begin{figure}[htbp]
+  \centering
+  \image{001B-eqtri}
+  \caption{\nameref{subsec:001B-eqtri}：通过构造两对全等得出结论。}
+  \label{fig:001B-eqtri}
+\end{figure}
+
+\emph{YYX提供的方法。}
+
+基本思路：通过作等边三角形构造两对全等，从而得出两线段相等。
+
+如图~\ref{fig:001B-eqtri}，以$PC$为边向左作等边$\triangle PCM'$，连接$MC$、$M'N$。
+
+\begin{align*}
+  &\because   \angle MNB = \angle AMP \\
+  &\therefore \angle MNB + 60^\circ = \angle AMP + 60^\circ \\
+  &\because   \triangle ABC\ \text{是等边三角形} \\
+  &\therefore \angle ABN = 60^\circ \\
+  &\therefore \angle MNB + \angle ABN = \angle AMP + 60^\circ \\
+  &\because   \angle MNB + \angle ABN = \angle AMN \\
+  &\therefore \angle AMN = \angle AMP + 60^\circ \\
+  &\therefore \angle AMP + \angle PMN = \angle AMP + 60^\circ \\
+  &\therefore \angle PMN = 60^\circ \\
+  &\because   PM = MN \\
+  &\therefore \triangle PMN\ \text{是等边三角形} \\
+  &\therefore PM = PN = MN, \angle MPN = 60^\circ \\
+  &\because   \triangle PCM'\ \text{是等边三角形} \\
+  &\therefore PC = PM' = M'C, \angle M'PC = \angle M'CP = 60^\circ \\
+  &\therefore \angle MPN = \angle M'PC \\
+  &\therefore \angle M'PN = \angle CPM \\
+  &\because   \text{在}\triangle M'PN\text{与}\triangle CPM\text{中} \\
+  &\mathalignsep \begin{cases}
+    M'P = CP \\
+    \angle M'PN = \angle CPM \\
+    PN = PM \\
+  \end{cases} \\
+  &\therefore \triangle M'PN \cong \triangle CPM \\
+  &\therefore M'N = MC, \angle PNM' = \angle PMC \\
+  &\because   MC\text{是等边}\triangle ABC\text{的中线} \\
+  &\therefore \angle AMC = 90^\circ, \angle BCM = 30^\circ \\
+  &\therefore \angle PMC = 90^\circ - \angle AMP, \\
+  &\mathalignsep \angle MCN = 180^\circ - 30^\circ = 150^\circ \\
+  &\therefore \angle PNM' = 90^\circ - \angle AMP \\
+  &\because   \angle M'CP = 60^\circ \\
+  &\therefore \angle M'NC \\
+  &= \angle PNM' + 60^\circ + \angle MNB \\
+  &= 90^\circ - \angle AMP + 60^\circ + \angle MNB \\
+  &= 150^\circ + (\angle MNB - \angle AMP) \\
+  &\because   \angle MNB = \angle AMP \\
+  &\therefore \angle MNB - \angle AMP = 0^\circ \\
+  &\therefore \angle M'NC = 150^\circ \\
+  &\therefore \angle M'NC = \angle MCN \\
+  &\because   \text{在}\triangle M'NC\text{与}\triangle MCN\text{中} \\
+  &\mathalignsep \begin{cases}
+    M'N = MC \\
+    \angle M'NC = \angle MCN \\
+    NC = CN \\
+  \end{cases} \\
+  &\therefore \triangle M'NC \cong \triangle MCN \\
+  &\therefore M'C = MN \\
+  &\therefore PN = PC \\
+\end{align*}
+
+综上，线段$PN$与$PC$的数量关系为$PN = PC$。\footnotemark
+
+\subsection{解析几何} \label{subsec:001B-dec}
+
+\begin{figure}[htbp]
+  \centering
+  \image{001B-dec}
+  \caption{\nameref{subsec:001B-dec}：通过建立平面直角坐标系证明$P$在$NC$的中垂线上。} \label{fig:001B-dec}
+\end{figure}
+
+基本思路：通过建立平面直角坐标系证明$P$在$NC$的中垂线上，从而得出$PN = PC$。
+
+如图~\ref{fig:001B-dec}，以$C$为原点，直线$CB$为$x$轴建立平面直角坐标系$xCy$。不妨设$B(4,0)$、$N(2d,0)$。
+
+\begin{align*}
+  &\because   \triangle PMN\ \text{是等边三角形} \\
+  &\mathalignsep \text{（证明参见\nameref{subsec:001B-eqtri}）} \\
+  &\therefore \angle PNM = 60^\circ, PN = MN \\
+  \text{又} &\because B(4,0), C(0,0) \\
+  &\therefore A(\cos60^\circ\cdot4, \sin60^\circ\cdot4) \\
+  &\therefore A(2,2\sqrt3) \\
+  &\because   M\text{是线段}AB\text{的中点} \\
+  &\therefore M(3,\sqrt3) \\
+  &\because   P\text{由}M\text{绕点}N\text{顺时针旋转}60^\circ\text{得到} \\
+  &\therefore x_P = (x_M - x_N)\cos60^\circ \\
+  &- (y_M - y_N)\sin60^\circ + x_N = d \\
+  &\therefore P\text{在直线}x = d\text{上} \\
+  &\because   \text{直线}x = d\text{是线段}NC\text{的中垂线} \\
+  &\therefore PN = PC \\
+\end{align*}
+
+综上，线段$PN$与$PC$的数量关系为$PN = PC$。
+
+\footnotetext{$N$在$BC$上时方法与此基本相同，此处不加赘述。}

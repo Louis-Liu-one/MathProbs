@@ -1,0 +1,36 @@
+
+\prob{0028}{相交弦定理}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0028}
+  \caption{0028：相交弦定理} \label{fig:0028}
+\end{figure}
+
+证明相交弦定理：经过圆内一点引两条弦，各弦被这点所分成的两线段的积相等。
+\problabels{yellow/平面几何, green/证明题}
+
+\subsection{相似三角形} \label{subsec:0028-sim}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0028-sim}
+  \caption{\nameref{subsec:0028-sim}：通过圆周角定理找出相似三角形。}
+  \label{fig:0028-sim}
+\end{figure}
+
+基本思路：运用圆周角定理找出相似三角形，证明命题。
+
+如图~\ref{fig:0028-sim}，连接$AD$、$BC$。
+
+\begin{align*}
+  &\because   \text{据圆周角定理\footnotemark 得，}\angle PAD = \angle PCB, \\
+  &\mathalignsep \angle APD = \angle CPB \\
+  &\therefore \triangle APD \sim \triangle CPB \\
+  &\therefore PA:PD = PC:PB \\
+  &\therefore PA\cdot PB = PC\cdot PD \\
+\end{align*}
+
+\footnotetext{圆周角定理的证明参见第~\ref{sec:0025} 题。}
+
+证毕。

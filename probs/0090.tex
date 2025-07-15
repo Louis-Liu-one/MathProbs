@@ -1,0 +1,27 @@
+
+\prob{0090}{整数根方程IV}
+
+对于某两非零且互不为相反数的整数$a, b$，关于$n$的方程
+\begin{align}
+  \frac1a + \frac1b = \frac n{a + b} \label{eq:0090}
+\end{align}
+有整数解，求所有的整数解$n$。
+\problabels{yellow/数论, green/方程相关问题}
+
+\ans{$n = 4$}
+
+\subsection{解二次方程}
+
+式~\ref{eq:0090} 化简为
+\[ a^2 + (2 - n)ab + b^2 = 0 \]
+对$a$应用二次方程求根公式得
+\begin{align*}
+  a &= \frac{-(2 - n)b \pm \sqrt{(2 - n)^2b^2 - 4b^2}}2 \\
+  &= \frac b2\left(n - 2 \pm \sqrt{(n - 2)^2 - 4}\right)
+\end{align*}
+注意到$a, b, n$为整数，于是$(n - 2)^2 - 4$是平方数。设其为$k^2$，则
+\begin{align*}
+  (n - 2)^2 - 4 &= k^2 \\
+  (n - 2 + k)(n - 2 - k) &= 4 \\
+\end{align*}
+而两乘数皆整数，故易知有$n - 2 = \pm2$即$n = 0$或$n = 4$。当$n = 0$时，式~\ref{eq:0090} 左边不为0，右边为0，矛盾，故$n = 4$。经检验，$n = 4$在$a = b$时成立。

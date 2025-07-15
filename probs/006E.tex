@@ -1,0 +1,32 @@
+
+\prob{006E}{矩形与最小值}
+
+\begin{figure}[htbp]
+  \centering
+  \image{006E}
+  \caption{006E：第一象限的矩形与最小值} \label{fig:006E}
+\end{figure}
+
+如图~\ref{fig:006E}，在第一象限内有矩形$ABCD$，其中$A, B$分别在$y, x$正半轴上，且$AB = CD = 2, AD = BC = 1$，求$OD$的最大值。
+\problabels{yellow/解析几何, green/最值问题}
+
+\ans{$OD$的最大值为$1 + \sqrt2$。}
+
+\subsection{构造三角形} \label{subsec:006E-tri}
+
+基本思路：通过构造三角形使得$OD$在一个另外两边都为定值三角形中。
+
+\begin{figure}[htbp]
+  \centering
+  \image{006E-tri}
+  \caption{\nameref{subsec:006E-tri}：构造两边为定值的三角形。}
+  \label{fig:006E-tri}
+\end{figure}
+
+如图~\ref{fig:006E-tri}，作$AB$的中点$E$，连接$OE, DE$。
+
+由于$\triangle AOB$是直角三角形，且$OE$是其斜边上的中线，故$2OE = AB = 2$，即$OE = AE = 1$。
+
+而由$AE = AD = 1, \angle BAD = 90^\circ$，有$DE = \sqrt2$。
+
+由此易知，当$O, D, E$三点共线时，$OD$取最大值$OE + DE$，即其最大值为$1 + \sqrt2$。

@@ -1,0 +1,23 @@
+
+\begin{tikzpicture}[scale=.3]
+  \tkzDefPoints{0/0/O_1,-8/0/A,8/0/B,4/3/O_2,4/0/P,1/0/D}
+  \tkzDefLine[orthogonal=through D](A,B)  \tkzGetPoint{d}
+  \tkzInterLC(D,d)(O_1,B)                 \tkzGetSecondPoint{C}
+  \tkzDefPointBy[reflection=over C--D](P) \tkzGetPoint{P'}
+  \tkzInterCC(O_1,B)(O_2,P)               \tkzGetFirstPoint{E}
+  \tkzDefLine[altitude](B,P,C)            \tkzGetPoint{H}
+  \tkzDefCircle[circum](A,P',C)           \tkzGetPoint{o}
+  \tkzDrawSemiCircle(O_1,B)
+  \tkzDrawCircle(O_2,P)
+  \tkzDrawCircle[dashed](o,A)
+  \tkzDrawSegments(A,B C,D C,P)
+  \tkzDrawSegments[dashed](A,C B,C C,P' O_1,C O_1,E O_2,P P,H)
+  \tkzMarkAngles[mark=|,mkcolor=teal,size=1.2](P',C,D D,C,P P,C,B)
+  \tkzMarkAngles[mark=||,mkcolor=blue,size=1.8](B,A,C P',C,P)
+  \tkzMarkAngles[mark=||,mkcolor=blue,size=2.5](D,C,B)
+  \tkzMarkRightAngles[size=.5](B,D,C C,H,P A,C,B A,P,O_2)
+  \tkzDrawPoints(O_1,O_2,A,B,C,D,E,P,P',H)
+  \tkzLabelPoints[below](O_1,A,B,D,P,P')
+  \tkzLabelPoints[above](O_2,C)
+  \tkzLabelPoints[right](E,H)
+\end{tikzpicture}

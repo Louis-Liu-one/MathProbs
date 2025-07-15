@@ -1,0 +1,55 @@
+
+\prob{001F}{Euler公式}
+
+证明：
+\[ \mathe^{\mathi\theta} = \cos\theta + \mathi\sin\theta \]
+\problabels{yellow/微积分, green/证明题}
+
+\subsection{Taylor展开}
+
+因为$(\mathe^x)' = \mathe^x$，$\mathe^x$求导后不变，所以可知其Maclaurin展开为
+\begin{align*}
+  \mathe^x &= \frac{\mathe^0}{0!}x^0 + \frac{\mathe^0}{1!}x^1 + \frac{\mathe^0}{2!}x^2 + \frac{\mathe^0}{3!}x^3 \\
+  &+ \dots + \frac{\mathe^0}{n!}x^n \\
+  &= \frac1{0!}x^0 + \frac1{1!}x^1 + \frac1{2!}x^2 + \frac1{3!}x^3 \\
+  &+ \dots + \frac1{n!}x^n + \cdots \\
+\end{align*}
+由于$\mathi^0 = 1, \mathi^1 = \mathi, \mathi^2 = -1, \mathi^3 = -\mathi, \mathi^n = \mathi^{n - 4}$，令$x = \mathi\theta$，可得
+\begin{align*}
+  \mathe^{\mathi\theta} &= \frac1{0!}(\mathi\theta)^0 + \frac1{1!}(\mathi\theta)^1 + \frac1{2!}(\mathi\theta)^2 \\
+  &+ \frac1{3!}(\mathi\theta)^3 + \dots + \frac1{n!}(\mathi\theta)^n + \cdots \\
+  &= \frac1{0!}\theta^0 + \frac1{1!}\mathi\theta^1 - \frac1{2!}\theta^2 - \frac1{3!}\mathi\theta^3 + \cdots \\
+  &= \left(\frac1{0!}\theta^0 - \frac1{2!}\theta^2 + \frac1{4!}\theta^4 - \frac1{6!}\theta^6 + \dots\right) \\
+  &+ \mathi\left(\frac1{1!}\theta^1 - \frac1{3!}\theta^3 + \frac1{5!}\theta^5 - \frac1{7!}\theta^7 + \dots\right) \\
+\end{align*}
+
+因为
+\begin{align*}
+  (\cos\theta) &= \cos\theta \qquad& (\cos\theta)' &= -\sin\theta \\
+  (\cos\theta)'' &= -\cos\theta \qquad& (\cos\theta)''' &= \sin\theta \\
+  (\cos\theta)'''' &= \cos\theta \qquad& \cdots &= \cdots \\
+\end{align*}
+可得$\cos\theta$的Maclaurin展开式为
+\begin{align*}
+  \cos\theta &= \frac{\cos0}{0!}\theta^0 + \frac{-\sin0}{1!}\theta^1 \\
+  &+ \frac{-\cos0}{2!}\theta^2 + \frac{\sin0}{3!}\theta^3 + \cdots \\
+  &= \frac1{0!}\theta^0 - \frac0{1!}\theta^1 - \frac1{2!}\theta^2 + \frac0{3!}\theta^3 + \cdots \\
+  &= \frac1{0!}\theta^0 - \frac1{2!}\theta^2 + \frac1{4!}\theta^4 - \frac1{6!}\theta^6 + \cdots \\
+\end{align*}
+又因为
+\begin{align*}
+  (\sin\theta) &= \sin\theta \qquad& (\sin\theta)' &= \cos\theta \\
+  (\sin\theta)'' &= -\sin\theta \qquad& (\sin\theta)''' &= -\cos\theta \\
+  (\sin\theta)'''' &= \sin\theta \qquad& \cdots &= \cdots \\
+\end{align*}
+可得$\sin\theta$的Maclaurin展开式为
+\begin{align*}
+  \sin\theta &= \frac{\sin0}{0!}\theta^0 + \frac{\cos0}{1!}\theta^1 \\
+  &+ \frac{-\sin0}{2!}\theta^2 + \frac{-\cos0}{3!}\theta^3 + \cdots \\
+  &= \frac0{0!}\theta^0 + \frac1{1!}\theta^1 - \frac0{2!}\theta^2 - \frac1{3!}\theta^3 + \cdots \\
+  &= \frac1{1!}\theta^1 - \frac1{3!}\theta^3 + \frac1{5!}\theta^5 - \frac1{7!}\theta^7 + \cdots \\
+\end{align*}
+
+对比$\mathe^{\mathi\theta}$的展开式，可得
+\[ \mathe^{\mathi\theta} = \cos\theta + \mathi\sin\theta \]
+证毕。\footnote{公式$\mathe^{\mathi\theta} = \cos\theta + \mathi\sin\theta$是Euler公式在$\theta = \pi$时的特殊情况，把复指数函数与三角函数联系起来，有非常重要的地位。由其导出的$\mathe^{\mathi\pi} + 1 = 0$，包含了两个重要的超越数：$\mathe$和$\pi$、实数和虚数单位：$1$和$\mathi$、数的基石：$0$、三种最基本的运算：加法、乘法和乘方、还有最重要的二元关系之一：相等，使得该公式被誉为“最美公式”之一。}

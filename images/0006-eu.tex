@@ -1,0 +1,24 @@
+
+\begin{tikzpicture}[scale=.5]
+  \coordinate[label=above:$D$] (A) at ($ (0,0)!(4,0)!(4,3) $);
+  \coordinate[label=above:$E$] (B) at ($ (-3,4)!(4,0)!(1,7) $);
+  \draw (0,0) node[left] {$B$} -- (4,0) node[below right] {$C$}
+    -- (4,3) node[above right] {$A$} -- cycle
+    (0,0) -- (4,3) -- (1,7) node[above] {$B'$}
+    -- (-3,4) node[left] {$A'$} -- cycle
+    (-3,4) -- (4,0) (4,3) -- (0,-4) (A) -- (B)
+    (0,0) -- (0,-4) node[below] {$C'_1$}
+    -- (4,-4) node[below] {$F$} -- (4,0) -- cycle
+    (4,0) -- (7,0) node[right] {$G$}
+    -- (7,3) node[right] {$C'_2$} -- (4,3) -- cycle
+    (B) -- (0,0) -- (4,-4);
+  \draw[dashed] (4,0) -- (A);
+  \fill[opafill=green] (0,0) |- (4,-4) |- cycle;
+  \fill[opafill=blue] (4,0) |- (7,3) |- cycle;
+  \fill[opafill=green] (0,0) -- (A) -- (B) -- (-3,4) -- cycle;
+  \fill[opafill=blue] (4,3) -- (A) -- (B) -- (1,7) -- cycle;
+  \fill[opafill=red] (0,0) -- (4,0) -- (-3,4) -- cycle
+    (0,0) -- (B) -- (-3,4) -- cycle;
+  \fill[opafill=cyan] (0,0) -- (0,-4) -- (4,3) -- cycle
+    (0,0) |- (4,-4) -- cycle;
+\end{tikzpicture}

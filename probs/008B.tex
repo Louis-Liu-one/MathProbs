@@ -1,0 +1,25 @@
+
+\prob{008B}{根式求和化简}
+
+化简
+\[ \sum_{k = 1}^n \sqrt{1 + \frac1{k^2} + \frac1{(k + 1)^2}} \]
+\problabels{yellow/代数, green/代数求值问题}
+
+\ans{$n + 1 - \sfrac1{n + 1}$}
+
+\subsection{展开}
+
+\begin{align*}
+  & \sum_{k = 1}^n \sqrt{1 + \frac1{k^2} + \frac1{(k + 1)^2}} \\
+  ={}& \sum_{k = 1}^n \sqrt{\frac{k^2 + (k + 1)^2 + k^2(k + 1)^2}{k^2(k + 1)^2}} \\
+  ={}& \sum_{k = 1}^n \frac{\sqrt{2k^2 + 2k + 1 + (k(k + 1))^2}}{k(k + 1)} \\
+  ={}& \sum_{k = 1}^n \frac{\sqrt{2k(k + 1) + 1 + (k(k + 1))^2}}{k(k + 1)} \\
+  ={}& \sum_{k = 1}^n \frac{\sqrt{(k(k + 1) + 1)^2}}{k(k + 1)} = \sum_{k = 1}^n \frac{k(k + 1) + 1}{k(k + 1)} \\
+  ={}& \sum_{k = 1}^n 1 + \frac1{k(k + 1)} = n + \sum_{k = 1}^n \frac1{k(k + 1)} \\
+  ={}& n + \frac1{1\cdot2} + \frac1{2\cdot3} + \dots + \frac1{n(n + 1)} \\
+  ={}& n + 1 - \frac12 + \frac12 - \frac13 + \dots + \frac1n - \frac1{n + 1} \\
+  ={}& n + 1 - \frac1{n + 1}
+\end{align*}
+
+故化简结果为
+\[ n + 1 - \frac1{n + 1} \]

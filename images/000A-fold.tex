@@ -1,0 +1,33 @@
+
+\begin{tikzpicture}[scale=.2]
+  \tkzDefPoint(60:7){E}
+  \tkzDefPoint(120:15){A}
+  \tkzDefPoint(0,0){D}
+  \tkzInterLC(A,E)(D,A)     \tkzGetFirstPoint{C}
+  \tkzInterLC[R](C,D)(D,8)  \tkzGetSecondPoint{B}
+  \tkzDefPointBy[reflection=over A--B](D) \tkzGetPoint{D'}
+  \tkzInterLC[R](A,D)(A,7)  \tkzGetSecondPoint{B'}
+  \tkzInterLC[R](A,D')(A,7) \tkzGetFirstPoint{F}
+  \tkzInterLL(A,B)(D,F)     \tkzGetPoint{G}
+  \tkzFillPolygon[teal!20](A,F,G,B')
+  \tkzFillPolygon[cyan!20](B,D,B',G)
+  \tkzDrawPolygon(A,B,C)
+  \tkzDrawSegments(A,D D,E)
+  \tkzDrawSegments[dashed](A,D' B,D' D,F B',G)
+  \tkzMarkSegments[color=teal,mark=|](A,D C,D)
+  \tkzMarkAngles[mkcolor=cyan,mark=|,size=2](B,A,D D',A,B)
+  \tkzMarkAngle[mkcolor=cyan,mark=|,mkpos=1/4,size=2](C,D,E)
+  \tkzMarkAngle[mkcolor=cyan,mark=|,mkpos=3/4,size=2](C,D,E)
+  \tkzMarkAngles[mkcolor=teal,mark=x,size=2](D,A,E A,D,F F,D,B)
+  \tkzLabelAngle[pos=2](E,D,A){$60^\circ$}
+  \tkzLabelAngle[pos=2](B,G,D){$60^\circ$}
+  \tkzLabelAngle[pos=2](D,G,B'){$60^\circ$}
+  \tkzLabelAngle[pos=2](B',G,A){$60^\circ$}
+  \tkzLabelAngle[pos=2](A,G,F){$60^\circ$}
+  \tkzDrawPoints(A,B,C,D,E,F,G,B',D')
+  \tkzLabelPoints[above](A)
+  \tkzLabelPoints[left](F)
+  \tkzLabelPoints[below left](G)
+  \tkzLabelPoints[above right](E,B')
+  \tkzLabelPoints[below](B,C,D,D')
+\end{tikzpicture}

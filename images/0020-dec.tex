@@ -1,0 +1,17 @@
+
+\begin{tikzpicture}[scale=.6]
+  \coordinate[label=below left:{$A(0,0)$}] (A) at (0,0);
+  \coordinate[label=below left:{$B(7,0)$}] (B) at (7,0);
+  \coordinate[label=above:$C$] (C) at (7,7);
+  \coordinate[label=left:{$D(0,7)$}] (D) at (0,7);
+  \coordinate[label=above:{$E(3,7)$}] (E) at (3,7);
+  \coordinate[label=above right:{$F(x,7-x)$}] (F) at (5,2);
+  \pic[mark angle={teal}{3mm}{1}] {right angle=E--F--A};
+  \draw[->, thick] (-1.2,0) -- (8.2,0) node[above] {$x$};
+  \draw[->, thick] (0,-1.2) -- (0,8.2) node[right] {$y$};
+  \draw[thick] (-1.2,8.2) -- (8.2,-1.2) node[below] {$y = 7-x$};
+  \draw (A) -- (B) -- (C) -- (D) -- node[left] {$7$} cycle
+    (B) -- (F) -- node[left] {$\sqrt2x$} (D)
+    (A) -- node[above, sloped] {$k_2 = \sfrac{7-x}x$} (F)
+    -- node[above, sloped] {$k_1 = -\sfrac x{x-3}$} (E);
+\end{tikzpicture}

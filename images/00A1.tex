@@ -1,0 +1,20 @@
+
+\begin{tikzpicture}[scale=2]
+  \tkzDefPoint(0,0){O}
+  \tkzDefPoint(0:1){A}
+  \tkzDefPoint(-160:1){B}
+  \tkzDefPoint(-80:1){C}
+  \tkzDefPoint(140:1){D}
+  \tkzInterLL(A,B)(C,D)   \tkzGetPoint{E}
+  \tkzDefTangent[at=D](O) \tkzGetPoint{d}
+  \tkzInterLL(A,B)(D,d)   \tkzGetPoint{F}
+  \tkzDrawCircle(O,A)
+  \tkzDrawSegments(A,F C,D D,F)
+  \tkzDrawPoints(A,B,C,D,E,F)
+  \tkzMarkArc[color=teal,mark=|](O,B,C)
+  \tkzMarkArc[color=teal,mark=|](O,C,A)
+  \tkzLabelPoints[below](B,C)
+  \tkzLabelPoints[above](D,E)
+  \tkzLabelPoints[left](F)
+  \tkzLabelPoints[right](A)
+\end{tikzpicture}

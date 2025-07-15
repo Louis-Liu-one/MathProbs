@@ -1,0 +1,33 @@
+
+\prob{00AC}{面积差最小值}
+
+\begin{figure}[htbp]
+  \centering \image{00AC}
+  \caption{总第~\ref{sec:00AC} 题图} \label{fig:00AC}
+\end{figure}
+
+如图~\ref{fig:00AC}，在四边形$ABCD$中，$AB = BC = 2$；连接$AC$，$\angle CAD = 90^\circ$，$CA$平分$\angle BCD$；$E$是$BC$的中点，连接$DE$；$AC$与$DE$交于$F$。求$S_{\triangle ADF} - S_{\triangle CEF}$的最大值。
+\problabels{yellow/平面几何, green/面积问题, green/最值问题}
+
+\ans{$S_{\triangle ADF} - S_{\triangle CEF}$的最大值为2。}
+
+\subsection{连中线} \label{subsec:00AC-mid}
+
+\begin{figure}[htbp]
+  \centering \image{00AC-mid}
+  \caption{方法~\ref{subsec:00AC-mid} 图} \label{fig:00AC-mid}
+\end{figure}
+
+如图~\ref{fig:00AC-mid}，连接$BD$，作$\rttri CAD$斜边上的中线$AB'$。显然$AB \parallel CD$。
+
+由于$\triangle CAD$为直角三角形，故$\angle CAB' = \angle ACB'$，而$AB = AC, \angle ACB' = \angle ACB$，于是
+\[ \angle CAB' = \angle ACB' = \angle CAB = \angle ACB \]
+故$\triangle ABC \cong \triangle AB'C$，于是$B'C = B'D = 2 \Rightarrow CD = 4$。
+
+由于
+\begin{align*}
+  & S_{\triangle ADF} - S_{\triangle CEF} \\
+  ={}& S_{\triangle ACD} - S_{\triangle CDE} \\
+  ={}& S_{\triangle BCD} - S_{\triangle CDE} = S_{\triangle CDE}
+\end{align*}
+而显然$S_{\triangle CDE}$的最大值为$\sfrac12CD\cdot CE = 2$，此时$\angle BCD = 90^\circ$。因此，$S_{\triangle ADF} - S_{\triangle CEF}$的最大值为2。

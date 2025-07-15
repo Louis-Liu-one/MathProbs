@@ -1,0 +1,14 @@
+
+\begin{tikzpicture}[scale=2.4]
+  \coordinate[label=left:$O$] (O) at (0,0);
+  \coordinate[label=left:$A$] (A) at (180:1);
+  \coordinate[label=right:$B$] (B) at (40:1);
+  \coordinate[label=below:$C$] (C) at (-50:1);
+  \coordinate[label=above:$D$] (D) at (90:1);
+  \draw[name path=AB] (A) -- (B);
+  \draw[name path=CD] (C) -- (D);
+  \path[name intersections={of=AB and CD}]
+    coordinate[label=below left:$P$] (P) at (intersection-1);
+  \fill (O) circle (.5pt);
+  \draw (O) circle (1);
+\end{tikzpicture}

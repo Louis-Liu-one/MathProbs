@@ -1,0 +1,53 @@
+
+\prob{002C}{余弦定理}
+
+\begin{figure}[htbp]
+  \centering
+  \image{002C}
+  \caption{002C：余弦定理} \label{fig:002C}
+\end{figure}
+
+如图~\ref{fig:002C}，在任意$\triangle ABC$中，设$\alpha = \angle A$，证明余弦定理：
+
+\[ \cos\alpha = \frac{b^2 + c^2 - a^2}{2bc} \]
+\problabels{yellow/平面几何, green/证明题}
+
+\subsection{勾股定理} \label{subsec:002C-pyth}
+
+\begin{figure}[htbp]
+  \centering
+  \image{002C-pyth}
+  \caption{\nameref{subsec:002C-pyth}：作垂线，然后利用勾股定理证明。} \label{fig:002C-pyth}
+\end{figure}
+
+基本思路：通过作垂线构造直角三角形，然后运用勾股定理并通过一系列代数变换证明命题。
+
+如图~\ref{fig:002C-pyth}，作$CD \perp AB$于$D$。
+
+由正余弦函数的定义易知
+
+\begin{align*}
+  CD &= b\sin\alpha \\
+  AD &= b\cos\alpha \\
+\end{align*}
+
+又由于$AB = c$，可知
+
+\[ BD = c - b\cos\alpha \]
+
+又由于$CD \perp AB$，即$\angle BDC = 90^\circ$，因此$\triangle BDC$是直角三角形。由勾股定理得
+
+\begin{align*}
+  BD^2 + CD^2 &= BC^2 \\
+  (c - b\cos\alpha)^2 + (b\sin\alpha)^2 &= a^2 \\
+  c^2 - 2bc\cos\alpha + b^2\cos^2\alpha & \\
+  + b^2\sin^2\alpha &= a^2 \\
+  -2bc\cos\alpha & \\
+  + b^2(\cos^2\alpha + \sin^2\alpha) &= -c^2 + a^2 \\
+  -2bc\cos\alpha + b^2 &= -c^2 + a^2 \\
+  -2bc\cos\alpha &= -b^2 - c^2 + a^2 \\
+  2bc\cos\alpha &= b^2 + c^2 - a^2 \\
+  \cos\alpha &= \frac{b^2 + c^2 - a^2}{2bc} \\
+\end{align*}
+
+即为余弦定理。证毕。

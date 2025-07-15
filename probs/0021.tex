@@ -1,0 +1,39 @@
+
+\prob{0021}{一元二次方程}
+
+推导标准一元二次方程$ax^2 + bx + c = 0\quad(a \ne0)$的求根公式。
+\problabels{yellow/代数, green/方程相关问题}
+
+\ans{$x_{1,2} = \sfrac{-b \pm\sqrt{b^2 - 4ac}}{2a}$}
+
+\subsection{配方法}
+
+基本思路：将等号左边配成平方，然后开平方根求解。
+
+先将等式两边同时除以$a$得
+
+\[ x^2 + \frac bax + \frac ca = 0 \]
+
+将等号左边提出一个完全平方式，然后进行移项：
+
+\begin{align*}
+  x^2 + \frac bax + \frac ca &= 0 \\
+  \left(x^2 + 2\cdot\frac b{2a}x + \left(\frac b{2a}\right)^2\right) + \frac ca - \left(\frac b{2a}\right)^2 &= 0 \\
+  \left(x + \frac b{2a}\right)^2 - \left(\left(\frac b{2a}\right)^2 - \frac ca\right) &= 0 \\
+  \left(x + \frac b{2a}\right)^2 &= \frac{b^2}{4a^2} - \frac ca \\
+\end{align*}
+
+此时将等式两边同时开平方根可得
+
+\begin{align*}
+  x + \frac b{2a} &= \pm\sqrt{\frac{b^2}{4a^2} - \frac ca} \\
+  &= \pm\sqrt{\frac{b^2}{4a^2} - \frac{4ac}{4a^2}} \\
+  &= \pm\sqrt{\frac{b^2 - 4ac}{4a^2}} \\
+  &= \frac{\pm\sqrt{b^2 - 4ac}}{2a} \\
+  x &= \frac{\pm\sqrt{b^2 - 4ac}}{2a} - \frac b{2a} \\
+  &= \frac{-b \pm\sqrt{b^2 - 4ac}}{2a} \\
+\end{align*}
+
+综上，一元二次方程的求根公式为
+
+\[ x_{1,2} = \frac{-b \pm\sqrt{b^2 - 4ac}}{2a} \]

@@ -1,0 +1,46 @@
+
+\prob{005F}{四整数最大和}
+
+若$a, b, c, d$是整数，$b > 0$，且满足
+
+\[ \begin{cases}
+  a + b = c \\
+  b + c = d \\
+  c + d = a \\
+\end{cases} \]
+
+求$a + b + c + d$的最大值。
+\problabels{yellow/数论, green/最值问题}
+
+\ans{$a + b + c + d$的最大值为$-5$。}
+
+\subsection{同一变量表示}
+
+基本思路：将$a, c, d$用$b$表示，然后利用$b$是正整数这一条件求解最大值。
+
+解关于$a, c, d$的三元一次方程组
+
+\[ \begin{cases}
+  a + b = c \\
+  b + c = d \\
+  c + d = a \\
+\end{cases} \]
+
+得
+
+\[ \begin{cases}
+  a = -3b \\
+  c = -2b \\
+  d = -b \\
+\end{cases} \]
+
+故
+
+\begin{align*}
+  a + b + c + d &= (-3b) + (-2b) + b + (-b) \\
+  &= -5b \\
+\end{align*}
+
+而$b$为正整数，故$b$最小时$a + b + c + d$最大，此时$b = 1$，$a + b + c + d = -5$。
+
+综上，$a + b + c + d$的最大值为$-5$。

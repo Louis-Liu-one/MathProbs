@@ -1,0 +1,50 @@
+
+\prob{0041}{等边内一点I}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0041}
+  \caption{0041：等边内一点I} \label{fig:0041}
+\end{figure}
+
+如图~\ref{fig:0041}，在等边$\triangle ABC$中有一点$P$，满足$AP = 3$，$BP = 4$，$CP = 5$，求等边三角形的边长。
+\problabels{yellow/平面几何, green/长度问题}
+
+\ans{等边三角形的边长为$\sqrt{25 + 12\sqrt3}$。}
+
+\subsection{旋转法} \label{subsec:0041-rot}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0041-rot}
+  \caption{\nameref{subsec:0041-rot}：通过旋转三角形求解。}
+  \label{fig:0041-rot}
+\end{figure}
+
+基本思路：通过旋转$\triangle ACP$求出$\angle APB$，然后运用余弦定理求解边长。
+
+如图~\ref{fig:0041-rot}，因为$AB = AC$且$\angle BAC = 60^\circ$，所以将$\triangle ACP$顺时针旋转$60^\circ$后$C$与$B$重合。设$P$的对应点为$P'$，连接$PP'$。由旋转的性质易知$\triangle ACP \cong \triangle ABP'$。
+
+\begin{align*}
+  &\because   \triangle ACP \cong \triangle ABP' \\
+  &\therefore AP' = AP, BP' = CP, \angle P'AB = \angle PAC \\
+  &\therefore \angle BAC = \angle PAP' \\
+  &\because   \angle BAC = 60^\circ \\
+  &\therefore \angle PAP' = 60^\circ \\
+  &\therefore \triangle PAP'\text{是等边三角形} \\
+  &\therefore \angle APP' = 60^\circ, PP' = AP \\
+  &\because   AP = 3, CP = 5 \\
+  &\therefore PP' = 3, BP' = 5 \\
+  &\because   BP = 4 \\
+  &\therefore BP^2 + PP'^2 = BP'^2 \\
+  &\therefore \angle BPP' = 90^\circ \\
+  &\because   \angle APB = \angle APP' + \angle BPP' \\
+  &\therefore \angle APB = 60^\circ + 90^\circ = 150^\circ \\
+  \text{又}&\because AP^2 + BP^2 - AB^2 = 2AP\cdot BP\cos\angle APB \\
+  &\therefore 25 - AB^2 = 24\cos\angle APB \\
+  &\because   \cos\angle APB = \cos 150^\circ = -\frac{\sqrt3}2 \\
+  &\therefore AB^2 - 25 = 12\sqrt3 \\
+  &\therefore AB = \sqrt{25 + 12\sqrt3} \\
+\end{align*}
+
+综上所述，等边三角形$ABC$的边长为$\sqrt{25 + 12\sqrt3}$。

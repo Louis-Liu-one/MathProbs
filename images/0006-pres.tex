@@ -1,0 +1,9 @@
+
+\begin{tikzpicture}[scale=.8]
+  \draw (0,0) -- node[below] {$b$} (3,0) -- node[right] {$a$} (3,4)
+    -- (-4,3) -- node[left] {$b$} (-4,0) -- node[below] {$a$} cycle
+    (-4,3) -- node[above] {$c$} (0,0) (0,0) -- node[above] {$c$} (3,4);
+  \fill[opafill=green] (-4,3) -- (0,0) -- (3,4) -- cycle;
+  \fill[opafill=blue] (0,0) -- (3,0) -- (3,4)
+    -- (0,0) -- (-4,3) -- (-4,0) -- cycle;
+\end{tikzpicture}

@@ -1,0 +1,32 @@
+
+\prob{007F}{从等式到函数}
+
+若$f$是某定义域和值域均为正整数的函数，且满足：
+\begin{enumerate}
+  \item 至少存在一个$n \ge 2$，使得$f(n) = n$；
+  \item 对于任意正整数$m > n$，有$f(mn) = f(m)f(n)$，且$f(m) > f(n)$。
+\end{enumerate}
+求$f(n)$。
+\problabels{yellow/数论}
+
+\ans{$f(n) = n$}
+
+\subsection{利用正整数的性质}
+
+设$k \ge 2$为最小的满足$f(k) = k$的正整数，利用归纳法证明$f(n) = n$。
+
+首先对于$n = 1$，由于$f(k) = k$，故$f(k) = f(1k) = f(1)f(k)$，即$kf(1) = k \Rightarrow f(1) = 1$。于是由题设有
+\[ f(1) < f(2) < f(3) < \dots < f(k) \]
+而$f(1) = 1, f(k) = k$，而$f$取整数，故直接有
+\[ f(1) = 1, f(2) = 2, \dots, f(n) = n\quad(1 \le n \le k) \]
+
+而对于$m > 1$，假设对于所有$n \le km$，有$f(n) = n$，于是
+\[ f(km) < f(km + 1) < \dots < f(km + k) = f(k)f(m + 1) \]
+而$m + 1 \le km$，故$f(m + 1) = m + 1$，即
+\[ f(km + k) = f(k)f(m + 1) = k(m + 1) = km + k \]
+代入原不等式得
+\[ km < f(km + 1) < \dots < f(km + k - 1) < km + k \]
+而$f$取单调增的整数，故直接有
+\[ f(n) = n\quad(km \le n \le km + k) \]
+
+综上，有$f(n) = n$。

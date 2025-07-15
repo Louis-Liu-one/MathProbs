@@ -1,0 +1,25 @@
+
+\begin{tikzpicture}[scale=2]
+  \clip (-1.2,-2/3) rectangle (1.7,1.5);
+  \coordinate[label=below:$A$] (A) at (0,0);
+  \coordinate[label=below:$B$] (B) at (1,0);
+  \path[name path=AC] (A) -- ($ (A)!2! 20:(B) $);
+  \path[name path=BC] (B) -- ($ (B)!2! -125:(A) $);
+  \path[name intersections={of=AC and BC}]
+    coordinate[label=right:$C$] (C) at (intersection-1);
+  \path[name path=AD] (A) -- ($ (A)!2! 80:(C) $);
+  \path[name path=CD] (C) -- ($ (C)!2! -45:(A) $);
+  \path[name intersections={of=AD and CD}]
+    coordinate[label=above:$D$] (D) at (intersection-1);
+  \coordinate[label=below:$B'$] (B') at ($ (D)!1! -70:(B) $);
+  \pic[mark angle={red}{5mm}{1.2}] {angle=D--C--A};
+  \pic[mark angle={red}{5mm}{1.2}] {angle=A--B'--D};
+  \pic[mark angle={red}{5mm}{1.2}] {angle=D--B--A};
+  \pic[mark angle={blue}{5mm}{1.2}] {angle=B--A--B'};
+  \draw (D) -- (A) -- (B) -- (C) (A) -- (C);
+  \draw[blue] (C) -- (D) (B) -- (D);
+  \draw[dashed] (A) -- (B');
+  \draw[blue, dashed] (D) -- (B');
+  \fill[opafill=cyan] (D) -- (B') -- (A) -- (B) -- cycle;
+  \fill[opafill=green] (B') -- (C) -- (D) -- cycle;
+\end{tikzpicture}

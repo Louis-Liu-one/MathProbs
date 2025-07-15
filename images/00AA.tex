@@ -1,0 +1,13 @@
+
+\begin{tikzpicture}[scale=5]
+  \tkzDefPoints{-1/0/A,0/0/B}
+  \tkzDefPoint(100:1){C}
+  \tkzDefPointBy[rotation=center A angle 30](C) \tkzGetPoint{a}
+  \tkzDefPointBy[rotation=center B angle 20](C) \tkzGetPoint{b}
+  \tkzInterLL(A,a)(B,b)                         \tkzGetPoint{D}
+  \tkzDrawPolygon(A,B,C,D)
+  \tkzDrawSegments(A,C B,D)
+  \tkzDrawPoints(A,B,C,D)
+  \tkzLabelPoints[below](A,B)
+  \tkzLabelPoints[above](C,D)
+\end{tikzpicture}

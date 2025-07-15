@@ -1,0 +1,28 @@
+
+\begin{tikzpicture}
+  \tkzDefPoints{0/0/A,6/0/B}
+  \tkzDefShiftPoint[A](60:4){C}
+  \tkzDefLine[bisector,normed](A,B,C) \tkzGetPoint{b}
+  \tkzDefLine[bisector,normed](A,C,B) \tkzGetPoint{c}
+  \tkzInterLL(A,C)(B,b) \tkzGetPoint{D}
+  \tkzInterLL(A,B)(C,c) \tkzGetPoint{E}
+  \tkzInterLL(B,D)(C,E) \tkzGetPoint{O}
+  \tkzDefPointBy[rotation=center A angle -60](D)
+    \tkzGetPoint{D'}
+  \tkzFillPolygon[color=teal!30](A,O,D)
+  \tkzFillPolygon[color=teal!30](A,O,D')
+  \tkzDrawPoints(A,B,C,D,E,O,D')
+  \tkzDrawPolygon(A,B,C)
+  \tkzDrawSegments(B,D C,E)
+  \tkzDrawSegments[dashed](A,O D',O)
+  \tkzLabelPoint[below](A){$A$}
+  \tkzLabelPoint[below](B){$B$}
+  \tkzLabelPoint[above](C){$C$}
+  \tkzLabelPoint[left](D){$D$}
+  \tkzLabelPoint[below](E){$E$}
+  \tkzLabelPoint[above right](O){$O$}
+  \tkzLabelPoint[below](D'){$D'$}
+  \tkzMarkSegments[color=teal,mark=|](O,D O,D' O,E)
+  \tkzMarkAngle[mkcolor=cyan,mark=||](O,A,D)
+  \tkzMarkAngle[mkcolor=cyan,mark=||](E,A,O)
+\end{tikzpicture}

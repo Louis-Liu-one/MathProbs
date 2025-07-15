@@ -1,0 +1,182 @@
+
+\prob{0012}{Pick定理}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0012}
+  \caption{0012：Pick定理} \label{fig:0012}
+\end{figure}
+
+如图~\ref{fig:0012}，在某平面直角坐标系中，定义“格点”是横、纵坐标都是整数的的点，“格点多边形”是顶点都是格点的多边形。
+
+求证：任一格点多边形的面积等于其内部（不包括其边缘）的格点数量与其边缘上的格点数量的一半之和减去$1$。
+\problabels{yellow/解析几何, green/证明题}
+
+\subsection{数学归纳法} \label{subsec:0012-ind}
+
+基本思路：通过证明公式在边平行于$x$、$y$轴的矩形和直角边平行于$x$、$y$轴的直角三角形的情况下成立，从而推出公式在任意三角形的情况下成立。根据任意多边形都可以分成多个三角形的性质，若可以证明“若公式在两个多边形中都成立，则公式在两个多边形组合成的一个多边形中仍成立”，则命题得证。
+
+设多边形面积为$S$，内点数为$p$，边缘点数为$q$，则原命题可表达为：
+
+\[ S = p + \frac12q - 1 \]
+
+\subsubsection{边平行于$x$、$y$轴的矩形} \label{subsubsec:0012-ind-rect}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0012-ind-rect}
+  \caption{\nameref{subsubsec:0012-ind-rect}：归纳法的第一步，证明命题在边平行于$x$、$y$轴的矩形的情况下成立。}
+  \label{fig:0012-ind-rect}
+\end{figure}
+
+如图~\ref{fig:0012-ind-rect}，设边平行于$x$、$y$轴的矩形长为$a$，宽为$b$，则可知图中浅蓝色点数为$2a$，深蓝色点数为$2b$，因此边缘的点数为
+
+\[ q = 2a + 2b \]
+
+又通过观察图~\ref{fig:0012-ind-rect} 知其内部的红色点组成了一个长$a - 1$个点，宽$b - 1$个点的点阵，因此内点数为
+
+\[ p = (a - 1)(b - 1) \]
+
+代入待证公式得
+
+\begin{align*}
+  S &= p + \frac12q - 1 \\
+  &= (a - 1)(b - 1) + \frac12(2a + 2b) - 1 \\
+  &= ab - a - b + 1 + a + b - 1 \\
+  &= ab \\
+\end{align*}
+
+即为矩形面积。因此，原命题在多边形为边平行于$x$、$y$轴的矩形的情况下成立。
+
+\subsubsection{直角边平行于$x$、$y$轴的直角三角形} \label{subsubsec:0012-ind-rttri}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0012-ind-rttri}
+  \caption{\nameref{subsubsec:0012-ind-rttri}：归纳法的第二步，证明命题在直角边平行于$x$、$y$轴的三角形的情况下成立。}
+  \label{fig:0012-ind-rttri}
+\end{figure}
+
+如图~\ref{fig:0012-ind-rttri}，设直角边平行于$x$、$y$轴的直角三角形两直角边长分别为$a$、$b$，斜边上的点数（不含首尾）为$k$\footnote{例如在图~\ref{fig:0012-ind-rttri} 中浅绿色点有1个，$k = 1$。}。易知浅蓝色点有$a$个，深蓝色点有$b$个，因此边缘点数为
+
+\[ q = a + b + k + 1 \]
+
+看图易知红色点与灰色点数量相同，又由于红色点、灰色点、浅绿色点组合的点阵即为大矩形的内点，且大矩形的内点有$(a - 1)(b - 1)$个，所以可知直角三角形内点数为
+
+\[ p = \frac12\Big((a - 1)(b - 1) - k\Big) \]
+
+代入待证公式得
+
+\begin{align*}
+  S &= p + \frac12q - 1 \\
+  &= \frac12\Big((a - 1)(b - 1) - k\Big) \\
+  &+ \frac12(a + b + k + 1) - 1 \\
+  &= \frac12ab - \frac12a - \frac12b + \frac12 - \frac12k \\
+  &+ \frac12a + \frac12b + \frac12k + \frac12 - 1 \\
+  &= \frac12ab \\
+\end{align*}
+
+即为三角形面积。因此，原命题在多边形为直角边平行于$x$、$y$轴的直角三角形的情况下成立。
+
+\subsubsection{任意三角形} \label{subsubsec:0012-ind-tri}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0012-ind-tri}
+  \caption{\nameref{subsubsec:0012-ind-tri}：归纳法的第三步，证明命题在任意三角形的情况下成立。}
+  \label{fig:0012-ind-tri}
+\end{figure}
+
+如图~\ref{fig:0012-ind-tri}，设大矩形的面积为$S_R$，内点数为$p_R$，边缘点数为$q_R$，上面、右边、左下角三个直角三角形的面积、内点数、边缘点数、斜边点数（不含首尾）分别为$S_1$、$p_1$、$q_1$、$k_1$、$S_2$、$p_2$、$q_2$、$k_3$、$S_3$、$p_3$、$q_3$、$k_3$，则根据前面几步的结论可知
+
+\begin{align*}
+  S_R &= p_R + \frac12q_R - 1 \\
+  S_1 &= p_1 + \frac12q_1 - 1 \\
+  S_2 &= p_2 + \frac12q_2 - 1 \\
+  S_3 &= p_3 + \frac12q_3 - 1 \\
+\end{align*}
+
+又由三个直角三角形的斜边点数易知中心三角形的边缘点数为
+
+\[ q = k_1 + k_2 + k_3 + 3 \]
+
+看图易知灰点、红点、浅绿色点的数量之和为$p_R$，灰点数量为$p_1 + p_2 + p_3$，浅绿色点数量为$k_1 + k_2 + k_3$，易知中心三角形内点数量，即红点数量为
+
+\[ p = p_R - (p_1 + p_2 + p_3) - (k_1 + k_2 + k_3) \]
+
+代入待证公式可知算得的中心三角形面积为
+
+\begin{align*}
+  S &= p + \frac12q - 1 \\
+  &= p_R - (p_1 + p_2 + p_3) - (k_1 + k_2 + k_3) \\
+  &+ \frac12(k_1 + k_2 + k_3 + 3) - 1 \\
+  &= p_R - (p_1 + p_2 + p_3) - \frac12(k_1 + k_2 + k_3) + \frac12 \\
+  &= (p_R + \frac12q_R - 1) - \frac12q_R + 1 \\
+  &- (p_1 + p_2 + p_3) - \frac12(k_1 + k_2 + k_3) + \frac12 \\
+  &= S_R - \frac12q_R - (p_1 + p_2 + p_3) \\
+  &- \frac12(k_1 + k_2 + k_3) + \frac32 \\
+\end{align*}
+
+因为$q_R$是大矩形边缘点数，易知\footnote{因为$q_1 - k_1$等是每个直角三角形不算斜边的边缘点数，但是由于$k_1$等都不含首尾，因此$q_1 - k_1$等都包含中心三角形的三个顶点（绿点），因此每个绿点都被算了两次，所以要减去3。}
+
+\begin{align*}
+  q_R &= (q_1 - k_1) + (q_2 - k_2) + (q_3 - k_3) - 3 \\
+  &= (q_1 + q_2 + q_3) - (k_1 + k_2 + k_3) - 3 \\
+\end{align*}
+
+将上式代入面积公式得
+
+\begin{align*}
+  S &= S_R - \frac12q_R - (p_1 + p_2 + p_3) \\
+  &- \frac12(k_1 + k_2 + k_3) + \frac32 \\
+  &= S_R - \frac12(q_1 + q_2 + q_3) \\
+  &+ \frac12(k_1 + k_2 + k_3) + \frac32 \\
+  &-(p_1 + p_2 + p_3) - \frac12(k_1 + k_2 + k_3) + \frac32 \\
+  &= S_R - \Bigg((p_1 + p_2 + p_3) \\
+  &+ \frac12(q_1 + q_2 + q_3)\Bigg) + 3 \\
+  &= S_R - \Bigg(\left(p_1 + \frac12q_1 - 1\right) + \left(p_2 + \frac12q_2 - 1\right) \\
+  &+ \left(p_3 + \frac12q_3 - 1\right)\Bigg) \\
+  &= S_R - S_1 - S_2 - S_3 \\
+\end{align*}
+
+即为三角形的面积。因此，原命题在多边形为任意三角形的情况下均成立。
+
+\subsubsection{任意多边形} \label{subsubsec:0012-ind-poly}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0012-ind-poly}
+  \caption{\nameref{subsubsec:0012-ind-poly}：归纳法的第四步，证明命题在任意多边形的情况下成立。}
+  \label{fig:0012-ind-poly}
+\end{figure}
+
+如图~\ref{fig:0012-ind-poly}，设两个多边形的面积、内点数、边缘点数分别为$S_1$、$S_2$、$p_1$、$p_2$、$q_1$、$q_2$，且这两个多边形满足待证公式，即
+
+\begin{align*}
+  S_1 &= p_1 + \frac12q_1 - 1 \\
+  S_2 &= p_2 + \frac12q_2 - 1 \\
+\end{align*}
+
+设两个多边形的公共边上的点（不含首尾，即浅绿色点）的数量为$k$，则易知两多边形组合成的大多边形的边缘点数为\footnotemark
+
+\[ q = q_1 + q_2 - 2k - 2 \]
+
+又由于红点（$p_1 + p_2$）和浅绿色点（$k$）的数量之和即为大多边形的内点数，因此内点数为
+
+\[ p = p_1 + p_2 + k \]
+
+因此根据待证公式，大多边形的面积为
+
+\begin{align*}
+  S &= p + \frac12q - 1 \\
+  &= p_1 + p_2 + k + \frac12(q_1 + q_2 - 2k - 2) - 1 \\
+  &= p_1 + p_2 + \frac12q_1 + \frac12q_2 - 1 - 1 \\
+  &= \left(p_1 + \frac12q_1 - 1\right) + \left(p_2 + \frac12q_2 - 1\right) \\
+  &= S_1 + S_2 \\
+\end{align*}
+
+结果正确。因此待证公式成立。
+
+证毕。
+
+\footnotetext{在$q_1 + q_2$中，绿点被多算了一遍，浅绿色点被多算了两遍，所以要减去。}

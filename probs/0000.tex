@@ -1,0 +1,43 @@
+
+\prob{0000}{中线求长}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0000}
+  \caption{0000：中线求长} \label{fig:0000}
+\end{figure}
+
+如图~\ref{fig:0000}，在$\triangle ACD$中，$B$是$AC$的中点，$AD = 3$，$BD = 2$，$CD = 5$，求$AB$的长度。
+\problabels{yellow/平面几何, green/长度问题}
+
+\ans{$AB = \sqrt{13}$}
+
+\subsection{倍长中线} \label{subsec:0000-mid}
+
+\begin{figure}[htbp]
+  \centering
+  \image{0000-mid}
+  \caption{\nameref{subsec:0000-mid}：倍长中线，构造3-4-5三角形。} \label{fig:0000-mid}
+\end{figure}
+
+基本思路：倍长中线，找出一个3-4-5直角三角形，从而证明$\angle ADB = 90^\circ$。
+
+如图~\ref{fig:0000-mid}，延长$DB$至$D'$，使得$BD = BD'$。连接$AD'$。
+
+\begin{align*}
+  &\because   \triangle ABD' \cong \triangle CBD \ \text{（证明省略）} \\
+  &\therefore AD' = CD \\
+  &\because   CD = 5 \\
+  &\therefore AD' = 5 \\
+  &\because   BD = BD' \\
+  &\therefore DD' = 2BD \\
+  &\because   BD = 2 \\
+  &\therefore DD' = 4 \\
+  &\because   AD = 3 \\
+  &\therefore AD^2 + DD'^2 = AD'^2 \\
+  &\therefore \angle ADB = 90^\circ \\
+  &\therefore AD^2 + BD^2 = AB^2 \\
+  &\therefore AB = \sqrt{2^2 + 3^2} = \sqrt{13} \\
+\end{align*}
+
+综上，$AB = \sqrt{13}$。

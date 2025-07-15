@@ -1,0 +1,14 @@
+
+\begin{tikzpicture}[scale=2.4]
+  \coordinate (P1) at (0:1);
+  \coordinate (P2) at (72:1);
+  \coordinate (P3) at (144:1);
+  \coordinate (P4) at (-144:1);
+  \coordinate (P5) at (-72:1);
+  \draw (0,0) circle (1);
+  \foreach \fromdot in {P1,P2,P3,P4,P5} {
+    \foreach \todot in {P1,P2,P3,P4,P5} {
+      \draw (\fromdot) -- (\todot);
+    }
+  }
+\end{tikzpicture}

@@ -1,0 +1,10 @@
+
+\begin{tikzpicture}
+  \coordinate[label=above:$A$] (A) at (4,3);
+  \coordinate[label=below:$B$] (B) at (0,0);
+  \coordinate[label=below:$C$] (C) at (4,0);
+  \pic[mark angle={green}{3mm}{1}] {right angle=A--C--B};
+  \draw (B) -- node[above left] {$c$} (A)
+    -- node[right] {$b$} (C)
+    -- node[below] {$a$} cycle;
+\end{tikzpicture}

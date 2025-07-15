@@ -1,0 +1,12 @@
+
+\begin{tikzpicture}[scale=3, ang/.style={mark angle={green}{5mm}{1.2}}]
+  \coordinate[label=below:$C$] (C) at (0,0);
+  \coordinate[label=above:$D$] (D) at (140:{sin(80)});
+  \coordinate[label=below:$B$] (B) at ({-sin(60)},0);
+  \coordinate[label=below:$A$] (A) at ({-sin(60)-sin(80)},0);
+  \pic[ang, "$60^\circ$"] {angle=B--D--C};
+  \pic[ang, "$40^\circ$"] {angle=D--C--B};
+  \pic[ang, "$?$"] {angle=B--A--D};
+  \draw (A) -- (C) -- (D) -- cycle (B) -- (D);
+  \draw[blue] (A) -- (B) (C) -- (D);
+\end{tikzpicture}

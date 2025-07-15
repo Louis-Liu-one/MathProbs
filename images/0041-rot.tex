@@ -1,0 +1,23 @@
+
+\begin{tikzpicture}
+  \clip (-.1,-.8) rectangle (6.9,6.5);
+  \coordinate[label=below:$B$] (B) at (0,0);
+  \coordinate[label=below:$C$] (C) at ({sqrt(25+12*sqrt(3))},0);
+  \coordinate[label=above:$A$] (A) at ($ (B)!1! 60:(C) $);
+  \path[name path=Acirc] (A) circle (3);
+  \path[name path=Bcirc] (B) circle (4);
+  \path[name intersections={of=Acirc and Bcirc}]
+    coordinate[label=below:$P$] (P) at (intersection-2);
+  \coordinate[label=left:$P'$] (P') at ($ (A)!1! -60:(P) $);
+  \pic[mark angle={red}{3mm}{1}] {right angle=P'--P--B};
+  \pic[mark angle={blue}{3mm}{1.6}, "$60^\circ$"] {angle=A--P--P'};
+  \fill[opafill=cyan] (A) -- (P) -- (P') -- cycle;
+  \fill[opafill=red] (B) -- (P) -- (P') -- cycle;
+  \fill[opafill=blue]
+    (A) -- (B) -- (P') -- cycle (A) -- (C) -- (P) -- cycle;
+  \draw (A) -- (B) -- (C) -- cycle
+    (B) -- node[below] {$4$} (P) -- node[right] {$3$} (A)
+    (P) -- node[below] {$5$} (C);
+  \draw[dashed] (A) -- node[above] {$3$} (P')
+    -- node[left] {$5$} (B) (P) -- node[below] {$3$} (P');
+\end{tikzpicture}
