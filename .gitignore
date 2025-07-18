@@ -5,14 +5,14 @@
 *.log
 *.fls
 *.xdv
-*.synctex.gz
+*.synctex*
 *.fdb_latexmk
 */*.aux
 */*.toc
 */*.log
 */*.fls
 */*.xdv
-*/*.synctex.gz
+*/*.synctex*
 */*.fdb_latexmk
 *.pdf
 */*.pdf

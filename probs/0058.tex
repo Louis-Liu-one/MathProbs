@@ -1,7 +1,45 @@
 
 \prob{0058}{从高到底边}
 
-已知三角形的三边长分别为$a, b, c$，所对应的高分别为$h_a, h_b, h_c$。若$h_a = 3, h_b = 4, h_c = 6$，求$a, b, c$。
+已知$\triangle ABC$的三顶点$A, B, C$所对三边长分别为$a, b, c$，三边所对应的高分别为$h_a, h_b, h_c$。若$h_a = 3\sqrt{15}, h_b = 4\sqrt{15}, h_c = 6\sqrt{15}$，求$a, b, c$。
 \problabels{yellow/平面几何, green/长度问题}
 
-\ans{$a = \sfrac{32}{15}\sqrt{15}, b = \sfrac{24}{15}\sqrt{15}, c = \sfrac{16}{15}\sqrt{15}$}
+\ans{$a = 32, b = 24, c = 16$}
+
+\subsection{设比例} \label{subsec:0058-rt}
+
+显然
+\[ ah_a = bh_b = ch_c \Rightarrow 3a = 4b = 6c \]
+设$a = 4k, b = 3k, c = 2k$，求出$k$即可。
+
+\begin{figure}[htbp]
+  \centering \image{0058-rt}
+  \caption{方法~\ref{subsec:0058-rt} 图} \label{fig:0058-rt}
+\end{figure}
+
+如图~\ref{fig:0058-rt}，作$CH \perp AB$于$H$，显然有
+\[ AH^2 + CH^2 = AC^2, BH^2 + CH^2 = BC^2 \]
+设$AH = x, BH = y$，则
+\[ \left\{ \begin{aligned}
+  y - x &= AB = 2k \\
+  x^2 + h_c^2 &= (3k)^2 = 9k^2 \\
+  y^2 + h_c^2 &= (4k)^2 = 16k^2
+\end{aligned} \right. \]
+后两式相减得
+\[ (y + x)(y - x) = 7k^2 \Rightarrow y + x = \frac72k \]
+于是
+\[ \left\{ \begin{aligned}
+  y - x &= 2k \\
+  y + x &= \frac72k
+\end{aligned} \right.
+\Rightarrow \left\{ \begin{aligned}
+  x &= \frac34k \\
+  y &= \frac{11}4k
+\end{aligned} \right. \]
+
+在$\rttri AHC$中，
+\[ AH^2 + CH^2 = AC^2 \Rightarrow x^2 + h_c^2 = 9k^2 \]
+即
+\[ 9k^2 + 8640 = 144k^2 \Rightarrow k = 8 \]
+于是
+\[ a = 4k = 32, b = 3k = 24, c = 2k = 16 \]

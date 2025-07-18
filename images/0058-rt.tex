@@ -1,0 +1,12 @@
+
+\begin{tikzpicture}[scale=1.5]
+  \tkzDefPoints{0/0/B,2/0/A}
+  \tkzInterCC[R](A,3)(B,4)     \tkzGetSecondPoint{C}
+  \tkzDefLine[altitude](A,C,B) \tkzGetPoint{H}
+  \tkzDrawPolygon(A,B,C)
+  \tkzDrawSegments(C,H A,H)
+  \tkzMarkRightAngle(C,H,B)
+  \tkzDrawPoints(A,B,C,H)
+  \tkzLabelPoints[below](A,B,H)
+  \tkzLabelPoints[above](C)
+\end{tikzpicture}

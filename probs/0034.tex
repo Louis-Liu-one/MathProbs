@@ -2,12 +2,32 @@
 \prob{0034}{中线延长}
 
 \begin{figure}[htbp]
-  \centering
-  \image{0034}
-  \caption{0034：中线延长} \label{fig:0034}
+  \centering \image{0034}
+  \caption{总第~\ref{sec:0034} 题图} \label{fig:0034}
 \end{figure}
 
 如图~\ref{fig:0034}，在$\triangle ABC$中，$D$在线段$AC$上且$AD:CD = 1:2$，$E$是线段$BD$的中点，$F$是$BC$与$AE$的延长线的交点。若$\triangle ABC$的面积为$12$，求$\triangle BEF$的面积。
 \problabels{yellow/平面几何, green/面积问题}
 
-（解法待编）
+\ans{$\triangle BEF$的面积为1。}
+
+\subsection{列方程} \label{subsec:0034-eq}
+
+\begin{figure}[htbp]
+  \centering \image{0034-eq}
+  \caption{方法~\ref{subsec:0034-eq} 图} \label{fig:0034-eq}
+\end{figure}
+
+如图~\ref{fig:0034-eq}，连接$DF$。设
+\[ S_{\triangle BEF} = S_{\triangle DEF} = S \]
+
+显然
+\[ S_{\triangle BCD} = 8, S_{\triangle ADE} = 2 \]
+故
+\begin{align*}
+  S_{\triangle CDF} &= S_{\triangle BCD} - S_{\triangle BDF} = 8 - 2S \\
+  S_{\triangle CDF} &= \frac23S_{\triangle ACF} = 2S_{\triangle ADF} = 2(2 + S)
+\end{align*}
+故
+\[ 8 - 2S = 2(2 + S) \Rightarrow S = 1 \]
+因此，$\triangle BEF$的面积为1。
