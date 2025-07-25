@@ -13,7 +13,7 @@ Based on the repository structure, here is a README.md file tailored for this pr
 - **probs/**: 存放所有数学问题的 TeX 文件，每个文件对应一个数学问题。
 - **images/**: 包含与问题相关的图像资源，通常以 TeX 或 PDF 格式提供。
 - **covers/**: 项目封面相关的文件。
-- **makefile**: 用于自动化构建整个项目的脚本文件。
+- **makefile**: 用于清除辅助文件。
 - **preamble.tex**: TeX 预处理文件，定义了文档的基本格式和样式。
 - **problist.tex**: 问题列表文件，可能包含所有问题的索引或汇总信息。
 - **.gitignore**: Git 忽略配置文件，防止某些文件被提交到版本控制中。
@@ -31,13 +31,7 @@ Based on the repository structure, here is a README.md file tailored for this pr
 在项目目录中运行以下命令以构建文档：
 
 ```bash
-make
-```
-
-如果 `make` 不可用，可手动编译 TeX 文件：
-
-```bash
-pdflatex your_file.tex
+xelatex your_file.tex
 ```
 
 ## 如何贡献
