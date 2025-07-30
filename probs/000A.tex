@@ -7,6 +7,7 @@
 \end{figure}
 
 如图~\ref{fig:000A}，在$\triangle ABC$中，$D, E$分别是边$BC, AC$上的点且满足$BD = 8, DE = 7, AD = CD, \angle ADE = 60^\circ, 2\angle BAD = \angle CDE$，求$AE$的长。
+
 \problabels{yellow/平面几何, green/长度问题}
 
 \ans{$AE = 13$}
@@ -133,3 +134,36 @@
 综上，$AE = 13$。
 
 若不用余弦定理，则得出$AD = 15$后，也可作$EH \perp AD$于$H$。根据$DH:DE:EH = 1:2:\sqrt3$可得$EH = 7\sqrt3/2, DH = 7/2$。因此$AH = 15 - 7/2 = 23/2$，$AE = \sqrt{AH^2 + EH^2} = \sqrt{169} = 13$。作$AH \perp DE$于$H$亦可，方法与前述类似。
+
+\subsection{相似三角形} \label{subsec:000A-sim}
+
+\begin{figure}
+  \centering \image{000A-sim}
+  \caption{方法~\ref{subsec:000A-sim} 图} \label{fig:000A-sim}
+\end{figure}
+
+\emph{LTY提供的方法。}
+
+如图~\ref{fig:000A-sim}，延长$AB, ED$交于$F$；作$FH \perp AD$于$H$。设$\angle BAD = \theta$，则$\angle CDE = \angle BDF = 2\theta$。
+
+由于$AD = CD$，故$\angle C = 60^\circ - \theta$，又有$\angle ADB = 120^\circ - 2\theta$，则$\angle DBF = 120^\circ - \theta$，于是$\angle BFD = 60^\circ - \theta = \angle C$。由于
+\[ \angle BFD = \angle C, \angle BDF = \angle EDC \]
+故而$\triangle BDF \sim \triangle EDC$，相似比为$8:7$。不妨设$AD = CD = 7x$，则$FD = 8x$。
+
+由于$\angle FDH = \angle ADE = 60^\circ, DH \perp FH$，有
+\[ DH = \frac12FD = 4x, FH = \frac{\sqrt3}2FD = 4\sqrt3x \]
+故
+\[ AH = AD + DH = 7x + 4x = 11x \]
+由勾股定理知
+\[ AF = \sqrt{AH^2 + FH^2} = \sqrt{169x^2} = 13x \]
+由正余弦函数的定义知
+\[ \sin\theta = \frac{FH}{AF} = \frac4{13}\sqrt3, \cos\theta = \frac{AH}{AF} = \frac{11}{13} \]
+由差角公式知
+\begin{align*}
+  & \sin\angle CAD = \sin\angle C = \sin(60^\circ - \theta) \\
+  ={}& \sin60^\circ\cos\theta - \cos60^\circ\sin\theta \\
+  ={}& \frac{11}{26}\sqrt3 - \frac4{26}\sqrt3 = \frac7{26}\sqrt3
+\end{align*}
+在$\triangle ADE$中应用正弦定理知
+\[ \frac{AE}{\sin\angle ADE} = \frac{DE}{\sin\angle CAD} \Rightarrow \frac23\sqrt3AE = \frac{26}3\sqrt3 \]
+即$AE = 13$。
