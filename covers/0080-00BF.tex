@@ -31,13 +31,43 @@
     \draw (2,2) node
       {\fontsize{100pt}{0pt}\selectfont\textcolor{RoyalBlue2}{\textbf{3}}};
     \draw (13,6) node {
-      \begin{minipage}{3cm}
-        \footnotesize \textit{
-        \raggedright 质数螺旋 \\
-        \raggedleft ——混沌中的秩序 \\ }
+      \begin{minipage}{6cm}
+        \footnotesize \textit{——最简洁的命题，最复杂的证明}
       \end{minipage} };
-    \begin{scope}[shift={(12,15)}, scale=.9, very thick]
-      \draw (0,0) node {\includegraphics[width=16cm]{images/primes}};
+    \begin{scope}[shift={(12.5,13)}, scale=1.35, very thick]
+      \tkzDefPoints{-1/0/A,1/0/B,-6/1.6/A_1,1.4/-3.1/B_1,1.3/5.6/C_1}
+      \tkzDefTriangle(A,B)     \tkzGetPoint{C}
+      \tkzDefTriangle(A,A_1)   \tkzGetPoint{A_2}
+      \tkzDefTriangle(B,B_1)   \tkzGetPoint{B_2}
+      \tkzDefTriangle(C,C_1)   \tkzGetPoint{C_2}
+      \tkzDefMidPoint(A_2,B_1) \tkzGetPoint{M_1}
+      \tkzDefMidPoint(B_2,C_1) \tkzGetPoint{M_2}
+      \tkzDefMidPoint(C_2,A_1) \tkzGetPoint{M_3}
+      \tkzDefMidPoint(A,B_1)   \tkzGetPoint{M'_1}
+      \tkzDefMidPoint(A_1,B_1) \tkzGetPoint{M'_2}
+      \tkzDefPointBy[symmetry=center M_2](A) \tkzGetPoint{B'_1}
+      \tkzFillPolygon[cyan!20](A,B,C)
+      \tkzFillPolygon[teal!10](A,A_1,A_2)
+      \tkzFillPolygon[teal!10](B,B_1,B_2)
+      \tkzFillPolygon[teal!10](C,C_1,C_2)
+      \tkzDrawPolygon(A,B,C)
+      \tkzDrawPolygon(A,A_1,A_2)
+      \tkzDrawPolygon(B,B_1,B_2)
+      \tkzDrawPolygon(C,C_1,C_2)
+      \tkzDrawPolygon(M_1, M_2, M_3)
+      \tkzDrawSegments(A_2,B_1 B_2,C_1 C_2,A_1)
+      \tkzDrawSegments[dashed](A_1,B_1 A,B_1 M_1,M'_1 M_1,M'_2 M_2,M'_1 M_3,M'_2)
+      \tkzDrawSegments[dashed](A,B'_1 B_1,B'_1 B_2,B'_1 A,C_1 B,C_2 B_1,C_2)
+      \tkzMarkSegments[color=cyan,mark=|](A_2,M_1 B_1,M_1)
+      \tkzMarkSegments[color=teal,mark=||](B_2,M_2 C_1,M_2)
+      \tkzMarkSegments[color=blue,mark=x](C_2,M_3 A_1,M_3)
+      \tkzDrawPoints(A,B,C,A_1,B_1,C_1,A_2,B_2,C_2,M_1,M_2,M_3,M'_1,M'_2,B'_1)
+      \tkzLabelPoints(A_2,M_1,B_1)
+      \tkzLabelPoints[above](A,B'_1)
+      \tkzLabelPoints[above left](A_1,M_3,C_2)
+      \tkzLabelPoints[right](C_1,B_2,C,M'_1)
+      \tkzLabelPoints[above right](B)
+      \tkzLabelPoints[below](M_2,M'_2)
     \end{scope}
   \end{tikzpicture}
 \end{inctext}
