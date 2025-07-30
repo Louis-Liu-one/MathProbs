@@ -45,10 +45,6 @@ xelatex your_file.tex
 5. Push 到分支：`git push origin new-problem`.
 6. 创建 Pull Request。
 
-## 许可证
-
-本项目采用 [MIT License](https://opensource.org/licenses/MIT)。详情请参见 [License File](LICENSE)。
-
 ## 联系作者
 
 如果您有任何问题或建议，请联系仓库维护者 [Louis-Liu-one](https://gitee.com/Louis-Liu-one)。
