@@ -1,0 +1,22 @@
+
+\begin{tikzpicture}[scale=.35]
+  \tkzDefPoints{0/0/O_1,3/0/O_2,8/0/S}
+  \tkzDefPoint(60:8){A}
+  \tkzDefLine[tangent from=A](O_2,S)
+    \tkzGetSecondPoint{C}
+  \tkzInterLC(A,C)(O_1,S)  \tkzGetSecondPoint{B}
+  \tkzDefLine(A,B)          \tkzGetPoints{m1}{m2}
+  \tkzInterLC(m1,m2)(O_1,S) \tkzGetFirstPoint{M}
+  \tkzDefMidPoint(A,B)      \tkzGetPoint{N}
+  \tkzInterLC(C,O_2)(O_2,S) \tkzGetSecondPoint{C'}
+  \tkzFillPolygon[cyan!20](C,C',S,M,N)
+  \tkzDrawCircles(O_1,S O_2,S)
+  \tkzDrawSegments(A,B M,N)
+  \tkzDrawSegments[dashed](M,S C,C' S,C' O_1,S O_1,N)
+  \tkzMarkRightAngles[size=.5](M,N,B C',C,A C,S,C')
+  \tkzDrawPoints(A,B,C,S,M,N,O_1,O_2,C')
+  \tkzLabelPoints(B,N,O_1,O_2,C')
+  \tkzLabelPoints[right](S)
+  \tkzLabelPoints[left](M)
+  \tkzLabelPoints[above](A,C)
+\end{tikzpicture}

@@ -3,20 +3,74 @@
 
 \begin{figure}[htbp]
   \centering \image{00B4}
-  \caption{总第~\ref{sec:00B4} 题图} \label{fig:00B4}
+  \caption{总第~\ref{sec:00B4} 题图}
+  \label{fig:00B4}
 \end{figure}
 
-如图~\ref{fig:00B4}，在半圆$O_1$中，$AB$是其直径，$C$是半圆上一点，过$C$作$CD \perp AB$于$D$；在半圆内、$CD$右侧作$\odot O_2$使之与半圆和$CD$相切，且与$AB$切于$P$；连接$PC$。求证：
+如图~\ref{fig:00B4}，在半$\odot O_1$中，$AB$是其直径，$C$是半圆上一点，过$C$作$CD \perp AB$于$D$；在半圆内、$CD$右侧作$\odot O_2$使之与半圆和$CD$相切，且与$AB$切于$P$；连接$PC$。求证：
 \[ PC^2 = 2PA\cdot PD \]
 \problabels{yellow/平面几何, green/证明题}
 
 \emph{YCY提供的题目。}
 
+\subsection{构造相似} \label{subsec:00B4-sim}
+
+\begin{lemma} \label{lemma:00B4-sim-l}
+  \begin{figure}
+    \centering \image{00B4-sim-l}
+    \caption{引理~\ref{lemma:00B4-sim-l} 图}
+    \label{fig:00B4-sim-l}
+  \end{figure}
+
+  如图~\ref{fig:00B4-sim-l}，大圆与小圆内切于$S$，在大圆内有一条弦$AB$切小圆于$C$；过线段$AB$的中点$N$作其中垂线$MN$，交大圆于$M$。若$M$与$S$在直线$AB$异侧，设小圆直径为$d$，则有
+  \[ AC \cdot BC = d \cdot MN \]
+
+  YCY提供的引理。
+\end{lemma}
+
+\begin{proof}
+  \begin{figure}[htbp]
+    \centering \image{00B4-sim-lp}
+    \caption{引理~\ref{lemma:00B4-sim-l} 证明图}
+    \label{fig:00B4-sim-lp}
+  \end{figure}
+
+  如图~\ref{fig:00B4-sim-lp}，令大圆的圆心为$O_1$，小圆的圆心为$O_2$，显然$O_1, O_2, S$共线；连接$O_1S, MS, CS$，作直线$O_2C$与$\odot O_2$交于另一点$C'$，连接$C'S$。
+
+  由于$AB$切小圆于$C$，故
+  \[ O_2C \perp AB, MN \perp AB \Rightarrow O_2C \parallel MN \]
+  故$\angle MO_1S = \angle CO_2S$，圆心角相等，故易得$\angle O_1SC = \angle O_1SM$，于是$S, C, M$共线。因此易有
+  \[ \angle CMN = \angle C'CS \Rightarrow \rttri CMN \cong \rttri C'CS \]
+  因此
+  \[ \frac{MN}{MC} = \frac{SC}{CC'} \Rightarrow CC' \cdot MN = MC \cdot SC \]
+  而由相交弦定理知$MC\cdot SC = AC\cdot BC$，故
+  \[ AC \cdot BC = CC' \cdot MN = d \cdot MN \]
+\end{proof}
+
+\begin{figure}[htbp]
+  \centering \image{00B4-sim}
+  \caption{方法~\ref{subsec:00B4-sim} 图}
+  \label{fig:00B4-sim}
+\end{figure}
+
+如图~\ref{fig:00B4-sim}，延长$CD$与$\odot O_1$交于另一点$C'$。令$\odot O_2$切$CD$于$T$，小圆半径为$r$。
+
+显然四边形$DPO_2T$是正方形，故$DT = DP = r$。由引理~\ref{lemma:00B4-sim-l} 知
+\begin{align*}
+  CT \cdot C'T &= 2r \cdot AD \\
+  CT \cdot C'T &= (CD + r)(CD - r) = CD^2 - r^2 \\
+  CP^2 &= CD^2 + r^2 = \left(CD^2 - r^2\right) + 2r^2 \\
+  &= CT \cdot C'T + 2r^2 = 2r \cdot (AD + r) \\
+  &= 2PA \cdot PD
+\end{align*}
+证毕。
+
 \subsection{硬算角平分线} \label{subsec:00B4-bis}
 
 \begin{figure}[htbp]
   \centering \image{00B4-bis}
-  \caption{方法~\ref{subsec:00B4-bis} 图} \label{fig:00B4-bis}
+  \caption{方法~\ref{subsec:00B4-bis} 图}
+  \label{fig:00B4-bis}
 \end{figure}
 
 如图~\ref{fig:00B4-bis}，连接$AC, BC, O_1C$；令半$\odot O_1$与$\odot O_2$切于$E$，连接$O_1E, O_2P$；在线段$AD$上找一点$P'$使得$PD = P'D$；作$PH \perp BC$于$H$；过$A, P', C$作圆。设$\odot O_1$的半径为$R$，$\odot O_2$的半径为$r$。显然有$\angle DCP = \angle DCP', DP = O_2P = r$。
@@ -60,6 +114,6 @@
 \[ \angle DCP' = \angle DCP = \angle BCP \]
 于是有$\angle BCD = \angle PCP'$。
 
-显然$\angle CAP' = \angle BCD$，故$\angle CAP' = \angle PCP'$，由弦切角定理逆定理知$CP$切于$\triangle ACP'$外接的圆，由切割线定理知
+显然$\angle CAP' = \angle BCD$，故有$\angle CAP' = \angle PCP'$，由弦切角定理逆定理知$CP$切于$\triangle ACP'$外接的圆，由切割线定理知
 \[ PC^2 = PP'\cdot PA \Rightarrow PC^2 = 2PD\cdot PA \]
 证毕。
