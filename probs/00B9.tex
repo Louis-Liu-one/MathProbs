@@ -1,0 +1,213 @@
+
+\prob{00B9}{行星竖式}
+
+若两两不同的数字$A$、$E$、$H$、$N$、$P$、$R$、$S$、$T$、$U$、$V$满足竖式~\ref{tab:00B9}，其中得数和每个加数的首位非零，求这十个数字。
+\problabels{yellow/数论, yellow/数学谜题}
+
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{*{7}{>{$}c<{$}}>{$\leftarrow$}l}
+      &   &   &   & T & H & E & 这 \\
+      &   & E & A & R & T & H & 地球 \\
+      &   & V & E & N & U & S & 金星 \\
+      & S & A & T & U & R & N & 土星 \\
+    + & U & R & A & N & U & S & 天王星 \\ \cline{1-7}
+    N & E & P & T & U & N & E & 海王星
+  \end{tabular}
+  \caption{行星竖式。} \label{tab:00B9}
+\end{table}
+
+\ans{如表~\ref{tab:00B9-ans}。}
+
+\subsection{计算中枚举}
+
+为简单起见，下文所称“第$n$位”均为自右向左，$k_n$表示第$n$位自第$n - 1$位所获的进位。
+
+\begin{lemma} \label{lemma:00B9-N}
+  $N = k_7 = 1, S + U \ge7, k_6 = 10 + E - S - U \le3$。
+\end{lemma}
+
+\begin{proof}
+  令所有加数的1～4位全部取9，以估计进位最大值。
+
+  令$\{A, E, R, V\} = \{6, 7, 8, 9\}$，此时$k_6$取得可能最大值，计算得$k_6 \le3$。显然$S + U \le 17$，当且仅当$\{S, U\} = \{8, 9\}$时等号成立。因此
+  \[ S + U + k_6 \le20 \Rightarrow k_7 \le2 \]
+  当$k_7 = 2$时显然必有$\{S, U\} = \{8, 9\}, k_6 = 3$，此时$\{A, E, R, V\}$只能取$\{4, 5, 6, 7\}$使$k_6$最大，然此时$k_6 = 2 \ne3$，矛盾，故$k_7 < 2$。而$N = k_7 \ne0$，故$N = k_7 = 1$。
+
+  由于$k_6 \le3$，且$S + U + k_6 = 10k_7 + E \ge10$，故显然$S + U \ge7, k_6 = 10 + E - S - U$。
+\end{proof}
+
+\begin{lemma} \label{lemma:00B9-SHU}
+  当$k_2 = 1$时有$S = 0, H = 9, U = 8, \{T, R\} = \{2, 3\}, k_3 = 3, k_4 = 1$。
+\end{lemma}
+
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{cccccc}
+    \toprule
+    $S$ & $H$ & $k_3$ & $U$ & $T + R$ \\ \midrule
+    2 & 5 & 2 & 6 & 3 \\ \midrule
+    \multirow{4}*{2} & \multirow{4}*{5} & \multirow{4}*{3} & 6 & 13 \\
+    & & & 7 & 11 \\ & & & 8 & 9 \\
+    & & & 9 & 7 \\ \midrule
+    \multirow{2}*{0} & \multirow{2}*{9} & \multirow{2}*{3} & 7 & 7 \\
+    & & & 8 & 5 \\ \bottomrule
+  \end{tabular}
+  \caption{$k_2 = 1$时$S, H, k_3, U, T + R$的可能取值。} \label{tab:00B9-HU}
+\end{table}
+
+\begin{proof}
+  由第1位知
+  \[ E + H + 2S + N = 10k_2 + E \Rightarrow H + 2S = 10k_2 - 1 \]
+  而$0 < H + 2S \le 8 + 2\times9 = 26$，故$H + 2S \in \{9, 19\}$，枚举得表~\ref{tab:00B9-SH}。
+
+  \begin{table}[htbp]
+    \centering
+    \begin{tabular}{cccccc}
+      \toprule
+      $S$ & $H$ & $k_2$ & $S$ & $H$ & $k_2$ \\ \midrule
+      0 & 9 & \multirow{2}*{1} & 5 & 9 & \multirow{4}*{2} \\
+      2 & 5 & & 6 & 7 & \\ & & & 7 & 5 & \\
+      & & & 8 & 3 & \\ \bottomrule
+    \end{tabular}
+    \caption{$S, H, k_2$的可能取值。} \label{tab:00B9-SH}
+  \end{table}
+
+  当$k_2 = 1, S = 2, H = 5$时由第2位知
+  \[ 5 + T + R + 2U + 1 = 10k_3 + 1 \]
+  即$T + R + 2U = 10k_3 - 5 \in \{5, 15, 25\}$。当$T + R + 2U = 5$时，必有$U = 0$，此时$S + U = 2 < 7$与引理~\ref{lemma:00B9-N} 矛盾，故
+  \[ T + R + 2U = 10k_3 - 5 \in \{15, 25\} \]
+
+  当$k_2 = 1, S = 0, H = 9$时同理有$T + R + 2U \in \{11, 21, 31\}$
+  当$T + R + 2U = 31$时必有$9 \in \{T, R, U\}$，而$H = 9$，故舍去，因此
+  \[ T + R + 2U = 10k_3 - 9 \in \{11, 21\} \]
+  枚举易得表~\ref{tab:00B9-HU}。
+
+  当$k_3 = 2$时第3位有
+  \[ T + R + 2 + k_3 = 10k_4 \Rightarrow T + R = 10k_4 - 4 \]
+  与表~\ref{tab:00B9-HU} 不符，舍。当$k_3 = 3$时同理有
+  \[ T + R = 10k_4 - 5 \]
+  故仅有$H = 9, U = 8, T + R = 5$一栏满足要求，此时$k_4 = 1$。枚举易得$\{T, R\} = \{2, 3\}$。
+\end{proof}
+
+\begin{lemma}
+  $k_2 = 2$。
+\end{lemma}
+
+\begin{proof}
+  当$k_2 = 1$时由引理~\ref{lemma:00B9-SHU} 知$S + U = 8, k_4 = 1$，由第4位知
+  \[ 2A + E + k_4 = 10k_5 \Rightarrow 2A + E = 10k_5 - 1 \in \{9, 19\} \]
+  枚举易得$A = 6, E = 7$或$A = 7, E = 5$，由引理~\ref{lemma:00B9-N} 知
+  \[ k_6 = 10 + E - (S + U) \in \{7, 9\} \]
+  与引理~\ref{lemma:00B9-N} 中$k_6 \le3$矛盾，故$k_2 = 2$。
+\end{proof}
+
+\begin{lemma} \label{lemma:00B9-k3}
+  $k_3 = 2$。
+\end{lemma}
+
+\begin{proof}
+  由第2位知
+  \[ H + T + R + 2U = 10k_3 - 1 \in \{9, 19, 29, 39\} \]
+  当$H + T + R + 2U = 39$时必有$\{H, T, R\} = \{6, 7, 8\}$，此时必然有$H = 7, S = 6$，存在重复，舍。因此$H + T + R + 2U \in \{9, 19, 29\}, k_3 \in \{1, 2, 3\}$。
+
+  由表~\ref{tab:00B9-SH} 知$H$为奇数，故$T + R$为偶数。由第3位知
+  \[ T + R + k_3 = 10k_4 - 2 = 2(5k_4 - 1) \]
+  为偶数，故$k_3$为偶数，即$k_3 = 2, H + T + R + 2U = 19$。
+\end{proof}
+
+\begin{lemma}
+  $k_4 = 1$。
+\end{lemma}
+
+\begin{proof}
+  由引理~\ref{lemma:00B9-k3} 和表~\ref{tab:00B9-SH} 枚举得$S, H, T + R + 2U$的可能取值如表~\ref{tab:00B9-TRU}。
+
+  \begin{table}[htbp]
+    \centering
+    \begin{tabular}{ccc}
+      \toprule
+      $S$ & $H$ & $T + R + 2U$ \\ \midrule
+      5 & 9 & 10 \\ 6 & 7 & 12 \\ 7 & 5 & 14 \\
+      8 & 3 & 16 \\ \bottomrule
+    \end{tabular}
+    \caption{$S, H, T + R + 2U$的可能取值。} \label{tab:00B9-TRU}
+  \end{table}
+
+  由第3位知
+  \[ T + R + 2 + k_3 = 10k_4 \Rightarrow T + R = 10k_4 - 4 \in \{6, 16\} \]
+  枚举得表~\ref{tab:00B9-TR2U}。
+
+  \begin{table}[htbp]
+    \centering
+    \begin{tabular}{cccc>{$\{}c<{\}$}c}
+      \toprule
+      $k_4$ & $T + R + 2U$ & $T + R$ & $U$ & T, R & \\ \midrule
+      \multirow{5}*{1} & 10 & \multirow{5}*{6} & 2 & 0, 6 & A \\
+      & 12 & & 3 & 2, 4 & B \\ & 14 & & 4 & 0, 6 & C \\
+      & \multirow{2}*{16} & & \multirow{2}*{5} & 0, 6 & D \\
+      & & & & 2, 4 & E \\ \midrule
+      2 & 16 & 16 & 0 & 7, 9 \\ \bottomrule
+    \end{tabular}
+    \caption{$T + R + 2U, T, R, U$的可能取值。} \label{tab:00B9-TR2U}
+  \end{table}
+
+  \begin{table}[htbp]
+    \centering
+    \begin{tabular}{cccl}
+      \toprule
+      $k_5$ & $A$ & $E$ & 适配的情况 \\ \midrule
+      \multirow{2}*{1} & 0 & 9 & B, E \\
+      & 2 & 5 & 无（舍）\\ \midrule
+      \multirow{4}*{2} & 5 & 9 & B \\
+      & 6 & 7 & E \\ & 7 & 5 & 无（舍）\\
+      & 8 & 3 & A, C \\ \bottomrule
+    \end{tabular}
+    \caption{$k_5, A, E$的可能取值。“适配的情况”一栏的内容对应表~\ref{tab:00B9-TR2U} 中最后一栏的编号。} \label{tab:00B9-AE}
+  \end{table}
+
+  当$k_4 = 2$时由第4位，
+  \[ 2A + E + k_4 = 10k_5 \Rightarrow 2A + E = 10k_5 - 2 \in \{8, 18\} \]
+  枚举易得$A = 2, E = 4$，由引理~\ref{lemma:00B9-N} 知
+  \[ k_6 = 10 + E - S - U = 10 + 4 - 8 - 0 = 6 \]
+  与引理~\ref{lemma:00B9-N} 中$k_6 \le3$矛盾，故$k_4 = 1$。
+\end{proof}
+
+由第4位知
+\[ 2A + E + k_4 = 10k_5 \Rightarrow 2A + E = 10k_5 - 1 \in \{9, 19\} \]
+枚举得表~\ref{tab:00B9-AE}。由此，改写表~\ref{tab:00B9-TR2U} 为表~\ref{tab:00B9-SUTR}。
+
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{cccccccc}
+    \toprule
+    $S$ & $H$ & $U$ & $\{T, R\}$ & $A$ & $E$ & $k_5$ & $k_6$ \\
+    5 & 9 & 2 & \multirow{2}*{$\{0, 6\}$} & \multirow{2}*{8} & \multirow{2}*{3} & \multirow{2}*{2} & 6 \\
+    7 & 5 & 4 & & & & & 2 \\ \midrule
+    \multirow{2}*{6} & \multirow{2}*{7} & \multirow{2}*{3} & \multirow{2}*{$\{2, 4\}$} & 0 & \multirow{2}*{9} & 1 & \multirow{2}*{10} \\
+    & & & & 5 & & 2 & \\ \midrule
+    \multirow{2}*{8} & \multirow{2}*{3} & \multirow{2}*{5} & \multirow{2}*{$\{2, 4\}$} & 0 & 9 & 1 & 6 \\
+    & & & & 6 & 7 & 2 & 4 \\ \bottomrule
+  \end{tabular}
+  \caption{$S, H, U, \{T, R\}, A, E, k_5, k_6$的可能取值，其中$k_6$一栏由$k_6 = 10 + E - S - U$计算得。} \label{tab:00B9-SUTR}
+\end{table}
+
+由引理~\ref{lemma:00B9-N} 知$k_6 \le3$，故表~\ref{tab:00B9-SUTR} 中仅$S = 7$一栏满足要求。故$S = 7, H = 5, U = 4, \{T, R\} = \{0, 6\}, A = 8, E = 3, k_5 = k_6 = 2$。
+
+现在还有$P, R, T, V$没有确定。然由上可知
+\[ \{T, R\} = \{0, 6\}, \{P, V\} = \{2, 9\} \]
+由第5位知
+\[ E + V + A + R + k_5 = 10k_6 + P \Rightarrow V + R = P + 7 \]
+显然只有$P = 2, R = 0, V = 9$满足上式，后知$T = 6$。
+
+因此，答案如表~\ref{tab:00B9-ans} 所示。
+
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{*{10}{>{$}c<{$}}}
+    \toprule
+    A & E & H & N & P & R & S & T & U & V \\ \midrule
+    8 & 3 & 5 & 1 & 2 & 0 & 7 & 6 & 4 & 9 \\ \bottomrule
+  \end{tabular}
+  \caption{行星竖式的答案。} \label{tab:00B9-ans}
+\end{table}
