@@ -42,3 +42,76 @@
   \Rightarrow{}& \triangle M_1M'_1M_2 \cong \triangle M_1M'_2M_3
 \end{align*}
 且两者有旋转$60^\circ$的关系。故$M_1M_2 = M_1M_3$且$\angle M_2M_1M_3 = 60^\circ$，即$\triangle M_1M_2M_3$是等边三角形。证毕。
+
+\subsection{解析几何} \label{subsec:00B8-dec}
+
+\begin{lemma} \label{lemma:00B8-decl}
+  在平面直角坐标系中，将$P(a + 2x, b + 2y)$绕$O(a, b)$逆时针旋转$60^\circ$后得到的点是$P'(a + x - \sqrt3y, b + \sqrt3x + y)$。
+\end{lemma}
+
+\begin{proof}
+  将$O$平移至$(0, 0)$，则$P$平移至$(2x, 2y)$。
+
+  设$2x = k\cos\theta, 2y = k\sin\theta$，则
+  \[ P'(k\cos(\theta + 60^\circ), k\sin(\theta + 60^\circ)) \]
+  即
+  \[ P'\left(\frac12k\cos\theta - \frac{\sqrt3}2k\sin\theta, \frac{\sqrt3}2k\cos\theta + \frac12k\sin\theta\right) \]
+  代入$x, y$立得$P'(x - \sqrt3y, \sqrt3x + y)$，平移回原位置后得$P'(a + x - \sqrt3y, b + \sqrt3x + y)$。
+\end{proof}
+
+\begin{figure}[htbp]
+  \centering \image{00B8-dec}
+  \caption{方法~\ref{subsec:00B8-dec} 图}
+  \label{fig:00B8-dec}
+\end{figure}
+
+如图~\ref{fig:00B8-dec}，以$AB$中点为中心，直线$AB$为$x$轴建立平面直角坐标系。不妨设
+\begin{align*}
+  & A(-1, 0), B(1, 0), C(0, \sqrt3), \\
+  & A_1(2x_1 - 1, 2y_1), \\
+  & B_1(2x_2 + 1, 2y_2), \\
+  & C_1(2x_3, 2y_3 + \sqrt3)
+\end{align*}
+由引理~\ref{lemma:00B8-decl} 立得
+\begin{align*}
+  A_2&(x_1 - \sqrt3y_1 - 1, \sqrt3x_1 + y_1) \\
+  B_2&(x_2 - \sqrt3y_2 + 1, \sqrt3x_2 + y_2) \\
+  C_2&(x_3 - \sqrt3y_3, \sqrt3x_3 + y_3 + \sqrt3) \\
+\end{align*}
+令$M_k$的坐标为$(X_k/2, Y_k/2)$，则
+\begin{align*}
+  X_1 &= x_1 - \sqrt3y_1 + 2x_2, Y_1 = \sqrt3x_1 + y_1 + 2y_2, \\
+  X_2 &= x_2 - \sqrt3y_2 + 2x_3 + 1, \\
+  Y_2 &= \sqrt3x_2 + y_2 + 2y_3 + \sqrt3, \\
+  X_3 &= x_3 - \sqrt3y_3 + 2x_1 - 1, \\
+  Y_3 &= \sqrt3x_3 + y_3 + 2y_1 + \sqrt3
+\end{align*}
+于是有
+\begin{align*}
+  & M_1M_2 = M_1M_3 \\
+  \Leftrightarrow{}& (X_1 - X_2)^2 + (Y_1 - Y_2)^2 \\
+  &= (X_1 - X_3)^2 + (Y_1 - Y_3)^2 \\
+  \Leftrightarrow{}& X_2^2 - X_3^2 + Y_2^2 - Y_3^2 \\
+  &= 2X_1X_2 - 2X_1X_3 + 2Y_1Y_2 - 2Y_1Y_3 \\
+  \Leftrightarrow{}& (X_2 + X_3)(X_2 - X_3) + (Y_2 + Y_3)(Y_2 - Y_3) \\
+  &= 2X_1(X_2 - X_3) + 2Y_1(Y_2 - Y_3) \\
+  \Leftrightarrow{}& (X_2 + X_3 - 2X_1)(X_2 - X_3) \\
+  &+ (Y_2 + Y_3 - 2Y_1)(Y_2 - Y_3) = 0
+\end{align*}
+令
+\begin{align*}
+  P_1 &= X_2 + X_3 - 2X_1, & P_2 &= X_2 - X_3 \\
+  Q_1 &= Y_2 + Y_3 - 2Y_1, & Q_2 &= Y_2 - Y_3
+\end{align*}
+即要证明$P_1P_2 + Q_1Q_2 = 0$。
+
+计算可知
+\begin{align*}
+  P_1 &= -3x_2 + 3x_3 - \sqrt3y_2 - \sqrt3y_3 + 2\sqrt3y_1 \\
+  P_2 &= x_2 + x_3 - 2x_1 - \sqrt3y_2 + \sqrt3y_3 + 2 \\
+  Q_1 &= \sqrt3x_2 + \sqrt3x_3 - 2\sqrt3x_1 - 3y_2 + 3y_3 + 2\sqrt3 \\
+  Q_2 &= \sqrt3x_2 - \sqrt3x_3 + y_2 + y_3 - 2y_1
+\end{align*}
+注意到$Q_1 = \sqrt3P_2, P_1 = -\sqrt3Q_2$，故显然$P_1P_2 + Q_1Q_2 = 0 \Rightarrow M_1M_2 = M_1M_3$。
+
+再以$BC$中点为中心，直线$BC$为$x$轴建立平面直角坐标系。同理可证$M_1M_2 = M_2M_3$，故$M_1M_2 = M_2M_3 = M_3M_1$，于是$\triangle M_1M_2M_3$是等边三角形。证毕。
