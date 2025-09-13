@@ -1,0 +1,27 @@
+
+\prob{00BA}{双平行作图}
+
+\begin{figure}[htbp]
+  \centering \image{00BA}
+  \caption{总第~\ref{sec:00BA} 题图}
+  \label{fig:00BA}
+\end{figure}
+
+如图~\ref{fig:00BA}，直线$l_1 \parallel l_2$；在两直线之间有一点$P$，其中$P$到两直线距离不相等。仅使用无刻度直尺，过$P$作直线$l \parallel l_1$，并证明之。
+\problabels{yellow/平面几何, green/作图问题}
+
+\subsection{Ceva定理} \label{subsec:00BA-ceva}
+
+\begin{figure}[htbp]
+  \centering \image{00BA-ceva}
+  \caption{方法~\ref{subsec:00BA-ceva} 图}
+  \label{fig:00BA-ceva}
+\end{figure}
+
+如图~\ref{fig:00BA-ceva}，自$P$引出两条不重合的直线$II', JJ'$，分别交$l_2$于$I, J$，交$l_1$与$I', J'$；作直线$IJ', I'J$，交于$K$；作直线$PK$，交$l_2$于$M$；连接$MJ'$，交$II'$于$N$，作直线$NJ$，交$IK$于$P'$。作直线$PP'$，此即为所求直线$l$。
+
+现在证明$PP' \parallel IJ$。在$\triangle IJK$中，由（边元）Ceva定理和平行线等比例分线段，
+\[ \frac{IJ'}{J'K}\cdot\frac{I'K}{I'J}\cdot\frac{JM}{IM} = 1, \frac{IJ'}{J'K} = \frac{I'J}{I'K} \Rightarrow IM = JM \]
+在$\triangle IJJ'$中，由Ceva定理，
+\[ \frac{PJ}{PJ'}\cdot\frac{P'J'}{P'I}\cdot\frac{IM}{JM} = 1, IM = JM \Rightarrow \frac{JJ'}{PJ'} = \frac{IJ'}{P'J'} \]
+从而显然有$\triangle P'J'P \sim \triangle IJ'J \Rightarrow PP' \parallel IJ$。证毕。

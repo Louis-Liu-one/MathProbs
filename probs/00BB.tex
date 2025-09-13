@@ -1,0 +1,88 @@
+
+\prob{00BB}{以2为底的三进制}
+
+对于每一个非负整数$N$，定义$f(N)$为将$N$表示为一个有序不定长非负整数组$(n_m, n_{m - 1}, \dots, n_1, n_0)$的方法的个数，其中$m$为非负整数，且
+\[ N = \sum_{i = 0}^m 2^in_i, n_i \in\{0, 1, 2\}, n_m \ne0 \]
+求$f(2025)$。
+\problabels{yellow/数论, green/代数求值问题}
+
+\ans{$f(2025) = 33$}
+
+\subsection{简单枚举}
+
+\begin{lemma} \label{lemma:00BB-l1}
+  若将$N$表示为题中形式的非负整数组，则该非负整数组的长度至多是$N$的二进制表示的长度，至少比$N$的二进制表示的长度少1。
+\end{lemma}
+
+\begin{proof}
+  不妨证明题中形式的非负整数组至少能表示等于自身长度的二进制数，至多能表示比自身长度多1的二进制数。
+
+  显然，非负整数组$(1, 0, \dots, 0)$是同长度的非负整数组中表示的数最小的，记作$N_{\min}$；$(2, 2, \dots, 2)$是同长度的非负整数组中表示的数最大的，记作$N_{\max}$。若非负整数组长度为$m$，则显然$N_{\min} = 2^m$，二进制表示的长度为$m$；$N_{\max} = 2^{m + 1}$，二进制表示的长度为$m + 1$。因此，长度为$m$的非负整数组所能表示的数的二进制表示的长度至少为$m$，至多为$m + 1$。
+\end{proof}
+
+首先，将2025转为二进制得$N = 2025 = (11111101001)_2$，显然$n_0 = 1$。
+
+定义
+\[ N_k = \sum_{i = 0}^k 2^in_i, 0 \le k \le m \]
+且$b_{k, t} \in\{0, 1\}$为$N_k$的二进制表示的自右往左第$t$位，其中$t$从0开始。由引理~\ref{lemma:00BB-l1}，$t \le k + 1$。若不足，则$b_{k, t} = 0$。
+
+显然$N = N_m$，且
+\[ N_0 = n_0 = 1, N_k = N_{k - 1} + 2^kn_k \]
+因此，$n_k$的任何取值不影响每一个满足$0 \le t < k$的$b_{k, t}$，只影响$b_{k, k}$和$b_{k, k + 1}$。
+
+同时，对于所有的$0 < t \le k \le m$，$b_{k, t}$一经$n_{t - 1}$和$n_t$确定后便不再改变，故
+\begin{equation}
+    \forall 0 \le t \le k \le m\ (b_{k, t} = b_{m, t}) \label{eq:00BB-rem}
+\end{equation}
+
+显然$b_{k, k} + 2b_{k, k + 1} = b_{k - 1, k} + n_k$，由此即可通过$n_k$确定$b_{k, k}$。由式~\ref{eq:00BB-rem} 知$b_{k, k} = b_{m, k}$，故$n_k$必须满足
+\[ b_{k, k + 1} = \frac12\left(b_{k - 1, k} + n_k - b_{m, k}\right) \in\{0, 1\} \]
+整理得当$b_{m, k} = 0$时，
+\begin{align}
+  b_{k, k + 1} &\left\{\begin{aligned}
+    &\in\{0, 1\}, & b_{k - 1, k} = 0 \\
+    &= 1, & b_{k - 1, k} = 1
+  \end{aligned}\right. \label{eq:00BB-mk0}
+\end{align}
+当$b_{m, k} = 1$时，
+\begin{align}
+  b_{k, k + 1} &\left\{\begin{aligned}
+    &= 0, & b_{k - 1, k} = 0 \\
+    &\in\{0, 1\}, & b_{k - 1, k} = 1
+  \end{aligned}\right. \label{eq:00BB-mk1}
+\end{align}
+
+定义函数$B_t(k)$为满足$b_{k, k + 1} = t$的$N_k$的个数，则$B_0(0) = 1, B_1(0) = 0$。由引理~\ref{lemma:00BB-l1}，$m \in\{10, 11\}$，故必须有$b_{10, 11} = 0$，因此答案为$B_0(10)$。$B_0(10)$中所有的$m$都为11，然其中一些首位为0，去掉首位的0使得$m = 10$即可。
+
+对于所有$0 < k < 11$，由式~\ref{eq:00BB-mk0} 知当$b_{m, k} = 0$时，
+\begin{align*}
+  B_0(k) &= B_0(k - 1) \\ B_1(k) &= B_0(k - 1) + B_1(k - 1)
+\end{align*}
+由式~\ref{eq:00BB-mk1} 知当$b_{m, k} = 1$时，
+\begin{align*}
+  B_0(k) &= B_0(k - 1) + B_1(k - 1) \\ B_1(k) &= B_1(k - 1)
+\end{align*}
+从$k = 0$开始列表得表~\ref{tab:00BB-btk}。
+\newpage
+
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{rrrr}
+    \toprule
+    $k$ & $b_{m, k}$ & $B_0(k)$ & $B_1(k)$ \\ \midrule
+     0 & 1 &  1 & 0 \\
+     1 & 0 &  1 & 1 \\
+     2 & 0 &  1 & 2 \\
+     3 & 1 &  3 & 2 \\
+     4 & 0 &  3 & 5 \\
+     5 & 1 &  8 & 5 \\
+     6 & 1 & 13 & 5 \\
+     7 & 1 & 18 & 5 \\
+     8 & 1 & 23 & 5 \\
+     9 & 1 & 28 & 5 \\
+    10 & 1 & \emph{33} & 5 \\ \bottomrule
+  \end{tabular}
+  \caption{枚举$B_t(k)$得到答案。} \label{tab:00BB-btk}
+\end{table}
+
+故答案为$f(2025) = B_0(10) = 33$。
