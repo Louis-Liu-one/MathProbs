@@ -6,24 +6,16 @@
   \tkzDefTriangle[equilateral](C,D) \tkzGetPoint{Q}
   \tkzFillPolygon[color=cyan!10](A,C,Q)
   \tkzFillPolygon[color=cyan!10](B,P,D)
-  \tkzDrawPoints(A,B,C,D,E,P,Q)
   \tkzDrawPolygon(A,B,C)
   \tkzDrawSegments(A,D B,E)
   \tkzDrawSegments[dashed](C,Q D,Q)
-  \tkzLabelPoint[right](A){$A$}
-  \tkzLabelPoint[below](B){$B$}
-  \tkzLabelPoint[below](C){$C$}
-  \tkzLabelPoint[below left](D){$D$}
-  \tkzLabelPoint[above](E){$E$}
-  \tkzLabelPoint[below](P){$P$}
-  \tkzLabelPoint[below](Q){$Q$}
   \tkzMarkSegments[color=blue,mark=|](A,B A,C B,P)
-  \tkzMarkAngle[mkcolor=cyan,mark=|](D,A,E)
-  \tkzMarkAngle[mkcolor=cyan,mark=|](D,B,E)
-  \tkzMarkAngle[mkcolor=violet,mark=||](A,D,B)
-  \tkzMarkAngle[mkcolor=violet,mark=||](A,E,B)
-  \tkzMarkAngle[mkcolor=violet,mark=||](Q,D,C)
-  \tkzMarkAngle[mkcolor=violet,mark=||](C,Q,D)
-  \tkzMarkAngle[mkcolor=blue,mark=x,arc=ll](B,A,D)
-  \tkzMarkAngle[mkcolor=blue,mark=x,arc=ll](A,P,B)
+  \tkzMarkAngles[mkcolor=cyan,mark=|](D,A,E D,B,E)
+  \tkzMarkAngles[mkcolor=violet,mark=||](A,D,B A,E,B Q,D,C C,Q,D)
+  \tkzMarkAngles[mkcolor=blue,mark=x,arc=ll](B,A,D A,P,B)
+  \tkzDrawPoints(A,B,C,D,E,P,Q)
+  \tkzLabelPoints[right](A)
+  \tkzLabelPoints[above](E)
+  \tkzLabelPoints[below](B,C,P,Q)
+  \tkzLabelPoints[below left](D)
 \end{tikzpicture}

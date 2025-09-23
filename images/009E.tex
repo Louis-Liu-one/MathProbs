@@ -2,13 +2,11 @@
 \begin{tikzpicture}[scale=.8]
   \tkzDefPoints{0/0/O,-2/0/A,5/3/C,5/0/H}
   \tkzInterLC(A,C)(O,A) \tkzGetFirstPoint{B}
-  \tkzDrawPoints(O,A,B,C,H)
   \tkzDrawPolygon(A,C,H)
   \tkzDrawCircle(O,A)
-  \tkzLabelPoint[below](O){$O$}
-  \tkzLabelPoint[left](A){$A$}
-  \tkzLabelPoint[above](B){$B$}
-  \tkzLabelPoint[above](C){$C$}
-  \tkzLabelPoint[below](H){$H$}
   \tkzMarkRightAngle(C,H,A)
+  \tkzDrawPoints(O,A,B,C,H)
+  \tkzLabelPoints[above](B,C)
+  \tkzLabelPoints[below](O,H)
+  \tkzLabelPoints[left](A)
 \end{tikzpicture}

@@ -1,0 +1,15 @@
+
+\begin{tikzpicture}[scale=.75]
+  \tkzDefPoints{-5/0/A,4/0/B,0/6/C,-1/2/P}
+  \tkzDefLine[altitude](B,P,C) \tkzGetPoint{H_1}
+  \tkzDefLine[altitude](C,P,A) \tkzGetPoint{H_2}
+  \tkzDefLine[altitude](A,P,B) \tkzGetPoint{H_3}
+  \tkzDrawPolygon(A,B,C)
+  \tkzDrawSegments(A,P B,P C,P P,H_1 P,H_2 P,H_3)
+  \tkzMarkRightAngles(P,H_1,C P,H_2,A P,H_3,B)
+  \tkzDrawPoints(A,B,C,P,H_1,H_2,H_3)
+  \tkzLabelPoints[below](A,H_3,B)
+  \tkzLabelPoints[right](H_1)
+  \tkzLabelPoints[above left](H_2)
+  \tkzLabelPoints[above](C,P)
+\end{tikzpicture}

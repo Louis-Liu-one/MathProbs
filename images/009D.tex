@@ -3,7 +3,6 @@
   \tkzDefPoints{0/{4*sqrt(3)}/A,-9/0/B,9/0/C,4/0/D}
   \tkzInterLC(A,C)(D,C) \tkzGetSecondPoint{E}
   \tkzInterLL(A,D)(B,E) \tkzGetPoint{P}
-  \tkzDrawPoints(A,B,C,D,E,P)
   \tkzDrawPolygon(A,B,C)
   \tkzDrawSegments(A,D B,E)
   \tkzLabelPoint[above](A){$A$}
@@ -13,4 +12,7 @@
   \tkzLabelPoint[above](E){$E$}
   \tkzLabelPoint[below](P){$P$}
   \tkzMarkSegments[color=blue,mark=|](A,B A,C)
+  \tkzDrawPoints(A,B,C,D,E,P)
+  \tkzLabelPoints[above](A,E)
+  \tkzLabelPoints[below](B,C,D,P)
 \end{tikzpicture}

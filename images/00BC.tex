@@ -1,0 +1,14 @@
+
+\begin{tikzpicture}[scale=.75]
+  \tkzDefPoints{-5/0/A,4/0/B,0/6/C,-1/2/P}
+  \tkzInterLL(A,P)(B,C) \tkzGetPoint{P_1}
+  \tkzInterLL(B,P)(C,A) \tkzGetPoint{P_2}
+  \tkzInterLL(C,P)(A,B) \tkzGetPoint{P_3}
+  \tkzDrawPolygon(A,B,C)
+  \tkzDrawSegments(A,P_1 B,P_2 C,P_3)
+  \tkzDrawPoints(A,B,C,P,P_1,P_2,P_3)
+  \tkzLabelPoints[below](A,P_3,B)
+  \tkzLabelPoints[right](P_1)
+  \tkzLabelPoints[above left](P_2)
+  \tkzLabelPoints[above](C,P)
+\end{tikzpicture}

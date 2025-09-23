@@ -5,18 +5,10 @@
   \tkzInterLL(A,D)(B,E) \tkzGetPoint{P}
   \tkzDefLine[altitude](B,A,C) \tkzGetPoint{Q}
   \tkzDefCircle[circum](A,B,D) \tkzGetPoint{o}
-  \tkzDrawPoints(A,B,C,D,E,P,Q)
   \tkzDrawPolygon(A,B,C)
   \tkzDrawSegments(A,D B,E)
   \tkzDrawSegments[dashed](D,E A,Q)
   \tkzDrawCircle[dashed,teal](o,A)
-  \tkzLabelPoint[above](A){$A$}
-  \tkzLabelPoint[below](B){$B$}
-  \tkzLabelPoint[below](C){$C$}
-  \tkzLabelPoint[below](D){$D$}
-  \tkzLabelPoint[above](E){$E$}
-  \tkzLabelPoint[below](P){$P$}
-  \tkzLabelPoint[below](Q){$Q$}
   \tkzMarkSegments[color=teal,mark=|](D,C D,E D,P)
   \tkzMarkAngle[mkcolor=violet,arc=ll,mark=|](C,B,A)
   \tkzMarkAngle[mkcolor=violet,arc=ll,mark=|](A,C,B)
@@ -25,4 +17,7 @@
   \tkzMarkAngle[mkcolor=cyan,mark=x](B,E,D)
   \tkzMarkAngle[mkcolor=cyan,mark=x](A,P,B)
   \tkzMarkRightAngle(A,Q,B)
+  \tkzDrawPoints(A,B,C,D,E,P,Q)
+  \tkzLabelPoints[above](A,E)
+  \tkzLabelPoints[below](B,C,D,P,Q)
 \end{tikzpicture}

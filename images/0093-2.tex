@@ -7,14 +7,12 @@
   \tkzInterLL(A,C)(B,b) \tkzGetPoint{D}
   \tkzInterLL(A,B)(C,c) \tkzGetPoint{E}
   \tkzInterLL(B,D)(C,E) \tkzGetPoint{O}
-  \tkzDrawPoints(A,B,C,D,E,O)
   \tkzDrawPolygon(A,B,C)
   \tkzDrawSegments(B,D C,E)
-  \tkzLabelPoint[below](A){$A$}
-  \tkzLabelPoint[below](B){$B$}
-  \tkzLabelPoint[above](C){$C$}
-  \tkzLabelPoint[left](D){$D$}
-  \tkzLabelPoint[below](E){$E$}
-  \tkzLabelPoint[above right](O){$O$}
   \tkzMarkSegments[color=teal,mark=|](O,D O,E)
+  \tkzDrawPoints(A,B,C,D,E,O)
+  \tkzLabelPoints[below](A,B,E)
+  \tkzLabelPoints[above](C)
+  \tkzLabelPoints[above right](O)
+  \tkzLabelPoints[left](D)
 \end{tikzpicture}

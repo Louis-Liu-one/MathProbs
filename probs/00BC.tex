@@ -1,0 +1,43 @@
+
+\prob{00BC}{边角元Ceva定理}
+
+\begin{figure}[htbp]
+    \centering \image{00BC}
+    \caption{总第~\ref{sec:00BC} 题图}
+    \label{fig:00BC}
+\end{figure}
+
+如图~\ref{fig:00BC}，$P$是$\triangle ABC$内一点；作射线$AP, BP, CP$分别交$BC, CA, AB$于$P_1, P_2, P_3$。求证：
+\begin{align}
+  \frac{BP_1}{P_1C}\cdot\frac{CP_2}{P_2A}\cdot\frac{AP_3}{P_3B} &= 1 \label{eq:00BC-scv} \\
+  \frac{\sin\angle BCP}{\sin\angle PCA}\cdot\frac{\sin\angle CAP}{\sin\angle PAB}\cdot\frac{\sin\angle ABP}{\sin\angle PBC} &= 1 \label{eq:00BC-acv}
+\end{align}
+\problabels{yellow/平面几何, green/证明题}
+
+\subsection{转换比例}
+
+\subsubsection{边元Ceva定理}
+
+先证明式~\ref{eq:00BC-scv}。令
+\[ S_1 = S_{\triangle BPC}, S_1 = S_{\triangle CPA}, S_3 = S_{\triangle APB} \]
+显然有
+\[ \frac{BP_1}{P_1C} = \frac{S_2}{S_3}, \frac{CP_2}{P_2A} = \frac{S_3}{S_1}, \frac{AP_3}{P_3B} = \frac{S_1}{S_2} \]
+于是式~\ref{eq:00BC-scv} 显然得证。
+
+\subsubsection{角元Ceva定理} \label{subsubsec:00BC-acv}
+
+\begin{figure}[htbp]
+  \centering \image{00BC-acv}
+  \caption{步骤~\ref{subsubsec:00BC-acv} 图}
+  \label{fig:00BC-acv}
+\end{figure}
+
+现在证明式~\ref{eq:00BC-acv}。如图~\ref{fig:00BC-acv}，分别作$P$在$BC, CA, AB$上的垂线，垂足分别为$H_1, H_2, H_3$。于是显然有
+\begin{align*}
+  \sin\angle BCP = \frac{PH_1}{PC}, & \sin\angle PCA = \frac{PH_2}{PC} \\
+  \sin\angle CAP = \frac{PH_2}{PA}, & \sin\angle PAB = \frac{PH_3}{PA} \\
+  \sin\angle ABP = \frac{PH_3}{PB}, & \sin\angle PBC = \frac{PH_1}{PB}
+\end{align*}
+于是式~\ref{eq:00BC-acv} 显然得证。
+
+证毕。

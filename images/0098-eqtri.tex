@@ -11,19 +11,9 @@
   \tkzDefMidPoint(B,P) \tkzGetPoint{N}
   \tkzFillPolygon[color=cyan!20](D,M,E)
   \tkzFillPolygon[color=cyan!20](D,N,F)
-  \tkzDrawPoints(A,B,C,D,E,F,P,M,N)
   \tkzDrawPolygon(A,B,C)
   \tkzDrawSegments(A,E B,F E,P F,P A,P B,P D,E D,F)
   \tkzDrawSegments[dashed](D,M D,N E,M F,N)
-  \tkzLabelPoint[left](A){$A$}
-  \tkzLabelPoint[above](B){$B$}
-  \tkzLabelPoint[above](C){$C$}
-  \tkzLabelPoint[above](D){$D$}
-  \tkzLabelPoint[left](E){$E$}
-  \tkzLabelPoint[right](F){$F$}
-  \tkzLabelPoint[below](P){$P$}
-  \tkzLabelPoint[right](M){$M$}
-  \tkzLabelPoint[left](N){$N$}
   \tkzMarkSegments[color=teal,mark=|](D,E D,F)
   \tkzMarkSegments[color=cyan,mark=||](E,M D,N A,M P,M)
   \tkzMarkSegments[color=blue,mark=|||](F,N D,M B,N P,N)
@@ -31,4 +21,9 @@
   \tkzMarkAngle[mkcolor=blue,mark=x](P,B,F)
   \tkzMarkRightAngle(P,E,A)
   \tkzMarkRightAngle(B,F,P)
+  \tkzDrawPoints(A,B,C,D,E,F,P,M,N)
+  \tkzLabelPoints[above](B,C,D)
+  \tkzLabelPoints[below](P)
+  \tkzLabelPoints[left](A,E,N)
+  \tkzLabelPoints[right](M,F)
 \end{tikzpicture}

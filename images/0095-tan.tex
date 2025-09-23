@@ -4,16 +4,12 @@
   \tkzDefRectangle(B,E) \tkzGetPoints{A}{F}
   \tkzInterLL(B,E)(A,F) \tkzGetPoint{D}
   \tkzInterLL(C,E)(A,B) \tkzGetPoint{G}
-  \tkzDrawPoints(A,B,F,E,D,C,G)
   \tkzDrawPolygon(A,B,F,E)
   \tkzDrawCircle[dashed](D,E)
   \tkzDrawSegments(B,E A,F C,F A,G C,D G,D C,G)
-  \tkzLabelPoint[below](B){$B$}
-  \tkzLabelPoint[above right](E){$E$}
-  \tkzLabelPoint[below](A){$A$}
-  \tkzLabelPoint[left](F){$F$}
-  \tkzLabelPoint[below](D){$D$}
-  \tkzLabelPoint[left](C){$C$}
-  \tkzLabelPoint[below](G){$G$}
   \tkzMarkSegments[color=teal,mark=|](D,C D,G)
+  \tkzDrawPoints(A,B,F,E,D,C,G)
+  \tkzLabelPoints[below](A,B,D,G)
+  \tkzLabelPoints[left](C,F)
+  \tkzLabelPoints[above right](E)
 \end{tikzpicture}

@@ -9,16 +9,14 @@
   \tkzInterLL(B,D)(C,E) \tkzGetPoint{O}
   \tkzFillPolygon[color=teal!30](A,O,D)
   \tkzFillPolygon[color=teal!30](A,O,E)
-  \tkzDrawPoints(A,B,C,D,E,O)
   \tkzDrawPolygon(A,B,C)
   \tkzDrawSegments(B,D C,E)
   \tkzDrawSegments[dashed](A,O)
-  \tkzLabelPoint[below](A){$A$}
-  \tkzLabelPoint[below](B){$B$}
-  \tkzLabelPoint[above](C){$C$}
-  \tkzLabelPoint[left](D){$D$}
-  \tkzLabelPoint[below](E){$E$}
-  \tkzLabelPoint[above right](O){$O$}
   \tkzMarkSegments[color=teal,mark=|](O,D O,E)
   \tkzMarkSegments[color=cyan,mark=||](A,D A,E)
+  \tkzDrawPoints(A,B,C,D,E,O)
+  \tkzLabelPoints[below](A,B,E)
+  \tkzLabelPoints[above](C)
+  \tkzLabelPoints[above right](O)
+  \tkzLabelPoints[left](D)
 \end{tikzpicture}
