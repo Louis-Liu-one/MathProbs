@@ -1,54 +1,38 @@
 
+# MathProbs -- 数学题集
 
-Based on the repository structure, here is a README.md file tailored for this project:
+此问题集采用LaTeX编写，具体分为三卷，每卷64题。编篡此集旨在提升数学能力，与广大数学爱好者共享数学之乐趣。
 
----
+## 文件组织
 
-# Math Problems Collection
+- **0000-003F.tex, 0040-007F.tex, 0080-00BF.tex**：主文件，每个文件包含一卷内容；
+- **probs/**：存放单个问题，每个问题及解法存于一文件中；
+- **images/**：存放各处插图；
+- **covers/**：每卷封面页；
+- **problist.tex**：题目分类；
+- **preamble.tex**：导言区。
 
-这是一个数学问题的集合项目，旨在整理和分享各类数学题目及其解法。适用于教师、学生及数学爱好者查阅与学习。
+问题编号采取四位十六进制，从**0000**开始。
 
-## 项目结构
+## 构建方法
 
-- **probs/**: 存放所有数学问题的 TeX 文件，每个文件对应一个数学问题。
-- **images/**: 包含与问题相关的图像资源，通常以 TeX 或 PDF 格式提供。
-- **covers/**: 项目封面相关的文件。
-- **makefile**: 用于清除辅助文件。
-- **preamble.tex**: TeX 预处理文件，定义了文档的基本格式和样式。
-- **problist.tex**: 问题列表文件，可能包含所有问题的索引或汇总信息。
-- **.gitignore**: Git 忽略配置文件，防止某些文件被提交到版本控制中。
+需要使用XeLaTeX引擎编译，推荐使用LaTeXmk。共3个主文件，编译每个主文件生成一卷内容。编者使用的MacOS+MacTeX可以成功编译。
 
-## 使用技术
+正文所有插图均使用TikZ或TkZ-Euclide绘图。*如你的发行版不完整，请先安装preamble.tex中列举的必要宏包。*编译时间可能较慢，请耐心等待。
 
-该项目使用 [LaTeX](https://www.latex-project.org/) 编写数学问题及其解答，图像资源也使用 TeX 或 PDF 格式以保证高质量的数学公式显示。
+编译生成的.aux、.log、.toc、.fls、.xdv、.fdb_latexmk、.synctex.gz文件，以及probs/中的.aux文件都是中间文件，完成生成PDF后可直接舍弃。
 
-## 安装与构建
+## 贡献与鸣谢
 
-请确保您已安装 [TeX Live](https://www.tug.org/texlive/) 或其他兼容的 TeX 发行版。
+欢迎提交新问题、已知问题的新方法，或纠正已知问题的错误。欢迎向仓库提交PR。*在0093及以后的平面几何问题，为统一绘图格式，请不要再使用TikZ绘图，可以使用TkZ-Euclide。*
 
-### 构建项目
+感谢JYH（0099之题目、009A之题目、009B之题目、009C之题目、00AD之题目、00AF之题目）、LTY（000A之2个方法、00B0之题目、00B5之题目、00B6之题目）、YCY（003F之1个方法、00B4之题目和1个引理）、LHQ（0049之题目与1个方法、00B3之题目）、XWT（009D之1个方法）等对编撰工作的支持。
 
-在项目目录中运行以下命令以构建文档：
+## 注意事项
 
-```bash
-xelatex your_file.tex
-```
+- 由于一些原因，部分问题尚未编写方法，部分问题的文本中存在排版问题；
+- 较早的部分问题由于历史原因在公式排版、几何绘图、图表编号等方面与较新的问题存在格式不同的问题；
+- 由于精力有限，部分问题的描述或方法等可能存在错误、笔误、不清晰、不严谨等问题；
+- 部分问题由于加入时间较早或来源不明，未能标明提供者或出处，敬请谅解。
 
-## 如何贡献
-
-欢迎提交新的数学问题或改进现有问题的解答。请遵循以下步骤：
-
-1. Fork 仓库。
-2. 创建新分支：`git checkout -b new-problem`.
-3. 添加或修改 TeX 文件。
-4. 提交更改：`git commit -m "Add new problem or fix existing problem"`.
-5. Push 到分支：`git push origin new-problem`.
-6. 创建 Pull Request。
-
-## 联系作者
-
-如果您有任何问题或建议，请联系仓库维护者 [Louis-Liu-one](https://gitee.com/Louis-Liu-one)。
-
---- 
-
-这是一个适合数学教育场景的结构化资源库，方便扩展和查阅。
+如有侵权，请联系编者[Liu One](https://gitee.com/Louis-Liu-one)。
