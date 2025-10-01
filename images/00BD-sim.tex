@@ -1,0 +1,16 @@
+
+\begin{tikzpicture}
+  \tkzDefPoints{0/0/A,2/{2*sqrt(3)}/B,{3*sqrt(3)}/0/C,
+    {3*sqrt(3)}/-3/D,2/0/H,{3/2*sqrt(3)}/{-3/2}/O}
+  \tkzInterLC(O,B)(O,D) \tkzGetSecondPoint{C'}
+  \tkzDrawPolygon(A,B,C)
+  \tkzDrawSegments(B,H)
+  \tkzDrawSegments[dashed](A,D C,D O,B)
+  \tkzDrawSemiCircle[dashed](O,D)
+  \tkzMarkRightAngles(C,H,B A,C,D D,A,B)
+  \tkzDrawPoints(A,B,C,D,H,O,C')
+  \tkzLabelPoints[below](D,H,O)
+  \tkzLabelPoints[left](A)
+  \tkzLabelPoints[right](C,C')
+  \tkzLabelPoints[above](B)
+\end{tikzpicture}

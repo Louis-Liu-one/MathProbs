@@ -1,0 +1,51 @@
+
+\prob{00BD}{线段比与最值}
+
+\begin{figure}[htbp]
+  \centering \image{00BD}
+  \caption{总第~\ref{sec:00BD} 题图}
+  \label{fig:00BD}
+\end{figure}
+
+如图~\ref{fig:00BD}，在$\triangle ABC$中，$AB = 4$，作$BH \perp AC$，$H$在直线$AC$上。若始终有$BH/AC = 2/3$，求$BC$的最小值。
+\problabels{yellow/平面几何, green/最值问题}
+
+\ans{$BC$的最小值为$2$。}
+
+\subsection{相似三角形} \label{subsec:00BD-sim}
+
+\begin{figure}[htbp]
+  \centering \image{00BD-sim}
+  \caption{方法~\ref{subsec:00BD-sim} 图}
+  \label{fig:00BD-sim}
+\end{figure}
+
+如图~\ref{fig:00BD-sim}，将$A, B$视为定点，$C, H$视为动点；过$C$作$CD \perp AC$使得$AH/CD = 2/3$；作$AD$的中点$O$，以$O$为圆心、$OD$为半径作圆。
+
+显然
+\[ \triangle ACD \sim \triangle BHA \Rightarrow \left\{ \begin{aligned}
+  \angle BAD &= 90^\circ \\ AD &= 6
+\end{aligned} \right. \]
+由于$A, B$均为定点，$\angle BAD$为定角且$AD$定长，故$D$亦为定点。于是$O$也为定点，且$OA = OD = 3$。
+
+由于$\angle ACD = 90^\circ$，故$C$始终在$\odot O$上。而$B$为定点，故$O, B, C$共线时$BC$最小，此时$C$在图中$C'$处。此时显然有$OB = 5, OC' = 3$，故$BC' = 5 - 3 = 2$。因此，$BC$的最小值为$2$。
+
+\subsection{求导}
+
+设$BH = 2k, AC = 3k$，则
+\begin{align*}
+  BC^2 &= \left(3k - \sqrt{4^2 - (2k)^2}\right)^2 + (2k)^2 \\
+  &= 9k^2 - 12k\sqrt{4 - k^2} + 16 = 6f(k)
+\end{align*}
+
+若$f(k)$最小，则
+\[ \frac{\dif f}{\dif k} = 3k - 2\sqrt{4 - k^2} + 2\frac{k^2}{\sqrt{4 - k^2}} = 0 \]
+两边同除以$\sqrt{4 - k^2}$，令$K = k/\sqrt{4 - k^2}$得
+\[ 2K^2 + 3K - 2 = (2K - 1)(K + 2) = 0 \]
+于是得$K_1 = 1/2, K_2 = -2$（舍）。因此，
+\[ K^2 = \frac{k^2}{4 - k^2} = \frac14 \Rightarrow \left\{ \begin{aligned}
+  k^2 &= 4/5 \\ k\sqrt{4 - k^2} &= 8/5
+\end{aligned} \right. \]
+故此时
+\[ BC^2 = 9\cdot\frac45 - 12\cdot\frac85 + 16 = 4 \Rightarrow BC = 2 \]
+因此，$BC$的最小值为$2$。

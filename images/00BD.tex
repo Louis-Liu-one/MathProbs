@@ -1,0 +1,10 @@
+
+\begin{tikzpicture}
+  \tkzDefPoints{0/0/A,2/{2*sqrt(3)}/B,{3*sqrt(3)}/0/C,2/0/H}
+  \tkzDrawPolygon(A,B,C)
+  \tkzDrawSegment(B,H)
+  \tkzMarkRightAngle(C,H,B)
+  \tkzDrawPoints(A,B,C,H)
+  \tkzLabelPoints[below](A,C,H)
+  \tkzLabelPoints[above](B)
+\end{tikzpicture}
