@@ -1,0 +1,70 @@
+
+\prob{00BE}{三角函数互比}
+
+对于角$\theta$，求
+\[ f(\theta) = \frac{\sin\theta + 2}{\cos\theta + 3} \]
+的取值范围。
+\problabels{yellow/代数, green/取值范围问题}
+
+\ans{\[
+  \frac{3 - \sqrt3}4 \le f(\theta) \le \frac{3 + \sqrt3}4
+\]}
+
+\emph{JYH提供的题目。}
+
+\subsection{数形结合} \label{subsec:00BE-d}
+
+\begin{figure}[htbp]
+  \centering \image{00BE-d}
+  \caption{方法~\ref{subsec:00BE-d} 图}
+  \label{fig:00BE-d}
+\end{figure}
+
+如图~\ref{fig:00BE-d}，在平面直角坐标系中，定义点$T(\cos\theta, \sin\theta)$，其恒在单位$\odot O$上；令$P(-3, -2)$，则$f(\theta)$是直线$PT$的斜率。
+
+显然直线$PT$的斜率最大或最小时，$PT$切$\odot O$于$T$，$T$在图中$T_1$或$T_2$处。设此时斜率$f(\theta) = k$，则
+\[ PT: y = k(x + 3) - 2 = kx + 3k - 2 \]
+而单位$\odot O$之方程为$x^2 + y^2 = 1$，联立得
+\[ \left\{\begin{aligned}
+  & y = kx + 3k - 2 \\ & x^2 + y^2 = 1
+\end{aligned}\right. \Rightarrow x^2 + (kx + 3k - 2)^2 = 1 \]
+展开得
+\[ \left(k^2 + 1\right)x^2 + 2k(3k - 2)x + \left(9k^2 - 12k + 3\right) = 0 \]
+由于$PT$切于$\odot O$，故此二次方程有两相同根，故
+\begin{align*}
+  \Delta = 0 \Rightarrow{}& k^2(3k - 2)^2 = \left(k^2 + 1\right)\left(9k^2 - 12k + 3\right) \\
+  \Rightarrow{}& k^2\left(9k^2 - 12k + 4\right) \\
+    &= \left(k^2 + 1\right)\left(9k^2 - 12k + 3\right) \\
+  \Rightarrow{}& k^2 = 9k^2 - 12k + 3 \Rightarrow k_{1, 2} = \frac{3 \pm\sqrt3}4
+\end{align*}
+故$f(\theta)$最大值为$\left(3 + \sqrt3\right)/4$，$f(\theta)$最小值为$\left(3 - \sqrt3\right)/4$。因此，
+\[ \frac{3 - \sqrt3}4 \le f(\theta) \le \frac{3 + \sqrt3}4 \]
+
+\subsection{求导}
+
+当$f(\theta)$取得极值时，
+\begin{align*}
+  \frac{\dif f}{\dif\theta} ={}& \cos\theta\cdot\frac1{\cos\theta + 3} \\
+    &+ (\sin\theta + 2)\cdot(\cos\theta + 3)^{-2}\cdot\sin\theta \\
+  ={}& \frac{\cos\theta}{\cos\theta + 3} + \frac{\sin\theta(\sin\theta + 2)}{(\cos\theta + 3)^2} \\
+  ={}& \frac{\cos\theta(\cos\theta + 3) + \sin\theta(\sin\theta + 2)}{(\cos\theta + 3)^2} \\
+  ={}& \frac{3\cos\theta + 2\sin\theta + 1}{(\cos\theta + 3)^2} = 0
+\end{align*}
+令$\cos\theta = x, \sin\theta = y$，则
+\[ \left\{\begin{aligned}
+  x^2 + y^2 &= 1 \\ 3x + 2y &= -1
+\end{aligned}\right. \Rightarrow
+\left\{\begin{aligned}
+  & 4x^2 + 4y^2 = 4 \\ & 4y^2 = (3x + 1)^2
+\end{aligned}\right. \]
+即$4x^2 + (3x + 1)^2 = 4$，解得
+\[ x = \frac{-3 \pm4\sqrt3}{13}, y = \frac{-2 \mp6\sqrt3}{13} \]
+此时
+\begin{align*}
+  f(\theta) &= \frac{y + 2}{x + 3} = \frac{24 \mp6\sqrt3}{36 \pm4\sqrt3} = \frac{12 \mp3\sqrt3}{2\sqrt3\left(3\sqrt3 \pm1\right)} \\
+  &= \frac{\sqrt3\left(12 \mp3\sqrt3\right)\left(3\sqrt3 \mp1\right)}{6\left(3\sqrt3 \pm1\right)\left(3\sqrt3 \mp1\right)} \\
+  &= \frac{\sqrt3\left(36\sqrt3 \mp27 \mp12 + 3\sqrt3\right)}{6\cdot26} \\
+  &= \frac{\sqrt3\left(39\sqrt3 \mp39\right)}{12\cdot13} = \frac{3 \mp\sqrt3}4
+\end{align*}
+因此，
+\[ \frac{3 - \sqrt3}4 \le f(\theta) \le \frac{3 + \sqrt3}4 \]

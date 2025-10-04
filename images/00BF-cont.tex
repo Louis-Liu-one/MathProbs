@@ -1,0 +1,12 @@
+
+\begin{tikzpicture}[scale=.8]
+  \tkzDefPoints{0/0/A,3/0/B,5/0/H,5/3/P_0}
+  \tkzDefLine[altitude](A,B,P_0) \tkzGetPoint{H'}
+  \tkzDrawLines(A,H A,P_0)
+  \tkzDrawSegments(P_0,H B,H')
+  \tkzMarkRightAngles(P_0,H,A A,H',B)
+  \tkzLabelLine[right,pos=1.2](A,H){$l_0$}
+  \tkzDrawPoints(A,B,H,H',P_0)
+  \tkzLabelPoints[below](A,B,H)
+  \tkzLabelPoints[above](P_0,H')
+\end{tikzpicture}

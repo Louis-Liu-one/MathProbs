@@ -1,0 +1,19 @@
+
+\prob{00BF}{Sylvester-Gallai 定理}
+
+求证：对于平面上任意有限点集，若此点集中所有点不共线，则必然存在至少一条直线，使得其通过此点集中两点，且不通过此点集中其它点。
+\problabels{yellow/平面几何, green/证明题}
+
+\subsection{反证法} \label{subsec:00BF-cont}
+
+\begin{figure}[htbp]
+  \centering \image{00BF-cont}
+  \caption{方法~\ref{subsec:00BF-cont} 图}
+  \label{fig:00BF-cont}
+\end{figure}
+
+对于一有限点集$S_P$，此点集中所有点不共线，假设过此点集中过任意两点的直线都过其中第三点。
+
+过$S_P$中的任意两点作一条直线，这些直线组成一个直线集$S_L$；$\forall l \in S_L$，从属于$S_P$且在$l$外的每一点作$l$的垂线，所有垂线组成一个垂线集$S_H$；显然存在一条垂线$P_0H$在$S_H$中最短。如图~\ref{fig:00BF-cont}，设这条垂线是从$P_0 \in S_P$向直线$l_0 \in S_L$所作的垂线，垂足为$H$。
+
+由假设，$l_0$上必然存在至少三个$S_P$中的点，故在$H$的两侧必然有一侧存在至少两个$S_P$中的点，将此两点记作$A, B$，且$AH > BH$。显然，直线$AP_0 \in S_L$。过$B$作$BH' \perp AP_0$于$H'$，显然$BH' \in S_H$且$BH' < P_0H$。然而，$P_0H$是$S_H$中最短的垂线，故矛盾，假设不成立，原命题成立。证毕。

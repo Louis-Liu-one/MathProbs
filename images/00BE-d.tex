@@ -1,0 +1,14 @@
+
+\begin{tikzpicture}
+  \tkzInit[xmin=-3.5,ymin=-2.5,xmax=1.5,ymax=1.5]
+  \tkzDefPoints{0/0/O,1/0/o,-3/-2/P}
+  \tkzDefLine[tangent from=P](O,o) \tkzGetPoints{T_1}{T_2}
+  \tkzDrawX \tkzDrawY
+  \tkzDrawCircle(O,o)
+  \tkzDrawLines[add=0 and .2](P,T_1 P,T_2)
+  \tkzDrawPoints(O,P,T_1,T_2)
+  \tkzLabelPoints[above right](O)
+  \tkzLabelPoints[above left](T_1)
+  \tkzLabelPoints[below](T_2)
+  \tkzLabelPoint[below](P){$P(-3,-2)$}
+\end{tikzpicture}
