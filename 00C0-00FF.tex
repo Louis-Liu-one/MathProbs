@@ -1,0 +1,23 @@
+
+\documentclass[twoside, twocolumn]{ctexart}
+\input{preamble}
+\setcounter{section}{192}
+
+\title{\textbf{Liu One的数学题集}（\textit{VOL. 4}\quad 00C0 -- 00FF）}
+\author{Copyright \copyright\ 2024 \textbf{Liu One}
+  \quad \emph{All rights reserved.} \\
+  \textit{版权所有，侵权必究。}}
+\date{}
+
+\begin{document}
+
+  %\input{covers/00C0-00FF}
+  \balance
+  \maketitle
+  \tableofcontents
+
+  \foreach \probno in {
+    00C0, 00C1, 00C2
+  } { \include{probs/\probno} }
+
+\end{document}

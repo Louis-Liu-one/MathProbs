@@ -1,0 +1,30 @@
+
+\prob{00C2}{互余角证明}
+
+若对于锐角 $\alpha, \beta$ 有
+\[ \cos^2\alpha + \cos^2\beta = \sin(\alpha + \beta) \]
+求证：$\alpha + \beta = \pi/2$。
+\problabels{yellow/代数, green/证明题}
+
+\emph{JYH 提供的题目。}
+
+\subsection{反证法}
+
+定义
+\begin{align*}
+  f ={}& \cos^2\alpha + \cos^2\beta - \sin(\alpha + \beta) \\
+  ={}& \cos^2\alpha + \cos^2\beta - \cos\alpha\sin\beta - \cos\beta\sin\alpha \\
+  ={}& \cos\alpha(\cos\alpha - \sin\beta) + \cos\beta(\cos\beta - \sin\alpha) \\
+  ={}& \cos\alpha\left(\sin\left(\frac\pi2 - \alpha\right) - \sin\beta\right) \\
+  &+ \cos\beta\left(\sin\left(\frac\pi2 - \beta\right) - \sin\alpha\right)
+\end{align*}
+由题可知 $0 < \alpha, \beta < \pi/2$，故 $\cos\alpha, \cos\beta > 0$。由于 $\sin x$ 在 $(0, \pi/2)$ 上单调增，故设 $\alpha + \beta > \pi/2$ 得
+\[ \left\{ \begin{aligned}
+  \frac\pi2 - \alpha &< \beta \\ \frac\pi2 - \beta &< \alpha
+\end{aligned} \right. \Rightarrow \left\{ \begin{aligned}
+  \sin\left(\frac\pi2 - \alpha\right) - \sin\beta &< 0 \\
+  \sin\left(\frac\pi2 - \beta\right) - \sin\alpha &< 0
+\end{aligned} \right. \]
+故 $f > 0$，不符题目条件 $f = 0$。当 $\alpha + \beta < \pi/2$ 时同理可证。故 $\alpha + \beta = \pi/2$。
+
+证毕。

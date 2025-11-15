@@ -1,0 +1,47 @@
+
+\prob{00C1}{四边形三边到一边}
+
+\begin{figure}[htbp]
+  \centering \image{00C1}
+  \caption{总第~\ref{sec:00C1} 题图} \label{fig:00C1}
+\end{figure}
+
+如图~\ref{fig:00C1}，在四边形 $ABCD$ 中，对角线 $AC, BD$ 交于 $O$，$AC = BD, \angle BOC = 60^\circ$。若 $AB = \sqrt7, AD = 2, BC = \sqrt3$，求 $CD$。
+\problabels{yellow/平面几何, green/长度问题}
+
+\emph{LTY 提供的题目。}
+
+\ans{$CD = \sqrt{13}$}
+
+\subsection{证全等} \label{subsec:00C1-eq}
+
+\begin{figure}[htbp]
+  \centering \image{00C1-eq}
+  \caption{方法~\ref{subsec:00C1-eq} 图} \label{fig:00C1-eq}
+\end{figure}
+
+如图~\ref{fig:00C1-eq}，以 $AB$ 为边向上做等边 $\triangle APB$，有 $PA = PB = AB = \sqrt7, \angle APB = 60^\circ$；连接 $PC, PD$。
+
+显然有
+\[ \angle BAC + \angle PAC = \angle BAC + \angle ABD = 60^\circ \]
+故 $\angle PAC = \angle ABD$。于是在 $\triangle PAC$ 与 $\triangle ABD$ 中，
+\[ \left\{ \begin{aligned}
+  PA &= AB \\ \angle PAC &= \angle ABD \\ AC &= BD
+\end{aligned} \right. \Rightarrow \triangle PAC \cong \triangle ABD \]
+故 $PC = AD = 2$，于是
+\[ PC^2 + BC^2 = PB^2 \Rightarrow \angle BCP = 90^\circ \]
+故 $\angle BPC + \angle PBC = 90^\circ$。
+
+同理可得 $\triangle PBD \cong \triangle BAC \Rightarrow PD = BC = \sqrt3$，于是在 $\triangle ADP$ 与 $\triangle PCB$ 中，
+\[ \left\{ \begin{aligned}
+  PD = BC \\ AD = PC \\ AP = PB
+\end{aligned} \right. \Rightarrow \triangle ADP \cong \triangle PCB \]
+故 $\angle APD = \angle PBC \Rightarrow \angle APD + \angle BPC = 90^\circ$。而 $\angle APB = 60^\circ$，故 $\angle CPD = 150^\circ$。
+
+由余弦定理知，
+\begin{align*}
+  CD^2 &= PC^2 + PD^2 - 2PC\cdot PD \cos\angle CPD \\
+  &= PC^2 + PD^2 + \sqrt3PC\cdot PD \\
+  &= 2^2 + \left(\sqrt3\right)^2 + \sqrt3\cdot2\cdot\sqrt3 = 13
+\end{align*}
+故 $CD = \sqrt{13}$。

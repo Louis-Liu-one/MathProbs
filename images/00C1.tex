@@ -1,0 +1,18 @@
+
+\begin{tikzpicture}[scale=1.3]
+  \pgfmathsetmacro\rad{sqrt(7)/2}
+  \tkzDefPoints{-\rad/0/A,\rad/0/B}
+  \tkzDefTriangle[equilateral](A,B) \tkzGetPoint{P}
+  \tkzDefMidPoint(P,A) \tkzGetPoint{a}
+  \tkzDefMidPoint(P,B) \tkzGetPoint{b}
+  \tkzInterCC[R](a,\rad)(A,2) \tkzGetSecondPoint{D}
+  \tkzInterCC[R](b,\rad)(P,2) \tkzGetSecondPoint{C}
+  \tkzInterLL(A,C)(B,D) \tkzGetPoint{O}
+  \tkzDrawPolygon(A,B,C,D)
+  \tkzDrawSegments(A,C B,D)
+  \tkzDrawPoints(A,B,C,D,O)
+  \tkzLabelPoints[below](A,B)
+  \tkzLabelPoints[left](D)
+  \tkzLabelPoints[right](C)
+  \tkzLabelPoints[above](O)
+\end{tikzpicture}

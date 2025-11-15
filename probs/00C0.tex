@@ -1,0 +1,52 @@
+
+\prob{00C0}{反比例递增}
+
+定义数列
+\[ x_n = \begin{cases}
+  5, & n = 0 \\ x_{n - 1} + 1/x_{n - 1}, & n > 0
+\end{cases} \]
+求证：$45 < x_{1000} < 45.1$。
+\problabels{yellow/代数, green/证明题}
+
+\emph{ZYT 提供的题目。}
+
+\subsection{分组}
+
+首先，$\forall n > 0$ 有
+\begin{align*}
+  x_n^2 &= \left(x_{n - 1} + \frac1{x_{n - 1}}\right)^2 = x_{n - 1}^2 + \frac1{x_{n - 1}^2} + 2 \\
+  &= x_0^2 + 2n + \sum_{k = 0}^{n - 1} \frac1{x_k^2} > x_0^2 + 2n
+\end{align*}
+于是
+\[ x_{1000}^2 > x_0^2 + 2\cdot1000 = 2025 \Rightarrow x_{1000} > 45 \]
+左边不等式得证。
+
+显然数列 $\{x_n\}$ 单调增，故数列 $\left\{1/x_n^2\right\}$ 单调减。于是
+\[ \sum_{k = n_0}^{n_1} \frac1{x_k^2} < \frac{n_1 - n_0 + 1}{x_{n_0}^2} \]
+故有
+\begin{align*}
+  \sum_{k = 0}^{24} \frac1{x_k^2} &< \frac{25}{x_0^2} = 1 \\
+  \sum_{k = 25}^{99} \frac1{x_k^2} &< \frac{75}{x_{25}^2}, \sum_{k = 100}^{999} \frac1{x_k^2} < \frac{900}{x_{100}^2}
+\end{align*}
+于是
+\begin{align*}
+  & x_{25}^2 = x_0^2 + 2\cdot25 + \sum_{k = 0}^{24} \frac1{x_k^2} \\
+  \Rightarrow{}& 75 < x_{25}^2 < 76 \Rightarrow \frac1{76} < \frac1{x_{25}^2} < \frac1{75} \\
+  \Rightarrow{}& \sum_{k = 25}^{99} \frac1{x_k^2} < \frac{75}{x_{25}^2} < 75\cdot\frac1{75} = 1 \\
+  \Rightarrow{}& \sum_{k = 0}^{99} \frac1{x_k^2} < 1 + 1 = 2
+\end{align*}
+又有
+\begin{align*}
+  & x_{100}^2 = x_0^2 + 2\cdot100 + \sum_{k = 0}^{99} \frac1{x_k^2} \\
+  \Rightarrow{}& 225 < x_{100}^2 < 227 \Rightarrow \frac1{227} < \frac1{x_{100}^2} < \frac1{225} \\
+  \Rightarrow{}& \sum_{k = 100}^{999} \frac1{x_k^2} < \frac{900}{x_{100}^2} < 900\cdot\frac1{225} = 4 \\
+  \Rightarrow{}& \sum_{k = 0}^{999} \frac1{x_k^2} < 2 + 4 = 6
+\end{align*}
+因此，有
+\begin{align*}
+  x_{1000}^2 &= x_0^2 + 2\cdot1000 + \sum_{k = 0}^{999} \frac1{x_k^2} \\
+  &< 25 + 2000 + 6 = 2031
+\end{align*}
+故 $x_{1000} < \sqrt{2031} < 45.1$，右边不等式得证。
+
+证毕。
