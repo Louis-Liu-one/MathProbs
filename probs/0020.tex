@@ -21,40 +21,38 @@
   \label{fig:0020-pyth}
 \end{figure}
 
-基本思路：通过作垂线构造多个直角三角形，然后利用勾股定理列方程求解。
-
 如图~\ref{fig:0020-pyth}，作$FP \perp AD$于$P$，$EQ \perp FP$于$Q$，连接$AE$。设$DP = x$。
 
 \begin{align*}
-  &\because   \text{四边形}ABCD\text{是正方形} \\
-  &\therefore \angle ADC = 90^\circ \\
-  &\therefore AD^2 + DE^2 = AE^2 \\
-  &\because   AD = 7, DE = 3 \\
-  &\therefore AE = \sqrt{7^2 + 3^2} = \sqrt{58} \\
-  &\because   FP \perp AD, EQ \perp FP \\
-  &\therefore \angle DPF = \angle EQP = 90^\circ \\
-  &\therefore \text{四边形}DPQE\text{是矩形} \\
-  &\therefore PQ = DE = 3, EQ = DP = x \\
-  &\because   BD\text{是正方形}ABCD\text{的对角线} \\
-  &\therefore \angle FDP = 45^\circ \\
-  &\because   \angle DPF = 90^\circ \\
-  &\therefore \triangle DPF\text{是等腰直角三角形} \\
-  &\therefore PD = FP = x, DF = \sqrt2x \\
-  &\therefore FQ = FP - PQ = x - 3 \\
-  &\because   \angle EQF = 90^\circ \\
-  &\therefore EQ^2 + FQ^2 = EF^2 \\
-  &\therefore EF = \sqrt{x^2 + (x - 3)^2} = \sqrt{2x^2 - 6x + 9} \\
-  \text{又}&\because AD = 7 \\
-  &\therefore AP = AD - DP = 7 - x \\
-  &\because   \angle APF = 90^\circ \\
-  &\therefore FP^2 + AP^2 = AF^2 \\
-  &\therefore AF = \sqrt{x^2 + (7 - x)^2} = \sqrt{2x^2 - 14x + 49} \\
-  &\because   AF \perp EF \\
-  &\therefore \angle AFE = 90^\circ \\
-  &\therefore AF^2 + EF^2 = AE^2 \\
-  &\therefore (2x^2 - 14x + 49) + (2x^2 - 6x + 9) = 58 \\
-  &\therefore x = 5 \\
-  &\therefore DF = \sqrt2x = 5\sqrt2 \\
+  \because  {}& \text{四边形}ABCD\text{是正方形} \\
+  \therefore{}& \angle ADC = 90^\circ \\
+  \therefore{}& AD^2 + DE^2 = AE^2 \\
+  \because  {}& AD = 7, DE = 3 \\
+  \therefore{}& AE = \sqrt{7^2 + 3^2} = \sqrt{58} \\
+  \because  {}& FP \perp AD, EQ \perp FP \\
+  \therefore{}& \angle DPF = \angle EQP = 90^\circ \\
+  \therefore{}& \text{四边形}DPQE\text{是矩形} \\
+  \therefore{}& PQ = DE = 3, EQ = DP = x \\
+  \because  {}& BD\text{是正方形}ABCD\text{的对角线} \\
+  \therefore{}& \angle FDP = 45^\circ \\
+  \because  {}& \angle DPF = 90^\circ \\
+  \therefore{}& \triangle DPF\text{是等腰直角三角形} \\
+  \therefore{}& PD = FP = x, DF = \sqrt2x \\
+  \therefore{}& FQ = FP - PQ = x - 3 \\
+  \because  {}& \angle EQF = 90^\circ \\
+  \therefore{}& EQ^2 + FQ^2 = EF^2 \\
+  \therefore{}& EF = \sqrt{x^2 + (x - 3)^2} = \sqrt{2x^2 - 6x + 9} \\
+  \text{又}\because{}& AD = 7 \\
+  \therefore{}& AP = AD - DP = 7 - x \\
+  \because  {}& \angle APF = 90^\circ \\
+  \therefore{}& FP^2 + AP^2 = AF^2 \\
+  \therefore{}& AF = \sqrt{x^2 + (7 - x)^2} = \sqrt{2x^2 - 14x + 49} \\
+  \because  {}& AF \perp EF \\
+  \therefore{}& \angle AFE = 90^\circ \\
+  \therefore{}& AF^2 + EF^2 = AE^2 \\
+  \therefore{}& (2x^2 - 14x + 49) + (2x^2 - 6x + 9) = 58 \\
+  \therefore{}& x = 5 \\
+  \therefore{}& DF = \sqrt2x = 5\sqrt2 \\
 \end{align*}
 
 综上，$DF = 5\sqrt2$。
@@ -68,28 +66,26 @@
   \label{fig:0020-dec}
 \end{figure}
 
-基本思路：通过建立平面直角坐标系求出$AF$、$EF$的斜率，然后利用垂直列方程求解。
-
-如图~\ref{fig:0020-dec}，以$A$为原点，直线$AB$为$x$轴，直线$AD$为$y$轴建立平面直角坐标系$xAy$。依题意得$A(0,0)$、$B(7,0)$、$D(0,7)$、$E(3,7)$，设$x_F = x$，直线$EF$的斜率为$k_1$，直线$AF$的斜率为$k_2$。
+如图~\ref{fig:0020-dec}，以$A$为原点，直线$AB$为$x$轴，直线$AD$为$y$轴建立平面直角坐标系$xAy$。依题意得$A(0,0), B(7,0), D(0,7), E(3,7)$，设$x_F = x$，直线$EF$的斜率为$k_1$，直线$AF$的斜率为$k_2$。
 
 \begin{align*}
-  &\because   B(7, 0), D(0, 7) \\
-  &\therefore \text{直线}BD\text{的解析式为}y = 7 - x \\
-  &\because   F\text{在线段}BD\text{上} \\
-  &\therefore y_F = 7 - x_F = 7 - x \\
-  &\therefore F(x, 7 - x) \\
-  &\therefore k_1 = \frac{(7 - x) - 7}{x - 3} = -\frac x{x - 3}, \\
-  &\mathalignsep k_2 = \frac{(7 - x) - 0}{x - 0} = \frac{7 - x}x \\
-  &\because   AF \perp EF \\
-  &\therefore k_1 \cdot k_2 = -1 \\
-  &\therefore -\frac x{x - 3} \cdot \frac{7 - x}x = -1 \\
-  &\therefore \frac{7 - x}{x - 3} = 1 \\
-  &\therefore 7 - x = x - 3 \\
-  &\therefore x = 5 \\
-  &\therefore y_F = 7 - x = 2 \\
-  &\because   D(0, 7) \\
-  &\therefore DF = \sqrt{(x_F - 0)^2 + (y_F - 7)^2} \\
-  &\therefore DF = \sqrt{2x^2} = \sqrt2x = 5\sqrt2 \\
+  \because  {}& B(7, 0), D(0, 7) \\
+  \therefore{}& \text{直线 $BD$ 的解析式为 $y = 7 - x$} \\
+  \because  {}& \text{$F$ 在线段 $BD$ 上} \\
+  \therefore{}& y_F = 7 - x_F = 7 - x \\
+  \therefore{}& F(x, 7 - x) \\
+  \therefore{}& k_1 = \frac{(7 - x) - 7}{x - 3} = -\frac x{x - 3}, \\
+  & k_2 = \frac{(7 - x) - 0}{x - 0} = \frac{7 - x}x \\
+  \because  {}& AF \perp EF \\
+  \therefore{}& k_1 \cdot k_2 = -1 \\
+  \therefore{}& -\frac x{x - 3} \cdot \frac{7 - x}x = -1 \\
+  \therefore{}& \frac{7 - x}{x - 3} = 1 \\
+  \therefore{}& 7 - x = x - 3 \\
+  \therefore{}& x = 5 \\
+  \therefore{}& y_F = 7 - x = 2 \\
+  \because  {}& D(0, 7) \\
+  \therefore{}& DF = \sqrt{(x_F - 0)^2 + (y_F - 7)^2} \\
+  \therefore{}& DF = \sqrt{2x^2} = \sqrt2x = 5\sqrt2 \\
 \end{align*}
 
 综上，$DF = 5\sqrt2$。\footnote{建立平面直角坐标系时，也可以其它点作为原点，方法类似，不加赘述。}

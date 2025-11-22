@@ -10,59 +10,59 @@
 如图~\ref{fig:0016}，在$\triangle ABC$中，$AD \perp BC$于$D$，$CE \perp AB$于$E$，$EM$平分$\angle BEC$交$AD$的延长线于$M$，连接$BM$、$CM$、$DM$，若$\angle CFD + \angle ABM = 180^\circ$，$2AE = 5BE$，$S_{\triangle AEF} = 5$，求$\triangle CEM$的面积。
 \problabels{yellow/平面几何, green/面积问题}
 
-\ans{$S_{\triangle CEM} = \sfrac{25}3$}
+\ans{$S_{\triangle CEM} = 25/3$}
 
 \subsection{蝴蝶模型} \label{subsec:0016-butf}
 
 基本思路：通过证明两个全等，得出$AC \parallel EM$以及$EF:CF$，然后运用蝴蝶模型求解。
 
 \begin{align*}
-  &\because   \angle CFD + \angle ABM = 180^\circ, \\
-  &\mathalignsep \angle CFD + \angle EFM = 180^\circ \\
-  &\therefore \angle EBM = \angle EFM, \angle CEM = \frac12\angle BEC \\
-  &\because   EM\text{平分}\angle BEC \\
-  &\therefore \angle BEM = \angle FEM \\
-  &\therefore \triangle BEM \cong \triangle FEM\ \text{（证明省略）} \\
-  &\therefore EB = EF \\
-  &\because   2AE = 5BE \\
-  &\therefore 2AE = 5EF \\
-  &\because   S_{\triangle AEF} = 5 \\
-  &\therefore \frac12AE\cdot EF = 5 \\
-  &\therefore AE = 5, EF = 2 \\
-  \text{又}&\because CE \perp AB \\
-  &\therefore \angle AEF = 90^\circ \\
-  &\therefore \angle EAF + \angle AFE = 90^\circ \\
-  &\because   \angle AEF + \angle CEB = 180^\circ \\
-  &\therefore \angle CEB = 90^\circ \\
-  &\therefore \angle AEF = \angle CEB, \angle CEM = 45^\circ \\
-  \text{又} &\because AD \perp BC \\
-  &\therefore \angle ADB = 90^\circ \\
-  &\therefore \angle EAF + \angle CBE = 90^\circ \\
-  &\therefore \angle AFE = \angle CBE \\
-  &\because   \text{在}\triangle AEF\text{与}\triangle CEB\text{中} \\
-  &\mathalignsep \begin{cases}
+  \because  {}& \angle CFD + \angle ABM = 180^\circ, \\
+  & \angle CFD + \angle EFM = 180^\circ \\
+  \therefore{}& \angle EBM = \angle EFM, \angle CEM = \frac12\angle BEC \\
+  \because  {}& \text{$EM$ 平分 $\angle BEC$} \\
+  \therefore{}& \angle BEM = \angle FEM \\
+  \therefore{}& \triangle BEM \cong \triangle FEM\ \text{（证明省略）} \\
+  \therefore{}& EB = EF \\
+  \because  {}& 2AE = 5BE \\
+  \therefore{}& 2AE = 5EF \\
+  \because  {}& S_{\triangle AEF} = 5 \\
+  \therefore{}& \frac12AE\cdot EF = 5 \\
+  \therefore{}& AE = 5, EF = 2 \\
+  \text{又}\because{}& CE \perp AB \\
+  \therefore{}& \angle AEF = 90^\circ \\
+  \therefore{}& \angle EAF + \angle AFE = 90^\circ \\
+  \because  {}& \angle AEF + \angle CEB = 180^\circ \\
+  \therefore{}& \angle CEB = 90^\circ \\
+  \therefore{}& \angle AEF = \angle CEB, \angle CEM = 45^\circ \\
+  \text{又}\because{}& AD \perp BC \\
+  \therefore{}& \angle ADB = 90^\circ \\
+  \therefore{}& \angle EAF + \angle CBE = 90^\circ \\
+  \therefore{}& \angle AFE = \angle CBE \\
+  \because  {}& \text{在 $\triangle AEF$ 与 $\triangle CEB$ 中} \\
+  & \begin{cases}
     \angle AEF = \angle CEB \\
     EF = EB \\
-    \angle AFE = \angle CBE \\
+    \angle AFE = \angle CBE
   \end{cases} \\
-  &\therefore \triangle AEF \cong \triangle CEB \\
-  &\therefore AE = CE \\
-  &\therefore \angle ACE = 90^\circ - \frac12\angle AEC = 45^\circ \\
-  &\because   \angle CEM = 45^\circ \\
-  &\therefore \angle ACE = \angle CEM \\
-  &\therefore AC \parallel EM \\
-  &\therefore S_{\triangle AEM} = S_{\triangle CEM} \\
-  &\therefore S_{\triangle AEF} = S_{\triangle CMF} = 5 \\
-  &\because   AE = 5 \\
-  &\therefore CE = 5 \\
-  &\because   EF = 2 \\
-  &\therefore CF = 3 \\
-  &\therefore EF:CF = 2:3 \\
-  &\because   S_{\triangle EMF}:S_{\triangle CMF} = EF:CF \\
-  &\therefore S_{\triangle EMF}:5 = 2:3 \\
-  &\therefore S_{\triangle EMF} = \frac{10}3 \\
-  &\because   S_{\triangle CEM} = S_{\triangle EMF} + S_{\triangle CMF} \\
-  &\therefore S_{\triangle CEM} = \frac{10}3 + 5 = \frac{25}3 \\
+  \therefore{}& \triangle AEF \cong \triangle CEB \\
+  \therefore{}& AE = CE \\
+  \therefore{}& \angle ACE = 90^\circ - \frac12\angle AEC = 45^\circ \\
+  \because  {}& \angle CEM = 45^\circ \\
+  \therefore{}& \angle ACE = \angle CEM \\
+  \therefore{}& AC \parallel EM \\
+  \therefore{}& S_{\triangle AEM} = S_{\triangle CEM} \\
+  \therefore{}& S_{\triangle AEF} = S_{\triangle CMF} = 5 \\
+  \because  {}& AE = 5 \\
+  \therefore{}& CE = 5 \\
+  \because  {}& EF = 2 \\
+  \therefore{}& CF = 3 \\
+  \therefore{}& EF:CF = 2:3 \\
+  \because  {}& S_{\triangle EMF}:S_{\triangle CMF} = EF:CF \\
+  \therefore{}& S_{\triangle EMF}:5 = 2:3 \\
+  \therefore{}& S_{\triangle EMF} = \frac{10}3 \\
+  \because  {}& S_{\triangle CEM} = S_{\triangle EMF} + S_{\triangle CMF} \\
+  \therefore{}& S_{\triangle CEM} = \frac{10}3 + 5 = \frac{25}3
 \end{align*}
 
 综上，$\triangle CEM$的面积为$\sfrac{25}3$。
@@ -81,39 +81,39 @@
 如图~\ref{fig:0016-vert}，作$MG \perp AB$于$G$。设$x = BG$。
 
 \begin{align*}
-  &\because   S_{\triangle BEM} = \frac12BE\cdot EM\sin\angle BEM, \\
-  &\mathalignsep S_{\triangle CEM} = \frac12CE\cdot EM\sin\angle CEM \\
-  &\therefore S_{\triangle BEM}:S_{\triangle CEM} \\
-  &\mathalignsep = BE\sin\angle BEM:CE\sin\angle CEM \\
-  &\because   EM\text{平分}\angle BEC \\
-  &\therefore \angle BEM = \angle CEM \\
-  &\therefore \sin\angle BEM = \sin\angle CEM \\
-  &\therefore S_{\triangle BEM}:S_{\triangle CEM} = BE:CE \\
-  &\because   \angle EAF = \angle GAM, \angle AEF = \angle G \\
-  &\therefore \triangle EAF \sim \triangle GAM \\
-  &\therefore AE:AG = EF:GM \\
-  &\because   \triangle BEM \cong \triangle FEM \\
-  &\mathalignsep \text{（证法参见\nameref{subsec:0016-butf}）}, \\
-  &\mathalignsep S_{\triangle AEF} = 5 \\
-  &\therefore AE = 5, EB = EF = 2 \\
-  &\mathalignsep \text{（证法参见\nameref{subsec:0016-butf}）} \\
-  &\because   \angle GEM = \angle CEM, \angle FEG = 90^\circ \\
-  &\therefore \angle GEM = 45^\circ \\
-  &\because   \angle G = 90^\circ \\
-  &\therefore \angle EMG = 45^\circ \\
-  &\therefore \angle GEM = \angle EMG \\
-  &\therefore GE = GM \\
-  &\because   GE = x + 2 \\
-  &\therefore GM = x + 2, AG = x + 7 \\
-  &\therefore \frac5{x + 7} = \frac2{x + 2} \\
-  &\therefore x = \frac{14}3 \\
-  &\therefore GM = x + 2 = \frac{20}3 \\
-  &\therefore S_{\triangle BEM} = \frac12EB\cdot GM = \frac{10}3 \\
-  &\because   \triangle AEF \cong \triangle BEC \\
-  &\mathalignsep \text{（证法参见\nameref{subsec:0016-butf}）} \\
-  &\therefore AE = CE = 5 \\
-  &\therefore \frac{10}3:S_{\triangle CEM} = 2:5 \\
-  &\therefore S_{\triangle CEM} = \frac{25}3 \\
+  \because  {}& S_{\triangle BEM} = \frac12BE\cdot EM\sin\angle BEM, \\
+  & S_{\triangle CEM} = \frac12CE\cdot EM\sin\angle CEM \\
+  \therefore{}& S_{\triangle BEM}:S_{\triangle CEM} \\
+  & = BE\sin\angle BEM:CE\sin\angle CEM \\
+  \because  {}& EM\text{平分}\angle BEC \\
+  \therefore{}& \angle BEM = \angle CEM \\
+  \therefore{}& \sin\angle BEM = \sin\angle CEM \\
+  \therefore{}& S_{\triangle BEM}:S_{\triangle CEM} = BE:CE \\
+  \because  {}& \angle EAF = \angle GAM, \angle AEF = \angle G \\
+  \therefore{}& \triangle EAF \sim \triangle GAM \\
+  \therefore{}& AE:AG = EF:GM \\
+  \because  {}& \triangle BEM \cong \triangle FEM \\
+  & \text{（证法参见\nameref{subsec:0016-butf}）}, \\
+  & S_{\triangle AEF} = 5 \\
+  \therefore{}& AE = 5, EB = EF = 2 \\
+  & \text{（证法参见\nameref{subsec:0016-butf}）} \\
+  \because  {}& \angle GEM = \angle CEM, \angle FEG = 90^\circ \\
+  \therefore{}& \angle GEM = 45^\circ \\
+  \because  {}& \angle G = 90^\circ \\
+  \therefore{}& \angle EMG = 45^\circ \\
+  \therefore{}& \angle GEM = \angle EMG \\
+  \therefore{}& GE = GM \\
+  \because  {}& GE = x + 2 \\
+  \therefore{}& GM = x + 2, AG = x + 7 \\
+  \therefore{}& \frac5{x + 7} = \frac2{x + 2} \\
+  \therefore{}& x = \frac{14}3 \\
+  \therefore{}& GM = x + 2 = \frac{20}3 \\
+  \therefore{}& S_{\triangle BEM} = \frac12EB\cdot GM = \frac{10}3 \\
+  \because  {}& \triangle AEF \cong \triangle BEC \\
+  & \text{（证法参见\nameref{subsec:0016-butf}）} \\
+  \therefore{}& AE = CE = 5 \\
+  \therefore{}& \frac{10}3:S_{\triangle CEM} = 2:5 \\
+  \therefore{}& S_{\triangle CEM} = \frac{25}3 \\
 \end{align*}
 
-综上，$\triangle CEM$的面积为$\sfrac{25}3$。
+综上，$\triangle CEM$的面积为$25/3$。

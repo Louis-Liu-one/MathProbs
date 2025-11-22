@@ -7,57 +7,46 @@
   \caption{002A：Heron公式} \label{fig:002A}
 \end{figure}
 
-证明Heron公式：对任意$\triangle ABC$，设其面积为$S$，三边分别为$a$、$b$、$c$，又设$p = \sfrac12(a + b + c)$，则
+证明Heron公式：对任意$\triangle ABC$，设其面积为$S$，三边分别为$a, b, c$，又设$p = (a + b + c)/2$，则
 
 \[ S = \sqrt{p(p - a)(p - b)(p - c)} \]
 \problabels{yellow/平面几何, green/证明题}
 
 \subsection{余弦定理}
 
-基本思路：通过余弦定理求出$\sin\angle A$，然后用$a$、$b$、$c$表示$S$，整理得Heron公式。
-
 设$\alpha = \angle A$。
 
 由余弦定理知
-
 \[ \cos\alpha = \frac{b^2 + c^2 - a^2}{2bc} \]
-
 由$\cos^2\alpha + \sin^2\alpha = 1$知
-
 \begin{align*}
   \sin\alpha &= \sqrt{1 - \cos^2\alpha} \\
   &= \sqrt{1 - \left(\frac{b^2 + c^2 - a^2}{2bc}\right)} \\
   &= \frac{\sqrt{(2bc)^2 - (b^2 + c^2 - a^2)^2}}{2bc} \\
 \end{align*}
-
-又由$S = \sfrac12bc\sin\alpha$知
-
+又由$S = bc\sin\alpha/2$知
 \begin{align*}
-  S &= \frac12bc\sin\alpha \\
-  &= \frac12bc\cdot\frac{\sqrt{(2bc)^2 - (b^2 + c^2 - a^2)^2}}{2bc} \\
-  &= \frac14\sqrt{(2bc)^2 - (b^2 + c^2 - a^2)^2} \\
-  &= \frac14\Big((2bc + b^2 + c^2 - a^2) \\
-  &\phantom{=} \cdot(2bc - b^2 - c^2 + a^2)\Big)^{\sfrac12} \\
-  &= \frac14\sqrt{((b + c)^2 - a^2)(-(b - c)^2 + a^2)} \\
-  &= \frac14\Big((a + b + c)(-a + b + c) \\
-  &\phantom{=} \cdot(a - b + c)(a + b - c)\Big)^{\sfrac12} \\
-  &= \Bigg(\frac1{16}(a + b + c)(-a + b + c) \\
-  &\phantom{=} \cdot(a - b + c)(a + b - c)\Bigg)^{\sfrac12} \\
-  &= \Bigg(\frac{a + b + c}2\cdot\frac{-a + b + c}2 \\
-  &\phantom{=} \cdot\frac{a - b + c}2\cdot\frac{a + b - c}2\Bigg)^{\sfrac12} \\
+  S ={}& \frac12bc\sin\alpha \\
+  ={}& \frac12bc\cdot\frac{\sqrt{(2bc)^2 - (b^2 + c^2 - a^2)^2}}{2bc} \\
+  ={}& \frac14\sqrt{(2bc)^2 - (b^2 + c^2 - a^2)^2} \\
+  ={}& \frac14\Big((2bc + b^2 + c^2 - a^2) \\
+  & \cdot(2bc - b^2 - c^2 + a^2)\Big)^{1/2} \\
+  ={}& \frac14\sqrt{((b + c)^2 - a^2)(-(b - c)^2 + a^2)} \\
+  ={}& \frac14\Big((a + b + c)(-a + b + c) \\
+  & \cdot(a - b + c)(a + b - c)\Big)^{1/2} \\
+  ={}& \Bigg(\frac1{16}(a + b + c)(-a + b + c) \\
+  & \cdot(a - b + c)(a + b - c)\Bigg)^{1/2} \\
+  ={}& \Bigg(\frac{a + b + c}2\cdot\frac{-a + b + c}2 \\
+  & \cdot\frac{a - b + c}2\cdot\frac{a + b - c}2\Bigg)^{1/2}
 \end{align*}
-
-设$p = \sfrac12(a + b + c)$，则
-
+设$p = (a + b + c)/2$，则
 \begin{align*}
   \frac{a + b + c}2 &= p \\
   \frac{-a + b + c}2 &= p - a \\
   \frac{a - b + c}2 &= p - b \\
-  \frac{a + b - c}2 &= p - c \\
+  \frac{a + b - c}2 &= p - c
 \end{align*}
-
 因此
-
 \[ S = \sqrt{p(p - a)(p - b)(p - c)} \]
 
 证毕。
@@ -71,32 +60,25 @@
   \label{fig:002A-circ}
 \end{figure}
 
-基本思路：通过作三角形的内切圆得出相似三角形，然后通过代数计算并运用射影定理等证明命题。
-
-如图~\ref{fig:002A-circ}，作$\angle BAC$的平分线、$\angle ABC$的平分线、$\angle ACB$的平分线，三线交于点$O$；作$OD \perp BC$于$D$，$OE \perp AC$于$E$，$OF \perp AB$于$F$；延长$AB$到点$M$使得$BM = CE$；作$BN \perp AB$，$ON \perp OA$，两线交于点$N$，$ON$与$AB$交于点$L$；连接$AN$。
+如图~\ref{fig:002A-circ}，作$\angle BAC, \angle ABC, \angle ACB$的平分线，三线交于点$O$；作$OD \perp BC$于$D$，$OE \perp AC$于$E$，$OF \perp AB$于$F$；延长$AB$到点$M$使得$BM = CE$；作$BN \perp AB, ON \perp OA$，两线交于$N$，$ON, AB$交于点$L$；连接$AN$。
 
 由于$O$是$\triangle ABC$的内心，所以由三角形内心的性质，可以设
-
 \begin{align*}
   AE = AF &= x \\
   BD = BF &= y \\
   CD = CE = BM &= z \\
   OD = OE = OF &= r \\
   FL &= h \\
-  p &= \frac12(a + b + c) \\
+  p &= \frac12(a + b + c)
 \end{align*}
-
 则可知
-
 \begin{align*}
   BL &= y - h \\
   x + y &= c \\
   y + z &= a \\
-  x + z &= b \\
+  x + z &= b
 \end{align*}
-
 因此，
-
 \begin{align*}
   p &= \frac12(a + b + c) \\
   &= \frac12(x + y + y + z + x + z) \\
@@ -105,56 +87,36 @@
   y &= p - b \\
   z &= p - c \\
   AM &= AF + BF + BM \\
-  &= x + y + z \\
-  &= p \\
+  &= x + y + z = p
 \end{align*}
-
 又由于$\angle AON = \angle ABN = 90^\circ$，可知$A, O, B, N$四点共圆，根据圆周角定理\footnote{圆周角定理的证明参见第~\ref{sec:0025} 题。}，
-
 \[ \angle ONA = \angle OBA \]
-
-因此，
-
-\begin{align*}
-  &\phantom{=} \angle OBA + \angle OAB + \angle BAN \\
-  &= \angle ONA + \angle OAB + \angle BAN \\
-  &= 90^\circ \\
-\end{align*}
-
-又由于$OA$、$OB$、$OC$分别平分$\angle BAC$、$\angle ABC$、$\angle ACB$，且$\angle BAC + \angle ABC + \angle ACB = 180^\circ$，所以
-
-\begin{align*}
-  &\phantom{=} \angle OBA + \angle OAB + \angle ECO \\
-  &= \frac12\angle ABC + \frac12\angle BAC + \frac12\angle ACB \\
-  &= \frac12\cdot 180^\circ = 90^\circ \\
-\end{align*}
-
 因此
-
 \begin{align*}
-  &\phantom{=} \angle OBA + \angle OAB + \angle BAN \\
-  &=\angle OBA + \angle OAB + \angle ECO \\
-  &\phantom{=} \angle BAN = \angle ECO \\
+  & \angle OBA + \angle OAB + \angle BAN \\
+  ={}& \angle ONA + \angle OAB + \angle BAN = 90^\circ
 \end{align*}
-
+又由于$OA$、$OB$、$OC$分别平分$\angle BAC$、$\angle ABC$、$\angle ACB$，且$\angle BAC + \angle ABC + \angle ACB = 180^\circ$，所以
+\begin{align*}
+  & \angle OBA + \angle OAB + \angle ECO \\
+  ={}& \frac12\angle ABC + \frac12\angle BAC + \frac12\angle ACB \\
+  ={}& \frac12\cdot 180^\circ = 90^\circ
+\end{align*}
+因此
+\begin{align*}
+  & \angle OBA + \angle OAB + \angle BAN \\
+  ={}& \angle OBA + \angle OAB + \angle ECO \\
+  & \angle BAN = \angle ECO
+\end{align*}
 又由于$\angle ABN = \angle CEO = 90^\circ$，所以可得
-
 \[ \triangle ABN \sim \triangle CEO \]
-
 即
-
 \[ \frac{BN}{AB} = \frac{OE}{CE} = \frac{OE}{BM} \]
-
 所以
-
 \[ \frac{BM}{AB} = \frac{OE}{BN} = \frac{OF}{BN} \]
-
 又因为$\angle OFB = \angle FBN$，所以$OF \parallel BN$，因此，
-
 \[ \frac{OF}{BN} = \frac{FL}{BL} \]
-
-因此，
-
+因此
 \begin{align*}
   \frac{BM}{AB} &= \frac{FL}{BL} \\
   \frac{BM + AB}{AB} &= \frac{FL + BL}{BL} \\
@@ -162,44 +124,34 @@
   AM\cdot BL &= AB\cdot BF \\
   p(y - h) &= cy \\
   ph &= py - cy \\
-  &= y(p - c) \\
-  &= yz \\
-  pxh &= xyz \\
+  &= y(p - c) = yz \\
+  pxh &= xyz
 \end{align*}
 
 由射影定理\footnote{射影定理可以由相交弦定理推知。相交弦定理的证明参见第~\ref{sec:0028} 题。}可知，在$\triangle AOL$中，
-
 \begin{align*}
   AF\cdot FL &= OF^2 \\
-  xh &= r^2 \\
+  xh &= r^2
 \end{align*}
-
 因此，
-
 \begin{align*}
   pxh &= xyz \\
   pr^2 &= xyz \\
-  p^2r^2 &= pxyz \\
+  p^2r^2 &= pxyz
 \end{align*}
-
 又因为
-
 \begin{align*}
   S &= S_{\triangle AOB} + S_{\triangle AOC} + S_{\triangle BOC} \\
   &= \frac12AB\cdot OF + \frac12AC\cdot OE \\
   &+ \frac12BC\cdot OD \\
   &= \frac12cr + \frac12br + \frac12ar \\
-  &= r\cdot\frac12(a + b + c) \\
-  &= pr \\
-  S^2 &= p^2r^2 \\
+  &= r\cdot\frac12(a + b + c) = pr \\
+  S^2 &= p^2r^2
 \end{align*}
-
 所以
-
 \begin{align*}
   p^2r^2 &= pxyz \\
   S^2 &= p(p - a)(p - b)(p - c) \\
-  S &= \sqrt{p(p - a)(p - b)(p - c)} \\
+  S &= \sqrt{p(p - a)(p - b)(p - c)}
 \end{align*}
-
 即为Heron公式。证毕。

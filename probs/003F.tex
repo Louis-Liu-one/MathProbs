@@ -7,59 +7,55 @@
   \caption{003F：矩形翻折} \label{fig:003F}
 \end{figure}
 
-如图~\ref{fig:003F}，在矩形$ABCD$中，$AB = 4$，$BC = 3$，$P$为边$BC$上一点，将$\triangle CDP$沿$DP$折叠，点$C$落在点$E$处，$DE, PE$分别交$AB$于点$F, G$。若$EG = BG$，求$BF$的长。
+如图~\ref{fig:003F}，在矩形$ABCD$中，$AB = 4, BC = 3$，$P$为边$BC$上一点，将$\triangle CDP$沿$DP$折叠，点$C$落在点$E$处，$DE, PE$分别交$AB$于点$F, G$。若$EG = BG$，求$BF$的长。
 \problabels{yellow/平面几何, green/长度问题}
 
-\ans{$BF = \sfrac{12}5$}
+\ans{$BF = 12/5$}
 
 \subsection{勾股定理} \label{subsec:003F-pyth}
-
-基本思路：设$BF = x$，然后在$\triangle ADF$中应用勾股定理求解。
 
 设$BF = x$。
 
 \begin{align*}
-  &\because   \triangle EDP\text{由}\triangle CDP\text{折叠而来} \\
-  &\therefore \angle C = \angle E, PC = PE, CD = DE \\
-  &\because   \text{四边形}ABCD\text{为矩形} \\
-  &\therefore \angle A = \angle B = \angle C = 90^\circ, \\
-  &\mathalignsep AB = CD, BC = AD \\
-  &\therefore \angle B = \angle E \\
-  &\because   \text{在}\triangle EFG\text{与}\triangle BPG\text{中} \\
-  &\mathalignsep \begin{cases}
+  \because  {}& \text{$\triangle EDP$ 由 $\triangle CDP$ 折叠而来} \\
+  \therefore{}& \angle C = \angle E, PC = PE, CD = DE \\
+  \because  {}& \text{四边形 $ABCD$ 为矩形} \\
+  \therefore{}& \angle A = \angle B = \angle C = 90^\circ, \\
+  & AB = CD, BC = AD \\
+  \therefore{}& \angle B = \angle E \\
+  \because  {}& \text{在 $\triangle EFG$ 与 $\triangle BPG$ 中} \\
+  & \begin{cases}
     \angle E = \angle B \\
     EG = BG \\
-    \angle EGF = \angle BGP \\
+    \angle EGF = \angle BGP
   \end{cases} \\
-  &\therefore \triangle EFG \cong \triangle BPG \\
-  &\therefore FG = PG, EF = BP \\
-  &\because   BF = BG + FG \\
-  &\therefore BF = EG + PG = PE \\
-  &\because   BF = x \\
-  &\therefore BF = PE = PC = x \\
-  &\because   BC = 3 \\
-  &\therefore AD = 3, BP = 3 - x \\
-  &\therefore EF = 3 - x \\
-  &\because   AB = 4 \\
-  &\therefore CD = 4, AF = AB - BF = 4 - x \\
-  &\therefore DE = 4 \\
-  &\therefore DF = DE - EF = x + 1 \\
-  \text{又}&\because \angle A = 90^\circ \\
-  &\therefore AD^2 + AF^2 = DF^2 \\
-  &\therefore 3^2 + (4 - x)^2 = (x + 1)^2 \\
-  &\therefore x = \frac{12}5 \\
-  &\therefore BF = \frac{12}5 \\
+  \therefore{}& \triangle EFG \cong \triangle BPG \\
+  \therefore{}& FG = PG, EF = BP \\
+  \because  {}& BF = BG + FG \\
+  \therefore{}& BF = EG + PG = PE \\
+  \because  {}& BF = x \\
+  \therefore{}& BF = PE = PC = x \\
+  \because  {}& BC = 3 \\
+  \therefore{}& AD = 3, BP = 3 - x \\
+  \therefore{}& EF = 3 - x \\
+  \because  {}& AB = 4 \\
+  \therefore{}& CD = 4, AF = AB - BF = 4 - x \\
+  \therefore{}& DE = 4 \\
+  \therefore{}& DF = DE - EF = x + 1 \\
+  \text{又}\because{}& \angle A = 90^\circ \\
+  \therefore{}& AD^2 + AF^2 = DF^2 \\
+  \therefore{}& 3^2 + (4 - x)^2 = (x + 1)^2 \\
+  \therefore{}& x = \frac{12}5 \\
+  \therefore{}& BF = \frac{12}5
 \end{align*}
 
-综上，$BF$的长为$\sfrac{12}5$。
+综上，$BF$的长为$12/5$。
 
 \subsection{面积法}
 
 \emph{YCY提供的方法。}
 
-基本思路：通过比较梯形$BCDF$与四边形$CDEP$的面积求解。
-
-根据解法\nameref{subsec:003F-pyth}知，$BF = PC$，设$BF = PC = x$，则易知$S_{\triangle CDP} = 2x$，$S_{BCDF} = \sfrac32(x + 4) = \sfrac32x + 6$。
+根据解法\nameref{subsec:003F-pyth}知，$BF = PC$，设$BF = PC = x$，则易知$S_{\triangle CDP} = 2x$，$S_{BCDF} = 3(x + 4)/2 = 3x/2 + 6$。
 
 又根据解法\nameref{subsec:003F-pyth}知
 
@@ -74,7 +70,7 @@
   2S_{\triangle CDP} &= S_{BCDF} \\
   4x &= \frac32x + 6 \\
   x &= \frac{12}5 \\
-  BF &= \frac{12}5 \\
+  BF &= \frac{12}5
 \end{align*}
 
-综上，$BF$的长为$\sfrac{12}5$。
+综上，$BF$的长为$12/5$。

@@ -10,7 +10,7 @@
 如图~\ref{fig:0024}，$l_1 \parallel l_2 \parallel l_3$且$l_1$与$l_2$的距离为$a$，$l_2$与$l_3$的距离为$b$，$a < b$，边长为$c$的等边$\triangle ABC$的三个顶点$A$、$B$、$C$分别在$l_1$、$l_2$、$l_3$上，求$c$（用含$a$、$b$的代数式表示）。
 \problabels{yellow/平面几何, green/数量关系问题}
 
-\ans{$c = \sfrac23\sqrt{3(a^2 + ab + b^2)}$}
+\ans{$c = 2\sqrt{3(a^2 + ab + b^2)}/3$}
 
 \subsection{勾股定理} \label{subsec:0024-pyth}
 
@@ -21,33 +21,31 @@
   \label{fig:0024-pyth}
 \end{figure}
 
-基本思路：通过作垂线构造三个直角三角形，然后利用勾股定理，结合等边三角形三边相等的性质列方程求解。
-
-如图~\ref{fig:0024-pyth}，过$B$作$UV \perp l_2$，交$l_1$于$U$，交$l_3$于$V$，过$A$作$AW \perp l_3$于$W$。
+如图~\ref{fig:0024-pyth}，过$B$作$UV \perp l_2$交$l_1$于$U$，交$l_3$于$V$，过$A$作$AW \perp l_3$于$W$。
 
 \begin{align*}
-  &\because   UV \perp l_2, l_1 \parallel l_2 \\
-  &\therefore UV \perp l_1 \\
-  &\therefore \angle AUB = 90^\circ \\
-  &\therefore UA^2 + UB^2 = AB^2 \\
-  &\because   UV \perp l_2, l_3 \parallel l_2 \\
-  &\therefore UV \perp l_3 \\
-  &\therefore \angle BVC = 90^\circ \\
-  &\therefore VB^2 + VC^2 = BC^2 \\
-  &\because   AW \perp l_3 \\
-  &\therefore \angle AWC = 90^\circ \\
-  &\therefore WA^2 + WC^2 = AC^2, \\
-  &\mathalignsep \angle AUB = \angle BVC = \angle AWC = 90^\circ \\
-  &\therefore \text{四边形}AUVW\text{是矩形} \\
-  &\therefore UV = WA, AU = VW \\
-  &\therefore UB + VB = WA, UA = VC + WC \\
-  &\because   UB = a, VB = b, AB = AC = BC = c \\
-  &\therefore \begin{cases}
+  \because  {}& UV \perp l_2, l_1 \parallel l_2 \\
+  \therefore{}& UV \perp l_1 \\
+  \therefore{}& \angle AUB = 90^\circ \\
+  \therefore{}& UA^2 + UB^2 = AB^2 \\
+  \because  {}& UV \perp l_2, l_3 \parallel l_2 \\
+  \therefore{}& UV \perp l_3 \\
+  \therefore{}& \angle BVC = 90^\circ \\
+  \therefore{}& VB^2 + VC^2 = BC^2 \\
+  \because  {}& AW \perp l_3 \\
+  \therefore{}& \angle AWC = 90^\circ \\
+  \therefore{}& WA^2 + WC^2 = AC^2, \\
+  & \angle AUB = \angle BVC = \angle AWC = 90^\circ \\
+  \therefore{}& \text{四边形 $AUVW$ 是矩形} \\
+  \therefore{}& UV = WA, AU = VW \\
+  \therefore{}& UB + VB = WA, UA = VC + WC \\
+  \because  {}& UB = a, VB = b, AB = AC = BC = c \\
+  \therefore{}& \begin{cases}
     WA = a + b \\
     UA^2 + a^2 = c^2 \\
     VC^2 + b^2 = c^2 \\
     WC^2 + WA^2 = c^2 \\
-    UA - VC = WC \\
+    UA - VC = WC
   \end{cases}
 \end{align*}
 
@@ -61,7 +59,7 @@
   \sqrt{c^2 - a^2} - \sqrt{c^2 - b^2} &= \sqrt{c^2 - (a + b)^2} \\
   2c^2 - a^2 - b^2 & \\
   - 2\sqrt{(c^2 - a^2)(c^2 - b^2)} &= c^2 - a^2 - b^2 - 2ab \\
-  2\sqrt{(c^2 - a^2)(c^2 - b^2)} &= c^2 + 2ab \\
+  2\sqrt{(c^2 - a^2)(c^2 - b^2)} &= c^2 + 2ab
 \end{align*}
 
 设$x = c^2$，两边平方可得一个关于$x$的一元二次方程：
@@ -69,21 +67,21 @@
 \begin{align*}
   4(x - a^2)(x - b^2) &= (x + 2ab)^2 \\
   4x^2 - 4(a^2 + b^2)x + 4a^2b^2 &= x^2 + 4abx + 4a^2b^2 \\
-  3x^2 - 4(a^2 + ab + b^2)x &= 0 \\
+  3x^2 - 4(a^2 + ab + b^2)x &= 0
 \end{align*}
 
 此时由于$x \ne0$，可得
 
 \begin{align*}
   3x - 4(a^2 + ab + b^2) &= 0 \\
-  x &= \frac43(a^2 + ab + b^2) \\
+  x &= \frac43(a^2 + ab + b^2)
 \end{align*}
 
 代入$x = c^2$，得
 
 \begin{align*}
   c^2 &= \frac43(a^2 + ab + b^2) \\
-  c &= \frac23\sqrt{3(a^2 + ab + b^2)} \\
+  c &= \frac23\sqrt{3(a^2 + ab + b^2)}
 \end{align*}
 
-综上，$c = \sfrac23\sqrt{3(a^2 + ab + b^2)}$。
+综上，$c = 2\sqrt{3(a^2 + ab + b^2)}/3$。

@@ -7,7 +7,7 @@
   \caption{0002：40度角} \label{fig:0002}
 \end{figure}
 
-如图~\ref{fig:0002}，$\angle C = 40^\circ$，$\angle BDC = 60^\circ$，$AB = CD$，求$\angle A$。
+如图~\ref{fig:0002}，$\angle C = 40^\circ, \angle BDC = 60^\circ, AB = CD$，求$\angle A$。
 \problabels{yellow/平面几何, green/角度问题}
 
 \ans{$\angle A = 30^\circ$}
@@ -22,40 +22,40 @@
 
 基本思路：构造等边三角形，然后通过一系列等腰三角形求解。
 
-如图~\ref{fig:0002-eqtri}，延长$DB$到$E$使得$DE = CE$，$E$在直线$AC$下方。在直线$AC$上找到一点$F$使得$EF = EB$，连接$EA$、$EC$、$EF$。
+如图~\ref{fig:0002-eqtri}，延长$DB$到$E$使得$DE = CE$，$E$在直线$AC$下方。在直线$AC$上找到一点$F$使得$EF = EB$，连接$EA, EC, EF$。
 
 \begin{align*}
-  &\because   DC = DE, \angle CDE = 60^\circ \\
-  &\therefore \triangle CDE \text{是等边三角形} \\
-  &\therefore DC = DE = CE,\\
-  &\mathalignsep \angle CDE = \angle DCE = \angle DEC = 60^\circ \\
-  &\because   AB = CD \\
-  &\therefore AB = CE \\
-  &\because   \angle ACD = 40^\circ \\
-  &\therefore \angle ACE = 20^\circ \\
-  &\therefore \angle ABE = 80^\circ \\
-  &\because   EF = EB \\
-  &\therefore \angle ABE = \angle CFE \\
-  &\therefore \angle CFE = 80^\circ \\
-  &\therefore \angle DEF = 20^\circ \\
-  &\therefore \angle CEF = 80^\circ \\
-  &\therefore \angle CFE = \angle CEF \\
-  &\therefore \angle CEF = \angle ABE, CE = CF \\
-  &\because   \text{在}\triangle ABE\text{与}\triangle CEF\text{中} \\
-  &\mathalignsep \begin{cases}
+  \because  {}& DC = DE, \angle CDE = 60^\circ \\
+  \therefore{}& \text{$\triangle CDE$是等边三角形} \\
+  \therefore{}& DC = DE = CE, \\
+  & \angle CDE = \angle DCE = \angle DEC = 60^\circ \\
+  \because  {}& AB = CD \\
+  \therefore{}& AB = CE \\
+  \because  {}& \angle ACD = 40^\circ \\
+  \therefore{}& \angle ACE = 20^\circ \\
+  \therefore{}& \angle ABE = 80^\circ \\
+  \because  {}& EF = EB \\
+  \therefore{}& \angle ABE = \angle CFE \\
+  \therefore{}& \angle CFE = 80^\circ \\
+  \therefore{}& \angle DEF = 20^\circ \\
+  \therefore{}& \angle CEF = 80^\circ \\
+  \therefore{}& \angle CFE = \angle CEF \\
+  \therefore{}& \angle CEF = \angle ABE, CE = CF \\
+  \because  {}& \text{在 $\triangle ABE$ 与 $\triangle CEF$ 中} \\
+  & \begin{cases}
     AB = CE \\
     \angle ABE = \angle CEF \\
-    BE = EF \\
+    BE = EF
   \end{cases} \\
-  &\therefore \triangle ABE \cong \triangle CEF \\
-  &\therefore AE = CF, \angle AED = \angle CFE, \angle EAC = \angle ECA \\
-  &\therefore DC = DE = CE = CF = AB = AE \\
-  &\therefore EA = ED \\
-  &\therefore \angle EAD = \angle EDA \\
-  &\because   \angle AED = 80^\circ \\
-  &\therefore \angle EAD = 50^\circ \\
-  &\because   \angle EAC = 20^\circ \\
-  &\therefore \angle CAD = 30^\circ \\
+  \therefore{}& \triangle ABE \cong \triangle CEF \\
+  \therefore{}& AE = CF, \angle AED = \angle CFE, \angle EAC = \angle ECA \\
+  \therefore{}& DC = DE = CE = CF = AB = AE \\
+  \therefore{}& EA = ED \\
+  \therefore{}& \angle EAD = \angle EDA \\
+  \because  {}& \angle AED = 80^\circ \\
+  \therefore{}& \angle EAD = 50^\circ \\
+  \because  {}& \angle EAC = 20^\circ \\
+  \therefore{}& \angle CAD = 30^\circ
 \end{align*}
 
 综上，$\angle CAD = 30^\circ$。

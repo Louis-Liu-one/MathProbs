@@ -13,103 +13,81 @@
 \subsubsection{消去三次项}
 
 为了消去三次项，将$x = y + t$代入方程得
-
 \begin{align*}
   a(y + t)^4 + b(y + t)^3 & \\
   + c(y + t)^2 + d(y + t) + e &= 0 \\
   ay^4 + (4at + b)y^3 + (6at^2 + 3bt + c)y^2 & \\
   + (4at^3 + 3bt^2 + 2ct + d)y & \\
-  + (at^4 + bt^3 + ct^2 + dt + e) &= 0 \\
+  + (at^4 + bt^3 + ct^2 + dt + e) &= 0
 \end{align*}
 
-当且仅当$4at + b = 0$，即$t = -\sfrac b{4a}$时，三次项被消去。因此，令$t = -\sfrac b{4a}$，于是$x = y - \sfrac b{4a}$，则
-
+当且仅当$4at + b = 0$，即$t = -b/(4a)$时，三次项被消去。因此，令$t = -b/(4a)$，于是$x = y - b/(4a)$，则
 \begin{align*}
   ay^4 + \left(-\frac{3b^2}{8a} + c\right)y^2 + \left(\frac{b^3}{8a^2} - \frac{bc}{2a} + d\right)y & \\
   + \left(-\frac{b^4}{256a^3} + \frac{b^2c}{16a^2} - \frac{bd}{4a} + e\right) &= 0 \\
   y^4 + \left(-\frac{3b^2}{8a^2} + \frac ca\right)y^2 + \left(\frac{b^3}{8a^3} - \frac{bc}{2a^2} + \frac da\right)y & \\
-  + \left(-\frac{b^4}{256a^4} + \frac{b^2c}{16a^3} - \frac{bd}{4a^2} + \frac ea\right) &= 0 \\
+  + \left(-\frac{b^4}{256a^4} + \frac{b^2c}{16a^3} - \frac{bd}{4a^2} + \frac ea\right) &= 0
 \end{align*}
 
 \subsubsection{配方}
 
 令
-
 \begin{align*}
   u &= \frac{3b^2}{8a^2} - \frac ca \\
   v &= -\frac{b^3}{8a^3} + \frac{bc}{2a^2} - \frac da \\
-  w &= \frac{b^4}{256a^4} - \frac{b^2c}{16a^3} + \frac{bd}{4a^2} - \frac ea \\
+  w &= \frac{b^4}{256a^4} - \frac{b^2c}{16a^3} + \frac{bd}{4a^2} - \frac ea
 \end{align*}
-
 则
-
 \[ y^4 = uy^2 + vy + w \]
-
 等式两边同时加上$2ky^2 + k^2$得
-
 \begin{align*}
   y^4 + 2ky^2 + k^2 &= (u + 2k)y^2 + vy + (w + k^2) \\
-  (y^2 + k)^2 &= (u + 2k)y^2 + vy + (w + k^2) \\
+  (y^2 + k)^2 &= (u + 2k)y^2 + vy + (w + k^2)
 \end{align*}
 
 当且仅当等式右边的二次三项式的判别式$\Delta = v^2 - 4(u + 2k)(w + k^2) = 0$时，该二次三项式可以配成完全平方式。由此可得关于$k$的一元三次方程
-
 \begin{align*}
   4(u + 2k)(w + k^2) &= v^2 \\
-  8k^3 + 4uk^2 + 8wk + (4uw - v^2) &= 0 \\
+  8k^3 + 4uk^2 + 8wk + (4uw - v^2) &= 0
 \end{align*}
-
 代入一元三次方程求根公式\footnote{一元三次方程解法参见第~\ref{sec:0022} 题。}得其一个根为
-
 \[ k = \sqrt[3]{-p + \sqrt{p^2 + q^3}} + \sqrt[3]{-p - \sqrt{p^2 + q^3}} - \frac u6 \]
-
 其中
-
 \begin{align*}
   p &= \frac{u^3}{216} + \frac{uw}6 - \frac{v^2}{16} \\
-  q &= -\frac{u^2}{36} + \frac w3 \\
+  q &= -\frac{u^2}{36} + \frac w3
 \end{align*}
-
 此时等号两边可以配成完全平方式
-
 \[ (y^2 + k)^2 = \left(\sqrt{u + 2k}y + \sqrt{w + k^2}\right)^2 \]
-
 两边开平方根可得两个一元二次方程
-
 \begin{align*}
   y^2 + k &= \sqrt{u + 2k}y + \sqrt{w + k^2} \\
-  y^2 + k &= -\sqrt{u + 2k}y - \sqrt{w + k^2} \\
+  y^2 + k &= -\sqrt{u + 2k}y - \sqrt{w + k^2}
 \end{align*}
-
 解得
-
-\begin{align*}
-  \begin{cases}
-    y_{1,2} = \sfrac12\ \Bigg(\sqrt{u + 2k} \\
-    \phantom{y_{1,2}} \pm\sqrt{u - 2k + 4\sqrt{w + k^2}}\Bigg) \\
-    y_{3,4} = \sfrac12\ \Bigg(-\sqrt{u + 2k} \\
-    \phantom{y_{3,4}} \pm\sqrt{u - 2k - 4\sqrt{w + k^2}}\Bigg) \\
-  \end{cases}
-\end{align*}
-
-代入$x = y - \sfrac b{4a}$可得一元四次方程求根公式：
-
-\begin{align*}
-  \begin{cases}
-    x_{1,2} = \sfrac12\ \Bigg(\sqrt{u + 2k} \\
-    \phantom{x_{1,2}} \pm\sqrt{u - 2k + 4\sqrt{w + k^2}} - \sfrac b{2a}\Bigg) \\
-    x_{3,4} = \sfrac12\ \Bigg(-\sqrt{u + 2k} \\
-    \phantom{x_{3,4}} \pm\sqrt{u - 2k - 4\sqrt{w + k^2}} - \sfrac b{2a}\Bigg) \\
-  \end{cases}
-\end{align*}
-
+\[
+  \left\{ \begin{aligned}
+    y_{1,2} &= \frac12\ \bigg(\sqrt{u + 2k} \\
+    &\pm\sqrt{u - 2k + 4\sqrt{w + k^2}}\bigg) \\
+    y_{3,4} &= \frac12\ \bigg(-\sqrt{u + 2k} \\
+    &\pm\sqrt{u - 2k - 4\sqrt{w + k^2}}\bigg)
+  \end{aligned} \right.
+\]
+代入$x = y - b/(4a)$可得一元四次方程求根公式：
+\[
+  \left\{ \begin{aligned}
+    x_{1,2} &= \frac12\ \Bigg(\sqrt{u + 2k} \\
+    &\pm\sqrt{u - 2k + 4\sqrt{w + k^2}} - \frac b{2a}\Bigg) \\
+    x_{3,4} &= \frac12\ \Bigg(-\sqrt{u + 2k} \\
+    &\pm\sqrt{u - 2k - 4\sqrt{w + k^2}} - \frac b{2a}\Bigg)
+  \end{aligned} \right.
+\]
 其中
-
 \begin{align*}
   u &= \frac{3b^2}{8a^2} - \frac ca \\
   v &= -\frac{b^3}{8a^3} + \frac{bc}{2a^2} - \frac da \\
   w &= \frac{b^4}{256a^4} - \frac{b^2c}{16a^3} + \frac{bd}{4a^2} - \frac ea \\
   p &= \frac{u^3}{216} + \frac{uw}6 - \frac{v^2}{16} \\
   q &= -\frac{u^2}{36} + \frac w3 \\
-  k &= \sqrt[3]{-p + \sqrt{p^2 + q^3}} + \sqrt[3]{-p - \sqrt{p^2 + q^3}} - \frac u6 \\
+  k &= \sqrt[3]{-p + \sqrt{p^2 + q^3}} + \sqrt[3]{-p - \sqrt{p^2 + q^3}} - \frac u6
 \end{align*}

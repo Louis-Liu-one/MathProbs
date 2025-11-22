@@ -20,21 +20,22 @@
 
 基本思路：寻找两个面积相等，底也相等的三角形，根据它们的高相等这一结论推出一个8形全等。
 
-如图~\ref{fig:0004-S}，连接$CF$，作$AA' \perp BF$、$CC' \perp BF$，垂足分别为$A'$、$C'$。
+如图~\ref{fig:0004-S}，连接$CF$，作$AA' \perp BF, CC' \perp BF$，垂足分别为$A', C'$。
 
 \begin{align*}
-  &\because   AF:EF = 5:2 \\
-  &\therefore S_{\triangle AFB}:S_{\triangle EFB} = 5:2 \\
-  &\because   BE:CE = 2:3 \\
-  &\therefore S_{\triangle EFB}:S_{\triangle EFC} = 2:3 \\
-  &\therefore S_{\triangle AFB}:S_{\triangle CFB} = 1:1 \\
-  &\therefore S_{\triangle AFB} = S_{\triangle CFB} \\
-  &\therefore \frac12BF \cdot AA' = \frac12BF \cdot CC' \\
-  &\therefore AA' = CC' \\
-  &\therefore \triangle AA'D \cong \triangle CC'D \ \text{（证明省略）} \\
-  &\therefore DA = DC \\
-  &\text{证毕。} \\
+  \because  {}& AF:EF = 5:2 \\
+  \therefore{}& S_{\triangle AFB}:S_{\triangle EFB} = 5:2 \\
+  \because  {}& BE:CE = 2:3 \\
+  \therefore{}& S_{\triangle EFB}:S_{\triangle EFC} = 2:3 \\
+  \therefore{}& S_{\triangle AFB}:S_{\triangle CFB} = 1:1 \\
+  \therefore{}& S_{\triangle AFB} = S_{\triangle CFB} \\
+  \therefore{}& \frac12BF \cdot AA' = \frac12BF \cdot CC' \\
+  \therefore{}& AA' = CC' \\
+  \therefore{}& \triangle AA'D \cong \triangle CC'D \ \text{（证明省略）} \\
+  \therefore{}& DA = DC \\
 \end{align*}
+
+证毕。
 
 \subsection{倍长“中线”法} \label{subsec:0004-mid}
 
@@ -48,21 +49,22 @@
 
 基本思路：构造等腰三角形，然后找出一个8形全等，进而证明。
 
-如图~\ref{fig:0004-mid}，延长$BD$到点$B'$，使得$AB' = CB = 5$。连接$AB'$、$DB'$。
+如图~\ref{fig:0004-mid}，延长$BD$到点$B'$，使得$AB' = CB = 5$。连接$AB', DB'$。
 
 \begin{align*}
-  &\because   AB' = CB, CB = AD \\
-  &\therefore AB' = AD \\
-  &\therefore \angle B' = \angle AFD \\
-  &\because   \angle AFD = \angle BFE = \angle EBF \\
-  &\therefore \angle B' = \angle EBF \\
-  \text{又}&\because \text{在}\triangle ADB'\text{与}\triangle CDB\text{中} \\
-  &\mathalignsep \begin{cases}
+  \because  {}& AB' = CB, CB = AD \\
+  \therefore{}& AB' = AD \\
+  \therefore{}& \angle B' = \angle AFD \\
+  \because  {}& \angle AFD = \angle BFE = \angle EBF \\
+  \therefore{}& \angle B' = \angle EBF \\
+  \text{又}\because{}& \text{在 $\triangle ADB'$ 与 $\triangle CDB$ 中} \\
+  & \begin{cases}
     AB' = CB \\
     \angle B' = \angle EBF \\
-    \angle ADB' = \angle CDB \\
+    \angle ADB' = \angle CDB
   \end{cases} \\
-  &\therefore \triangle ADB' \cong \triangle CDB \\
-  &\therefore DA = DC \\
-  &\text{证毕。} \\
+  \therefore{}& \triangle ADB' \cong \triangle CDB \\
+  \therefore{}& DA = DC
 \end{align*}
+
+证毕。
