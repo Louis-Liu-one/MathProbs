@@ -1,0 +1,51 @@
+
+\prob{00C3}{极线与调和点列}
+
+\begin{figure}[htbp]
+  \centering \image{00C3}
+  \caption{总第~\ref{sec:00C3} 题图}
+  \label{fig:00C3}
+\end{figure}
+
+如图~\ref{fig:00C3}，从 $\odot O$ 外一点 $A$ 引出其两条切线 $AB, AC$ 分别切 $\odot O$ 于 $B, C$，连接 $BC$；从 $A$ 引出 $\odot O$ 一条割线交 $\odot O$ 于 $P, P'$，交 $BC$ 于 $M$。求证：$A, P, M, P'$ 是调和点列，即
+\[ \frac{AP}{AP'} = \frac{MP}{MP'} \]
+\problabels{yellow/平面几何, green/证明题}
+
+\emph{YCY 提供的题目。}
+
+\subsection{代数方法} \label{subsec:00C3-ag}
+
+\begin{figure}[htbp]
+  \centering \image{00C3-ag}
+  \caption{方法~\ref{subsec:00C3-ag} 图}
+  \label{fig:00C3-ag}
+\end{figure}
+
+如图~\ref{fig:00C3-ag}，作直线 $OA$，交 $BC$ 于 $M_0$，显然 $OA \perp BC$；作 $PH \perp OA$ 于 $H$，$P'H' \perp OA$ 于 $H'$。设
+\begin{align*}
+  AM_0 &= l, AB = AC = kx, AP = x, \\
+  BM_0 &= CM_0 = h_1, MM_0 = h_2, \\
+  MP &= p, MP' = q
+\end{align*}
+
+由切割线定理可知
+\[ AC^2 = AP\cdot AP' \Rightarrow AP' = k^2x \]
+于是
+\[ p + q + x = k^2x \]
+又由相交弦定理知
+\[ MP\cdot MP' = MB\cdot MC \]
+故有
+\[ pq = (h_1 + h_2)(h_1 - h_2) = h_1^2 - h_2^2 \]
+而
+\[ h_1^2 = k^2x^2 - l^2, h_2^2 = (p + x)^2 - l^2 \]
+于是有
+\begin{align*}
+  pq &= k^2x^2 - (p + x)^2 \\
+  &= x(p + q + x) - \left(p^2 + 2px + x^2\right) \\
+  &= qx - p^2 - px = qx - p(p + x) \\
+  qx &= p(p + q + x) = p\cdot k^2x \\
+  \frac pq &= \frac1{k^2} = \frac x{k^2x} = \frac{AP}{AP'}
+\end{align*}
+故
+\[ \frac{MP}{MP'} = \frac{AP}{AP'} \]
+证毕。

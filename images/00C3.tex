@@ -1,0 +1,18 @@
+
+\begin{tikzpicture}[scale=2]
+  \tkzDefPoints{0/-.4/O,-1/0/B,1/0/C,.4/0/M}
+  \tkzDefLine[tangent at=B](O) \tkzGetPoint{b}
+  \tkzDefLine[tangent at=C](O) \tkzGetPoint{c}
+  \tkzInterLL(B,b)(C,c) \tkzGetPoint{A}
+  \tkzInterLC(A,M)(O,B) \tkzGetPoints{P'}{P}
+  \tkzDrawCircle(O,B)
+  \tkzDrawSegments(A,B A,C A,P' B,C)
+  \tkzDrawPoints(O,A,B,C,M,P,P')
+  \tkzLabelPoints[above](A)
+  \tkzLabelPoints[left](B)
+  \tkzLabelPoints[right](C)
+  \tkzLabelPoints[below](P')
+  \tkzLabelPoints[below right](M)
+  \tkzLabelPoints[below left](O)
+  \tkzLabelPoints[above right](P)
+\end{tikzpicture}

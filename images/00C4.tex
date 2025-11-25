@@ -1,0 +1,26 @@
+
+\begin{tikzpicture}[scale=2]
+  \tkzDefPoints{0/-.4/O,-1/0/A,1/0/B,0/0/M,.4/0/M'}
+  \tkzDefLine[tangent at=A](O) \tkzGetPoint{a}
+  \tkzDefLine[tangent at=B](O) \tkzGetPoint{b}
+  \tkzInterLL(A,a)(B,b)        \tkzGetPoint{C}
+  \tkzDefTriangleCenter(A,B,C) \tkzGetPoint{o}
+  \tkzInterLC(C,M')(O,A) \tkzGetPoints{F'}{F}
+  \tkzInterLC(C,M')(o,A) \tkzGetFirstPoint{G}
+  \tkzInterLC(A,F)(o,A)  \tkzGetSecondPoint{D}
+  \tkzInterLC(B,F)(o,A)  \tkzGetFirstPoint{E}
+  \tkzDrawCircle(o,A)
+  \tkzDrawPolygon(A,B,C)
+  \tkzDrawSegments(A,D B,E C,F' M,F M,F')
+  \tkzMarkSegments[mark=|,color=cyan](F,G F',G)
+  \tkzMarkArc[mark=||,color=teal](o,B,D)
+  \tkzMarkArc[mark=||,color=teal](o,C,E)
+  \tkzLabelCircle[left](o,A)(-45){$K$}
+  \tkzDrawPoints(A,B,C,D,E,F,F',G,M)
+  \tkzLabelPoints[above](C,E)
+  \tkzLabelPoints[below](F')
+  \tkzLabelPoints[below left](A,M)
+  \tkzLabelPoints[below right](B,G)
+  \tkzLabelPoints[right](D)
+  \tkzLabelPoints[left](F)
+\end{tikzpicture}

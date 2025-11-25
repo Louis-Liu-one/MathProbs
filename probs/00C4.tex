@@ -1,0 +1,61 @@
+
+\prob{00C4}{中点上的角平分线}
+
+\begin{figure}[htbp]
+  \centering \image{00C4}
+  \caption{总第~\ref{sec:00C4} 题图}
+  \label{fig:00C4}
+\end{figure}
+
+如图~\ref{fig:00C4}，等腰 $\triangle ABC$ 内接于 $\odot K$，$AC = BC$，$M$ 是 $AB$ 的中点；分别在 $\wideparen{BC}, \wideparen{AC}$ 上找点 $D, E$ 使得 $\wideparen{BD} = \wideparen{CE}$；连接 $AD, BE$ 交于 $F$，作直线 $CF$ 交 $\odot K$ 于 $G$；在直线 $CF$ 上找一点 $F'$ 使得 $FG = F'G$，连接 $MF, MF'$。求证：$\angle BMF = \angle BMF'$。
+\problabels{yellow/平面几何, green/证明题}
+
+\emph{LTY 提供的题目。}
+
+\subsection{调和点列} \label{subsec:00C4-h}
+
+\begin{figure}[htbp]
+  \centering \image{00C4-h}
+  \caption{方法~\ref{subsec:00C4-h} 图}
+  \label{fig:00C4-h}
+\end{figure}
+
+如图~\ref{fig:00C4-h}，作 $\triangle AFB$ 的外接 $\odot O$，连接 $OA, OB, OF, OF'$；作直线 $OC$，作 $FH \perp OC$ 于 $H$，$F'H' \perp OC$ 于 $H'$。设 $\angle ACB = 2\theta$。
+
+显然
+\[ \wideparen{BD} = \wideparen{CE} \Rightarrow \angle BAD = \angle CBE \]
+于是
+\begin{align*}
+  \angle ABF + \angle BAF &= \angle ABF + \angle CBE  \\
+  &= \angle ABC = 90^\circ - \theta \\
+  \angle AFB &= 90^\circ + \theta
+\end{align*}
+
+显然
+\[ \angle AOB + \angle OAF + \angle OBF + \angle AFB = 360^\circ \]
+而
+\[ \angle OAF = \angle OFA, \angle OBF = \angle OFB \]
+故
+\[ \angle AOB = 360^\circ - 2\angle AFB = 180^\circ - 2\theta \]
+因此有
+\[ \angle AOB + \angle ACB = 180^\circ \]
+故 $A, O, B, C$ 共圆，即 $O$ 在 $\odot K$ 上。显然 $OC$ 是 $\odot K$ 的直径，故
+\[ \angle OAC = \angle OBC = \angle OGC = 90^\circ \]
+故 $CA, CB$ 切于 $\odot O$。
+
+由于 $OG \perp FF', FG = F'G$，故 $OG$ 垂直平分 $FF'$，于是 $OF = OF'$。而 $OF$ 是 $\odot O$ 的半径，故 $F'$ 在 $\odot O$ 上。
+
+由总第~\ref{sec:00C3} 题知，$C, F, M', F'$ 是调和点列，即
+\[ \frac{CF}{CF'} = \frac{M'F}{M'F'} \]
+而 $HF \parallel H'F'$，故
+\[ \triangle HCF \sim \triangle H'CF' \Rightarrow \frac{CF}{CF'} = \frac{HF}{H'F'} \]
+由平行线等比例分线段知
+\[ \frac{M'F}{M'F'} = \frac{MH}{MH'} \]
+故
+\[ \left\{ \begin{aligned}
+  \angle MHF &= \angle MH'F' \\
+  \frac{HF}{H'F'} &= \frac{MH}{MH'}
+\end{aligned} \right. \Rightarrow \triangle MHF \sim \triangle MH'F' \]
+故有
+\[ \angle HMF = \angle H'MF' \Rightarrow \angle BMF = \angle BMF' \]
+命题得证。

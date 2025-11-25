@@ -1,0 +1,24 @@
+
+\begin{tikzpicture}[scale=2]
+  \tkzDefPoints{0/-.4/O,-1/0/B,1/0/C,.4/0/M}
+  \tkzDefLine[tangent at=B](O) \tkzGetPoint{b}
+  \tkzDefLine[tangent at=C](O) \tkzGetPoint{c}
+  \tkzInterLL(B,b)(C,c) \tkzGetPoint{A}
+  \tkzInterLC(A,M)(O,B) \tkzGetPoints{P'}{P}
+  \tkzDefLine[altitude](A,P,O)  \tkzGetPoint{H}
+  \tkzDefLine[altitude](A,P',O) \tkzGetPoint{H'}
+  \tkzInterLL(O,A)(B,C) \tkzGetPoint{M_0}
+  \tkzMarkRightAngles[size=.1](O,H,P P',H',O O,M_0,M)
+  \tkzDrawCircle(O,B)
+  \tkzDrawSegments(A,B A,C A,P' B,C)
+  \tkzDrawSegments[dashed](A,H' P,H P',H')
+  \tkzDrawPoints(O,A,B,C,M,M_0,P,P',H,H')
+  \tkzLabelPoints[above](A)
+  \tkzLabelPoints[left](B,H,H')
+  \tkzLabelPoints[right](C)
+  \tkzLabelPoints[below](P')
+  \tkzLabelPoints[below right](M)
+  \tkzLabelPoints[below left](O)
+  \tkzLabelPoints[above right](P)
+  \tkzLabelPoints[above left](M_0)
+\end{tikzpicture}
